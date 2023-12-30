@@ -1,0 +1,208 @@
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+    font-family: var(--bs-body-font-family);
+}
+
+html {
+    font-size: 24px;
+}
+
+@media (min-width: 600px) {
+    .container-fluid.responsive {
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+}
+@media (max-width: 600px) {
+    html {
+        font-size: 16px;
+    }
+    .main-banner-section {
+        height: 12rem !important;
+        line-height: 12rem !important;
+    }
+    .classify-section .wrap-slider .slider{
+        width: 210% !important;
+    }
+}
+
+.offcanvas.offcanvas-end.text-bg-dark {
+    width: 17rem;
+}
+
+.btn-min-width {
+    min-width: 35%;
+}
+
+.cover-fixed-nav-section {
+    width: 100%;
+    height: 3.5rem;
+}
+
+.main-banner-section {
+    width: 100%;
+    height: 20rem;
+    text-align: center;
+    font-size: 3rem;
+    line-height: 20rem;
+}
+
+.search-section {
+    width: 100%;
+    height: 5rem;
+}
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #198754;
+    border-right: none;
+    padding: 5px;
+    height: 1.5rem;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 0.7rem;
+    color: #9dbfaf;
+}
+
+.searchTerm:focus {
+    color: #198754;
+}
+
+.searchButton {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #198754;
+    background: #198754;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap.container {
+    width: 50%;
+}
+
+.classify-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    position: sticky;
+    top: 3.5rem;
+    background-color: white;
+}
+
+.classify-section .wrap-slider {
+    width: 70%;
+    height: 3rem;
+    overflow-x: hidden;
+}
+
+.classify-section .left-slide-button,
+.classify-section .right-slide-button {
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    font-size: 2rem;
+    color: #4374d9;
+    background-color: white;
+}
+
+.classify-section .wrap-slider .slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    transition: 0.5s all;
+}
+
+.classify-div {
+    width: 3.5rem;
+    height: 3rem;
+    text-align: center;
+    align-items: center;
+}
+.classify-button {
+    width: 3.5rem;
+    height: 2rem;
+    border: 0.2rem solid #EAEAEA;
+    border-radius: 0.5rem;
+    background-color: #EAEAEA;
+}
+.classify-button-name {
+    font-size: 0.5rem;
+    line-height: 0.7rem;
+}
+
+.classified-items-section {
+    width: 100%;
+    height: 100vw;
+}
+.classified-info{
+    width: 100%;
+    height: 5rem;
+    padding-top: 2.4rem;
+    border-bottom: 0.05rem solid #212529;
+    display: flex;
+    align-content: space-between;
+}
+.classified-info-text{
+    font-size: 1rem;
+    vertical-align: bottom;
+    margin-bottom: 0;
+}
+.classified-items-list{
+    width: 100%;
+    height: 90%;
+}
+
+/* Signin */
+.wrap-login-form, .wrap-signup-form{
+    width: 50%;
+    margin: 5rem auto;
+}
+
+.login-text, .signup-text{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+}
