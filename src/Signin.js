@@ -34,7 +34,7 @@ class Signin extends Component {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: {
-                    `signinEmail=${this.state.signinEmail}&signinPassword=${this.state.singninPassword}`
+                    'signinEmail='+this.state.signinEmail.toStirng()+'&signinPassword='this.state.singninPassword.toString()
                 },
             })
             .then((response) => {console.log(response);});
