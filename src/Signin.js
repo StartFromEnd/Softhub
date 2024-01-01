@@ -29,6 +29,7 @@ class Signin extends Component {
             fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signin', {
                 method: 'POST',
                 mode: 'cors',
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
