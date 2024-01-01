@@ -36,7 +36,7 @@ class Signin extends Component {
                     signinPassword: this.state.singninPassword,
                 }),
             })
-            .then((response) => {response.json(); console.log(response.json());});
+            .then((response) => {response.json(); console.log(response);});
         }
     }
     render() {
