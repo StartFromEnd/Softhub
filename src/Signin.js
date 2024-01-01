@@ -25,6 +25,8 @@ class Signin extends Component {
             return;
         }
         else {
+            let email = this.state.signinEmail;
+            let password = this.state.signinPassword;
             this.setState({signinMsg: ''});
             fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signin', {
                 method: 'POST',
@@ -34,7 +36,7 @@ class Signin extends Component {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: {
-                    'signinEmail='+this.state.signinEmail.toStirng()+'&signinPassword='this.state.singninPassword.toString()
+                    'signinEmail='+email+'&signinPassword='+password
                 },
             })
             .then((response) => {console.log(response);});
