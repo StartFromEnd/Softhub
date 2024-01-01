@@ -26,7 +26,7 @@ class Signin extends Component {
         }
         else {
             this.setState({signinMsg: ''});
-            fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/', {
+            fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
