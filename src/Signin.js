@@ -40,7 +40,7 @@ class Signin extends Component {
                     signinPassword: `${password}`
                 }),
             })
-            .then((response) => {console.log(response.json().Object);});
+            .then((response) => {console.log(response.json().ok);});
         }
     }
     render() {
