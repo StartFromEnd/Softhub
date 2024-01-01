@@ -26,17 +26,17 @@ class Signin extends Component {
         }
         else {
             this.setState({signinMsg: ''});
-            fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signin', {
+            fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: JSON.stringify({
+                body: {
                     signinEmail: this.state.signinEmail,
                     signinPassword: this.state.singninPassword,
-                }),
+                },
             })
-            .then((response) => {response.json(); console.log(response);});
+            .then((response) => {console.log(response);});
         }
     }
     render() {
