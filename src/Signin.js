@@ -28,7 +28,7 @@ class Signin extends Component {
             let email = this.state.signinEmail;
             let password = this.state.signinPassword;
             this.setState({ signinMsg: '' });
-            let session = fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signin', {
+            fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signin', {
                 method: 'POST',
                 mode: 'cors',
                 credentials: 'include',
@@ -46,11 +46,15 @@ class Signin extends Component {
                 .catch((error) => {
                     alert('오류가 발생하였습니다.');
                 })
-                .then((data) => {
-                    return data;
+                .then((session) => {
+                    console.log(session);
+                    if(session.ok){
+                        this.state.changeMainState(session);
+                    }
+                    else{
+                        this.setState({signinMsg: session.msg});
+                    }
                 });
-            console.log(session);
-            this.state.changeMainState(session);
         }
     }
     render() {
