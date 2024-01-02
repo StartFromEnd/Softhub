@@ -11,7 +11,7 @@ class Signin extends Component {
             signinPassword: '',
             signinMsg: '',
             signinMsgStyle: signinStyles.red,
-            changeMainState: props.changeMainState;
+            changeMainState: props.changeMainState,
         };
     }
     saveSigninEmail(param) {
