@@ -22,7 +22,7 @@ class App extends Component {
 
     ChangeMainState = (session) => {
         if (session != null) {
-            data = fetchingSession(session);
+            let data = fetchingSession(session);
             this.setState({ nickname: data.nickname });
             this.setState({ session: session });
             this.setState({ dropdownBtn: data.nickname });
