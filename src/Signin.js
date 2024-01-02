@@ -3,32 +3,51 @@ import logo from './logo.svg';
 import './App.css';
 
 class Signin extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             signinEmail: '',
             signinPassword: '',
             signinMsg: '',
-            signinMsgStyle: signinStyles.red
+            signinMsgStyle: signinStyles.red,
         };
     }
-    saveSigninEmail(param){
-        this.setState({signinEmail: param});
+    saveSigninEmail(param) {
+        this.setState({ signinEmail: param });
     }
-    saveSigninPassword(param){
-        this.setState({signinPassword: param});
+    saveSigninPassword(param) {
+        this.setState({ signinPassword: param });
     }
-    signinButton(){
-        if(this.state.signinEmail == '' || this.state.signinPassword == ''){
-            this.setState({signinMsg: '모든 칸을 기입해주십시오'});
-            this.setState({signinMsgStyle: signinStyles.red});
+    signinButton() {
+        if (this.state.signinEmail == '' || this.state.signinPassword == '') {
+            this.setState({ signinMsg: '모든 칸을 기입해주십시오' });
+            this.setState({ signinMsgStyle: signinStyles.red });
             return;
-        }
-        else {
+        } else {
             let email = this.state.signinEmail;
             let password = this.state.signinPassword;
-            this.setState({signinMsg: ''});
-            main(email, password);
+            this.setState({ signinMsg: '' });
+            fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signin', {
+                method: 'POST',
+                mode: 'cors',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    signinEmail: `${email}`,
+                    signinPassword: `${password}`,
+                }),
+            })
+            .then((response) => {
+                response.json();
+            })
+            .catch((error) => {
+                alert('오류가 발생하였습니다.');
+            })
+            .then((data) => {
+                console.log(data);
+            });
         }
     }
     render() {
@@ -76,7 +95,11 @@ class Signin extends Component {
                         <div id="Help" className="form-text" style={this.state.signinMsgStyle}>
                             {this.state.signinMsg}
                         </div>
-                        <button type="button" className="btn btn-primary" onClick={() => this.signinButton()}>
+                        <button
+                            type="button"
+                            className="btn btn-primary"
+                            onClick={() => this.signinButton()}
+                        >
                             확인
                         </button>
                     </form>
@@ -89,41 +112,7 @@ class Signin extends Component {
 const signinStyles = {
     red: {
         color: 'red',
-    }
-}
-
-const main = async (email, password) => {
-    
-    let result = await test(email, password);
-    
-    //String to Boolean
-    result = JSON.parse(result);
-    
-    //result가 true면 이어서 처리할 코드 작성
-    if(result) {
-        console.log(result);
-    }
-}
-
-const test = (email, password) => {
-    return new Promise((resolve, reject) => {
-        fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signin', {
-                method: 'POST',
-                mode: 'cors',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({
-                    signinEmail: `${email}`,
-                    signinPassword: `${password}`
-                }),
-            })
-        .then((response) => {response.text();})
-        .catch(error => {
-            alert('오류가 발생하였습니다.');
-        })
-    });
-}
+    },
+};
 
 export default Signin;
