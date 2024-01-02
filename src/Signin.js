@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './Fetching.js';
 
 class Signin extends Component {
     constructor(props) {
@@ -27,27 +28,8 @@ class Signin extends Component {
             let email = this.state.signinEmail;
             let password = this.state.signinPassword;
             this.setState({ signinMsg: '' });
-            fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signin', {
-                method: 'POST',
-                mode: 'cors',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({
-                    signinEmail: `${email}`,
-                    signinPassword: `${password}`,
-                }),
-            })
-            .then((response) => {
-                response.json();
-            })
-            .catch((error) => {
-                alert('오류가 발생하였습니다.');
-            })
-            .then((data) => {
-                console.log(data);
-            });
+            let res = Fetching.FetchSignin(email, password);
+            console.log(res);
         }
     }
     render() {
