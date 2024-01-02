@@ -46,13 +46,13 @@ class Signin extends Component {
                 .catch((error) => {
                     alert('오류가 발생하였습니다.');
                 })
-                .then((session) => {
-                    console.log(session);
-                    if(session.ok){
-                        this.state.changeMainState(session);
+                .then((data) => {
+                    console.log(data);
+                    if(data.ok){
+                        console.log(data);
                     }
                     else{
-                        this.setState({signinMsg: session.msg});
+                        this.setState({signinMsg: data.msg});
                     }
                 });
         }
