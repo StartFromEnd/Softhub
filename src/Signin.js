@@ -11,6 +11,7 @@ class Signin extends Component {
             signinPassword: '',
             signinMsg: '',
             signinMsgStyle: signinStyles.red,
+            changeMainState: props.changeMainState;
         };
     }
     saveSigninEmail(param) {
@@ -28,8 +29,29 @@ class Signin extends Component {
             let email = this.state.signinEmail;
             let password = this.state.signinPassword;
             this.setState({ signinMsg: '' });
-            let res = Fetching.FetchSignin(email, password);
-            console.log(res);
+            let session = fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signin', {
+                method: 'POST',
+                mode: 'cors',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    signinEmail: `${email}`,
+                    signinPassword: `${password}`,
+                }),
+            })
+                .then((response) => {
+                    return response.json();
+                })
+                .catch((error) => {
+                    alert('오류가 발생하였습니다.');
+                })
+                .then((data) => {
+                    return data;
+                });
+            console.log(session);
+            this.state.changeMainState(session);
         }
     }
     render() {
