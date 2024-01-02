@@ -47,7 +47,6 @@ class Signin extends Component {
                     alert('오류가 발생하였습니다.');
                 })
                 .then((data) => {
-                    console.log(data);
                     if(data.ok){
                         console.log(data);
                     }
