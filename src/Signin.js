@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Fetching from './Fetching.js';
 
 class Signin extends Component {
     constructor(props) {
