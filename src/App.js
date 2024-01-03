@@ -76,9 +76,7 @@ class App extends Component {
                 <BrowserRouter>
                     <nav className="navbar navbar-dark bg-dark fixed-top">
                         <div className="container-fluid responsive">
-                            <a className="navbar-brand" href="/">
-                                SoftHub
-                            </a>
+                            <NavLink to='/' className='navbar-brand'>Softhub</NavLink>
                             <button
                                 className="navbar-toggler"
                                 type="button"
