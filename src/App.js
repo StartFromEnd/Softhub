@@ -70,6 +70,7 @@ class App extends Component {
 
     render() {
         return (
+            this.CheckCookie();
             <div className="App">
                 <Nav
                     dropdownBtn={this.state.dropdownBtn}
