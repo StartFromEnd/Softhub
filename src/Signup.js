@@ -17,7 +17,7 @@ class Signup extends Component {
             
             signupEmailAuth: '',
             signupEmailAuthWrite: '',
-            signupEmailAUthWritePlaceholder: '처음엔 작성하실 필요가 없습니다.'
+            signupEmailAuthWritePlaceholder: '처음엔 작성하실 필요가 없습니다.'
         };
     }
     
