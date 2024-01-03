@@ -14,10 +14,13 @@ class Signup extends Component {
             isPasswordOKmsg: '',
             
             signupMsg: '',
+            signupMsgStyle: signupStyles.red,
             
             signupEmailAuth: '',
             signupEmailAuthWrite: '',
-            signupEmailAuthWritePlaceholder: '처음엔 작성하실 필요가 없습니다.'
+            signupEmailAuthWritePlaceholder: '처음엔 작성하실 필요가 없습니다.',
+            
+            changeMainState: props.changeMainState,
         };
     }
     
@@ -47,14 +50,16 @@ class Signup extends Component {
     
     signupButton(){
         if(this.state.signupEmail == '' || this.state.signupNickname == '' || this.state.signupPassword == '' || this.state.signupPasswordCheck == ''){
+            this.setState({signupMsgStyle: signupStyles.red});
             this.setState({signupMsg: '모든 칸을 기입해주십시오'});
             return;
         }
-        else if(!this.state.signupPassword == this.state.signupPasswordCheck){
+        else if(this.state.signupPassword !== this.state.signupPasswordCheck){
             return;
         }
         else{
-            this.setState({signupMsg: ''});
+            this.setState({signupMsgStyle: signupStyles.green});
+            this.setState({signupMsg: `${this.state.signupEmail} 계정으로 인증번호가 전송되었습니다. \n(페이지를 나가거나 새로고침하면 인증번홀를 다시 발급받아야 합니다.)`});
             this.setState({signupEmailAuthWritePlaceholder: '인증번호를 작성하여 주십시오.'});
         }
     }
@@ -136,7 +141,7 @@ class Signup extends Component {
                                 onChange={(event) => this.saveSignupEmailAuthWrite(event.target.value)}
                             />
                         </div>
-                        <div id="Help" className="form-text" style={signupStyles.red}>
+                        <div id="Help" className="form-text" style={this.state.signupMsgStyle}>
                             {this.state.signupMsg}
                         </div>
                         <button type="button" className="btn btn-primary" onClick={() => this.signupButton()}>

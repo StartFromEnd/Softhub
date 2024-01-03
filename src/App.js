@@ -161,7 +161,7 @@ class App extends Component {
                             path="/signIn"
                             element={<Signin changeMainState={this.ChangeMainState} />}
                         ></Route>
-                        <Route path="/signUp" element={<Signup />}></Route>
+                        <Route path="/signUp" element={<Signup changeMainState={this.ChangeMainState}/>}></Route>
                         <Route path="/signOut" element={<Signout />}></Route>
                     </Routes>
                 </BrowserRouter>
