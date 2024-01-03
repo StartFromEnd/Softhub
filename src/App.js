@@ -70,7 +70,7 @@ class App extends Component {
         this.CheckCookie();
     }
     componentDidMount(prevProps){
-        if(!this.props.dropdownOne == prevProps.dropdownOne){
+        if(this.props.dropdownOne !== prevProps.dropdownOne){
             this.CheckCookie();
         }
     }
