@@ -8,7 +8,9 @@ function Signout() {
     let session = cookie.load('sessionID');
     cookie.remove('sessionID', {path: '/'});
     return(
-        <Navigate replace to="/" />
+        <script>
+            {window.location.replace('/');}
+        </script>
     );
 }
 
