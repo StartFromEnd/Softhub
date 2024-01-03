@@ -60,7 +60,7 @@ class Signup extends Component {
         } else if (this.state.signupPassword !== this.state.signupPasswordCheck) {
             return;
         } else {
-            if (this.state.signupEmailAuth == this.state.signupEmailAuthWrite) {
+            if (this.state.signupEmailAuth == this.state.signupEmailAuthWrite && this.state.signupEmailAuth != '') {
                 fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signup', {
                     method: 'POST',
                     mode: 'cors',
