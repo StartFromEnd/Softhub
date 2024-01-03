@@ -7,7 +7,7 @@ import './App.css';
 function Signout(props) {
     let session = cookie.load('sessionID');
     cookie.remove('sessionID', {path: '/'});
-    props.check();
+    props();
     return(
         <Navigate replace to="/" />
     );
