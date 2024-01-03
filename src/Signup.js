@@ -128,7 +128,7 @@ class Signup extends Component {
                                 인증번호
                             </label>
                             <input
-                                placeholder={this.state.signupEmailAuthWritePlaceholder};
+                                placeholder={this.state.signupEmailAuthWritePlaceholder}
                                 type="text"
                                 className="form-control"
                                 id="exampleInputEmailAuthWrite1"
