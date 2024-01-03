@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import cookie from 'react-cookies';
 import logo from './logo.svg';
@@ -67,9 +67,12 @@ class App extends Component {
             this.setState({dropdownTwo: ['회원가입', '/signUp']});
         }
     };
-
+    
+    useEffect(() => {
+    console.log("useEffect!!", count);
+  }, []);
+    
     render() {
-        this.CheckCookie();
         return (
             <div className="App">
                 <Nav
