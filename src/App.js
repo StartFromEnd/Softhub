@@ -66,7 +66,7 @@ class App extends Component {
         }
     };
     
-    componentDidUpdate(){
+    componentDidMount(){
         this.CheckCookie();
     }
     
