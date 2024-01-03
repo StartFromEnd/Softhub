@@ -48,6 +48,7 @@ class Signin extends Component {
                 })
                 .then((data) => {
                     if(data.ok){
+                        alert('로그인 되었습니다.');
                         this.state.changeMainState(data.cookie[0], data.cookie[1]);
                         window.location.replace('/');
                     }
