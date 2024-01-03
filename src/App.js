@@ -27,7 +27,7 @@ class App extends Component {
             secure: true,
             httpOnly: true,
         });
-        CheckCookie();
+        CheckCookie;
     };
 
     CheckCookie = () => {
