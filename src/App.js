@@ -69,11 +69,6 @@ class App extends Component {
     componentDidMount(){
         this.CheckCookie();
     }
-    componentDidUpdate(prevProps){
-        if(this.props.dropdownOne !== prevProps.dropdownOne){
-            this.CheckCookie();
-        }
-    }
     
     render() {
         return (

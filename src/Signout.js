@@ -9,7 +9,7 @@ function Signout() {
     cookie.remove('sessionID', {path: '/'});
     return(
         <script>
-            {window.location.replace('/');}
+            {window.location.replace('/')}
         </script>
     );
 }
