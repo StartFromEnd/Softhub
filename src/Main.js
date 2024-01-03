@@ -181,15 +181,15 @@ const mainStyles = {
     },
 
     sliderMoveOne: {
-        transform: ['translateX(-20%)'],
+        transform: ['translateX(-30%)'],
     },
 
     sliderMoveTwo: {
-        transform: ['translateX(-40%)'],
+        transform: ['translateX(-60%)'],
     },
 
     sliderMoveThree: {
-        transform: ['translateX(-60%)'],
+        transform: ['translateX(-90%)'],
     },
 };
 

@@ -51,7 +51,7 @@ html {
         line-height: 12rem !important;
     }
     .classify-section .wrap-slider .slider{
-        width: 210% !important;
+        width: 26rem !important;
     }
 }
 
@@ -150,7 +150,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 38rem;
     height: 3rem;
     transition: 0.5s all;
 }
