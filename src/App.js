@@ -51,7 +51,7 @@ class App extends Component {
                 })
                 .then((data) => {
                     if (data.ok) {
-                        console.log(session.expires);
+                        console.log(session);
                         session.expires.setHours((new Date()).getHours() + 1);
                         console.log(session.expires);
                         this.setState({ dropdownBtn: data.nickname });
