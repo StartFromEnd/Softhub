@@ -60,7 +60,7 @@ class Signup extends Component {
     }
     
     saveSignupEmailAuthWrite(param){
-        this.state({signupEmailAuthWrite: param});
+        this.setState({signupEmailAuthWrite: param});
     }
     
     render() {
@@ -123,7 +123,7 @@ class Signup extends Component {
                                 {this.state.isPasswordOKmsg}
                             </div>
                         </div>
-                        <div className="mb-3" display={this.state.signupEmailAuthWriteDisplay}>
+                        <div className="mb-3" style={{display: this.state.signupEmailAuthWriteDisplay;}}>
                             <label for="exampleInputEmailAuthWrite1" className="form-label">
                                 인증번호
                             </label>
