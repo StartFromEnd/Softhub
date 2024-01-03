@@ -89,7 +89,7 @@ class Signup extends Component {
                             alert(data.msg);
                         }
                     });
-            } else if (this.state.signupEmailAUth == '') {
+            } else if (this.state.signupEmailAuth == '') {
                 fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signup', {
                     method: 'POST',
                     mode: 'cors',
