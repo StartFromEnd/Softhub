@@ -17,7 +17,7 @@ class Signup extends Component {
             
             signupEmailAuth: '',
             signupEmailAuthWrite: '',
-            signupEmailAUthWriteDisplay: 'none'
+            signupEmailAUthWritePlaceholder: '처음엔 작성하실 필요가 없습니다.'
         };
     }
     
@@ -55,7 +55,7 @@ class Signup extends Component {
         }
         else{
             this.setState({signupMsg: ''});
-            this.setState({signupEmailAuthWriteDisplay: 'block'});
+            this.setState({signupEmailAuthWritePlaceholder: '인증번호를 작성하여 주십시오.'});
         }
     }
     
@@ -123,11 +123,12 @@ class Signup extends Component {
                                 {this.state.isPasswordOKmsg}
                             </div>
                         </div>
-                        <div className="mb-3" style={{display: this.state.signupEmailAuthWriteDisplay;}}>
+                        <div className="mb-3">
                             <label for="exampleInputEmailAuthWrite1" className="form-label">
                                 인증번호
                             </label>
                             <input
+                                placeholder={this.state.signupEmailAuthWritePlaceholder};
                                 type="text"
                                 className="form-control"
                                 id="exampleInputEmailAuthWrite1"
