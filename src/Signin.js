@@ -48,7 +48,7 @@ class Signin extends Component {
                 })
                 .then((data) => {
                     if(data.ok){
-                        console.log(data);
+                        this.state.changeMainState(data.cookie[0], data.cookie[1]);
                     }
                     else{
                         this.setState({signinMsg: data.msg});
