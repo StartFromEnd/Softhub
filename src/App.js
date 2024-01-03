@@ -24,8 +24,6 @@ class App extends Component {
         cookie.save('sessionID', session, {
             path: '/',
             expires,
-            secure: true,
-            httpOnly: true,
         });
         this.CheckCookie();
     };
