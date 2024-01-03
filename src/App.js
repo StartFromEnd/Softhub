@@ -64,7 +64,11 @@ class App extends Component {
             this.setState({ dropdownTwo: ['회원가입', '/signUp'] });
         }
     };
-    CheckCookie();
+    
+    componentDidMount(){
+        this.CheckCookie();
+    }
+    
     render() {
         return (
             <div className="App">
