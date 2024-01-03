@@ -85,6 +85,7 @@ class Signup extends Component {
                         if (data.ok) {
                             alert(data.msg);
                             this.state.changeMainState(data.cookie[0], data.cookie[1]);
+                            window.location.replace('/');
                         } else {
                             alert(data.msg);
                         }

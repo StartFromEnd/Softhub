@@ -49,6 +49,7 @@ class Signin extends Component {
                 .then((data) => {
                     if(data.ok){
                         this.state.changeMainState(data.cookie[0], data.cookie[1]);
+                        window.location.replace('/');
                     }
                     else{
                         this.setState({signinMsg: data.msg});
