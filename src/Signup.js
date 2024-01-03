@@ -7,17 +7,26 @@ class Signup extends Component {
         super(props);
         this.state = {
             signupEmail: '',
+            signupNickname: '',
             signupPassword: '',
             signupPasswordCheck: '',
             isPasswordOK: false,
             isPasswordOKmsg: '',
             
-            signupMsg: ''
+            signupMsg: '',
+            
+            signupEmailAuth: '',
+            signupEmailAuthWrite: '',
+            signupEmailAUthWriteDisplay: 'none'
         };
     }
     
     saveSignupEmail(param){
         this.setState({signupEmail: param});
+    }
+    
+    saveSignupNickname(param){
+        this.setState({signupNickname: param});
     }
     
     saveSignupPassword(param){
@@ -37,7 +46,7 @@ class Signup extends Component {
     }
     
     signupButton(){
-        if(this.state.signupEmail == '' || this.state.signupPassword == '' || this.state.signupPasswordCheck == ''){
+        if(this.state.signupEmail == '' || this.state.signupNickname == '' || this.state.signupPassword == '' || this.state.signupPasswordCheck == ''){
             this.setState({signupMsg: '모든 칸을 기입해주십시오'});
             return;
         }
@@ -46,7 +55,12 @@ class Signup extends Component {
         }
         else{
             this.setState({signupMsg: ''});
+            this.setState({signupEmailAuthWriteDisplay: 'block'});
         }
+    }
+    
+    saveSignupEmailAuthWrite(param){
+        this.state({signupEmailAuthWrite: param});
     }
     
     render() {
@@ -69,6 +83,18 @@ class Signup extends Component {
                                 onChange={(event) => this.saveSignupEmail(event.target.value)}
                             />
                             <div id="emailHelp" className="form-text"></div>
+                        </div>
+                        <div className="mb-3">
+                            <label for="exampleInputNickname1" className="form-label">
+                                닉네임
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="exampleInputNickname1"
+                                value={this.state.signupNickname}
+                                onChange={(event) => this.saveSignupNickname(event.target.value)}
+                            />
                         </div>
                         <div className="mb-3">
                             <label for="exampleInputPassword1" className="form-label">
@@ -96,6 +122,18 @@ class Signup extends Component {
                             <div id="passwordHelp" className="form-text" style={this.state.isPasswordOK ? signupStyles.green : signupStyles.red}>
                                 {this.state.isPasswordOKmsg}
                             </div>
+                        </div>
+                        <div className="mb-3" display={this.state.signupEmailAuthWriteDisplay}>
+                            <label for="exampleInputEmailAuthWrite1" className="form-label">
+                                인증번호
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="exampleInputEmailAuthWrite1"
+                                value={this.state.signupEmailAuthWrite}
+                                onChange={(event) => this.saveSignupEmailAuthWrite(event.target.value)}
+                            />
                         </div>
                         <div id="Help" className="form-text" style={signupStyles.red}>
                             {this.state.signupMsg}
