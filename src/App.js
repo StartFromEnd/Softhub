@@ -32,6 +32,7 @@ class App extends Component {
 
     CheckCookie = () => {
         const session = cookie.load('sessionID');
+        console.log(session);
         if (session != undefined) {
             fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/session', {
                 method: 'POST',
