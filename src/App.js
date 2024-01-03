@@ -69,6 +69,11 @@ class App extends Component {
     componentDidMount(){
         this.CheckCookie();
     }
+    componentDidMount(prevProps){
+        if(!this.props.dropdownOne == prevProps.dropdownOne){
+            this.CheckCookie();
+        }
+    }
     
     render() {
         return (
@@ -162,7 +167,7 @@ class App extends Component {
                             element={<Signin changeMainState={this.ChangeMainState} />}
                         ></Route>
                         <Route path="/signUp" element={<Signup />}></Route>
-                        <Route path="/signOut" element={<Signout check={this.state.CheckCookie}/>}></Route>
+                        <Route path="/signOut" element={<Signout />}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>
