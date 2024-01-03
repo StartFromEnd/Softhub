@@ -4,9 +4,10 @@ import cookie from 'react-cookies';
 import logo from './logo.svg';
 import './App.css';
 
-function Signout() {
+function Signout(props) {
     let session = cookie.load('sessionID');
     cookie.remove('sessionID', {path: '/'});
+    props.check();
     return(
         <Navigate replace to="/" />
     );

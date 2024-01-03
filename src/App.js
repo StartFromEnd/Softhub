@@ -162,7 +162,7 @@ class App extends Component {
                             element={<Signin changeMainState={this.ChangeMainState} />}
                         ></Route>
                         <Route path="/signUp" element={<Signup />}></Route>
-                        <Route path="/signOut" element={<Signout />}></Route>
+                        <Route path="/signOut" element={<Signout check={this.state.CheckCookie}/>}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>
