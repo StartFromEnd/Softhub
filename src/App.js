@@ -6,6 +6,7 @@ import './App.css';
 import Main from './Main.js';
 import Signin from './Signin.js';
 import Signup from './Signup.js';
+import Signout from './Signout.js';
 
 class App extends Component {
     constructor(props) {
@@ -52,7 +53,7 @@ class App extends Component {
                     if (data.ok) {
                         this.setState({ dropdownBtn: data.nickname });
                         this.setState({ dropdownOne: ['프로필', '#'] });
-                        this.setState({ dropdownTwo: ['로그아웃', '#'] });
+                        this.setState({ dropdownTwo: ['로그아웃', '/signOut'] });
                     } else {
                         alert(data.msg);
                         cookie.remove('sessionID', { path: '/' });
@@ -108,13 +109,7 @@ class App extends Component {
                                 <div className="offcanvas-body">
                                     <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                                         <li className="nav-item">
-                                            <a
-                                                className="nav-link active"
-                                                aria-current="page"
-                                                href="/"
-                                            >
-                                                홈
-                                            </a>
+                                            <NavLink to='/' className='nav-link active'>홈</NavLink>
                                         </li>
                                         <li className="nav-item dropdown">
                                             <a
@@ -136,14 +131,10 @@ class App extends Component {
                                             </ul>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="#">
-                                                공지사항
-                                            </a>
+                                            <NavLink to='#' className='nav-link'>공지사항</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="#">
-                                                문의하기
-                                            </a>
+                                            <NavLink to='#' className='nav-link'>문의하기</NavLink>
                                         </li>
                                     </ul>
                                     <form className="d-flex mt-3" role="search">
@@ -171,6 +162,7 @@ class App extends Component {
                             element={<Signin changeMainState={this.ChangeMainState} />}
                         ></Route>
                         <Route path="/signUp" element={<Signup />}></Route>
+                        <Route path="/signOut" element={<Signout />}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>
