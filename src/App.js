@@ -69,8 +69,8 @@ class App extends Component {
     };
 
     render() {
+        this.CheckCookie();
         return (
-            this.CheckCookie();
             <div className="App">
                 <Nav
                     dropdownBtn={this.state.dropdownBtn}
@@ -91,7 +91,5 @@ class App extends Component {
         );
     }
 }
-
-function fetchingSession(session) {}
 
 export default App;
