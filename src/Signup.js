@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 class Signup extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             signupEmail: '',
@@ -12,62 +12,156 @@ class Signup extends Component {
             signupPasswordCheck: '',
             isPasswordOK: false,
             isPasswordOKmsg: '',
-            
+
             signupMsg: '',
             signupMsgStyle: signupStyles.red,
-            
+
             signupEmailAuth: '',
             signupEmailAuthWrite: '',
             signupEmailAuthWritePlaceholder: '처음엔 작성하실 필요가 없습니다.',
-            
+
             changeMainState: props.changeMainState,
         };
     }
-    
-    saveSignupEmail(param){
-        this.setState({signupEmail: param});
+
+    saveSignupEmail(param) {
+        this.setState({ signupEmail: param });
     }
-    
-    saveSignupNickname(param){
-        this.setState({signupNickname: param});
+
+    saveSignupNickname(param) {
+        this.setState({ signupNickname: param });
     }
-    
-    saveSignupPassword(param){
-        this.setState({signupPassword: param});
+
+    saveSignupPassword(param) {
+        this.setState({ signupPassword: param });
     }
-    
-    saveSignupPasswordCheck(param){
-        this.setState({signupPasswordCheck: param});
-        this.setState({isPasswordOK: (this.state.signupPassword == param)});
-        if(this.state.signupPassword == param){
-            this.setState({isPasswordOKmsg: '비밀번호가 일치합니다'});
-        }
-        else{
-            this.setState({isPasswordOKmsg: '비밀번호가 일치하지 않습니다'});
+
+    saveSignupPasswordCheck(param) {
+        this.setState({ signupPasswordCheck: param });
+        this.setState({ isPasswordOK: this.state.signupPassword == param });
+        if (this.state.signupPassword == param) {
+            this.setState({ isPasswordOKmsg: '비밀번호가 일치합니다' });
+        } else {
+            this.setState({ isPasswordOKmsg: '비밀번호가 일치하지 않습니다' });
         }
         console.log(this.state.signupPasswordCheck);
     }
-    
-    signupButton(){
-        if(this.state.signupEmail == '' || this.state.signupNickname == '' || this.state.signupPassword == '' || this.state.signupPasswordCheck == ''){
-            this.setState({signupMsgStyle: signupStyles.red});
-            this.setState({signupMsg: '모든 칸을 기입해주십시오'});
+
+    signupButton() {
+        if (
+            this.state.signupEmail == '' ||
+            this.state.signupNickname == '' ||
+            this.state.signupPassword == '' ||
+            this.state.signupPasswordCheck == ''
+        ) {
+            this.setState({ signupMsgStyle: signupStyles.red });
+            this.setState({ signupMsg: '모든 칸을 기입해주십시오' });
             return;
-        }
-        else if(this.state.signupPassword !== this.state.signupPasswordCheck){
+        } else if (this.state.signupPassword !== this.state.signupPasswordCheck) {
             return;
-        }
-        else{
-            this.setState({signupMsgStyle: signupStyles.green});
-            this.setState({signupMsg: `${this.state.signupEmail} 계정으로 인증번호가 전송되었습니다. \n(페이지를 나가거나 새로고침하면 인증번홀를 다시 발급받아야 합니다.)`});
-            this.setState({signupEmailAuthWritePlaceholder: '인증번호를 작성하여 주십시오.'});
+        } else {
+            if (this.state.signupEmailAuth == this.state.signupEmailAuthWrite) {
+                fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signup', {
+                    method: 'POST',
+                    mode: 'cors',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        signupEmail: `${this.state.signupEmail}`,
+                        signupPassword: `${this.state.signupPassword}`,
+                        signupNickname: `${this.state.signupNickname}`,
+                        signupEmailAuth: 'true',
+                    }),
+                })
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .catch((error) => {
+                        alert('오류가 발생하였습니다.');
+                    })
+                    .then((data) => {
+                        if (data.ok) {
+                            alert(data.msg);
+                            this.state.changeMainState(data.cookie[0], data.cookie[1]);
+                        } else {
+                            alert(data.msg);
+                        }
+                    });
+            } else if (this.state.signupEmailAUth == '') {
+                fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signup', {
+                    method: 'POST',
+                    mode: 'cors',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        signupEmail: `${this.state.signupEmail}`,
+                        signupPassword: `${this.state.signupPassword}`,
+                        signupNickname: `${this.state.signupNickname}`,
+                        signupEmailAuth: 'null',
+                    }),
+                })
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .catch((error) => {
+                        alert('오류가 발생하였습니다.');
+                    })
+                    .then((data) => {
+                        if (data.ok) {
+                            this.setState({ signupMsgStyle: signupStyles.green });
+                            this.setState({ signupEmailAuth: data.authNum });
+                            this.setState({
+                                signupMsg: `${this.state.signupEmail} 계정으로 인증번호가 전송되었습니다.
+            (페이지를 나가거나 새로고침하면 인증번호를 다시 발급받아야 합니다.)`,
+                            });
+                            this.setState({
+                                signupEmailAuthWritePlaceholder: '인증번호를 작성하여 주십시오.',
+                            });
+                        } else {
+                            alert(data.msg);
+                        }
+                    });
+            } else {
+                fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signup', {
+                    method: 'POST',
+                    mode: 'cors',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        signupEmail: `${this.state.signupEmail}`,
+                        signupPassword: `${this.state.signupPassword}`,
+                        signupNickname: `${this.state.signupNickname}`,
+                    }),
+                })
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .catch((error) => {
+                        alert('오류가 발생하였습니다.');
+                    })
+                    .then((data) => {
+                        this.setState({ signupMsgStyle: signupStyles.red });
+                        this.setState({
+                            signupMsg: `${this.state.signupEmail} 계정으로 보낸 인증번호와 일치하지 않습니다.`,
+                        });
+                        this.setState({
+                            signupEmailAuthWritePlaceholder: '인증번호를 작성하여 주십시오.',
+                        });
+                    });
+            }
         }
     }
-    
-    saveSignupEmailAuthWrite(param){
-        this.setState({signupEmailAuthWrite: param});
+
+    saveSignupEmailAuthWrite(param) {
+        this.setState({ signupEmailAuthWrite: param });
     }
-    
+
     render() {
         return (
             <div className="all">
@@ -122,9 +216,17 @@ class Signup extends Component {
                                 className="form-control"
                                 id="exampleInputPasswordCheck1"
                                 value={this.state.signupPasswordCheck}
-                                onChange={(event) => this.saveSignupPasswordCheck(event.target.value)}
+                                onChange={(event) =>
+                                    this.saveSignupPasswordCheck(event.target.value)
+                                }
                             />
-                            <div id="passwordHelp" className="form-text" style={this.state.isPasswordOK ? signupStyles.green : signupStyles.red}>
+                            <div
+                                id="passwordHelp"
+                                className="form-text"
+                                style={
+                                    this.state.isPasswordOK ? signupStyles.green : signupStyles.red
+                                }
+                            >
                                 {this.state.isPasswordOKmsg}
                             </div>
                         </div>
@@ -138,13 +240,19 @@ class Signup extends Component {
                                 className="form-control"
                                 id="exampleInputEmailAuthWrite1"
                                 value={this.state.signupEmailAuthWrite}
-                                onChange={(event) => this.saveSignupEmailAuthWrite(event.target.value)}
+                                onChange={(event) =>
+                                    this.saveSignupEmailAuthWrite(event.target.value)
+                                }
                             />
                         </div>
                         <div id="Help" className="form-text" style={this.state.signupMsgStyle}>
                             {this.state.signupMsg}
                         </div>
-                        <button type="button" className="btn btn-primary" onClick={() => this.signupButton()}>
+                        <button
+                            type="button"
+                            className="btn btn-primary"
+                            onClick={() => this.signupButton()}
+                        >
                             확인
                         </button>
                     </form>
@@ -160,7 +268,7 @@ const signupStyles = {
     },
     green: {
         color: 'green',
-    }
-}
+    },
+};
 
 export default Signup;
