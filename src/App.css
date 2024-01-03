@@ -150,7 +150,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 38rem;
+    width: 37rem;
     height: 3rem;
     transition: 0.5s all;
 }
