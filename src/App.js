@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import cookie from 'react-cookies';
+import cookie from 'react-cookie';
 import logo from './logo.svg';
 import './App.css';
 import Nav from './Nav.js';
