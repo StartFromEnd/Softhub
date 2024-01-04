@@ -40,7 +40,7 @@ class Myfaq extends Component {
                 </section>
                 <section className="mt-3 container myfaq-search-section">
                     <div className="container myfaq-write-button">
-                        <button type="button">글쓰기</button>
+                        <button className="btn btn-primary" type="button">글쓰기</button>
                     </div>
                     <div className="container myfaq-search-buttons">
                         <button type="button">&lt;</button>
