@@ -216,10 +216,19 @@ html {
 
 hr {
     width: 90%;
+    height: 0.05rem;
 }
 
 .login-text, .signup-text{
     font-size: 2rem;
     font-weight: bold;
     text-align: left;
+}
+
+.announcement-section {
+    height: 10rem;
+    text-align: center;
+    font-size: 3rem;
+    line-height: 10rem;
+    border-bottom: 0.05rem solid #DBDBDB;
 }
