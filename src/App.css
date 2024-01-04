@@ -230,11 +230,11 @@ hr {
     text-align: center;
     font-size: 3rem;
     line-height: 10rem;
-    border-bottom: 0.05rem solid #DBDBDB;
+    border-bottom: 0.05rem solid #212529;
 }
 .announcement-list-section {
     min-height: 3rem;
-    border-bottom: 0.05rem solid #DBDBDB;
+    border-bottom: 0.05rem solid #212529;
 }
 .announcement-search-section {
     text-align: center;
