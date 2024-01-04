@@ -47,13 +47,12 @@ class Signin extends Component {
                     alert('오류가 발생하였습니다.');
                 })
                 .then((data) => {
-                    if(data.ok){
+                    if (data.ok) {
                         alert('로그인 되었습니다.');
                         this.state.changeMainState(data.cookie[0], data.cookie[1]);
                         window.location.replace('/');
-                    }
-                    else{
-                        this.setState({signinMsg: data.msg});
+                    } else {
+                        this.setState({ signinMsg: data.msg });
                     }
                 });
         }
@@ -63,54 +62,58 @@ class Signin extends Component {
             <div className="all">
                 <section className="cover-fixed-nav-section"></section>
                 <section className="wrap-login-form">
-                    <p className="login-text">로그인</p>
-                    <form>
-                        <div className="mb-3">
-                            <label for="exampleInputEmail1" className="form-label">
-                                이메일
-                            </label>
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="exampleInputEmail1"
-                                aria-describedby="emailHelp"
-                                value={this.state.signinEmail}
-                                onChange={(event) => this.saveSigninEmail(event.target.value)}
-                            />
-                        </div>
-                        <div className="mb-3">
-                            <label for="exampleInputPassword1" className="form-label">
-                                비밀번호
-                            </label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="exampleInputPassword1"
-                                value={this.state.signinPassword}
-                                onChange={(event) => this.saveSigninPassword(event.target.value)}
-                            />
-                        </div>
-                        <div className="mb-3 form-check">
-                            <input
-                                type="checkbox"
-                                className="form-check-input"
-                                id="exampleCheck1"
-                            />
-                            <label className="form-check-label" for="exampleCheck1">
-                                기능 준비중..
-                            </label>
-                        </div>
-                        <div id="Help" className="form-text" style={this.state.signinMsgStyle}>
-                            {this.state.signinMsg}
-                        </div>
-                        <button
-                            type="button"
-                            className="btn btn-primary"
-                            onClick={() => this.signinButton()}
-                        >
-                            확인
-                        </button>
-                    </form>
+                    <div className="container">
+                        <p className="login-text">로그인</p>
+                        <form>
+                            <div className="mb-3">
+                                <label for="exampleInputEmail1" className="form-label">
+                                    이메일
+                                </label>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    id="exampleInputEmail1"
+                                    aria-describedby="emailHelp"
+                                    value={this.state.signinEmail}
+                                    onChange={(event) => this.saveSigninEmail(event.target.value)}
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label for="exampleInputPassword1" className="form-label">
+                                    비밀번호
+                                </label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="exampleInputPassword1"
+                                    value={this.state.signinPassword}
+                                    onChange={(event) =>
+                                        this.saveSigninPassword(event.target.value)
+                                    }
+                                />
+                            </div>
+                            <div className="mb-3 form-check">
+                                <input
+                                    type="checkbox"
+                                    className="form-check-input"
+                                    id="exampleCheck1"
+                                />
+                                <label className="form-check-label" for="exampleCheck1">
+                                    기능 준비중..
+                                </label>
+                            </div>
+                            <div id="Help" className="form-text" style={this.state.signinMsgStyle}>
+                                {this.state.signinMsg}
+                            </div>
+                            <button
+                                type="button"
+                                className="btn btn-primary"
+                                onClick={() => this.signinButton()}
+                            >
+                                확인
+                            </button>
+                        </form>
+                    </div>
                 </section>
             </div>
         );

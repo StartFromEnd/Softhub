@@ -60,7 +60,10 @@ class Signup extends Component {
         } else if (this.state.signupPassword !== this.state.signupPasswordCheck) {
             return;
         } else {
-            if (this.state.signupEmailAuth == this.state.signupEmailAuthWrite && this.state.signupEmailAuth != '') {
+            if (
+                this.state.signupEmailAuth == this.state.signupEmailAuthWrite &&
+                this.state.signupEmailAuth != ''
+            ) {
                 fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/signup', {
                     method: 'POST',
                     mode: 'cors',
@@ -168,95 +171,103 @@ class Signup extends Component {
             <div className="all">
                 <section className="cover-fixed-nav-section"></section>
                 <section className="wrap-signup-form">
-                    <p className="signup-text">회원가입</p>
-                    <form>
-                        <div className="mb-3">
-                            <label for="exampleInputEmail1" className="form-label">
-                                이메일
-                            </label>
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="exampleInputEmail1"
-                                aria-describedby="emailHelp"
-                                value={this.state.signupEmail}
-                                onChange={(event) => this.saveSignupEmail(event.target.value)}
-                            />
-                            <div id="emailHelp" className="form-text"></div>
-                        </div>
-                        <div className="mb-3">
-                            <label for="exampleInputNickname1" className="form-label">
-                                닉네임
-                            </label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="exampleInputNickname1"
-                                value={this.state.signupNickname}
-                                onChange={(event) => this.saveSignupNickname(event.target.value)}
-                            />
-                        </div>
-                        <div className="mb-3">
-                            <label for="exampleInputPassword1" className="form-label">
-                                비밀번호
-                            </label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="exampleInputPassword1"
-                                value={this.state.signupPassword}
-                                onChange={(event) => this.saveSignupPassword(event.target.value)}
-                            />
-                        </div>
-                        <div className="mb-3">
-                            <label for="exampleInputPasswordCheck1" className="form-label">
-                                비밀번호 확인
-                            </label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="exampleInputPasswordCheck1"
-                                value={this.state.signupPasswordCheck}
-                                onChange={(event) =>
-                                    this.saveSignupPasswordCheck(event.target.value)
-                                }
-                            />
-                            <div
-                                id="passwordHelp"
-                                className="form-text"
-                                style={
-                                    this.state.isPasswordOK ? signupStyles.green : signupStyles.red
-                                }
-                            >
-                                {this.state.isPasswordOKmsg}
+                    <div className="container">
+                        <p className="signup-text">회원가입</p>
+                        <form>
+                            <div className="mb-3">
+                                <label for="exampleInputEmail1" className="form-label">
+                                    이메일
+                                </label>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    id="exampleInputEmail1"
+                                    aria-describedby="emailHelp"
+                                    value={this.state.signupEmail}
+                                    onChange={(event) => this.saveSignupEmail(event.target.value)}
+                                />
+                                <div id="emailHelp" className="form-text"></div>
                             </div>
-                        </div>
-                        <div className="mb-3">
-                            <label for="exampleInputEmailAuthWrite1" className="form-label">
-                                인증번호
-                            </label>
-                            <input
-                                placeholder={this.state.signupEmailAuthWritePlaceholder}
-                                type="text"
-                                className="form-control"
-                                id="exampleInputEmailAuthWrite1"
-                                value={this.state.signupEmailAuthWrite}
-                                onChange={(event) =>
-                                    this.saveSignupEmailAuthWrite(event.target.value)
-                                }
-                            />
-                        </div>
-                        <div id="Help" className="form-text" style={this.state.signupMsgStyle}>
-                            {this.state.signupMsg}
-                        </div>
-                        <button
-                            type="button"
-                            className="btn btn-primary"
-                            onClick={() => this.signupButton()}
-                        >
-                            확인
-                        </button>
-                    </form>
+                            <div className="mb-3">
+                                <label for="exampleInputNickname1" className="form-label">
+                                    닉네임
+                                </label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="exampleInputNickname1"
+                                    value={this.state.signupNickname}
+                                    onChange={(event) =>
+                                        this.saveSignupNickname(event.target.value)
+                                    }
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label for="exampleInputPassword1" className="form-label">
+                                    비밀번호
+                                </label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="exampleInputPassword1"
+                                    value={this.state.signupPassword}
+                                    onChange={(event) =>
+                                        this.saveSignupPassword(event.target.value)
+                                    }
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label for="exampleInputPasswordCheck1" className="form-label">
+                                    비밀번호 확인
+                                </label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="exampleInputPasswordCheck1"
+                                    value={this.state.signupPasswordCheck}
+                                    onChange={(event) =>
+                                        this.saveSignupPasswordCheck(event.target.value)
+                                    }
+                                />
+                                <div
+                                    id="passwordHelp"
+                                    className="form-text"
+                                    style={
+                                        this.state.isPasswordOK
+                                            ? signupStyles.green
+                                            : signupStyles.red
+                                    }
+                                >
+                                    {this.state.isPasswordOKmsg}
+                                </div>
+                            </div>
+                            <div className="mb-3">
+                                <label for="exampleInputEmailAuthWrite1" className="form-label">
+                                    인증번호
+                                </label>
+                                <input
+                                    placeholder={this.state.signupEmailAuthWritePlaceholder}
+                                    type="text"
+                                    className="form-control"
+                                    id="exampleInputEmailAuthWrite1"
+                                    value={this.state.signupEmailAuthWrite}
+                                    onChange={(event) =>
+                                        this.saveSignupEmailAuthWrite(event.target.value)
+                                    }
+                                />
+                            </div>
+                            <div id="Help" className="form-text" style={this.state.signupMsgStyle}>
+                                {this.state.signupMsg}
+                            </div>
+                            <button
+                                type="button"
+                                className="btn btn-primary"
+                                onClick={() => this.signupButton()}
+                            >
+                                확인
+                            </button>
+                        </form>
+                    </div>
                 </section>
             </div>
         );

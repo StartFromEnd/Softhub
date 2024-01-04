@@ -200,9 +200,9 @@ html {
 
 /* Signin */
 .wrap-login-form, .wrap-signup-form{
-    width: 50%;
+    width: 60%;
     margin: 5rem auto;
-    border: 0.2rem solid black;
+    border: 0.1rem solid black;
     border-radius: 1rem;
 }
 
