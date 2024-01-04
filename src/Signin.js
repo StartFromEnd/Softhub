@@ -49,6 +49,7 @@ class Signin extends Component {
                 .then((data) => {
                     if (data.ok) {
                         alert('로그인 되었습니다.');
+                        console.log(window.getElementsByClassName('form-check-label')[0]);
                         this.state.changeMainState(data.cookie[0], data.cookie[1]);
                         window.location.replace('/');
                     } else {
@@ -99,7 +100,7 @@ class Signin extends Component {
                                     id="exampleCheck1"
                                 />
                                 <label className="form-check-label" for="exampleCheck1">
-                                    기능 준비중..
+                                    로그인 유지하기
                                 </label>
                             </div>
                             <div id="Help" className="form-text" style={this.state.signinMsgStyle}>
