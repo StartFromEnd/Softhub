@@ -34,6 +34,7 @@ class Myfaq extends Component {
                     과도한 장난 혹은 악질적인 내용이 확인되면 회원정지와 함께 법적 조치가 이뤄질 수
                     있습니다.
                 </p>
+                <Outlet />
                 <section className="mt-3 container myfaq-list-section" style={this.state.isWriting ? myfaqStyles.dNone : myfaqStyles.dEyes}>
                     <div class="d-flex flex-column mb-3">
                         {this.state.faqNum <= 0 ? (
@@ -45,7 +46,6 @@ class Myfaq extends Component {
                         )}
                     </div>
                 </section>
-                <Outlet />
                 <section className="mt-3 container myfaq-search-section" style={this.state.isWriting ? myfaqStyles.dNone : myfaqStyles.dEyes}>
                     <div className="container myfaq-write-button">
                         <button className="btn btn-primary" type="button" onClick={() => this.write()}>글쓰기</button>
