@@ -49,10 +49,10 @@ class Myfaq extends Component {
 
 const myfaqStyles = {
     dNone: {
-        display: none,
+        display: 'none',
     },
     dYes: {
-        display: inline-block,
+        display: 'inline-block',
     },
 }
 
