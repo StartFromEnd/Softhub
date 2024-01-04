@@ -9,7 +9,6 @@ class Announce extends Component {
             <div className="all">
                 <section className="cover-fixed-nav-section"></section>
                 <section className="announcement-section container">공지사항</section>
-                <section className="announcement-list-section container"></section>
                 <section className="announcement-search-section container">
                     <div class="input-group mb-3 search">
                         <input
@@ -24,6 +23,7 @@ class Announce extends Component {
                         </button>
                     </div>
                 </section>
+                <section className="announcement-list-section container"></section>
             </div>
         );
     }
