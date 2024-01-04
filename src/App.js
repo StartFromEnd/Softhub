@@ -9,6 +9,7 @@ import Signup from './Signup.js';
 import Signout from './Signout.js';
 import Announce from './Announce.js';
 import Faq from './Faq.js';
+import Profil from './Profil.js'
 
 class App extends Component {
     constructor(props) {
@@ -57,7 +58,7 @@ class App extends Component {
                             this.setState({ dropdownOne: ['관리메뉴', '/admin']});
                         }
                         else{
-                            this.setState({ dropdownOne: ['프로필', '#'] });   
+                            this.setState({ dropdownOne: ['프로필', '/profil'] });   
                         }
                         this.setState({ dropdownTwo: ['로그아웃', '/signOut'] });
                     } else {
@@ -169,6 +170,7 @@ class App extends Component {
                         <Route path="/signOut" element={<Signout />}></Route>
                         <Route path="/announce" element={<Announce />}></Route>
                         <Route path="/faq" element={<Faq />}></Route>
+                        <Route path="/profil" element={<Profil />}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>
