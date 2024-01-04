@@ -276,6 +276,9 @@ hr {
     align-items: center;
     width: 100%;
 }
+.myfaq-write-button {
+    margin: 3rem auto;
+}
 .myfaq-search-buttons > button {
     border: none;
     background-color: white;
