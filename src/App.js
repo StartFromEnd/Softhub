@@ -128,7 +128,7 @@ class App extends Component {
                                             </ul>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink to='#' className='nav-link'>공지사항</NavLink>
+                                            <NavLink to='/announcement' className='nav-link'>공지사항</NavLink>
                                         </li>
                                         <li className="nav-item">
                                             <NavLink to='#' className='nav-link'>문의하기</NavLink>
@@ -160,6 +160,7 @@ class App extends Component {
                         ></Route>
                         <Route path="/signUp" element={<Signup changeMainState={this.ChangeMainState}/>}></Route>
                         <Route path="/signOut" element={<Signout />}></Route>
+                        <Route path="/announcement" element={<Announce />}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>
