@@ -11,6 +11,8 @@ class Signin extends Component {
             signinMsg: '',
             signinMsgStyle: signinStyles.red,
             changeMainState: props.changeMainState,
+            
+            isChecked: false
         };
     }
     saveSigninEmail(param) {
@@ -18,6 +20,9 @@ class Signin extends Component {
     }
     saveSigninPassword(param) {
         this.setState({ signinPassword: param });
+    }
+    saveIsChecked(param) {
+        this.setState({ isChecked: !param });
     }
     signinButton() {
         if (this.state.signinEmail == '' || this.state.signinPassword == '') {
@@ -49,7 +54,7 @@ class Signin extends Component {
                 .then((data) => {
                     if (data.ok) {
                         alert('로그인 되었습니다.');
-                        console.log(window.getElementsByClassName('form-check-label')[0]);
+                        if(this.state.isChecked){data.cookie[1] *= (24 * 365 * 10)}
                         this.state.changeMainState(data.cookie[0], data.cookie[1]);
                         window.location.replace('/');
                     } else {
@@ -98,6 +103,8 @@ class Signin extends Component {
                                     type="checkbox"
                                     className="form-check-input"
                                     id="exampleCheck1"
+                                    value={this.state.isChecked}
+                                    onChange={(event) => this.saveIsChecked(event.target.value)}
                                 />
                                 <label className="form-check-label" for="exampleCheck1">
                                     로그인 유지하기
