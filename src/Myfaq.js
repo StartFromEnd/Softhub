@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, Navigate, Outlet } from 'react-router-dom';
+import { NavLink, useNavigate, Outlet } from 'react-router-dom';
 import cookie from 'react-cookies';
 import logo from './logo.svg';
 import './App.css';
@@ -20,7 +20,7 @@ class Myfaq extends Component {
 
     write = () => {
         this.setState({isWriting: true});
-        window.location.replace('/profil/myFaq/write');
+        useNavigate('/profil/myFaq/write');
     }
     
     render() {
