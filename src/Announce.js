@@ -4,6 +4,16 @@ import logo from './logo.svg';
 import './App.css';
 
 class Announce extends Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            announceNum: 0,
+            nowAnnounceNum: 1,
+            announceList: [],
+        };
+    }
+    
     render() {
         return (
             <div className="all">
@@ -24,9 +34,65 @@ class Announce extends Component {
                         </button>
                     </div>
                 </section>
+                <section className="mt-3 container myfaq-search-section">
+                    <div className="container myfaq-search-buttons">
+                        <button type="button">&lt;</button>
+                        <button type="button">{this.state.nowAnnounceNum}</button>
+                        <button
+                            type="button"
+                            style={
+                                this.state.announceNum > this.state.nowAnnounceNum * 10
+                                    ? myfaqStyles.dYes
+                                    : myfaqStyles.dNone
+                            }
+                        >
+                            {this.state.nowAnnounceNum + 1}
+                        </button>
+                        <button
+                            type="button"
+                            style={
+                                this.state.announceNum > this.state.nowAnnounceNum * 20
+                                    ? myfaqStyles.dYes
+                                    : myfaqStyles.dNone
+                            }
+                        >
+                            {this.state.nowAnnounceNum + 2}
+                        </button>
+                        <button
+                            type="button"
+                            style={
+                                this.state.announceNum > this.state.nowAnnounceNum * 30
+                                    ? myfaqStyles.dYes
+                                    : myfaqStyles.dNone
+                            }
+                        >
+                            {this.state.nowAnnounceNum + 3}
+                        </button>
+                        <button
+                            type="button"
+                            style={
+                                this.state.announceNum > this.state.nowAnnounceNum * 40
+                                    ? myfaqStyles.dYes
+                                    : myfaqStyles.dNone
+                            }
+                        >
+                            {this.state.nowAnnounceNum + 4}
+                        </button>
+                        <button type="button">&gt;</button>
+                    </div>
+                </section>
             </div>
         );
     }
 }
+
+const myfaqStyles = {
+    dNone: {
+        display: 'none',
+    },
+    dYes: {
+        display: 'inline-block',
+    },
+};
 
 export default Announce;
