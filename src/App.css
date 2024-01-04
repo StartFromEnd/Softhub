@@ -259,3 +259,14 @@ hr {
 .profil-section {
     margin: 3rem auto;
 }
+.myfaq-list-section {
+    min-height: 7rem;
+    border-top: 0.05rem solid #DBDBDB;
+    border-bottom: 0.05rem solid #DBDBDB;
+}
+.myfaq-search-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
