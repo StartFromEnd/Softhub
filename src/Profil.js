@@ -4,16 +4,16 @@ import cookie from 'react-cookies';
 import logo from './logo.svg';
 import './App.css';
 
-class Profil extends Component{
-    constructor(props){
+class Profil extends Component {
+    constructor(props) {
         super(props);
         this.state = {
             nickname: '',
             position: '',
             email: '',
-        }
+        };
     }
-    
+
     checkCookie = () => {
         const session = cookie.load('sessionID');
         if (session != undefined) {
@@ -36,9 +36,9 @@ class Profil extends Component{
                 })
                 .then((data) => {
                     if (data.ok) {
-                        this.setState({nickname: data.nickname});
-                        this.setState({position: data.position});
-                        this.setState({address: data.address});
+                        this.setState({ nickname: data.nickname });
+                        this.setState({ position: data.position });
+                        this.setState({ email: data.address });
                     } else {
                         alert(data.msg);
                         cookie.remove('sessionID', { path: '/' });
@@ -49,21 +49,46 @@ class Profil extends Component{
             alert('로그인이 필요합니다.');
             window.location.href('/signIn');
         }
-    }
-    
-    componentDidMount(){
+    };
+
+    componentDidMount() {
         this.checkCookie();
     }
-    
+
     render() {
-        return(
+        return (
             <div className="all">
                 <section className="cover-fixed-nav-section"></section>
-                <p>{this.state.nickname}</p>
-                <p>{this.state.position}</p>
-                <p>{this.state.email}</p>
+                <section className="profil-section container">
+                    <p>{this.state.nickname}</p>
+                    <p>{this.state.position}</p>
+                    <p>{this.state.email}</p>
+                    <p className="p-bold">
+                        닉네임과 이메일 주소는 사용자 식별 정보이므로 변경필요시 관리자에게 문의하여 주십시오.
+                    </p>
+                    <NavLink to="/faq">문의하기</NavLink>
+                </section>
+                <section className="profil-options-section container">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                내 후원목록
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                나에게 온 주문
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                내 문의사항
+                            </a>
+                        </li>
+                    </ul>
+                </section>
             </div>
-        )
+        );
     }
 }
 
