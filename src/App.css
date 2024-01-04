@@ -41,6 +41,9 @@ html {
         padding-right: 3rem;
         padding-left: 3rem;
     }
+    .wrap-login-form, .wrap-signup-form {
+        width: 40% !important;
+    }
 }
 @media (max-width: 600px) {
     html {
@@ -199,6 +202,8 @@ html {
 .wrap-login-form, .wrap-signup-form{
     width: 50%;
     margin: 5rem auto;
+    border: 0.2rem solid black;
+    border-radius: 1rem;
 }
 
 .login-text, .signup-text{
