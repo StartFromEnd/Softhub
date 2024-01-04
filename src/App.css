@@ -270,7 +270,7 @@ hr {
     line-height: 7rem;
 }
 
-.myfaq-search-buttons {
+.myfaq-search-buttons, .myfaq-write-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -279,7 +279,6 @@ hr {
 .myfaq-search-buttons > button {
     border: none;
     background-color: white;
-    color: #EAEAEA;
 }
 
 .all {

@@ -39,6 +39,9 @@ class Myfaq extends Component {
                     </div>
                 </section>
                 <section className="mt-3 container myfaq-search-section">
+                    <div className="container myfaq-write-button">
+                        <button type="button">글쓰기</button>
+                    </div>
                     <div className="container myfaq-search-buttons">
                         <button type="button">&lt;</button>
                         <button type="button">{this.state.nowFaqNum}</button>
