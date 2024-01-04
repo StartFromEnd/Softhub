@@ -207,7 +207,7 @@ html {
 }
 
 .wrap-login-form > div, .wrap-signup-form > div {
-    margin: 2rem auto;
+    margin: 2rem 1rem;
 }
 
 .form-control{

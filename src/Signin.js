@@ -22,7 +22,7 @@ class Signin extends Component {
         this.setState({ signinPassword: param });
     }
     saveIsChecked(param) {
-        this.setState({ isChecked: !param });
+        this.setState({ isChecked: param });
     }
     signinButton() {
         if (this.state.signinEmail == '' || this.state.signinPassword == '') {
