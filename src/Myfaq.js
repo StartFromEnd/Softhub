@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, Navigate } from 'react-router-dom';
+import { NavLink, Navigate, Outlet } from 'react-router-dom';
 import cookie from 'react-cookies';
 import logo from './logo.svg';
 import './App.css';
@@ -45,6 +45,7 @@ class Myfaq extends Component {
                         )}
                     </div>
                 </section>
+                <Outlet />
                 <section className="mt-3 container myfaq-search-section" style={this.state.isWriting ? myfaqStyles.dNone : myfaqStyles.dEyes}>
                     <div className="container myfaq-write-button">
                         <button className="btn btn-primary" type="button" onClick={() => this.state.write}>글쓰기</button>
