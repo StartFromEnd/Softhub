@@ -103,8 +103,8 @@ class Signin extends Component {
                                     type="checkbox"
                                     className="form-check-input"
                                     id="exampleCheck1"
-                                    value={this.state.isChecked}
-                                    onChange={(event) => this.saveIsChecked(event.target.value)}
+                                    checked={this.state.isChecked}
+                                    onChange={(event) => this.saveIsChecked(event.target.checked)}
                                 />
                                 <label className="form-check-label" for="exampleCheck1">
                                     로그인 유지하기
