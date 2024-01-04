@@ -214,6 +214,10 @@ html {
     width: 90% !important;
 }
 
+hr {
+    width: 90%;
+}
+
 .login-text, .signup-text{
     font-size: 2rem;
     font-weight: bold;
