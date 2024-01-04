@@ -6,21 +6,6 @@ import './App.css';
 
 class Myorder extends Component {
     
-    checkCookie = () => {
-        let session = cookie.load('sessionID');
-        if(session !== undefined){
-            return;
-        }
-        else {
-            alert('로그인이 필요합니다.');
-            window.location.replace('/signIn');
-        }
-    }
-    
-    componentDidMount(){
-        this.checkCookie();
-    }
-    
     render() {
         return (
             <div className="container">
