@@ -18,7 +18,7 @@ class Myfaq extends Component {
     }
     
     componentDidMount(){
-        this.checkCookie();
+        
     }
     
     render() {
