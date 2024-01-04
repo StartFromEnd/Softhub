@@ -20,7 +20,7 @@ class Myfaq extends Component {
 
     write = () => {
         this.setState({isWriting: true});
-        return <Navigate to="/profil/myFaq/write"></Navigate>;
+        window.location.replace('/profil/myFaq/write');
     }
     
     render() {
@@ -34,7 +34,7 @@ class Myfaq extends Component {
                     과도한 장난 혹은 악질적인 내용이 확인되면 회원정지와 함께 법적 조치가 이뤄질 수
                     있습니다.
                 </p>
-                <section className="mt-3 container myfaq-list-section">
+                <section className="mt-3 container myfaq-list-section" style={this.state.isWriting ? myfaqStyles.dNone : myfaqStyles.dEyes}>
                     <div class="d-flex flex-column mb-3">
                         {this.state.faqNum <= 0 ? (
                             <p className="na">아직 작성한 문의사항이 없습니다.</p>
