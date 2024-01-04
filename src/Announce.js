@@ -19,7 +19,17 @@ class Announce extends Component {
             <div className="all">
                 <section className="cover-fixed-nav-section"></section>
                 <section className="announcement-section container">공지사항</section>
-                <section className="announcement-list-section container"></section>
+                <section className="announcement-list-section container">
+                    <div class="d-flex flex-column mb-3">
+                        {this.state.announceNum <= 0 ? (
+                            <p className="na">아직 작성된 공지사항이 없습니다.</p>
+                        ) : (
+                            this.state.announceList.map((item) => {
+                                return <div className="list-items"></div>;
+                            })
+                        )}
+                    </div>
+                </section>
                 <section className="announcement-search-section container">
                     <div class="input-group mb-3 search">
                         <input

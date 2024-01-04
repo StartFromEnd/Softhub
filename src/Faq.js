@@ -19,7 +19,17 @@ class Faq extends Component {
             <div className="all">
                 <section className="cover-fixed-nav-section"></section>
                 <section className="faq-section container">문의하기</section>
-                <section className="faq-list-section container"></section>
+                <section className="faq-list-section container">
+                    <div class="d-flex flex-column mb-3">
+                        {this.state.faqNum <= 0 ? (
+                            <p className="na">아직 작성된 문의사항이 없습니다.</p>
+                        ) : (
+                            this.state.faqList.map((item) => {
+                                return <div className="list-items"></div>;
+                            })
+                        )}
+                    </div>
+                </section>
                 <section className="faq-search-section container">
                     <div class="input-group mb-3 search">
                         <input
