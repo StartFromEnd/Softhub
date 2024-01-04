@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import cookie from 'react-cookies';
 import logo from './logo.svg';
 import './App.css';
@@ -81,6 +82,7 @@ class Profil extends Component {
                         </li>
                     </ul>
                 </section>
+                <Outlet />
             </div>
         );
     }
