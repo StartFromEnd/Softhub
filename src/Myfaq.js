@@ -26,7 +26,7 @@ class Myfaq extends Component {
                 <p className='p-bold five'>'개인 문의하기'는 로그인된 사용자만 이용가능합니다.</p>
                 <p className='p-bold five'>장난 혹은 악질적인 내용이 확인되면 회원정지와 함께 법적 조치가 이뤄질 수 있습니다.</p>
                 <section className="mt-3 container myfaq-list-section">
-                    {this.state.faqNum <= 0 ? return <p>아직 작성한 문의사항이 없습니다.</p> :
+                    {this.state.faqNum <= 0 ? <p>아직 작성한 문의사항이 없습니다.</p> :
                         this.state.faqList.map((item) => {
                         return(<div className="list-items"></div>);
                     })}
