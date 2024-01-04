@@ -235,6 +235,10 @@ hr {
 .announcement-list-section {
     min-height: 3rem;
 }
+.announcement-search-section {
+    text-align: center;
+    align-items: center;
+}
 .input-group.mb-3.search {
     width: 80%;
 }
