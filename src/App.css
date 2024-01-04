@@ -233,7 +233,7 @@ hr {
     border-bottom: 0.05rem solid #212529;
 }
 .announcement-list-section {
-    min-height: 3rem;
+    min-height: 5rem;
     border-bottom: 0.05rem solid #212529;
 }
 .announcement-search-section {
@@ -244,4 +244,7 @@ hr {
     text-align: center;
     align-items: center;
     margin: 3rem auto;
+}
+.input-group.mb-3.search > .form-control {
+    width: 80% !important;
 }

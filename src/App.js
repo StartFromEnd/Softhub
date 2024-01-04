@@ -52,7 +52,12 @@ class App extends Component {
                 .then((data) => {
                     if (data.ok) {
                         this.setState({ dropdownBtn: data.nickname });
-                        this.setState({ dropdownOne: ['프로필', '#'] });
+                        if(data.position == 'admin'){
+                            this.setState({ dropdownOne: ['관리메뉴', '/admin']});
+                        }
+                        else{
+                            this.setState({ dropdownOne: ['프로필', '#'] });   
+                        }
                         this.setState({ dropdownTwo: ['로그아웃', '/signOut'] });
                     } else {
                         alert(data.msg);
