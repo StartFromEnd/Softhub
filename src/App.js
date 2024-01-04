@@ -7,6 +7,7 @@ import Main from './Main.js';
 import Signin from './Signin.js';
 import Signup from './Signup.js';
 import Signout from './Signout.js';
+import Announce from './Announce.js';
 
 class App extends Component {
     constructor(props) {
@@ -128,7 +129,7 @@ class App extends Component {
                                             </ul>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink to='/announcement' className='nav-link'>공지사항</NavLink>
+                                            <NavLink to='/announce' className='nav-link'>공지사항</NavLink>
                                         </li>
                                         <li className="nav-item">
                                             <NavLink to='#' className='nav-link'>문의하기</NavLink>
@@ -160,7 +161,7 @@ class App extends Component {
                         ></Route>
                         <Route path="/signUp" element={<Signup changeMainState={this.ChangeMainState}/>}></Route>
                         <Route path="/signOut" element={<Signout />}></Route>
-                        <Route path="/announcement" element={<Announce />}></Route>
+                        <Route path="/announce" element={<Announce />}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>
