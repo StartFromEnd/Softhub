@@ -268,7 +268,7 @@ class Signup extends Component {
                                 확인
                             </button>
                             <hr></hr>
-                            <p style={{fontWeight: bold;}}>계정이 이미 있으신가요?</p>
+                            <p className='p-bold'>계정이 이미 있으신가요?</p>
                             <NavLink to="/signIn">로그인 하기</NavLink>
                         </form>
                     </div>
