@@ -157,7 +157,6 @@ class Main extends Component {
                         </p>
                         <div className="semi-nav-bar"></div>
                     </div>
-                    <hr></hr>
                     <div className="classified-items-list container"></div>
                 </section>
             </div>
