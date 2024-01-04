@@ -229,6 +229,10 @@ hr {
     font-weight: bold;
 }
 
+.p-bold.5{
+    font-size: 0.5rem;
+}
+
 .announcement-section, .faq-section {
     height: 10rem;
     text-align: center;

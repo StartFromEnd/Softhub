@@ -77,7 +77,7 @@ class Profil extends Component {
                             <NavLink to="/profil/myOrder" className='nav-link'>내 주문목록</NavLink>
                         </li>
                         <li class="nav-item">
-                            <NavLink to="/profil/myFaq" className='nav-link'>개인문의하기</NavLink>
+                            <NavLink to="/profil/myFaq" className='nav-link'>개인 문의하기</NavLink>
                         </li>
                     </ul>
                 </section>
