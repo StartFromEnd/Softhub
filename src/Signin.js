@@ -122,7 +122,7 @@ class Signin extends Component {
                                 확인
                             </button>
                             <hr></hr>
-                            <p>계정이 없으신가요?</p>
+                            <p style={{fontWeight: bold;}}>계정이 없으신가요?</p>
                             <NavLink to="/signUp">회원가입 하기</NavLink>
                         </form>
                     </div>
