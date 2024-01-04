@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavLink from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
@@ -54,7 +55,7 @@ class Signin extends Component {
                 .then((data) => {
                     if (data.ok) {
                         alert('로그인 되었습니다.');
-                        if(this.state.isChecked){data.cookie[1] *= (24 * 365 * 10)}
+                        if(this.state.isChecked){data.cookie[1] *= 1000;}
                         this.state.changeMainState(data.cookie[0], data.cookie[1]);
                         window.location.replace('/');
                     } else {
@@ -120,6 +121,9 @@ class Signin extends Component {
                             >
                                 확인
                             </button>
+                            <hr></hr>
+                            <p>계정이 없으신가요?</p>
+                            <NavLink to="/signUp">회원가입 하기</NavLink>
                         </form>
                     </div>
                 </section>
