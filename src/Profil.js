@@ -65,20 +65,19 @@ class Profil extends Component {
                     <p>{this.state.position}</p>
                     <p>{this.state.email}</p>
                     <p className="p-bold">
-                        닉네임과 이메일 주소는 사용자 식별 정보이므로 변경필요시 관리자에게 문의하여 주십시오.
+                        닉네임과 이메일 주소는 사용자 식별 정보이므로\n변경필요시 관리자에게 문의하여 주십시오.
                     </p>
-                    <NavLink to="/faq">문의하기</NavLink>
                 </section>
                 <section className="profil-options-section container">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <NavLink to="/profil/mySupport" className='nav-link active'>내 후원목록</NavLink>
+                            <NavLink to="/profil/mySupport" className='nav-link'>내 후원목록</NavLink>
                         </li>
                         <li class="nav-item">
                             <NavLink to="/profil/myOrder" className='nav-link'>내 주문목록</NavLink>
                         </li>
                         <li class="nav-item">
-                            <NavLink to="/profil/myFaq" className='nav-link'>내 문의사항</NavLink>
+                            <NavLink to="/profil/myFaq" className='nav-link'>문의사항</NavLink>
                         </li>
                     </ul>
                 </section>
