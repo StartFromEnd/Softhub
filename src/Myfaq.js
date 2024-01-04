@@ -12,7 +12,7 @@ class Myfaq extends Component {
             return;
         }
         else {
-            alter('로그인이 필요합니다.');
+            alert('로그인이 필요합니다.');
             window.location.replace('/signIn');
         }
     }
