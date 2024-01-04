@@ -48,7 +48,7 @@ class Myfaq extends Component {
                 <Outlet />
                 <section className="mt-3 container myfaq-search-section" style={this.state.isWriting ? myfaqStyles.dNone : myfaqStyles.dEyes}>
                     <div className="container myfaq-write-button">
-                        <button className="btn btn-primary" type="button" onClick={() => this.write}>글쓰기</button>
+                        <button className="btn btn-primary" type="button" onClick={() => this.write()}>글쓰기</button>
                     </div>
                     <div className="container myfaq-search-buttons">
                         <button type="button">&lt;</button>
