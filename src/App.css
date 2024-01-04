@@ -264,6 +264,12 @@ hr {
     border-top: 0.05rem solid #DBDBDB;
     border-bottom: 0.05rem solid #DBDBDB;
 }
+
+.na{
+    text-align: center;
+    line-height: 7rem;
+}
+
 .myfaq-search-buttons {
     display: flex;
     justify-content: center;
@@ -273,4 +279,5 @@ hr {
 .myfaq-search-buttons > button {
     border: none;
     background-color: white;
+    color: #DBDBDB;
 }
