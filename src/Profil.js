@@ -43,12 +43,12 @@ class Profil extends Component {
                     } else {
                         alert(data.msg);
                         cookie.remove('sessionID', { path: '/' });
-                        window.location.href('/');
+                        window.location.replace('/');
                     }
                 });
         } else {
             alert('로그인이 필요합니다.');
-            window.location.href('/signIn');
+            window.location.replace('/signIn');
         }
     };
 
@@ -65,7 +65,7 @@ class Profil extends Component {
                     <p>{this.state.position}</p>
                     <p>{this.state.email}</p>
                     <p className="p-bold">
-                        닉네임과 이메일 주소는 사용자 식별 정보이므로\n변경필요시 관리자에게 문의하여 주십시오.
+                        닉네임과 이메일 주소는 사용자 식별 정보이므로 변경필요시 관리자에게 문의하여 주십시오.
                     </p>
                 </section>
                 <section className="profil-options-section container">
@@ -77,7 +77,7 @@ class Profil extends Component {
                             <NavLink to="/profil/myOrder" className='nav-link'>내 주문목록</NavLink>
                         </li>
                         <li class="nav-item">
-                            <NavLink to="/profil/myFaq" className='nav-link'>문의사항</NavLink>
+                            <NavLink to="/profil/myFaq" className='nav-link'>개인문의하기</NavLink>
                         </li>
                     </ul>
                 </section>
