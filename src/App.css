@@ -232,3 +232,9 @@ hr {
     line-height: 10rem;
     border-bottom: 0.05rem solid #DBDBDB;
 }
+.announcement-list-section {
+    min-height: 3rem;
+}
+.input-group.mb-3.search {
+    width: 60%;
+}

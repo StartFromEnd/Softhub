@@ -7,6 +7,7 @@ class Announce extends Component {
     render() {
         return (
             <div className="all">
+                <section className="cover-fixed-nav-section"></section>
                 <section className="announcement-section container">공지사항</section>
                 <section className="announcement-list-section container"></section>
                 <section className="announcement-search-section container">
