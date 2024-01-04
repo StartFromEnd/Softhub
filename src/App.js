@@ -8,6 +8,7 @@ import Signin from './Signin.js';
 import Signup from './Signup.js';
 import Signout from './Signout.js';
 import Announce from './Announce.js';
+import Faq from './Faq.js';
 
 class App extends Component {
     constructor(props) {
@@ -137,7 +138,7 @@ class App extends Component {
                                             <NavLink to='/announce' className='nav-link'>공지사항</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink to='#' className='nav-link'>문의하기</NavLink>
+                                            <NavLink to='/faq' className='nav-link'>문의하기</NavLink>
                                         </li>
                                     </ul>
                                     <form className="d-flex mt-3" role="search">
@@ -167,6 +168,7 @@ class App extends Component {
                         <Route path="/signUp" element={<Signup changeMainState={this.ChangeMainState}/>}></Route>
                         <Route path="/signOut" element={<Signout />}></Route>
                         <Route path="/announce" element={<Announce />}></Route>
+                        <Route path="/faq" element={<Faq />}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>

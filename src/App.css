@@ -229,18 +229,18 @@ hr {
     font-weight: bold;
 }
 
-.announcement-section {
+.announcement-section, .faq-section {
     height: 10rem;
     text-align: center;
     font-size: 3rem;
     line-height: 10rem;
     border-bottom: 0.05rem solid #212529;
 }
-.announcement-list-section {
+.announcement-list-section, .faq-list-section {
     min-height: 10rem;
     border-bottom: 0.05rem solid #212529;
 }
-.announcement-search-section {
+.announcement-search-section, .faq-search-section {
     text-align: center;
     align-items: center;
 }
