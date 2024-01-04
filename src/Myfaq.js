@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Navigate } from 'react-router-dom';
 import cookie from 'react-cookies';
 import logo from './logo.svg';
 import './App.css';
@@ -11,11 +11,18 @@ class Myfaq extends Component {
             faqNum: 0,
             nowFaqNum: 1,
             faqList: [],
+            
+            isWriting: false
         };
     }
 
     componentDidMount() {}
 
+    write = () => {
+        this.setState({isWriting: true});
+        return <Navigate to="/profil/myFaq/write"></Navigate>;
+    }
+    
     render() {
         return (
             <div className="mt-3 container">
@@ -24,7 +31,7 @@ class Myfaq extends Component {
                 </p>
                 <p className="p-bold five">'개인 문의하기'는 로그인된 사용자만 이용가능합니다.</p>
                 <p className="p-bold five">
-                    장난 혹은 악질적인 내용이 확인되면 회원정지와 함께 법적 조치가 이뤄질 수
+                    과도한 장난 혹은 악질적인 내용이 확인되면 회원정지와 함께 법적 조치가 이뤄질 수
                     있습니다.
                 </p>
                 <section className="mt-3 container myfaq-list-section">
@@ -38,9 +45,9 @@ class Myfaq extends Component {
                         )}
                     </div>
                 </section>
-                <section className="mt-3 container myfaq-search-section">
+                <section className="mt-3 container myfaq-search-section" style={this.state.isWriting ? myfaqStyles.dNone : myfaqStyles.dEyes}>
                     <div className="container myfaq-write-button">
-                        <button className="btn btn-primary" type="button">글쓰기</button>
+                        <button className="btn btn-primary" type="button" onClick={() => this.state.write}>글쓰기</button>
                     </div>
                     <div className="container myfaq-search-buttons">
                         <button type="button">&lt;</button>
@@ -100,6 +107,9 @@ const myfaqStyles = {
     dYes: {
         display: 'inline-block',
     },
+    dEyes: {
+        display: 'block',
+    }
 };
 
 export default Myfaq;

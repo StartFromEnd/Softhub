@@ -13,6 +13,7 @@ import Profil from './Profil.js';
 import Mysupport from './Mysupport.js';
 import Myorder from './Myorder.js';
 import Myfaq from './Myfaq.js';
+import Myfaqwrite from './Myfaqwrite.js';
 
 class App extends Component {
     constructor(props) {
@@ -176,7 +177,9 @@ class App extends Component {
                         <Route path="/profil" element={<Profil />}>
                             <Route path="/profil/mySupport" element={<Mysupport />}></Route>
                             <Route path="/profil/myOrder" element={<Myorder />}></Route>
-                            <Route path="/profil/myFaq" element={<Myfaq />}></Route>
+                            <Route path="/profil/myFaq" element={<Myfaq />}>
+                                <Route path="/profil/myFaq/write" element={<Myfaqwrite />}></Route>
+                            </Route>
                         </Route>
                     </Routes>
                 </BrowserRouter>
