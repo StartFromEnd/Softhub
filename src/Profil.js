@@ -71,19 +71,13 @@ class Profil extends Component {
                 <section className="profil-options-section container">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">
-                                내 후원목록
-                            </a>
+                            <NavLink to="/profil/mySupport" className='nav-link active'>내 후원목록</NavLink>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                나에게 온 주문
-                            </a>
+                            <NavLink to="/profil/myOrder" className='nav-link'>내 주문목록</NavLink>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                내 문의사항
-                            </a>
+                            <NavLink to="/profil/myFaq" className='nav-link'>내 문의사항</NavLink>
                         </li>
                     </ul>
                 </section>

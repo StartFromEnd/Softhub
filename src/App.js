@@ -9,7 +9,10 @@ import Signup from './Signup.js';
 import Signout from './Signout.js';
 import Announce from './Announce.js';
 import Faq from './Faq.js';
-import Profil from './Profil.js'
+import Profil from './Profil.js';
+import Mysupport from './Mysupport.js';
+import Myorder from './Myorder.js';
+import Myfaq from './Myfaq.js';
 
 class App extends Component {
     constructor(props) {
@@ -170,7 +173,11 @@ class App extends Component {
                         <Route path="/signOut" element={<Signout />}></Route>
                         <Route path="/announce" element={<Announce />}></Route>
                         <Route path="/faq" element={<Faq />}></Route>
-                        <Route path="/profil" element={<Profil />}></Route>
+                        <Route path="/profil" element={<Profil />}>
+                            <Route path="/profil/mySupport" element={<Mysupport />}></Route>
+                            <Route path="/profil/myOrder" element={<Myorder />}></Route>
+                            <Route path="/profil/myFaq" element={<Myfaq />}></Route>
+                        </Route>
                     </Routes>
                 </BrowserRouter>
             </div>
