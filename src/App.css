@@ -234,6 +234,7 @@ hr {
 }
 .announcement-list-section {
     min-height: 3rem;
+    border-bottom: 0.05rem solid #DBDBDB;
 }
 .announcement-search-section {
     text-align: center;
@@ -241,4 +242,6 @@ hr {
 }
 .input-group.mb-3.search {
     width: 80%;
+    text-align: center;
+    align-items: center;
 }
