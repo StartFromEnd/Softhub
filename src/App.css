@@ -270,3 +270,7 @@ hr {
     align-items: center;
     width: 100%;
 }
+.myfaq-search-buttons > button {
+    border: none;
+    background-color: none;
+}
