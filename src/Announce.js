@@ -11,7 +11,7 @@ class Announce extends Component {
                 <section className="announcement-section container">공지사항</section>
                 <section className="announcement-list-section container"></section>
                 <section className="announcement-search-section container">
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3 search">
                         <input
                             type="text"
                             class="form-control"
