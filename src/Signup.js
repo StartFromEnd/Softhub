@@ -16,7 +16,8 @@ class Signup extends Component {
 
             signupMsg: '',
             signupMsgStyle: signupStyles.red,
-
+            
+            authDisplay: signupStyles.dNone,
             signupEmailAuth: '',
             signupEmailAuthWrite: '',
             signupEmailAuthWritePlaceholder: '처음엔 작성하실 필요가 없습니다.',
@@ -123,6 +124,7 @@ class Signup extends Component {
                                 signupMsg: `${this.state.signupEmail} 계정으로 인증번호가 전송되었습니다.
             (페이지를 나가거나 새로고침하면 인증번호를 다시 발급받아야 합니다.)`,
                             });
+                            this.setState({authDisplay: signupStyles.dYes});
                             this.setState({
                                 signupEmailAuthWritePlaceholder: '인증번호를 작성하여 주십시오.',
                             });
@@ -242,7 +244,7 @@ class Signup extends Component {
                                     {this.state.isPasswordOKmsg}
                                 </div>
                             </div>
-                            <div className="mb-3">
+                            <div className="mb-3" style={this.state.authDisplay}>
                                 <label for="exampleInputEmailAuthWrite1" className="form-label">
                                     인증번호
                                 </label>
@@ -285,6 +287,12 @@ const signupStyles = {
     green: {
         color: 'green',
     },
+    dNone: {
+        display: 'none',
+    },
+    dYes: {
+        display: 'block',
+    }
 };
 
 export default Signup;
