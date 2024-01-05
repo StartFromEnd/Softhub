@@ -20,7 +20,7 @@ class Myfaq extends Component {
 
     write = () => {
         this.setState({isWriting: true});
-        useNavigate('/profil/myFaq/write');
+        history.pushState(null, null, '/profil/myFaq/write');
     }
     
     render() {
