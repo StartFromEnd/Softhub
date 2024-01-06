@@ -19,13 +19,12 @@ class Nav extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.state.session);
-        if (this.state.session == '') {
+        if (cookie.load('sessionID') == '') {
             return;
         }
 
         //session, email, password, nickname, variables...
-        let array = [this.state.session, null, null, this.state.nickname, null, null, null];
+        let array = [cookie.load('sessionID'), null, null, this.state.nickname, null, null, null];
         let data;
         let fetch = common.Fetch('/sessionCheck', array);
         fetch.then((info) => data = info);
