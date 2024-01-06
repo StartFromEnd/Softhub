@@ -92,7 +92,7 @@ class Myfaqwrite extends Component {
                                 className="form-control"
                                 placeholder="본문은 500자 이내로 작성하여 주십시오."
                                 value={this.state.faqMain}
-                                onChange={(event) => this.saveFaqTitle(event.target.value)}
+                                onChange={(event) => this.saveFaqMain(event.target.value)}
                             ></textarea>
                         </div>
                         <div id="Help" className="form-text" style={myFaqStyles.red}>
