@@ -85,10 +85,7 @@ class Myfaq extends Component {
                 </section>
                 <section className="mt-3 container myfaq-search-section" style={this.state.isWriting ? myfaqStyles.dNone : myfaqStyles.dEyes}>
                     <div className="container myfaq-write-button">
-                        <button className="btn btn-primary" type="button" onClick={() => this.write()}>
-                            글쓰기
-                        </button>
-                        <NavLink to='/profil/myFaq/write' className="btn btn-primary">글쓰기</NavLink>
+                        <NavLink to='/profil/myFaq/write' className="btn btn-primary" onClick={() => this.write()}>글쓰기</NavLink>
                     </div>
                     <div className="container myfaq-search-buttons">
                         <button type="button">&lt;</button>
