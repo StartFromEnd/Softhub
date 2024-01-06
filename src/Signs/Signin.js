@@ -56,7 +56,7 @@ class Signin extends React.Component {
                 }
                 cookie.save('sessionID', data.cookie[0], {
                     path: '/',
-                    expires,
+                    expires
                 });
                 this.state.SessionCheck();
                 window.location.replace('/');
