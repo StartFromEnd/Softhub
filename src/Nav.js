@@ -18,7 +18,7 @@ class Nav extends React.Component {
         };
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         if (cookie.load('sessionID') == '') {
             return;
         }
