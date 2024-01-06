@@ -25,9 +25,7 @@ class Nav extends React.Component {
 
         //session, email, password, nickname, variables...
         let array = [cookie.load('sessionID'), null, null, this.state.nickname, null, null, null];
-        let data;
-        let fetch = common.Fetch('/sessionCheck', array);
-        fetch.then((info) => data = info);
+        let data = await common.Fetch('/sessionCheck', array);
         if (data.ok) {
             this.setState({ nickname: data.nickname });
             this.setState({ position: data.position });
