@@ -23,12 +23,12 @@ class Myfaqwrite extends Component {
                         </div>
                         <div className='mb-3'>
                             <label for='input-faq' className='form-label'>본문</label>
-                            <input
+                            <textarea
                                 id='input-faq'
-                                type='textarea'
                                 className='form-control'
                                 placeholder='본문은 500자 이내로 작성하여 주십시오.'
-                            ></input>
+                                wrap='on'
+                            ></textarea>
                         </div>
                     </form>
                     <button type="button" className="btn btn-success">확인</button>

@@ -57,7 +57,7 @@ class Myfaq extends Component {
     }
 
     write = () => {
-        this.setState({isWriting: true});
+        //this.setState({isWriting: true});
     }
     
     noWrite = () => {
