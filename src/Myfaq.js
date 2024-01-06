@@ -15,12 +15,48 @@ class Myfaq extends Component {
             isWriting: false
         };
     }
-
-    componentDidMount() {}
+    
+    CheckFaq = () => {
+        const session = cookie.load('sessionID');
+        if (session != undefined) {
+            fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/faq', {
+                method: 'POST',
+                mode: 'cors',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    sessionID: `${session}`,
+                }),
+            })
+                .then((response) => {
+                    return response.json();
+                })
+                .catch((error) => {
+                    alert('데이터를 불러오던중 오류가 발생하였습니다.');
+                })
+                .then((data) => {
+                    if (data.ok) {
+                        this.setState({faqNum: data.faqNum});
+                        this.setState({faqList: data.faqList});
+                    } else {
+                        alert(data.msg);
+                    }
+                });
+        } else {
+            alert('로그인이 필요합니다.');
+            window.location.replace('/signIn');
+        }
+    };
+    
+    componentDidMount() {
+        this.CheckFaq();
+    }
 
     write = () => {
         this.setState({isWriting: true});
-        window.history.pushState(null, null, '/profil/myFaq/write');
+        window.location.replace('/profil/myFaq/write');
     }
     
     render() {
