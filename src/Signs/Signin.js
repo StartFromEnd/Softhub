@@ -78,7 +78,7 @@ class Signin extends React.Component {
                                 type="email"
                                 id="email-input"
                                 className="form-control"
-                                placeholder="(한글, 영문, 숫자, !, ?, @, .) 만 입력가능"
+                                placeholder="email"
                                 value={this.state.email}
                                 onChange={(event) => this.SaveEmail(event.target.value)}
                             ></input>
@@ -91,7 +91,7 @@ class Signin extends React.Component {
                                 type="password"
                                 id="password-input"
                                 className="form-control"
-                                placeholder="(한글, 영문, 숫자, !, ?, @) 만 입력가능"
+                                placeholder="password"
                                 value={this.state.password}
                                 onChange={(event) => this.SavePassword(event.target.value)}
                             ></input>
