@@ -68,8 +68,8 @@ class Signin extends React.Component {
     render() {
         return (
             <div>
-                <section className="signin-form-wrap container">
-                    <form className="signin-form">
+                <section className="sign-form-wrap container">
+                    <form className="sign-form">
                         <div className="mb-3">
                             <label for="email-input" className="form-label">
                                 이메일
@@ -105,7 +105,7 @@ class Signin extends React.Component {
                                 onChange={(event) => this.SaveCheck(event.target.checked)}
                             />
                             <label className="form-check-label" for="input-check">
-                                로그인 유지하기
+                                정보 기억하기
                             </label>
                         </div>
                         <div id="Help" className="form-text" style={Styles.red}>
