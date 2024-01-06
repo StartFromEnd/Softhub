@@ -9,6 +9,7 @@ class Signin extends React.Component {
         super(props);
         this.state = {
             session: props.Session,
+            SessionCheck: props.SessionCheck,
 
             email: '',
             password: '',
@@ -57,6 +58,7 @@ class Signin extends React.Component {
                     path: '/',
                     servedMaxAge,
                 });
+                this.state.SessionCheck();
                 window.location.replace('/');
             }
             else{
