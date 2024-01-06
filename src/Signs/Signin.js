@@ -68,8 +68,8 @@ class Signin extends React.Component {
     render() {
         return (
             <div>
-                <section className="signin-form-wrap">
-                    <form>
+                <section className="signin-form-wrap container">
+                    <form className="signin-form">
                         <div className="mb-3">
                             <label for="email-input" className="form-label">
                                 이메일
@@ -118,6 +118,9 @@ class Signin extends React.Component {
                         >
                             확인
                         </button>
+                        <hr></hr>
+                        <p className="bold">계정이 없으신가요?</p>
+                        <NavLink to='/signUp'>회원가입 하기</NavLink>
                     </form>
                 </section>
             </div>
