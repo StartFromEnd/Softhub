@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-export function Fetch(url, array, callBackFunc) {
+export function Fetch(url, array) {
     const response = fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/'+url, {
         method: 'POST',
         mode: 'cors',
