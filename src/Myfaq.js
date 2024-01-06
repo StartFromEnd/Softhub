@@ -36,7 +36,7 @@ class Myfaq extends Component {
                     return response.json();
                 })
                 .catch((error) => {
-                    alert('데이터를 불러오던중 오류가 발생하였습니다.');
+                    alert(error);
                 })
                 .then((data) => {
                     if (data.ok) {
