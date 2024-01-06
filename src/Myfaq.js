@@ -36,7 +36,6 @@ class Myfaq extends Component {
                     return response.json();
                 })
                 .catch((error) => {
-                    console.log(error);
                     alert('데이터를 불러오던중 오류가 발생하였습니다.');
                 })
                 .then((data) => {
@@ -59,7 +58,6 @@ class Myfaq extends Component {
 
     write = () => {
         this.setState({isWriting: true});
-        window.location.replace('/profil/myFaq/write');
     }
     
     render() {
@@ -87,7 +85,10 @@ class Myfaq extends Component {
                 </section>
                 <section className="mt-3 container myfaq-search-section" style={this.state.isWriting ? myfaqStyles.dNone : myfaqStyles.dEyes}>
                     <div className="container myfaq-write-button">
-                        <button className="btn btn-primary" type="button" onClick={() => this.write()}>글쓰기</button>
+                        <button className="btn btn-primary" type="button" onClick={() => this.write()}>
+                            글쓰기
+                        </button>
+                        <NavLink to='/profil/myFaq/write' className="btn btn-primary">글쓰기</NavLink>
                     </div>
                     <div className="container myfaq-search-buttons">
                         <button type="button">&lt;</button>
