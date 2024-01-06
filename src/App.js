@@ -45,7 +45,7 @@ class App extends React.Component {
                     <section className="cover-fixed-nav-section"></section>
                     <Routes>
                         <Route path='/' element={<Home Session={this.state.sessionID}/>}></Route>
-                        <Route path='/signIn' element={<Signin Session={this.state.sessionID} SessionCheck={this.state.SessionCheck()}/>}></Route>
+                        <Route path='/signIn' element={<Signin Session={this.state.sessionID} SessionCheck={this.SessionCheck}/>}></Route>
                         <Route path='/signUp' element={<Signup Session={this.state.sessionID}/>}></Route>
                         <Route path='/signOut' element={<Signout Session={this.state.sessionID}/>}></Route>
                     </Routes>
