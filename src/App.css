@@ -287,3 +287,7 @@ hr {
 .all {
     height: 70vw;
 }
+
+#input-faq {
+    min-height: 30vw;
+}

@@ -60,6 +60,10 @@ class Myfaq extends Component {
         this.setState({isWriting: true});
     }
     
+    noWrite = () => {
+        this.setState({isWriting: false});
+    }
+    
     render() {
         return (
             <div className="mt-3 container">
