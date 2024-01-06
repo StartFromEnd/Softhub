@@ -9,6 +9,7 @@ class Nav extends React.Component {
         super(props);
         this.state = {
             session: props.Session,
+            SessionCheck: props.SessionCheck,
 
             nickname: '',
             position: '',
@@ -41,6 +42,7 @@ class Nav extends React.Component {
             this.setState({ dropDownLinks: [profilOrManage[1], '/signOut'] });
         } else {
             cookie.remove('sessionID', { path: '/' });
+            this.state.SessionCheck();
             alert(data.msg);
             window.location.replace('/');
         }

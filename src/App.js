@@ -41,7 +41,7 @@ class App extends React.Component {
         return (
             <div className="App">
                 <BrowserRouter>
-                    <Nav Session={this.state.sessionID} />
+                    <Nav Session={this.state.sessionID} SessionCheck={this.SessionCheck}/>
                     <section className="cover-fixed-nav-section"></section>
                     <Routes>
                         <Route path='/' element={<Home Session={this.state.sessionID}/>}></Route>
