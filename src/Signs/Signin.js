@@ -50,14 +50,16 @@ class Signin extends React.Component {
             console.log(data);
             if(data.ok){
                 let servedSession = data.cookie[0];
-                let expires = data.cookie[1];
+                let expires = new Date();
+                expires.setHours(expires.getHours() + data.cookie[1]);
                 if(this.state.check){
-                    expires *= 1000;
+                    expires.setHours(expires.getHours() * 1000);
                 }
                 cookie.save('sessionID', data.cookie[0], {
                     path: '/',
                     expires
                 });
+                this.setState({ helpMsg: '' });
                 this.state.SessionCheck();
                 window.location.replace('/');
             }
