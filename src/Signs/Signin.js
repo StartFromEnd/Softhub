@@ -9,7 +9,7 @@ class Signin extends React.Component {
         super(props);
         this.state = {
             session: props.Session,
-            SessionCheck: props.SessionCheck,
+            SessionCheck: props.SessionCheck(),
 
             email: '',
             password: '',
