@@ -53,7 +53,7 @@ class Signin extends React.Component {
                 let expires = new Date();
                 expires.setHours(expires.getHours() + data.cookie[1]);
                 if(this.state.check){
-                    expires.setHours(expires.getHours() * 1000);
+                    expires.setYears(expires.getYears() + 10);
                 }
                 cookie.save('sessionID', data.cookie[0], {
                     path: '/',
