@@ -14,40 +14,21 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sessionID: '',
+            
         };
-    }
-
-    SessionCheck = () => {
-        let session = cookie.load('sessionID');
-        if (session !== undefined) {
-            this.setState({ sessionID: session });
-        } else {
-            this.setState({ sessionID: '' });
-        }
-    };
-
-    componentDidMount() {
-        this.SessionCheck();
-    }
-    
-    componentDidUpdate(prevProps) {
-        if(this.props.sessionID !== prevProps.sessionID){
-            this.SessionCheck();
-        }
     }
     
     render() {
         return (
             <div className="App">
                 <BrowserRouter>
-                    <Nav Session={this.state.sessionID} SessionCheck={this.SessionCheck}/>
+                    <Nav />
                     <section className="cover-fixed-nav-section"></section>
                     <Routes>
-                        <Route path='/' element={<Home Session={this.state.sessionID}/>}></Route>
-                        <Route path='/signIn' element={<Signin Session={this.state.sessionID} SessionCheck={this.SessionCheck}/>}></Route>
-                        <Route path='/signUp' element={<Signup Session={this.state.sessionID}/>}></Route>
-                        <Route path='/signOut' element={<Signout Session={this.state.sessionID}/>}></Route>
+                        <Route path='/' element={<Home />}></Route>
+                        <Route path='/signIn' element={<Signin />}></Route>
+                        <Route path='/signUp' element={<Signup />}></Route>
+                        <Route path='/signOut' element={<Signout />}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>

@@ -8,9 +8,6 @@ class Signin extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            session: props.Session,
-            SessionCheck: props.SessionCheck,
-
             email: '',
             password: '',
             check: false,
@@ -19,7 +16,7 @@ class Signin extends React.Component {
     }
 
     componentDidMount() {
-        if (this.state.session !== '') {
+        if (cookie.load('sessionID') !== undefined) {
             alert('이미 로그인 상태입니다.');
             window.location.replace('/');
             return;
@@ -60,7 +57,6 @@ class Signin extends React.Component {
                     expires
                 });
                 this.setState({ helpMsg: '' });
-                this.state.SessionCheck();
                 window.location.replace('/');
             }
             else{
