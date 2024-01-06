@@ -81,6 +81,10 @@ class App extends Component {
         this.CheckCookie();
     }
     
+    noWrite = () => {
+        Myfaq.setState({isWriting: false});
+    }
+    
     render() {
         return (
             <div className="App">
@@ -178,7 +182,7 @@ class App extends Component {
                             <Route path="/profil/mySupport" element={<Mysupport />}></Route>
                             <Route path="/profil/myOrder" element={<Myorder />}></Route>
                             <Route path="/profil/myFaq" element={<Myfaq />}>
-                                <Route path="/profil/myFaq/write" element={<Myfaqwrite />}></Route>
+                                <Route path="/profil/myFaq/write" element={<Myfaqwrite noWrite={this.noWrite}/>}></Route>
                             </Route>
                         </Route>
                     </Routes>

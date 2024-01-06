@@ -6,6 +6,13 @@ import './App.css';
 
 class Myfaqwrite extends Component {
     
+    constructor(props){
+        super(props);
+        this.state = {
+            noWrite: props.noWrite;
+        }
+    }
+    
     render() {
         return(
             <div className="all">
@@ -27,12 +34,11 @@ class Myfaqwrite extends Component {
                                 id='input-faq'
                                 className='form-control'
                                 placeholder='본문은 500자 이내로 작성하여 주십시오.'
-                                wrap='on'
                             ></textarea>
                         </div>
                     </form>
                     <button type="button" className="btn btn-success">확인</button>
-                    <NavLink to='/profil/myFaq' className="btn btn-danger">취소</NavLink>
+                    <NavLink to='/profil/myFaq' className="btn btn-danger" onClick={() => this.noWrite()}>취소</NavLink>
                 </section>
             </div>
         )
