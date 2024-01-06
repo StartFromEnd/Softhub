@@ -10,6 +10,7 @@ class Myfaq extends Component {
         this.state = {
             faqNum: 0,
             nowFaqNum: 1,
+            pageNum: 1,
             faqList: [],
             
             isWriting: false
@@ -28,6 +29,7 @@ class Myfaq extends Component {
                 },
                 body: new URLSearchParams({
                     sessionID: `${session}`,
+                    pageNum: `${this.state.pageNum}`
                 }),
             })
                 .then((response) => {
