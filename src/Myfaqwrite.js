@@ -9,7 +9,7 @@ class Myfaqwrite extends Component {
     constructor(props){
         super(props);
         this.state = {
-            noWrite: props.noWrite;
+            noWrite: props.noWrite
         }
     }
     
