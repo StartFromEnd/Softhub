@@ -89,7 +89,7 @@ class Signup extends React.Component {
             }
             else{
                 let array = [null, this.state.email, this.state.password, this.state.nickname, null, null, null];
-                let data = await commit.Fetch('signUp', array);
+                let data = await common.Fetch('signUp', array);
                 if(data.ok){
                     
                 }
