@@ -31,6 +31,7 @@ class Profil extends React.Component {
             this.setState({position: data.result[1]});
             this.setState({email: data.result[2]});
             this.setState({bankAccount: data.result[3]});
+            console.log(data.result[3]);
         }
         else {
             cookie.remove('sessionID', { path: '/' });
@@ -43,10 +44,10 @@ class Profil extends React.Component {
         return(
             <div>
                <section className='profil-form-wrap container mt-3'>
-                    <p className='two bold'>{this.state.nickname}</p>
-                    <p className='two bold'>{this.state.position}</p>
-                    <p className='two bold'>{this.state.email}</p>
-                    <p className='two bold'>{this.state.bankAccount}</p>
+                    <p className='one bold'>{this.state.nickname}</p>
+                    <p className='one bold'>{this.state.position}</p>
+                    <p className='one bold'>{this.state.email}</p>
+                    <p className='one bold'>{this.state.bankAccount}</p>
                 </section>
             </div>
         );
