@@ -131,7 +131,7 @@ class Signup extends React.Component {
                     let num = `${data.result[0]}`;
                     this.setState({ helpMsg: data.msg });
                     this.setState({ helpMsgStyle: Styles.green });
-                    this.setState({ emailAuthNum: num });
+                    //this.setState({ emailAuthNum: num });
                 }
                 else {
                     this.setState({ helpMsg: data.msg });
