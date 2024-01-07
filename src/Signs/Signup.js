@@ -117,6 +117,7 @@ class Signup extends React.Component {
                 this.setState({ helpMsg: data.msg });
                 this.setState({ helpMsgStyle: Styles.red });
             } else {
+                console.log(hi);
                 let array = [
                     null,
                     this.state.email,
@@ -130,7 +131,7 @@ class Signup extends React.Component {
                 if (data.ok) {
                     this.setState({ helpMsg: data.msg });
                     this.setState({ helpMsgStyle: Styles.green });
-                    this.setState({ emailAuthNum: `${data.result[0]}` });
+                    //this.setState({ emailAuthNum: `${data.result[0]}` });
                 }
                 else {
                     this.setState({ helpMsg: data.msg });
