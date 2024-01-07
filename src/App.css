@@ -39,7 +39,15 @@ html {
 .bold {
     font-weight: bold;
 }
-
+.one {
+    font-size: 1rem;
+}
+.two {
+    font-size: 2rem;
+}
+.three {
+    font-size: 3rem;
+}
 @media (min-width: 600px) {
     .container-fluid.responsive {
         padding-right: 3rem;
@@ -79,4 +87,10 @@ html {
 
 .sign-form {
     margin: 3rem;
+}
+
+.profil-form-wrap {
+    margin-top: 5rem;
+    border: 0.05rem solid black;
+    border-radius: 1rem;
 }
