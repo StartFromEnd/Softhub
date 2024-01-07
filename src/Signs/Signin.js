@@ -45,17 +45,18 @@ class Signin extends React.Component {
             let array = [this.state.session, this.state.email, this.state.password, null, null, null, null];
             let data = await common.Fetch('signIn', array);
             if(data.ok){
-                let servedSession = data.cookie[0];
+                let servedSession = data.result[0];
                 let expires = new Date();
-                expires.setHours(expires.getHours() + data.cookie[1]);
+                expires.setHours(expires.getHours() + data.result[1]);
                 if(this.state.check){
                     expires.setFullYear(expires.getFullYear() + 10);
                 }
-                cookie.save('sessionID', data.cookie[0], {
+                cookie.save('sessionID', data.result[0], {
                     path: '/',
                     expires
                 });
                 this.setState({ helpMsg: '' });
+                alert(data.msg);
                 window.location.replace('/');
             }
             else{

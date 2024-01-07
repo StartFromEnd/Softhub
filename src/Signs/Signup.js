@@ -12,13 +12,13 @@ class Signup extends React.Component {
             nickname: '',
             password: '',
             passwordCheck: '',
-            
+
             pwCheckHelpMsg: '',
             pwCheckHelpMsgStyle: Styles.red,
-            
+
             emailAuthNum: '',
             emailAuthWrite: '',
-            
+
             helpMsg: '',
             helpMsgStyle: Styles.red,
         };
@@ -31,72 +31,112 @@ class Signup extends React.Component {
             return;
         }
     }
-    
-    SaveEmail(param){
+
+    SaveEmail(param) {
         this.setState({ email: param });
     }
-    
-    SaveNickname(param){
+
+    SaveNickname(param) {
         this.setState({ nickname: param });
     }
-    
-    SavePassword(param){
+
+    SavePassword(param) {
         this.setState({ password: param });
     }
-    
-    SavePasswordCheck(param){
+
+    SavePasswordCheck(param) {
         this.setState({ passwordCheck: param });
-        if(this.state.password !== param){
-            this.setState({pwCheckHelpMsg: '비밀번호가 일치하지 않습니다.'});
-            this.setState({pwCheckHelpMsgStyle: Styles.red});
+        if (this.state.password !== param) {
+            this.setState({ pwCheckHelpMsg: '비밀번호가 일치하지 않습니다.' });
+            this.setState({ pwCheckHelpMsgStyle: Styles.red });
             return;
-        }
-        else{
-            this.setState({pwCheckHelpMsg: '비밀번호가 일치합니다.'});
-            this.setState({pwCheckHelpMsgStyle: Styles.green});
+        } else {
+            this.setState({ pwCheckHelpMsg: '비밀번호가 일치합니다.' });
+            this.setState({ pwCheckHelpMsgStyle: Styles.green });
             return;
         }
     }
-    
-    SaveEmailAuthWrite(param){
+
+    SaveEmailAuthWrite(param) {
         this.setState({ emailAuthWrite: param });
     }
-    
-    SignUp = async() => {
-        if(this.state.email == '' || this.state.nickname == '' || this.state.password == ''){
-            this.setState({helpMsg: '모든 칸을 기입하여 주십시오.'});
-            this.setState({helpMsgStyle: Styles.red});
+
+    SignUp = async () => {
+        if (this.state.email == '' || this.state.nickname == '' || this.state.password == '') {
+            this.setState({ helpMsg: '모든 칸을 기입하여 주십시오.' });
+            this.setState({ helpMsgStyle: Styles.red });
             return;
-        }
-        else if(this.state.password !== this.state.passwordCheck){
-            this.setState({helpMsg: ''});
+        } else if (this.state.password !== this.state.passwordCheck) {
+            this.setState({ helpMsg: '' });
             return;
-        }
-        else{
-            if(this.emailAuthNum !== '' && this.state.emailAuthNum == this.state.emailAuthWrite){
-                let array = [null, this.state.email, this.state.password, this.state.nickname, true, null, null];
+        } else {
+            if (this.emailAuthNum !== '' && this.state.emailAuthNum == this.state.emailAuthWrite) {
+                let array = [
+                    null,
+                    this.state.email,
+                    this.state.password,
+                    this.state.nickname,
+                    true,
+                    null,
+                    null,
+                ];
                 let data = await common.Fetch('signUp', array);
-                if(data.ok){
-                    
+                if (data.ok) {
+                    this.setState({ helpMsg: data.msg });
+                    this.setState({ helpMsgStyle: Styles.green });
+                    let expires = new Date();
+                    expires.setHours(expires.getHours() + data.result[1]);
+                    cookie.save('sessionID', data.result[0], {
+                        path: '/',
+                        expires,
+                    });
+                    alert(data.msg);
+                    window.location.replace('/');
+                }
+                else {
+                    this.setState({ helpMsg: data.msg });
+                    this.setState({ helpMsgStyle: Styles.red });
+                }
+            } else if (
+                this.emailAuthNum !== '' &&
+                this.state.emailAuthNum !== this.state.emailAuthWrite
+            ) {
+                let array = [
+                    null,
+                    this.state.email,
+                    this.state.password,
+                    this.state.nickname,
+                    false,
+                    null,
+                    null,
+                ];
+                let data = await common.Fetch('signUp', array);
+
+                this.setState({ helpMsg: data.msg });
+                this.setState({ helpMsgStyle: Styles.red });
+            } else {
+                let array = [
+                    null,
+                    this.state.email,
+                    this.state.password,
+                    this.state.nickname,
+                    null,
+                    null,
+                    null,
+                ];
+                let data = await common.Fetch('signUp', array);
+                if (data.ok) {
+                    this.setState({ helpMsg: data.msg });
+                    this.setState({ helpMsgStyle: Styles.green });
+                }
+                else {
+                    this.setState({ helpMsg: data.msg });
+                    this.setState({ helpMsgStyle: Styles.red });
                 }
             }
-            else if(this.emailAuthNum !== '' && this.state.emailAuthNum !== this.state.emailAuthWrite){
-                let array = [null, this.state.email, this.state.password, this.state.nickname, false, null, null];
-                let data = await common.Fetch('signUp', array);
-                
-                this.setState({helpMsg: data.msg});
-                this.setState({helpMsgStyle: Styles.red});
-            }
-            else{
-                let array = [null, this.state.email, this.state.password, this.state.nickname, null, null, null];
-                let data = await common.Fetch('signUp', array);
-                if(data.ok){
-                    
-                }
-            }
         }
-    }
-    
+    };
+
     render() {
         return (
             <div>
@@ -154,11 +194,18 @@ class Signup extends React.Component {
                                 value={this.state.passwordCheck}
                                 onChange={(event) => this.SavePasswordCheck(event.target.value)}
                             ></input>
-                            <div id="passwordCheckHelp" class="form-text" style={this.state.pwCheckHelpMsgStyle}>
+                            <div
+                                id="passwordCheckHelp"
+                                class="form-text"
+                                style={this.state.pwCheckHelpMsgStyle}
+                            >
                                 {this.state.pwCheckHelpMsg}
                             </div>
                         </div>
-                        <div className="mb-3" style={this.state.emailAuthNum == '' ? Styles.none : Styles.inlineBlock}>
+                        <div
+                            className="mb-3"
+                            style={this.state.emailAuthNum == '' ? Styles.none : Styles.inlineBlock}
+                        >
                             <label for="emailAuthWrite-input" className="form-label">
                                 인증번호
                             </label>
@@ -193,20 +240,20 @@ class Signup extends React.Component {
 
 const Styles = {
     red: {
-        color: 'red'
+        color: 'red',
     },
-    
+
     green: {
-        color: 'green'
+        color: 'green',
     },
-    
+
     none: {
-        display: 'none'
+        display: 'none',
     },
-    
+
     inlineBlock: {
-        display: 'inline-block'
-    }
-}
+        display: 'inline-block',
+    },
+};
 
 export default Signup;
