@@ -18,6 +18,7 @@ class Signup extends React.Component {
 
             emailAuthNum: '',
             emailAuthWrite: '',
+            emailAuthWriteDisplay: Styles.none,
 
             helpMsg: '',
             helpMsgStyle: Styles.red,
@@ -117,7 +118,6 @@ class Signup extends React.Component {
                 this.setState({ helpMsg: data.msg });
                 this.setState({ helpMsgStyle: Styles.red });
             } else {
-                console.log('hi');
                 let array = [
                     null,
                     this.state.email,
@@ -131,7 +131,8 @@ class Signup extends React.Component {
                 if (data.ok) {
                     this.setState({ helpMsg: data.msg });
                     this.setState({ helpMsgStyle: Styles.green });
-                    //this.setState({ emailAuthNum: `${data.result[0]}` });
+                    this.setState({ emailAuthNum: `${data.result[0]}` });
+                    this.setState({ emailAuthWriteDisplay: Styles.inlineBlock });
                 }
                 else {
                     this.setState({ helpMsg: data.msg });
@@ -208,7 +209,7 @@ class Signup extends React.Component {
                         </div>
                         <div
                             className="mb-3"
-                            style={this.state.emailAuthNum == '' ? Styles.none : Styles.inlineBlock}
+                            style={this.state.emailAuthWriteDisplay}
                         >
                             <label for="emailAuthWrite-input" className="form-label">
                                 인증번호
