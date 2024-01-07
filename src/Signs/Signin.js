@@ -41,13 +41,13 @@ class Signin extends React.Component {
             return;
         }
         else{
-            //session, email, password, nickname, variables...
+            //session, email, password, nickname, variables(3)...
             let array = [this.state.session, this.state.email, this.state.password, null, this.state.check, null, null];
             let data = await common.Fetch('signIn', array);
             if(data.ok){
                 let servedSession = data.result[0];
                 let expires = new Date();
-                expires.setDate(expires.getDate + data.result[1]);
+                expires.setDate(expires.getDate() + data.result[1]);
                 if(this.state.check){
                     
                 }
