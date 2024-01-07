@@ -27,8 +27,8 @@ class Nav extends React.Component {
         let array = [cookie.load('sessionID'), null, null, this.state.nickname, null, null, null];
         let data = await common.Fetch('sessionCheck', array);
         if (data.ok) {
-            this.setState({ nickname: data.nickname });
-            this.setState({ position: data.position });
+            this.setState({ nickname: data.result[0] });
+            this.setState({ position: data.result[1] });
 
             let profilOrManage;
             if (data.position == 'admin') {
@@ -37,7 +37,7 @@ class Nav extends React.Component {
                 profilOrManage = ['프로필', '/profil'];
             }
 
-            this.setState({ dropDownNames: [data.nickname, profilOrManage[0], '로그아웃'] });
+            this.setState({ dropDownNames: [data.result[0], profilOrManage[0], '로그아웃'] });
             this.setState({ dropDownLinks: [profilOrManage[1], '/signOut'] });
         } else {
             cookie.remove('sessionID', { path: '/' });
