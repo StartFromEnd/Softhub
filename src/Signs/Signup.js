@@ -122,7 +122,7 @@ class Signup extends React.Component {
                     this.state.email,
                     this.state.password,
                     this.state.nickname,
-                    null,
+                    'null',
                     null,
                     null,
                 ];
@@ -131,7 +131,7 @@ class Signup extends React.Component {
                     let num = `${data.result[0]}`;
                     this.setState({ helpMsg: data.msg });
                     this.setState({ helpMsgStyle: Styles.green });
-                    //this.setState({ emailAuthNum: num });
+                    this.setState({ emailAuthNum: num });
                 }
                 else {
                     this.setState({ helpMsg: data.msg });
