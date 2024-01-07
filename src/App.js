@@ -13,6 +13,10 @@ import Signout from './Signs/Signout.js';
 
 import Profil from './Profils/Profil.js';
 
+import Myfaq from './Profils/Myfaqs/Myfaq.js';
+import Myorder from './Profils/Myorders/Myorder.js';
+import Mysupport from './Profils/Mysupports/Mysupport.js';
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -32,7 +36,11 @@ class App extends React.Component {
                         <Route path='/signIn' element={<Signin />}></Route>
                         <Route path='/signUp' element={<Signup />}></Route>
                         <Route path='/signOut' element={<Signout />}></Route>
-                        <Route path='/profil' element={<Profil />}></Route>
+                        <Route path='/profil' element={<Profil />}>
+                            <Route path='/profil/mySupport' element={<Mysupport />}></Route>
+                            <Route path='/profil/myOrder' element={<Myorder />}></Route>
+                            <Route path='/profil/myFaq' element={<Myfaq />}></Route>
+                        </Route>
                     </Routes>
                 </BrowserRouter>
             </div>
