@@ -36,6 +36,9 @@ html {
     font-size: 24px;
 }
 
+hr {
+    width: 80%;
+}
 .bold {
     font-weight: bold;
 }
