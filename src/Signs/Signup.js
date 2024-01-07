@@ -86,7 +86,7 @@ class Signup extends React.Component {
                     this.setState({ helpMsgStyle: Styles.green });
                     let servedSession = data.result[0];
                     let expires = new Date();
-                    expires.setDays(expires.getDays() + data.result[1]);
+                    expires.setDate(expires.getDate() + data.result[1]);
                     cookie.save('sessionID', servedSession, {
                         path: '/',
                         expires,

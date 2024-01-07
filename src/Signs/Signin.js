@@ -47,7 +47,7 @@ class Signin extends React.Component {
             if(data.ok){
                 let servedSession = data.result[0];
                 let expires = new Date();
-                expires.setDays(expires.getDays + data.result[1]);
+                expires.setDate(expires.getDate + data.result[1]);
                 if(this.state.check){
                     
                 }
