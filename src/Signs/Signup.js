@@ -13,6 +13,9 @@ class Signup extends React.Component {
             password: '',
             passwordCheck: '',
             
+            pwCheckHelpMsg: '',
+            pwCheckHelpMsgStyle: Styles.red,
+            
             emailAuthNum: '',
             emailAuthWrite: '',
             
@@ -43,10 +46,55 @@ class Signup extends React.Component {
     
     SavePasswordCheck(param){
         this.setState({ passwordCheck: param });
+        if(this.state.password !== param){
+            this.setState({pwCheckHelpMsg: '비밀번호가 일치하지 않습니다.'});
+            this.setState({pwCheckHelpMsgStyle: Styles.red});
+            return;
+        }
+        else{
+            this.setState({pwCheckHelpMsg: '비밀번호가 일치합니다.'});
+            this.setState({pwCheckHelpMsgStyle: Styles.green});
+            return;
+        }
     }
     
     SaveEmailAuthWrite(param){
         this.setState({ emailAuthWrite: param });
+    }
+    
+    SignUp = async() => {
+        if(this.state.email == '' || this.state.nickname == '' || this.state.password == ''){
+            this.setState({helpMsg: '모든 칸을 기입하여 주십시오.'});
+            this.setState({helpMsgStyle: Styles.red});
+            return;
+        }
+        else if(this.state.password !== this.state.passwordCheck){
+            this.setState({helpMsg: ''});
+            return;
+        }
+        else{
+            if(this.emailAuthNum !== '' && this.state.emailAuthNum == this.state.emailAuthWrite){
+                let array = [null, this.state.email, this.state.password, this.state.nickname, true, null, null];
+                let data = await common.Fetch('signUp', array);
+                if(data.ok){
+                    
+                }
+            }
+            else if(this.emailAuthNum !== '' && this.state.emailAuthNum !== this.state.emailAuthWrite){
+                let array = [null, this.state.email, this.state.password, this.state.nickname, false, null, null];
+                let data = await common.Fetch('signUp', array);
+                
+                this.setState({helpMsg: data.msg});
+                this.setState({helpMsgStyle: Styles.red});
+            }
+            else{
+                let array = [null, this.state.email, this.state.password, this.state.nickname, null, null, null];
+                let data = await commit.Fetch('signUp', array);
+                if(data.ok){
+                    
+                }
+            }
+        }
     }
     
     render() {
@@ -102,9 +150,13 @@ class Signup extends React.Component {
                                 id="passwordCheck-input"
                                 className="form-control"
                                 placeholder="password-check"
+                                aria-describedby="passwordCheckHelp"
                                 value={this.state.passwordCheck}
                                 onChange={(event) => this.SavePasswordCheck(event.target.value)}
                             ></input>
+                            <div id="passwordCheckHelp" class="form-text" style={this.state.pwCheckHelpMsgStyle}>
+                                {this.state.pwCheckHelpMsg}
+                            </div>
                         </div>
                         <div className="mb-3" style={this.state.emailAuthNum == '' ? Styles.none : Styles.inlineBlock}>
                             <label for="emailAuthWrite-input" className="form-label">
@@ -125,7 +177,7 @@ class Signup extends React.Component {
                         <button
                             type="button"
                             className="btn btn-primary"
-                            onClick={() => this.SignIn()}
+                            onClick={() => this.SignUp()}
                         >
                             확인
                         </button>
