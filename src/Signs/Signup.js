@@ -117,7 +117,7 @@ class Signup extends React.Component {
                 this.setState({ helpMsg: data.msg });
                 this.setState({ helpMsgStyle: Styles.red });
             } else {
-                console.log(hi);
+                console.log('hi');
                 let array = [
                     null,
                     this.state.email,
