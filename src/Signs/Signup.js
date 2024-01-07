@@ -70,7 +70,7 @@ class Signup extends React.Component {
             this.setState({ helpMsg: '' });
             return;
         } else {
-            if (this.emailAuthNum !== '' && this.state.emailAuthNum == this.state.emailAuthWrite) {
+            if (this.state.emailAuthNum !== '' && this.state.emailAuthNum == this.state.emailAuthWrite) {
                 //session, email, password, nickname, variables(3)...
                 let array = [
                     null,
