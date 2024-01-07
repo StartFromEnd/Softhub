@@ -42,7 +42,7 @@ class Signin extends React.Component {
         }
         else{
             //session, email, password, nickname, variables...
-            let array = [this.state.session, this.state.email, this.state.password, null, null, null, null];
+            let array = [this.state.session, this.state.email, this.state.password, null, this.state.check, null, null];
             let data = await common.Fetch('signIn', array);
             if(data.ok){
                 let servedSession = data.result[0];
