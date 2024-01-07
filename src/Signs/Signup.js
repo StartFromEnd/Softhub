@@ -70,7 +70,7 @@ class Signup extends React.Component {
             this.setState({ helpMsg: '' });
             return;
         } else {
-            if ((this.state.emailAuthNum !== '') && (this.state.emailAuthNum == this.state.emailAuthWrite)) {
+            if (this.state.emailAuthNum !== '' && this.state.emailAuthNum == this.state.emailAuthWrite) {
                 //session, email, password, nickname, variables(3)...
                 let array = [
                     null,
@@ -100,8 +100,8 @@ class Signup extends React.Component {
                     this.setState({ helpMsgStyle: Styles.red });
                 }
             } else if (
-                (this.state.emailAuthNum !== '') &&
-                (this.state.emailAuthNum !== this.state.emailAuthWrite)
+                this.state.emailAuthNum !== '' &&
+                this.state.emailAuthNum !== this.state.emailAuthWrite
             ) {
                 let array = [
                     null,
@@ -122,16 +122,15 @@ class Signup extends React.Component {
                     this.state.email,
                     this.state.password,
                     this.state.nickname,
-                    'null',
+                    null,
                     null,
                     null,
                 ];
                 let data = await common.Fetch('signUp', array);
                 if (data.ok) {
-                    let num = `${data.result[0]}`;
                     this.setState({ helpMsg: data.msg });
                     this.setState({ helpMsgStyle: Styles.green });
-                    this.setState({ emailAuthNum: num });
+                    this.setState({ emailAuthNum: `${data.result[0]}` });
                 }
                 else {
                     this.setState({ helpMsg: data.msg });
