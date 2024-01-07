@@ -128,9 +128,10 @@ class Signup extends React.Component {
                 ];
                 let data = await common.Fetch('signUp', array);
                 if (data.ok) {
+                    let num = `${data.result[0]}`;
                     this.setState({ helpMsg: data.msg });
                     this.setState({ helpMsgStyle: Styles.green });
-                    this.setState({ emailAuthNum: data.result[0] });
+                    this.setState({ emailAuthNum: num });
                 }
                 else {
                     this.setState({ helpMsg: data.msg });
