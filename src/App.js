@@ -6,9 +6,12 @@ import './App.css';
 import * as common from './CommonFunctions.js';
 import Nav from './Nav.js';
 import Home from './Homes/Home.js';
+
 import Signin from './Signs/Signin.js';
 import Signup from './Signs/Signup.js';
 import Signout from './Signs/Signout.js';
+
+import Profil from './Profils/Profil.js';
 
 class App extends React.Component {
     constructor(props) {
@@ -29,6 +32,7 @@ class App extends React.Component {
                         <Route path='/signIn' element={<Signin />}></Route>
                         <Route path='/signUp' element={<Signup />}></Route>
                         <Route path='/signOut' element={<Signout />}></Route>
+                        <Route path='/profil' element={<Profil />}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>
