@@ -13,16 +13,30 @@ class Signout extends React.Component {
         }
     }
     
-    componentDidMount(){
+    async componentDidMount(){
         if(cookie.load('sessionID') == undefined){
             alert('로그인하지 않은 상태입니다.');
             window.location.replace('/');
             return;
         }
+        
+        //SignOut
+        //session, email, password, nickname, variables(3)...
+        let array = [cookie.load('sessionID'), null, null, null, null, null, null];
+        let data = await common.Fetch('signOut', array);
+        if(data.ok){
+            cookie.remove('sessionID', {path: '/'});
+            alert(data.msg);
+            window.location.replace('/');
+        }
+        else {
+            alert(data.msg);
+            window.location.replace('/');
+        }
     }
     
     render(){
-        return(<div>hi</div>);
+        return(<div>SignOut</div>);
     }
 }
 

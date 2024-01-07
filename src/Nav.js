@@ -23,7 +23,7 @@ class Nav extends React.Component {
             return;
         }
 
-        //session, email, password, nickname, variables...
+        //session, email, password, nickname, variables(3)...
         let array = [cookie.load('sessionID'), null, null, this.state.nickname, null, null, null];
         let data = await common.Fetch('sessionCheck', array);
         if (data.ok) {
