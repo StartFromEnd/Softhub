@@ -65,7 +65,7 @@ hr {
 }
 @media (max-width: 600px) {
     html {
-        font-size: 16px;
+        font-size: 16px !important;
     }
     .sign-form-wrap {
         width: 80%;
