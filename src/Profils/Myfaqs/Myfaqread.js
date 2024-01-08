@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Routes, Route, NavLink, Outlet, useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom';
 import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
@@ -16,9 +16,8 @@ class Myfaqread extends React.Component {
     
     LoadFaq = async() => {
         let params = new URLSearchParams(window.location.search);
-        console.log(params.get('seq'));
         //session, email, password, nickname, variables(3)...
-        let array = [cookie.load('sessionID'), null, null, null, 'private', useParams().seq, null];
+        let array = [cookie.load('sessionID'), null, null, null, 'private', params.get('seq'), null];
         let data = await common.Fetch('faqRead', array);
         
         if(data.ok){
