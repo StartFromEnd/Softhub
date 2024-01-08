@@ -61,7 +61,7 @@ class Myfaqlist extends React.Component {
                     <tbody>
                         {this.state.faqList.length <= 0 ?
                             <p>작성한 문의사항이 없습니다.</p> : 
-                        this.state.faqList.map((item, index) => {<Renderfaq key={index} seq={item.seq} process={item.faq_process} title={item.faq_title} created_at={item.faq_created_at}/>})
+                        this.state.faqList.map((item, index) => (<Renderfaq key={index} seq={item.seq} process={item.faq_process} title={item.faq_title} created_at={item.faq_created_at}/>))
                         }
                     </tbody>
                 </table>
