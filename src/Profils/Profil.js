@@ -70,7 +70,7 @@ class Profil extends React.Component {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/profil/myFaq" className="nav-link">
+                            <NavLink to="/profil/myFaq/myFaqList" className="nav-link">
                                 개인 문의하기
                             </NavLink>
                         </li>
