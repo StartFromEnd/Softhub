@@ -36,8 +36,8 @@ class Myfaqlist extends React.Component {
         }
     };
     
-    ShowFaqList = () => {
-        let arr = this.state.faqList;
+    ShowFaqList = async () => {
+        let arr = await this.state.faqList;
         console.log(this.state.faqList);
         console.log(arr);
         if(arr.length <= 0){
