@@ -43,7 +43,7 @@ hr {
     font-weight: bold;
 }
 .black {
-    color: black;
+    color: black !important;
 }
 .half {
     font-size: 0.5rem;
@@ -56,6 +56,12 @@ hr {
 }
 .three {
     font-size: 3rem;
+}
+.mt-3rem {
+    margin-top: 3rem;
+}
+.mb-3rem {
+    margin-bottom: 3rem;
 }
 @media (min-width: 600px) {
     .container-fluid.responsive {

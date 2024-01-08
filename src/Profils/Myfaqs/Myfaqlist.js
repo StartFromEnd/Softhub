@@ -74,7 +74,7 @@ class Myfaqlist extends React.Component {
                         )}
                     </tbody>
                 </table>
-                <div className="d-flex justify-content-center mt-3 mb-3">
+                <div className="d-flex justify-content-center mt-3rem">
                     <button
                         type="button"
                         className="btn btn-light"
@@ -152,7 +152,7 @@ class Myfaqlist extends React.Component {
                         &gt;
                     </button>
                 </div>
-                <div className="d-flex justify-content-center mt-3 mb-3">
+                <div className="d-flex justify-content-center mt-3rem mb-3rem">
                     <NavLink to="/profil/myFaq/myFaqWrite" className="btn btn-primary">
                         글쓰기
                     </NavLink>
