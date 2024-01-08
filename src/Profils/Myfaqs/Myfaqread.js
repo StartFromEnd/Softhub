@@ -49,11 +49,11 @@ class Myfaqread extends React.Component {
                     <p className='one'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_main}</p>
                     <br></br>
                     <br></br>
-                    <p className='half bold'>게시일</p>
-                    <p className='half'>{this.state.faq.length <= 0 ? '로딩중' : common.UTCChangeLocal(this.state.faq[0].faq_created_at)}</p>
+                    <p className='one bold'>게시일</p>
+                    <p className='one'>{this.state.faq.length <= 0 ? '로딩중' : common.UTCChangeLocal(this.state.faq[0].faq_created_at)}</p>
                     <br></br>
-                    <p className='half bold'>처리상태</p>
-                    <p className='half'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_process}</p>
+                    <p className='one bold'>처리상태</p>
+                    <p className='one'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_process}</p>
                 </section>
                 <hr></hr>
                 <section className='container mt-3rem mb-3rem'>
@@ -63,8 +63,8 @@ class Myfaqread extends React.Component {
                     <p className='one'>{this.state.answer.length <= 0 ? '로딩중' : this.state.answer[0].answer_main}</p>
                     <br></br>
                     <br></br>
-                    <p className='half bold'>답변일자</p>
-                    <p className='half'>{this.state.answer.length <= 0 ? '로딩중' : common.UTCChangeLocal(this.state.answer[0].answer_updated_at)}</p>
+                    <p className='one bold'>답변일자</p>
+                    <p className='one'>{this.state.faq[0].faq_process !== '답변완료' ? '요청을 처리중입니다..' : common.UTCChangeLocal(this.state.answer[0].answer_updated_at)}</p>
                 </section>
             </div>
         )
