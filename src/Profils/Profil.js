@@ -57,7 +57,7 @@ class Profil extends React.Component {
                         </p>
                     </section>
                 </section>
-                <section className="profil-routes container mt-3rem">
+                <section className="profil-routes container mt-3rem mb-3rem">
                     <ul className="nav justify-content-center">
                         <li className="nav-item">
                             <NavLink to="/profil/mySupport" className="nav-link">

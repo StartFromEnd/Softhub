@@ -58,14 +58,19 @@ class Myfaqread extends React.Component {
                 <hr></hr>
                 <section className='container mt-3rem mb-3rem'>
                     <p className='one bold'>답변제목</p>
-                    <p className='one'>{this.state.answer.length <= 0 ? '로딩중' : this.state.answer[0].answer_title}</p>
+                    <p className='one'>{this.state.faq.length <= 0 || this.state.faq[0].faq_process !== '답변완료' ? '요청을 처리중입니다..' : this.state.answer[0].answer_title}</p>
                     <p className='one bold'>답변본문</p>
-                    <p className='one'>{this.state.answer.length <= 0 ? '로딩중' : this.state.answer[0].answer_main}</p>
+                    <p className='one'>{this.state.faq.length <= 0 || this.state.faq[0].faq_process !== '답변완료' ? '요청을 처리중입니다..' : this.state.answer[0].answer_main}</p>
                     <br></br>
                     <br></br>
                     <p className='one bold'>답변일자</p>
                     <p className='one'>{this.state.faq.length <= 0 || this.state.faq[0].faq_process !== '답변완료' ? '요청을 처리중입니다..' : common.UTCChangeLocal(this.state.answer[0].answer_updated_at)}</p>
                 </section>
+                <div className="d-flex justify-content-center mt-3rem mb-3rem">
+                    <NavLink to="/profil/myFaq/myFaqList" className="btn btn-dark">
+                        뒤로가기
+                    </NavLink>
+                </div>
             </div>
         )
     }
