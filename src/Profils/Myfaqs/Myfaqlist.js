@@ -66,7 +66,7 @@ class Myfaqlist extends React.Component {
                                 <Renderfaq
                                     key={index}
                                     index={index+1+(this.state.nowPage-1)*10}
-                                    link={`/profil/myFaq/myFaqRead/${item.seq}`}
+                                    link={`/profil/myFaq/myFaqRead/?seq=${item.seq}`}
                                     process={item.faq_process}
                                     title={item.faq_title}
                                     created_at={item.faq_created_at}
