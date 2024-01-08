@@ -37,8 +37,9 @@ class Myfaqlist extends React.Component {
     };
     
     ShowFaqList = () => {
+        let arr = this.state.faqList;
         console.log(this.state.faqList);
-        let arr = [...this.state.faqList];
+        console.log(arr);
         if(arr.length <= 0){
             return (<p>아직 작성한 문의사항이 없습니다.</p>);
         }
