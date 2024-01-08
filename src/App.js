@@ -15,6 +15,7 @@ import Profil from './Profils/Profil.js';
 
 import Myfaq from './Profils/Myfaqs/Myfaq.js';
 import Myfaqlist from './Profils/Myfaqs/Myfaqlist.js';
+import Myfaqread from './Profils/Myfaqs/Myfaqread.js';
 import Myfaqwrite from './Profils/Myfaqs/Myfaqwrite.js';
 
 import Myorder from './Profils/Myorders/Myorder.js';
@@ -44,6 +45,7 @@ class App extends React.Component {
                             <Route path='/profil/myOrder' element={<Myorder />}></Route>
                             <Route path='/profil/myFaq' element={<Myfaq />}>
                                 <Route path='/profil/myFaq/myFaqList' element={<Myfaqlist />}></Route>
+                                <Route path='/profil/myFaq/myFaqRead' element={<Myfaqread />}></Route>
                                 <Route path='/profil/myFaq/myFaqWrite' element={<Myfaqwrite />}></Route>
                             </Route>
                         </Route>
