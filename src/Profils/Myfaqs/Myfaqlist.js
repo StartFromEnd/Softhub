@@ -65,6 +65,7 @@ class Myfaqlist extends React.Component {
                             this.state.faqList.map((item, index) => (
                                 <Renderfaq
                                     key={index}
+                                    index={index}
                                     seq={item.seq}
                                     process={item.faq_process}
                                     title={item.faq_title}
