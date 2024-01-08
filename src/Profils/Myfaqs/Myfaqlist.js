@@ -37,7 +37,7 @@ class Myfaqlist extends React.Component {
         }
     };
 
-    async componentDidMount() {
+    componentDidMount() {
         if (cookie.load('sessionID') == undefined) {
             window.location.replace('/signIn');
             return;
@@ -65,8 +65,8 @@ class Myfaqlist extends React.Component {
                             this.state.faqList.map((item, index) => (
                                 <Renderfaq
                                     key={index}
-                                    index={index+1}
-                                    seq={item.seq}
+                                    index={index+1+(this.state.nowPage-1)*10}
+                                    link={`/profil/myFaq/myFaqRead/${item.seq}`}
                                     process={item.faq_process}
                                     title={item.faq_title}
                                     created_at={item.faq_created_at}

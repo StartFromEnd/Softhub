@@ -4,12 +4,12 @@ import cookie from 'react-cookies';
 import './App.css';
 import * as common from './CommonFunctions.js';
 
-function Renderfaq({index, seq, process, title, created_at}) {
+function Renderfaq({index, link, process, title, created_at}) {
     return(
         <tr>
             <th scope='row'>{index}</th>
             <td>{process}</td>
-            <td><NavLink to={`/profil/myFaq/myFaqRead/?seq=${seq}`}>{title}</NavLink></td>
+            <td><NavLink to={link}>{title}</NavLink></td>
             <td>{common.UTCChangeLocal(created_at)}</td>
         </tr>
     )
