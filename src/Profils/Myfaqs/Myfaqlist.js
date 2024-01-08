@@ -31,43 +31,35 @@ class Myfaqlist extends React.Component {
         if (data.ok) {
             this.setState({ faqNum: data.result[0] });
             this.setState({ faqList: data.result[1] });
+            if (data.result[1].length <= 0) {
+                return <p>아직 작성한 문의사항이 없습니다.</p>;
+            } else {
+                return data.result[1].map((item) => {
+                    return (
+                        <div class="d-flex justify-content-between">
+                            <p>{item.faq_process}</p>
+                            <p>{item.faq_title}</p>
+                            <p>{item.faq_created_at}</p>
+                        </div>
+                    );
+                });
+            }
         } else {
             alert(data.msg);
         }
     };
-    
-    ShowFaqList = () => {
-        if(this.state.faqList == null){
-            return (<p>아직 작성한 문의사항이 없습니다.</p>);
-        }
-        else {
-            return(this.state.faqList.map((item) => {
-                return(
-                    <div class="d-flex justify-content-between">
-                        <p>{item.faq_process}</p>
-                        <p>{item.faq_title}</p>
-                        <p>{item.faq_created_at}</p>
-                    </div>
-                );
-            }));
-        }
-    }
-    
+
     async componentDidMount() {
         if (cookie.load('sessionID') == undefined) {
             window.location.replace('/signIn');
             return;
         }
-
-        this.LoadFaqList();
     }
 
     render() {
         return (
             <div>
-                <div className="d-flex flex-column mb-3">
-                    {this.ShowFaqList()}
-                </div>
+                <div className="d-flex flex-column mb-3">{this.LoadFaqList()}</div>
             </div>
         );
     }
