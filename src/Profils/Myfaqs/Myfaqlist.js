@@ -74,11 +74,22 @@ class Myfaqlist extends React.Component {
                         )}
                     </tbody>
                 </table>
-                <div className="d-flex justify-content-center">
-                    <button type="button" className="btn btn-light">
+                <div className="d-flex justify-content-center mt-3 mb-3">
+                    <button
+                        type="button"
+                        className="btn btn-light"
+                        onClick={() =>
+                            this.state.standardPage <= 1
+                                ? null
+                                : this.setState({standardPage: this.state.standardPage-5, nowPage: this.state.standardPage - 5})
+                        }>
                         &lt;
                     </button>
-                    <button type="button" className="btn btn-light" onClick={() => this.setState({nowPage: this.state.standardPage})}>
+                    <button
+                        type="button"
+                        className="btn btn-light"
+                        onClick={() => this.setState({ nowPage: this.state.standardPage })}
+                    >
                         {this.state.standardPage}
                     </button>
                     <button
@@ -89,7 +100,7 @@ class Myfaqlist extends React.Component {
                                 ? Styles.inlineBlock
                                 : Styles.none
                         }
-                        onClick={() => this.setState({nowPage: this.state.standardPage + 1})}
+                        onClick={() => this.setState({ nowPage: this.state.standardPage + 1 })}
                     >
                         {this.state.standardPage + 1}
                     </button>
@@ -101,7 +112,7 @@ class Myfaqlist extends React.Component {
                                 ? Styles.inlineBlock
                                 : Styles.none
                         }
-                        onClick={() => this.setState({nowPage: this.state.standardPage + 2})}
+                        onClick={() => this.setState({ nowPage: this.state.standardPage + 2 })}
                     >
                         {this.state.standardPage + 2}
                     </button>
@@ -113,7 +124,7 @@ class Myfaqlist extends React.Component {
                                 ? Styles.inlineBlock
                                 : Styles.none
                         }
-                        onClick={() => this.setState({nowPage: this.state.standardPage + 3})}
+                        onClick={() => this.setState({ nowPage: this.state.standardPage + 3 })}
                     >
                         {this.state.standardPage + 3}
                     </button>
@@ -125,16 +136,26 @@ class Myfaqlist extends React.Component {
                                 ? Styles.inlineBlock
                                 : Styles.none
                         }
-                        onClick={() => this.setState({nowPage: this.state.standardPage + 4})}
+                        onClick={() => this.setState({ nowPage: this.state.standardPage + 4 })}
                     >
                         {this.state.standardPage + 4}
                     </button>
-                    <button type="button" className="btn btn-light">
+                    <button
+                        type="button"
+                        className="btn btn-light"
+                        onClick={() =>
+                            this.state.faqNum > (this.state.standardPage + 4) * 10
+                                ? this.setState({ standardPage: this.state.standardPage + 5, nowPage: this.state.standardPage + 5 })
+                                : null
+                        }
+                    >
                         &gt;
                     </button>
                 </div>
-                <div className="d-flex justify-content-center">
-                    <NavLink to='/profil/myFaq/myFaqWrite' className='btn btn-primary'>글쓰기</NavLink>
+                <div className="d-flex justify-content-center mt-3 mb-3">
+                    <NavLink to="/profil/myFaq/myFaqWrite" className="btn btn-primary">
+                        글쓰기
+                    </NavLink>
                 </div>
             </div>
         );
