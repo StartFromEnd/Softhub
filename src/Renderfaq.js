@@ -9,7 +9,7 @@ function Renderfaq({key, seq, process, title, created_at}) {
         <tr>
             <th scope='row'>{key}</th>
             <td>{process}</td>
-            <td><NavLink to=`/profil/myFaq/myFaqRead/?seq=${seq}`>{title}</NavLink></td>
+            <td><NavLink to={`/profil/myFaq/myFaqRead/?seq=${seq}`}>{title}</NavLink></td>
             <td>{common.UTCChangeLocal(created_at)}</td>
         </tr>
     )
