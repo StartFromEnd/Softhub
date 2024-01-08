@@ -36,7 +36,7 @@ class Myfaqlist extends React.Component {
         }
     };
     
-    ShowFaqList = async () => {
+    ShowFaqList = () => {
         if(this.state.faqList == null){
             return (<p>아직 작성한 문의사항이 없습니다.</p>);
         }
