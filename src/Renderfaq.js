@@ -7,7 +7,7 @@ import * as common from './CommonFunctions.js';
 function Renderfaq({key, seq, process, title, created_at}) {
     return(
         <tr>
-            <th scope='row'>{key}</th>
+            <th className='black' scope='row'>{key}</th>
             <td>{process}</td>
             <td><NavLink to={`/profil/myFaq/myFaqRead/?seq=${seq}`}>{title}</NavLink></td>
             <td>{common.UTCChangeLocal(created_at)}</td>
