@@ -60,7 +60,7 @@ class Myfaqlist extends React.Component {
     render() {
         return (
             <div>
-                <div className="d-flex flex-column mb-3">{this.LoadFaqList()}</div>
+                <div className="d-flex flex-column mb-3">{() => this.LoadFaqList()}</div>
             </div>
         );
     }
