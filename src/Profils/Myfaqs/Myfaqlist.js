@@ -37,11 +37,11 @@ class Myfaqlist extends React.Component {
     };
     
     ShowFaqList = () => {
-        if(this.state.faqList.length <= 0){
+        let arr = this.state.faqList;
+        if(arr.length <= 0){
             return (<p>아직 작성한 문의사항이 없습니다.</p>);
         }
         else {
-            let arr = this.state.faqList;
             return(arr.map((item) => {
                 return(
                     <div class="d-flex justify-content-between">
