@@ -60,6 +60,9 @@ hr {
 .mb-3rem {
     margin-bottom: 3rem;
 }
+.bg-white {
+    background-color: white;
+}
 @media (min-width: 600px) {
     .container-fluid.responsive {
         padding-right: 3rem;
@@ -71,7 +74,7 @@ hr {
 }
 @media (max-width: 600px) {
     html {
-        font-size: 16px !important;
+        font-size: 10px !important;
     }
     .sign-form-wrap {
         width: 80%;

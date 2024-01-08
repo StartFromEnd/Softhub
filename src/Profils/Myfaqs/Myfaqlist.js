@@ -65,7 +65,7 @@ class Myfaqlist extends React.Component {
                             this.state.faqList.map((item, index) => (
                                 <Renderfaq
                                     key={index}
-                                    index={index}
+                                    index={index+1}
                                     seq={item.seq}
                                     process={item.faq_process}
                                     title={item.faq_title}
@@ -78,7 +78,7 @@ class Myfaqlist extends React.Component {
                 <div className="d-flex justify-content-center mt-3rem">
                     <button
                         type="button"
-                        className="btn btn-light"
+                        className="btn btn-light bg-white"
                         onClick={() =>
                             this.state.standardPage <= 1
                                 ? null
@@ -88,14 +88,14 @@ class Myfaqlist extends React.Component {
                     </button>
                     <button
                         type="button"
-                        className="btn btn-light"
+                        className="btn btn-light bg-white"
                         onClick={() => this.setState({ nowPage: this.state.standardPage })}
                     >
                         {this.state.standardPage}
                     </button>
                     <button
                         type="button"
-                        className="btn btn-light"
+                        className="btn btn-light bg-white"
                         style={
                             this.state.faqNum > this.state.standardPage * 10
                                 ? Styles.inlineBlock
@@ -107,7 +107,7 @@ class Myfaqlist extends React.Component {
                     </button>
                     <button
                         type="button"
-                        className="btn btn-light"
+                        className="btn btn-light bg-white"
                         style={
                             this.state.faqNum > this.state.standardPage * 20
                                 ? Styles.inlineBlock
@@ -119,7 +119,7 @@ class Myfaqlist extends React.Component {
                     </button>
                     <button
                         type="button"
-                        className="btn btn-light"
+                        className="btn btn-light bg-white"
                         style={
                             this.state.faqNum > this.state.standardPage * 30
                                 ? Styles.inlineBlock
@@ -131,7 +131,7 @@ class Myfaqlist extends React.Component {
                     </button>
                     <button
                         type="button"
-                        className="btn btn-light"
+                        className="btn btn-light bg-white"
                         style={
                             this.state.faqNum > this.state.standardPage * 40
                                 ? Styles.inlineBlock
@@ -143,7 +143,7 @@ class Myfaqlist extends React.Component {
                     </button>
                     <button
                         type="button"
-                        className="btn btn-light"
+                        className="btn btn-light bg-white"
                         onClick={() =>
                             this.state.faqNum > (this.state.standardPage + 4) * 10
                                 ? this.setState({ standardPage: this.state.standardPage + 5, nowPage: this.state.standardPage + 5 })
