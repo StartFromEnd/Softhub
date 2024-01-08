@@ -17,7 +17,7 @@ class Myfaqread extends React.Component {
     LoadFaq = async() => {
         let params = new URLSearchParams(window.location.search);
         //session, email, password, nickname, variables(3)...
-        let array = [cookie.load('sessionID'), null, null, null, 'private', 1, null];
+        let array = [cookie.load('sessionID'), null, null, null, 'private', params.get('seq'), null];
         let data = await common.Fetch('faqRead', array);
         
         if(data.ok){
