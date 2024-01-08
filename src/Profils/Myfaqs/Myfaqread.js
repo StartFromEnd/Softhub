@@ -64,7 +64,7 @@ class Myfaqread extends React.Component {
                     <br></br>
                     <br></br>
                     <p className='one bold'>답변일자</p>
-                    <p className='one'>{this.state.faq[0].faq_process !== '답변완료' ? '요청을 처리중입니다..' : common.UTCChangeLocal(this.state.answer[0].answer_updated_at)}</p>
+                    <p className='one'>{this.state.faq.length <= 0 || this.state.faq[0].faq_process !== '답변완료' ? '요청을 처리중입니다..' : common.UTCChangeLocal(this.state.answer[0].answer_updated_at)}</p>
                 </section>
             </div>
         )
