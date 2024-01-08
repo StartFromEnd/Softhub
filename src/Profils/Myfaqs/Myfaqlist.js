@@ -36,6 +36,7 @@ class Myfaqlist extends React.Component {
                 return <p>아직 작성한 문의사항이 없습니다.</p>;
             } else {
                 return data.result[1].map((item) => {
+                    console.log(item.faq_process);
                     return (
                         <div class="d-flex justify-content-between">
                             <p>{item.faq_process}</p>
