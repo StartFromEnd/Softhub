@@ -9,7 +9,7 @@ class Myfaqlist extends React.Component {
         super(props);
         this.state = {
             faqNum: 0,
-            faqList: null,
+            faqList: [],
             nowPage: 1,
             standardPage: 1,
         };
@@ -31,6 +31,7 @@ class Myfaqlist extends React.Component {
         if (data.ok) {
             this.setState({ faqNum: data.result[0] });
             this.setState({ faqList: data.result[1] });
+            console.log(data.result[1]);
             if (data.result[1].length <= 0) {
                 return <p>아직 작성한 문의사항이 없습니다.</p>;
             } else {
