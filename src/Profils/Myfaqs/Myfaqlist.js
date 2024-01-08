@@ -35,7 +35,7 @@ class Myfaqlist extends React.Component {
             if (data.result[1].length <= 0) {
                 return <p>아직 작성한 문의사항이 없습니다.</p>;
             } else {
-                return data.result[1].map((item) => {
+                return (data.result[1].map((item) => {
                     console.log(item.faq_process);
                     return (
                         <div class="d-flex justify-content-between">
@@ -44,7 +44,7 @@ class Myfaqlist extends React.Component {
                             <p>{item.faq_created_at}</p>
                         </div>
                     );
-                });
+                }));
             }
         } else {
             alert(data.msg);
