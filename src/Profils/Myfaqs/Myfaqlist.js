@@ -9,7 +9,7 @@ class Myfaqlist extends React.Component {
         super(props);
         this.state = {
             faqNum: 0,
-            faqList: [],
+            faqList: null,
             nowPage: 1,
             standardPage: 1,
         };
@@ -37,14 +37,11 @@ class Myfaqlist extends React.Component {
     };
     
     ShowFaqList = async () => {
-        let arr = await this.state.faqList;
-        console.log(this.state.faqList);
-        console.log(arr);
-        if(arr.length <= 0){
+        if(this.state.faqList == null){
             return (<p>아직 작성한 문의사항이 없습니다.</p>);
         }
         else {
-            return(arr.map((item) => {
+            return(this.state.faqList.map((item) => {
                 return(
                     <div class="d-flex justify-content-between">
                         <p>{item.faq_process}</p>
