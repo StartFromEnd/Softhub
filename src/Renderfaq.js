@@ -4,7 +4,7 @@ import cookie from 'react-cookies';
 import './App.css';
 import * as common from './CommonFunctions.js';
 
-function Renderfaq({seq, process, title, created_at}) {
+function Renderfaq({key, seq, process, title, created_at}) {
     return(
         <tr>
             <th scope='col'>{key}</th>
@@ -15,4 +15,4 @@ function Renderfaq({seq, process, title, created_at}) {
     )
 }
 
-export default Renderfaqer;
+export default Renderfaq;
