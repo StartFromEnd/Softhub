@@ -75,6 +75,8 @@ class Profil extends React.Component {
                             </NavLink>
                         </li>
                     </ul>
+                </section>
+                <section className='container'>
                     <Outlet />
                 </section>
             </div>
