@@ -36,7 +36,32 @@ class Myfaqlist extends React.Component {
             alert(data.msg);
         }
     };
-
+    
+    ButtonClick = async (param) => {
+        await this.setState({nowPage: this.state.standardPage + param});
+        this.LoadFaqList();
+    }
+    
+    LeftMoveButtonClick = async () => {
+        if(this.state.standardPage >= 6){
+            await this.setState({standardPage: this.state.standardPage-5, nowPage: this.state.standardPage - 5});
+            this.LoadFaqList();
+        }
+        else{
+            return;
+        }
+    }
+    
+    RightMoveButtonClick = async () => {
+        if(this.state.faqNum > (this.state.standardPage + 4) * 10){
+            await this.setState({standardPage: this.state.standardPage + 5, nowPage: this.state.standardPage + 5});
+            this.LoadFaqList();
+        }
+        else{
+            return;
+        }
+    }
+    
     componentDidMount() {
         if (cookie.load('sessionID') == undefined) {
             window.location.replace('/signIn');
@@ -60,7 +85,7 @@ class Myfaqlist extends React.Component {
                     </thead>
                     <tbody>
                         {this.state.faqList.length <= 0 ? (
-                            <p>작성한 문의사항이 없습니다.</p>
+                            <span>작성한 문의사항이 없습니다.</span>
                         ) : (
                             this.state.faqList.map((item, index) => (
                                 <Renderfaq
@@ -79,17 +104,13 @@ class Myfaqlist extends React.Component {
                     <button
                         type="button"
                         className="btn btn-light bg-white"
-                        onClick={() =>
-                            this.state.standardPage <= 1
-                                ? null
-                                : this.setState({standardPage: this.state.standardPage-5, nowPage: this.state.standardPage - 5})
-                        }>
+                        onClick={() => this.LeftMoveButtonClick()}>
                         &lt;
                     </button>
                     <button
                         type="button"
                         className="btn btn-light bg-white"
-                        onClick={() => this.setState({ nowPage: this.state.standardPage })}
+                        onClick={() => this.ButtonClick(0)}
                     >
                         {this.state.standardPage}
                     </button>
@@ -101,7 +122,7 @@ class Myfaqlist extends React.Component {
                                 ? Styles.inlineBlock
                                 : Styles.none
                         }
-                        onClick={() => this.setState({ nowPage: this.state.standardPage + 1 })}
+                        onClick={() => this.ButtonClick(1)}
                     >
                         {this.state.standardPage + 1}
                     </button>
@@ -113,7 +134,7 @@ class Myfaqlist extends React.Component {
                                 ? Styles.inlineBlock
                                 : Styles.none
                         }
-                        onClick={() => this.setState({ nowPage: this.state.standardPage + 2 })}
+                        onClick={() => this.ButtonClick(2)}
                     >
                         {this.state.standardPage + 2}
                     </button>
@@ -125,7 +146,7 @@ class Myfaqlist extends React.Component {
                                 ? Styles.inlineBlock
                                 : Styles.none
                         }
-                        onClick={() => this.setState({ nowPage: this.state.standardPage + 3 })}
+                        onClick={() => this.ButtonClick(3)}
                     >
                         {this.state.standardPage + 3}
                     </button>
@@ -137,18 +158,14 @@ class Myfaqlist extends React.Component {
                                 ? Styles.inlineBlock
                                 : Styles.none
                         }
-                        onClick={() => this.setState({ nowPage: this.state.standardPage + 4 })}
+                        onClick={() => this.ButtonClick(4)}
                     >
                         {this.state.standardPage + 4}
                     </button>
                     <button
                         type="button"
                         className="btn btn-light bg-white"
-                        onClick={() =>
-                            this.state.faqNum > (this.state.standardPage + 4) * 10
-                                ? this.setState({ standardPage: this.state.standardPage + 5, nowPage: this.state.standardPage + 5 })
-                                : null
-                        }
+                        onClick={() => this.RightMoveButtonClick()}
                     >
                         &gt;
                     </button>
