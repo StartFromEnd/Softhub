@@ -29,7 +29,7 @@ class Faqwrite extends React.Component {
         
         if(data.ok){
             alert(data.msg);
-            window.location.replace('/profil/myFaq/myFaqList');
+            window.location.replace('/faq/faqList');
         }
         else{
             alert(data.msg);
@@ -66,7 +66,7 @@ class Faqwrite extends React.Component {
                     ></textarea>
                 </div>
                 <div className="d-flex justify-content-center mt-3rem mb-3rem">
-                    <NavLink to="/profil/myFaq/myFaqList" className="btn btn-dark">
+                    <NavLink to="/faq/faqList" className="btn btn-dark">
                         뒤로가기
                     </NavLink>
                     <button type="button" class="btn btn-success" onClick={() => this.FaqWrite()}>완료</button>

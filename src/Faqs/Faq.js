@@ -9,7 +9,7 @@ class Faq extends React.Component {
     render() {
         return(
             <div>
-                <section className='faq-form container'>
+                <section className='faq-form container mt-3rem'>
                     <Outlet />
                 </section>
                 <section className='faq-form-wrap mt-3rem mb-3rem container'>

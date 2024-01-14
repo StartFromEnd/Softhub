@@ -70,7 +70,7 @@ class Faqlist extends React.Component {
         return (
             <div>
                 <table className="table">
-                    <thead className="table-dark">
+                    <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">처리상태</th>
@@ -78,7 +78,7 @@ class Faqlist extends React.Component {
                             <th scope="col">게시일</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="table-group-divider">
                         {this.state.faqList.length <= 0 ? (
                             <span>작성한 문의사항이 없습니다.</span>
                         ) : (
@@ -166,7 +166,7 @@ class Faqlist extends React.Component {
                     </button>
                 </div>
                 <div className="d-flex justify-content-center mt-3rem mb-3rem">
-                    <NavLink to="/profil/myFaq/myFaqWrite" className="btn btn-primary">
+                    <NavLink to="/faq/faqWrite" className="btn btn-primary">
                         글쓰기
                     </NavLink>
                 </div>
