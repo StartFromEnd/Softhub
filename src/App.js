@@ -21,6 +21,11 @@ import Myfaqwrite from './Profils/Myfaqs/Myfaqwrite.js';
 import Myorder from './Profils/Myorders/Myorder.js';
 import Mysupport from './Profils/Mysupports/Mysupport.js';
 
+import Faq from './Faqs/Faq.js';
+import Faqlist from './Faqs/Faqlist.js';
+import Faqread from './Faqs/Faqread.js';
+import Faqwrite from './Faqs/Faqwrite.js';
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -48,6 +53,11 @@ class App extends React.Component {
                                 <Route path='/profil/myFaq/myFaqRead' element={<Myfaqread />}></Route>
                                 <Route path='/profil/myFaq/myFaqWrite' element={<Myfaqwrite />}></Route>
                             </Route>
+                        </Route>
+                        <Route path='/faq' element={<Faq />}>
+                            <Route path='/faq/faqList' element={<Faqlist />}></Route>
+                            <Route path='/faq/faqRead' element={<Faqread />}></Route>
+                            <Route path='/faq/faqWrite' element={<Faqwrite />}></Route>
                         </Route>
                     </Routes>
                 </BrowserRouter>

@@ -113,6 +113,6 @@ hr {
     margin: 1rem;
 }
 
-.myfaq-form-wrap {
+.faq-form-wrap, .myfaq-form-wrap {
     text-align: center;
 }
