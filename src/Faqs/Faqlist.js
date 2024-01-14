@@ -86,7 +86,7 @@ class Faqlist extends React.Component {
                                 <Renderfaq
                                     key={index}
                                     index={index+1+(this.state.nowPage-1)*10}
-                                    link={`faq/faqRead/?seq=${item.seq}`}
+                                    link={`/faq/faqRead/?seq=${item.seq}`}
                                     process={item.faq_process}
                                     title={item.faq_title}
                                     created_at={item.faq_created_at}
