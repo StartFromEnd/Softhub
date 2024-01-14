@@ -122,7 +122,7 @@ class Nav extends React.Component {
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/" className="nav-link">
+                                    <NavLink to="/faq/faqList" className="nav-link">
                                         문의하기
                                     </NavLink>
                                 </li>
