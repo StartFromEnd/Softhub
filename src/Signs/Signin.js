@@ -119,6 +119,10 @@ class Signin extends React.Component {
                             확인
                         </button>
                         <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
                         <p className="bold">계정이 없으신가요?</p>
                         <NavLink to='/signUp'>회원가입 하기</NavLink>
                     </form>

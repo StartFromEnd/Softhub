@@ -60,6 +60,9 @@ hr {
 .mb-3rem {
     margin-bottom: 3rem;
 }
+.center {
+    text-align: center;
+}
 .bg-white {
     background-color: white;
 }
@@ -109,11 +112,6 @@ hr {
 
 .profil-form-wrap-margin {
     margin: 1rem;
-}
-
-.faq-form {
-    text-align: center;
-    line-height: 3rem;
 }
 
 .faq-form-wrap, .myfaq-form-wrap {

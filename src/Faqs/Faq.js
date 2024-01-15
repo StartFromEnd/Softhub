@@ -9,7 +9,7 @@ class Faq extends React.Component {
     render() {
         return(
             <div>
-                <section className='container mt-3rem three'>
+                <section className='container mt-3rem three center'>
                     문의하기
                 </section>
                 <section className='faq-form container mt-3rem'>
