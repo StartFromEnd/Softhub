@@ -236,8 +236,10 @@ class Signup extends React.Component {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <p className="bold center">계정이 이미 있으신가요?</p>
-                        <NavLink to="/signIn" className='center'>로그인 하기</NavLink>
+                        <section className='container center'>
+                            <p className="bold center">계정이 이미 있으신가요?</p>
+                            <NavLink to="/signIn" className='center'>로그인 하기</NavLink>
+                        </section>
                     </form>
                 </section>
             </div>
