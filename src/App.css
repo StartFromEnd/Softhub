@@ -111,6 +111,12 @@ hr {
     margin: 1rem;
 }
 
+.faq-form {
+    text-align: center;
+    line-height: 3rem;
+}
+
 .faq-form-wrap, .myfaq-form-wrap {
     text-align: center;
 }
+
