@@ -98,7 +98,7 @@ class Faqlist extends React.Component {
                 <div className="d-flex justify-content-center mt-3rem">
                     <button
                         type="button"
-                        className="btn btn-light bg-white"
+                        className="btn btn-light bg-white btn-left"
                         onClick={() => this.LeftMoveButtonClick()}>
                         &lt;
                     </button>
@@ -159,7 +159,7 @@ class Faqlist extends React.Component {
                     </button>
                     <button
                         type="button"
-                        className="btn btn-light bg-white"
+                        className="btn btn-light bg-white btn-right"
                         onClick={() => this.RightMoveButtonClick()}
                     >
                         &gt;

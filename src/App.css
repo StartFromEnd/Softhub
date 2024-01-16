@@ -66,7 +66,7 @@ hr {
 .bg-white {
     background-color: white;
 }
-@media (min-width: 600px) {
+@media (min-width: 800px) {
     .container-fluid.responsive {
         padding-right: 3rem;
         padding-left: 3rem;
@@ -75,7 +75,7 @@ hr {
         width: 50%;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     html {
         font-size: 10px !important;
     }
@@ -118,3 +118,14 @@ hr {
     text-align: center;
 }
 
+.btn.btn-light.bg-white {
+    border-radius: 0rem;
+}
+.btn.btn-light.bg-white.btn-left {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+.btn.btn-light.bg-white.btn-right {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
