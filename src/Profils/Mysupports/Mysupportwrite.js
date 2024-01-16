@@ -75,7 +75,7 @@ class Mysupportwrite extends React.Component {
                     ></input>
                 </div>
                 <CKEditor
-                    editor={ ClassicEditor }
+                    editors={ ClassicEditor }
                     data="<p>Hello from CKEditor 5!</p>"
                     onReady={ editor => {
                         // You can store the "editor" and use when it is needed.
