@@ -90,7 +90,7 @@ class Mysupportwrite extends React.Component {
                         console.log( 'Editor is ready to use!', editor )
                     }
                     onChange = {(event, editor) =>
-                        this.SaveData(editor.getData());
+                        this.SaveData(editor.getData())
                     }
                     onBlur={ ( event, editor ) =>
                         console.log( 'Blur.', editor )
