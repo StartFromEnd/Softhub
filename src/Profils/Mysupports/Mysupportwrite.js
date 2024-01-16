@@ -76,7 +76,7 @@ class Mysupportwrite extends Component {
                 </div>
                 <CKEditor
                     editor={ ClassicEditor }
-                    data="<p>Hello from CKEditor 5!</p>"
+                    data="<p>Hello from CKEditor 5</p>"
                     onInit={ editor => {
                         // You can store the "editor" and use when it is needed.
                         console.log( 'Editor is ready to use!', editor );
