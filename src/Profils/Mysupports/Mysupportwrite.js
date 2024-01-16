@@ -3,9 +3,10 @@ import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
-import { CKEditor } from 'ckeditor4-react';
+import CKEditor from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-class Mysupportwrite extends React.Component {
+class Mysupportwrite extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -73,7 +74,24 @@ class Mysupportwrite extends React.Component {
                         onChange={(event) => this.SaveGoal(event.target.value)}
                     ></input>
                 </div>
-                <CKEditor />
+                <CKEditor
+                    editor={ ClassicEditor }
+                    data="<p>Hello from CKEditor 5!</p>"
+                    onInit={ editor => {
+                        // You can store the "editor" and use when it is needed.
+                        console.log( 'Editor is ready to use!', editor );
+                    } }
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        console.log( { event, editor, data } );
+                    } }
+                    onBlur={ editor => {
+                        console.log( 'Blur.', editor );
+                    } }
+                    onFocus={ editor => {
+                        console.log( 'Focus.', editor );
+                    } }
+                />
             </div>
         )
     }
