@@ -66,6 +66,12 @@ hr {
 .bg-white {
     background-color: white;
 }
+.bg-skyblue {
+    background-color: #36FFFF;
+}
+.border-round {
+    border: 0.05rem solid #DBDBDB;
+}
 @media (min-width: 800px) {
     .container-fluid.responsive {
         padding-right: 3rem;
@@ -128,4 +134,12 @@ hr {
 .btn.btn-light.bg-white.btn-right {
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-items{
+    flex: 1 1 18%;
 }

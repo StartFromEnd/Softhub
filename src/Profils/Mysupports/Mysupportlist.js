@@ -3,28 +3,26 @@ import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
+import Renderflexitems from '../../Renderflexitems.js';
 
-class Mysupport extends React.Component {
+class Mysupportlist extends React.Component {
     
     componentDidMount() {
-        if (cookie.load('sessionID') == undefined) {
-            window.location.replace('/signIn');
-            return;
-        }
+        
     }
     
     render() {
         return(
             <div>
-                <section className='two center mb-3rem container'>
-                    내 후원목록
+                <section className='flex container mb-3rem'>
+                    
                 </section>
-                <section className='mysupport-form container'>
-                    <Outlet />
+                <section className='container center'>
+                    <NavLink to='/profil/mySupport/mySupportWrite' className="btn btn-primary">후원 요청하기</NavLink>
                 </section>
             </div>
         )
     }
 }
 
-export default Mysupport;
+export default Mysupportlist;

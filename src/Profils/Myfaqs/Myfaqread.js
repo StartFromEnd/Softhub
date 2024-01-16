@@ -31,11 +31,6 @@ class Myfaqread extends React.Component {
     }
     
     componentDidMount() {
-        if (cookie.load('sessionID') == undefined) {
-            window.location.replace('/signIn');
-            return;
-        }
-
         this.LoadFaq();
     }
     

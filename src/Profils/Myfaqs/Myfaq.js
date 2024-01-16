@@ -16,6 +16,9 @@ class Myfaq extends React.Component {
     render() {
         return(
             <div>
+                <section className='two center mb-3rem container'>
+                    개인 문의하기
+                </section>
                 <section className='myfaq-form container'>
                     <Outlet />
                 </section>
