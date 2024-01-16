@@ -24,7 +24,6 @@ import Mysupportread from './Profils/Mysupports/Mysupportread.js';
 import Mysupportwrite from './Profils/Mysupports/Mysupportwrite.js';
 
 import Myorder from './Profils/Myorders/Myorder.js';
-import Mysupport from './Profils/Mysupports/Mysupport.js';
 
 import Faq from './Faqs/Faq.js';
 import Faqlist from './Faqs/Faqlist.js';
