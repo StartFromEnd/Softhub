@@ -39,7 +39,7 @@ class Faqwrite extends React.Component {
     render() {
         return (
             <div>
-                <section className='two center mb-3rem'>
+                <section className='one center mb-3rem'>
                     문의 글쓰기
                 </section>
                 <div className="mb-3rem">

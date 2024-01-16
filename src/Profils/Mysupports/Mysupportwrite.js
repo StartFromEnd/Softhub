@@ -37,7 +37,7 @@ class Mysupportwrite extends React.Component {
     render(){
         return(
             <div>
-                <section className='two center mb-3rem'>
+                <section className='one center mb-3rem'>
                     후원 요청 글쓰기
                 </section>
                 <div className="mb-3rem">
@@ -85,9 +85,19 @@ class Mysupportwrite extends React.Component {
                         placeholder: '내용을 입력하세요.',
                     }}
                     data = { this.state.data }
+                    onReady={ editor => {
+                        // You can store the "editor" and use when it is needed.
+                        console.log( 'Editor is ready to use!', editor );
+                    } }
                     onChange = {(event, editor) => {
                         this.SaveData(editor.getData());
                     }}
+                    onBlur={ ( event, editor ) => {
+                        console.log( 'Blur.', editor );
+                    } }
+                    onFocus={ ( event, editor ) => {
+                        console.log( 'Focus.', editor );
+                    } }
                 />
             </div>
         )
