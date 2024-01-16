@@ -43,25 +43,28 @@ class Myfaqwrite extends React.Component {
     render() {
         return (
             <div>
-                <div class="mb-3rem">
-                    <label for="TitleFormControlInput" class="form-label">
+                <section className='two center mb-3rem'>
+                    개인 문의 글쓰기
+                </section>
+                <div className="mb-3rem">
+                    <label for="TitleFormControlInput" className="form-label">
                         제목
                     </label>
                     <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         id="TitleFormControlInput"
                         placeholder="100자 이내로 입력하여 주십시오."
                         value={this.state.title}
                         onChange={(event) => this.SaveTitle(event.target.value)}
                     ></input>
                 </div>
-                <div class="mb-3">
-                    <label for="MainFormControlTextarea" class="form-label">
+                <div className="mb-3">
+                    <label for="MainFormControlTextarea" className="form-label">
                         본문
                     </label>
                     <textarea
-                        class="form-control"
+                        className="form-control"
                         id="MainFormControlTextarea"
                         placeholder='500자 이내로 입력하여 주십시오.'
                         rows="10"
@@ -73,7 +76,7 @@ class Myfaqwrite extends React.Component {
                     <NavLink to="/profil/myFaq/myFaqList" className="btn btn-dark">
                         뒤로가기
                     </NavLink>
-                    <button type="button" class="btn btn-success" onClick={() => this.FaqWrite()}>완료</button>
+                    <button type="button" className="btn btn-success" onClick={() => this.FaqWrite()}>완료</button>
                 </div>
             </div>
         );

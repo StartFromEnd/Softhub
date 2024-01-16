@@ -39,25 +39,28 @@ class Faqwrite extends React.Component {
     render() {
         return (
             <div>
-                <div class="mb-3rem">
+                <section className='two center mb-3rem'>
+                    문의 글쓰기
+                </section>
+                <div className="mb-3rem">
                     <label for="TitleFormControlInput" class="form-label">
                         제목
                     </label>
                     <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         id="TitleFormControlInput"
                         placeholder="100자 이내로 입력하여 주십시오."
                         value={this.state.title}
                         onChange={(event) => this.SaveTitle(event.target.value)}
                     ></input>
                 </div>
-                <div class="mb-3">
+                <div className="mb-3">
                     <label for="MainFormControlTextarea" class="form-label">
                         본문
                     </label>
                     <textarea
-                        class="form-control"
+                        className="form-control"
                         id="MainFormControlTextarea"
                         placeholder='500자 이내로 입력하여 주십시오.'
                         rows="10"

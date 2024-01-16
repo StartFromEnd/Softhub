@@ -17,7 +17,7 @@ class Mysupportlist extends React.Component {
                 <section className='flex container mb-3rem'>
                     
                 </section>
-                <section className='container center'>
+                <section className='container center mb-3rem'>
                     <NavLink to='/profil/mySupport/mySupportWrite' className="btn btn-primary">후원 요청하기</NavLink>
                 </section>
             </div>
