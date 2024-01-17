@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
-import CKEditor from 'ckeditor4-react';
+import CKEditor from 'ckeditor4-react-advanced';
 
 class Mysupportwrite extends React.Component {
     constructor(props) {
@@ -77,28 +77,107 @@ class Mysupportwrite extends React.Component {
                     data={this.state.resource}
                     type="classic"
                     config={{
-                        toolbarGroups: [
-                            { name: 'document', groups: ['mode', 'document', 'doctools'] },
-                            { name: 'clipboard', groups: ['clipboard', 'undo'] },
+                        toolbar: [
+                            {
+                                name: 'document',
+                                items: [
+                                    'Source',
+                                    '-',
+                                    'Save',
+                                    'NewPage',
+                                    'ExportPdf',
+                                    'Preview',
+                                    'Print',
+                                    '-',
+                                    'Templates',
+                                ],
+                            },
+                            {
+                                name: 'clipboard',
+                                items: [
+                                    'Cut',
+                                    'Copy',
+                                    'Paste',
+                                    'PasteText',
+                                    'PasteFromWord',
+                                    '-',
+                                    'Undo',
+                                    'Redo',
+                                ],
+                            },
                             {
                                 name: 'editing',
-                                groups: ['find', 'selection', 'spellchecker', 'editing'],
+                                items: ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt'],
                             },
-                            { name: 'forms', groups: ['forms'] },
+                            {
+                                name: 'forms',
+                                items: [
+                                    'Form',
+                                    'Checkbox',
+                                    'Radio',
+                                    'TextField',
+                                    'Textarea',
+                                    'Select',
+                                    'Button',
+                                    'ImageButton',
+                                    'HiddenField',
+                                ],
+                            },
                             '/',
-                            { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+                            {
+                                name: 'basicstyles',
+                                items: [
+                                    'Bold',
+                                    'Italic',
+                                    'Underline',
+                                    'Strike',
+                                    'Subscript',
+                                    'Superscript',
+                                    '-',
+                                    'CopyFormatting',
+                                    'RemoveFormat',
+                                ],
+                            },
                             {
                                 name: 'paragraph',
-                                groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'],
+                                items: [
+                                    'NumberedList',
+                                    'BulletedList',
+                                    '-',
+                                    'Outdent',
+                                    'Indent',
+                                    '-',
+                                    'Blockquote',
+                                    'CreateDiv',
+                                    '-',
+                                    'JustifyLeft',
+                                    'JustifyCenter',
+                                    'JustifyRight',
+                                    'JustifyBlock',
+                                    '-',
+                                    'BidiLtr',
+                                    'BidiRtl',
+                                    'Language',
+                                ],
                             },
-                            { name: 'links', groups: ['links'] },
-                            { name: 'insert', groups: ['insert'] },
+                            { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
+                            {
+                                name: 'insert',
+                                items: [
+                                    'Image',
+                                    'Table',
+                                    'HorizontalRule',
+                                    'Smiley',
+                                    'SpecialChar',
+                                    'PageBreak',
+                                    'Iframe',
+                                ],
+                            },
                             '/',
-                            { name: 'styles', groups: ['styles'] },
-                            { name: 'colors', groups: ['colors'] },
-                            { name: 'tools', groups: ['tools'] },
-                            { name: 'others', groups: ['others'] },
-                            { name: 'about', groups: ['about'] },
+                            { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+                            { name: 'colors', items: ['TextColor', 'BGColor'] },
+                            { name: 'tools', items: ['Maximize', 'ShowBlocks'] },
+                            { name: 'about', items: ['About'] },
                         ],
                     }}
                     onChange={(event, editor) => this.SaveResource(editor.getData())}

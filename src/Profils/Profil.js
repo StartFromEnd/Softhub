@@ -52,7 +52,7 @@ class Profil extends React.Component {
                             닉네임 변경을 원할 시 관리자에게 개인 문의하여 주십시오.
                         </p>
                         <p className="half bold">
-                            공인 혹은 상표가 있는 단체는 관리자의 판단하에 √ 표시를 부여받을 수
+                            공인 혹은 상표가 있는 단체는 관리자의 판단하에 ✅ 표시를 부여받을 수
                             있습니다.
                         </p>
                     </section>
