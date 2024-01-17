@@ -76,7 +76,8 @@ class Mysupportwrite extends React.Component {
                 <CKEditor
                     data={this.state.resource}
                     type="classic"
-                    config={{height: 500}, {
+                    height='50vw'
+                    config={{
                         toolbar: [
                             {
                                 name: 'document',
