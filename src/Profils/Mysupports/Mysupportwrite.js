@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
+import * as ckeditor from '../../ckeditor/build/ckeditor.js';
 
 class Mysupportwrite extends React.Component {
     constructor(props) {
@@ -24,7 +25,15 @@ class Mysupportwrite extends React.Component {
     SaveGoal(param) {
         this.setState({ goal: param });
     }
-    componentDidMount() {}
+    componentDidMount() {
+        ckeditor.ClassicEditor.create(document.querySelector('#editor'))
+            .then((editor) => {
+                console.log(editor);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
 
     render() {
         return (
@@ -70,16 +79,6 @@ class Mysupportwrite extends React.Component {
                     ></input>
                 </div>
                 <div id="editor"></div>
-                <script src='https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js'></script>
-                <script>
-                    {ClassicEditor.create(document.querySelector('#editor'))
-                        .then((editor) => {
-                            console.log(editor);
-                        })
-                        .catch((error) => {
-                            console.error(error);
-                        })}
-                </script>
             </div>
         );
     }
