@@ -50,8 +50,8 @@ class Mysupportwrite extends React.Component {
                             </td>
                         </tr>
                         <tr>
-                            <td className="bold center table-primary" width='10%'>가격</td>
-                            <td width="40%">
+                            <td className="bold center table-primary" width='20%'>가격</td>
+                            <td width="80%">
                                 <input
                                     type="number"
                                     className="form-control form-input"
@@ -60,8 +60,10 @@ class Mysupportwrite extends React.Component {
                                     onChange={(event) => this.SavePrice(event.target.value)}
                                 ></input>
                             </td>
-                            <td className="bold center table-primary" width='10%'>목표</td>
-                            <td width="40%">
+                        </tr>
+                        <tr>
+                            <td className="bold center table-primary" width='20%'>목표</td>
+                            <td width="80%">
                                 <input
                                     type="number"
                                     className="form-control form-input"
@@ -78,10 +80,6 @@ class Mysupportwrite extends React.Component {
                     type="classic"
                     config={
                         ({
-                            placeholder:
-                                '도구 오른쪽 제일 아래 부분에서 화면을 최대화하여 작성하시면 편합니다.',
-                        },
-                        {
                             toolbar: [
                                 {
                                     name: 'document',
@@ -158,6 +156,10 @@ class Mysupportwrite extends React.Component {
                     }
                     onChange={(event) => this.SaveResource(event.editor.getData())}
                 />
+                <section className='center mt-3rem container'>
+                    <p className='half bold'>글쓰기 입력창의 오른쪽 제일 아래 직각삼각형을 드래그하면 창의 크기를 조절할 수 있습니다.</p>
+                    <p className='half bold'>글쓰기 입력창의 '도구' 오른쪽 제일 아래부분의 버튼으로 전체화면 모드를 활성화 할 수 있습니다.</p>
+                </section>
                 <section className="container center mt-3rem mb-3rem">
                     <NavLink to="/profil/mySupport" className="btn btn-dark">
                         뒤로가기
