@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
-import CKEditor from '@ckeditor/ckeditor5-react';
+import {CKEditor} from '@ckeditor/ckeditor5-react';
 
 class Mysupportwrite extends React.Component {
     constructor(props) {
