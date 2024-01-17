@@ -145,3 +145,6 @@ hr {
 .flex-items{
     flex: 1 1 18%;
 }
+#ckeditor{
+    min-height: 50vw;
+}
