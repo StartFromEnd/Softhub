@@ -161,7 +161,7 @@ class Mysupportwrite extends React.Component {
                     <p className='half bold'>글쓰기 입력창의 '도구' 오른쪽 제일 아래부분의 버튼으로 전체화면 모드를 활성화 할 수 있습니다.</p>
                 </section>
                 <section className="container center mt-3rem mb-3rem">
-                    <NavLink to="/profil/mySupport" className="btn btn-dark">
+                    <NavLink to="/profil/mySupport/mySupportList" className="btn btn-dark">
                         뒤로가기
                     </NavLink>
                     <button
