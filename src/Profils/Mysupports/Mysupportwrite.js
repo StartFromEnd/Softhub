@@ -12,6 +12,7 @@ class Mysupportwrite extends React.Component {
             title: '',
             price: '',
             goal: '',
+            resource: '',
         };
     }
 
@@ -23,6 +24,9 @@ class Mysupportwrite extends React.Component {
     }
     SaveGoal(param) {
         this.setState({ goal: param });
+    }
+    SaveResource(param) {
+        this.setState({resource: param});
     }
     componentDidMount() {
         
@@ -72,7 +76,9 @@ class Mysupportwrite extends React.Component {
                     ></input>
                 </div>
                 <CKEditor
-                    data="<p>Hello from CKEditor 4!</p>"
+                    data={this.state.resource}
+                    config={{placeholder: '후원자분들께 제품을 소개해주세요!'}}
+                    onChange={(event, editor) => this.SaveResource(editor.getData())}
                 />
             </div>
         );
