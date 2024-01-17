@@ -38,17 +38,23 @@ class Faqread extends React.Component {
         return(
             <div>
                 <section className='container mt-3rem mb-3rem'>
-                    <p className='one bold'>제목</p>
-                    <p className='one'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_title}</p>
-                    <p className='one bold'>본문</p>
+                    <table className='table border-round'>
+                        <tbody>
+                            <tr>
+                                <td className='table-info bold center' width='20%'>제목</td>
+                                <td width='80%'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_title}</td>
+                            </tr>
+                            <tr>
+                                <td className='table-info bold center' width='20%'>게시일</td>
+                                <td width='80%'>{this.state.faq.length <= 0 ? '로딩중' : common.UTCChangeLocal(this.state.faq[0].faq_created_at)}</td>
+                            </tr>
+                            <tr>
+                                <td className='table-info bold center' width='20%'>처리상태</td>
+                                <td width='80%'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_process}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <p className='one'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_main}</p>
-                    <br></br>
-                    <br></br>
-                    <p className='one bold'>게시일</p>
-                    <p className='one'>{this.state.faq.length <= 0 ? '로딩중' : common.UTCChangeLocal(this.state.faq[0].faq_created_at)}</p>
-                    <br></br>
-                    <p className='one bold'>처리상태</p>
-                    <p className='one'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_process}</p>
                 </section>
                 <hr></hr>
                 <section className='container mt-3rem mb-3rem'>

@@ -37,8 +37,8 @@ class Myfaqread extends React.Component {
     render() {
         return(
             <div>
-                <section className='container mt-3rem mb-3rem border-round'>
-                    <table className='table'>
+                <section className='container mt-3rem mb-3rem'>
+                    <table className='table border-round'>
                         <tbody>
                             <tr>
                                 <td className='table-info bold center' width='20%'>제목</td>
