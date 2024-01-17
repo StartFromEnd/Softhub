@@ -28,6 +28,9 @@ class Mysupportwrite extends React.Component {
     SaveResource(param) {
         this.setState({ resource: param });
     }
+    SupportWrite = async() => {
+        
+    }
     componentDidMount() {}
 
     render() {
@@ -76,8 +79,7 @@ class Mysupportwrite extends React.Component {
                 <CKEditor
                     data={this.state.resource}
                     type="classic"
-                    height='50vw'
-                    config={{
+                    config={{placeholder: '도구 오른쪽 제일 아래 부분에서 화면을 최대화하여 작성하시면 편합니다.'},{
                         toolbar: [
                             {
                                 name: 'document',
@@ -159,6 +161,10 @@ class Mysupportwrite extends React.Component {
                     }}
                     onChange={(event) => this.SaveResource(event.editor.getData())}
                 />
+                <section className='container center mt-3rem mb-3rem'>
+                    <NavLink to='/profil/mySupport' className="btn btn-dark">뒤로가기</NavLink>
+                    <button type="button" className="btn btn-success" onClick={() => this.SupportWrite()}>완료</button>
+                </section>
             </div>
         );
     }
