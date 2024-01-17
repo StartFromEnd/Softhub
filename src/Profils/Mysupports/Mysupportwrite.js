@@ -156,7 +156,7 @@ class Mysupportwrite extends React.Component {
                             { name: 'tools', items: ['Maximize', 'ShowBlocks'] },
                         ],
                     }}
-                    onChange={(event, editor) => this.SaveResource(editor.getData())}
+                    onChange={(event) => this.SaveResource(event.editor.getData())}
                 />
             </div>
         );
