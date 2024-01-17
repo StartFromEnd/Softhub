@@ -25,19 +25,13 @@ class Mysupportwrite extends React.Component {
         this.setState({ goal: param });
     }
     componentDidMount() {
-        if (!document.getElementById('cdn-ckeditor')) {
-            const scriptCKEditor = document.createElement('script');
-            scriptCKEditor.id = 'cdn-ckeditor';
-            scriptCKEditor.src = 'https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js';
-            document.getElementById('all').appendChild(scriptCKEditor);
-            ClassicEditor.create(document.querySelector('#editor'))
+        ClassicEditor.create(document.querySelector('#editor'))
             .then((editor) => {
                 console.log(editor);
             })
             .catch((error) => {
                 console.error(error);
             });
-        }
     }
 
     render() {
@@ -84,6 +78,7 @@ class Mysupportwrite extends React.Component {
                     ></input>
                 </div>
                 <div id="editor"></div>
+                <script src='https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js'></script>
             </div>
         );
     }
