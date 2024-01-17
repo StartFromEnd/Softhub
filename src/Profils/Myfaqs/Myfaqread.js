@@ -39,18 +39,19 @@ class Myfaqread extends React.Component {
             <div>
                 <section className='container mt-3rem mb-3rem'>
                     <table className='table'>
+                        <thead></thead>
                         <tbody>
                             <tr>
                                 <td className='table-info' colspan='1'>제목</td>
-                                <td colspan='4'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_title}</td>
+                                <td colspan='6'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_title}</td>
                             </tr>
                             <tr>
                                 <td className='table-info' colspan='1'>게시일</td>
-                                <td colspan='4'>{this.state.faq.length <= 0 ? '로딩중' : common.UTCChangeLocal(this.state.faq[0].faq_created_at)}</td>
+                                <td colspan='6'>{this.state.faq.length <= 0 ? '로딩중' : common.UTCChangeLocal(this.state.faq[0].faq_created_at)}</td>
                             </tr>
                             <tr>
                                 <td className='table-info' colspan='1'>처리상태</td>
-                                <td colspan='4'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_process}</td>
+                                <td colspan='6'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_process}</td>
                             </tr>
                         </tbody>
                     </table>
