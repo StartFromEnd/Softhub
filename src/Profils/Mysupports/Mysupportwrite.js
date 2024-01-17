@@ -24,20 +24,20 @@ class Mysupportwrite extends React.Component {
     SaveGoal(param) {
         this.setState({ goal: param });
     }
-    async componentDidMount() {
+    componentDidMount() {
         if (!document.getElementById('cdn-ckeditor')) {
             const scriptCKEditor = document.createElement('script');
             scriptCKEditor.id = 'cdn-ckeditor';
             scriptCKEditor.src = 'https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js';
-            await document.body.appendChild(scriptCKEditor);
-        }
-        ClassicEditor.create(document.querySelector('#editor'))
+            document.body.appendChild(scriptCKEditor);
+            ClassicEditor.create(document.querySelector('#editor'))
             .then((editor) => {
                 console.log(editor);
             })
             .catch((error) => {
                 console.error(error);
             });
+        }
     }
 
     render() {
