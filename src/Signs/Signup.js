@@ -145,7 +145,7 @@ class Signup extends React.Component {
     render() {
         return (
             <div>
-                <section className='two center container mt-r3em'>회원가입</section>
+                <section className='two center container mt-3rem mb-3rem'>회원가입</section>
                 <section className="sign-form-wrap container">
                     <form className="sign-form">
                         <div className="mb-3">

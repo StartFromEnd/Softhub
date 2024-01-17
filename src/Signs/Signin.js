@@ -68,7 +68,7 @@ class Signin extends React.Component {
     render() {
         return (
             <div>
-                <section className='two center container mt-3rem'>로그인</section>
+                <section className='two center container mt-3rem mb-3rem'>로그인</section>
                 <section className="sign-form-wrap container">
                     <form className="sign-form">
                         <div className="mb-3">
