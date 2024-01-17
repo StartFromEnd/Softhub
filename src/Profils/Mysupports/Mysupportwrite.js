@@ -26,11 +26,9 @@ class Mysupportwrite extends React.Component {
         this.setState({ goal: param });
     }
     SaveResource(param) {
-        this.setState({resource: param});
+        this.setState({ resource: param });
     }
-    componentDidMount() {
-        
-    }
+    componentDidMount() {}
 
     render() {
         return (
@@ -77,8 +75,32 @@ class Mysupportwrite extends React.Component {
                 </div>
                 <CKEditor
                     data={this.state.resource}
-                    type='classic'
-                    config={{height: '50vw'}, {allowedContent: true}}
+                    type="classic"
+                    config={{
+                        toolbarGroups: [
+                            { name: 'document', groups: ['mode', 'document', 'doctools'] },
+                            { name: 'clipboard', groups: ['clipboard', 'undo'] },
+                            {
+                                name: 'editing',
+                                groups: ['find', 'selection', 'spellchecker', 'editing'],
+                            },
+                            { name: 'forms', groups: ['forms'] },
+                            '/',
+                            { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+                            {
+                                name: 'paragraph',
+                                groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'],
+                            },
+                            { name: 'links', groups: ['links'] },
+                            { name: 'insert', groups: ['insert'] },
+                            '/',
+                            { name: 'styles', groups: ['styles'] },
+                            { name: 'colors', groups: ['colors'] },
+                            { name: 'tools', groups: ['tools'] },
+                            { name: 'others', groups: ['others'] },
+                            { name: 'about', groups: ['about'] },
+                        ],
+                    }}
                     onChange={(event, editor) => this.SaveResource(editor.getData())}
                 />
             </div>
