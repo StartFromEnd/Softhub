@@ -37,7 +37,7 @@ html {
 }
 
 hr {
-    width: 95%;
+    width: 100%;
 }
 .bold {
     font-weight: bold;
@@ -145,6 +145,7 @@ hr {
 .flex-items{
     flex: 1 1 18%;
 }
-#ckeditor{
-    min-height: 50vw;
+.form-input {
+    border-width: 0;
+    background-color: #FFF3CD;
 }

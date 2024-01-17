@@ -28,142 +28,147 @@ class Mysupportwrite extends React.Component {
     SaveResource(param) {
         this.setState({ resource: param });
     }
-    SupportWrite = async() => {
-        
-    }
+    SupportWrite = async () => {};
     componentDidMount() {}
 
     render() {
         return (
             <div id="all">
                 <section className="one-half center mb-3rem">후원 요청 글쓰기</section>
-                <div className="mb-3rem">
-                    <label for="TitleFormControlInput" className="form-label">
-                        제목
-                    </label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="TitleFormControlInput"
-                        placeholder="100자 이내로 입력하여 주십시오."
-                        value={this.state.title}
-                        onChange={(event) => this.SaveTitle(event.target.value)}
-                    ></input>
-                </div>
-                <div className="mb-3rem">
-                    <label for="PriceFormControlInput" className="form-label">
-                        가격
-                    </label>
-                    <input
-                        type="number"
-                        className="form-control"
-                        id="PriceFormControlInput"
-                        placeholder="제품 하나당 후원받을 가격을 입력하여 주십시오."
-                        value={this.state.price}
-                        onChange={(event) => this.SavePrice(event.target.value)}
-                    ></input>
-                </div>
-                <div className="mb-3rem">
-                    <label for="GoalFormControlInput" className="form-label">
-                        목표
-                    </label>
-                    <input
-                        type="number"
-                        className="form-control"
-                        id="GoalFormControlInput"
-                        placeholder="몇 개의 제품에 대해서 후원받을지 입력하여 주십시오."
-                        value={this.state.goal}
-                        onChange={(event) => this.SaveGoal(event.target.value)}
-                    ></input>
-                </div>
+                <table className="table mb-3rem border-round">
+                    <tbody>
+                        <tr>
+                            <td className="bold center table-primary" width='20%'>제목</td>
+                            <td width="80%">
+                                <input
+                                    type="text"
+                                    className="form-control form-input"
+                                    placeholder="100자 이내로 입력하여 주십시오."
+                                    value={this.state.title}
+                                    onChange={(event) => this.SaveTitle(event.target.value)}
+                                ></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="bold center table-primary" width='10%'>가격</td>
+                            <td width="40%">
+                                <input
+                                    type="number"
+                                    className="form-control form-input"
+                                    placeholder="제품 하나당 후원받을 가격을 입력하여 주십시오."
+                                    value={this.state.price}
+                                    onChange={(event) => this.SavePrice(event.target.value)}
+                                ></input>
+                            </td>
+                            <td className="bold center table-primary" width='10%'>목표</td>
+                            <td width="40%">
+                                <input
+                                    type="number"
+                                    className="form-control form-input"
+                                    placeholder="제품 하나당 후원받을 가격을 입력하여 주십시오."
+                                    value={this.state.goal}
+                                    onChange={(event) => this.SaveGoal(event.target.value)}
+                                ></input>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
                 <CKEditor
                     data={this.state.resource}
                     type="classic"
-                    config={{placeholder: '도구 오른쪽 제일 아래 부분에서 화면을 최대화하여 작성하시면 편합니다.'},{
-                        toolbar: [
-                            {
-                                name: 'document',
-                                items: [
-                                    'ExportPdf',
-                                    'Preview',
-                                    'Print',
-                                    '-',
-                                    'Templates',
-                                ],
-                            },
-                            {
-                                name: 'clipboard',
-                                items: [
-                                    'Cut',
-                                    'Copy',
-                                    'Paste',
-                                    'PasteText',
-                                    'PasteFromWord',
-                                    '-',
-                                    'Undo',
-                                    'Redo',
-                                ],
-                            },
-                            {
-                                name: 'editing',
-                                items: ['Find', 'Replace', '-', 'SelectAll'],
-                            },
-                            '/',
-                            {
-                                name: 'basicstyles',
-                                items: [
-                                    'Bold',
-                                    'Italic',
-                                    'Underline',
-                                    'Strike',
-                                    'Subscript',
-                                    'Superscript',
-                                    '-',
-                                    'CopyFormatting',
-                                    'RemoveFormat',
-                                ],
-                            },
-                            {
-                                name: 'paragraph',
-                                items: [
-                                    'NumberedList',
-                                    'BulletedList',
-                                    '-',
-                                    'Outdent',
-                                    'Indent',
-                                    '-',
-                                    'Blockquote',
-                                    '-',
-                                    'JustifyLeft',
-                                    'JustifyCenter',
-                                    'JustifyRight',
-                                    'JustifyBlock',
-                                    '-',
-                                ],
-                            },
-                            { name: 'links', items: ['Link', 'Unlink'] },
-                            {
-                                name: 'insert',
-                                items: [
-                                    'Image',
-                                    'Table',
-                                    'HorizontalRule',
-                                    'Smiley',
-                                    'SpecialChar',
-                                    'PageBreak',
-                                ],
-                            },
-                            '/',
-                            { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
-                            { name: 'colors', items: ['TextColor', 'BGColor'] },
-                            { name: 'tools', items: ['Maximize', 'ShowBlocks'] },
-                        ],
-                    }}
+                    config={
+                        ({
+                            placeholder:
+                                '도구 오른쪽 제일 아래 부분에서 화면을 최대화하여 작성하시면 편합니다.',
+                        },
+                        {
+                            toolbar: [
+                                {
+                                    name: 'document',
+                                    items: ['ExportPdf', 'Preview', 'Print', '-', 'Templates'],
+                                },
+                                {
+                                    name: 'clipboard',
+                                    items: [
+                                        'Cut',
+                                        'Copy',
+                                        'Paste',
+                                        'PasteText',
+                                        'PasteFromWord',
+                                        '-',
+                                        'Undo',
+                                        'Redo',
+                                    ],
+                                },
+                                {
+                                    name: 'editing',
+                                    items: ['Find', 'Replace', '-', 'SelectAll'],
+                                },
+                                '/',
+                                {
+                                    name: 'basicstyles',
+                                    items: [
+                                        'Bold',
+                                        'Italic',
+                                        'Underline',
+                                        'Strike',
+                                        'Subscript',
+                                        'Superscript',
+                                        '-',
+                                        'CopyFormatting',
+                                        'RemoveFormat',
+                                    ],
+                                },
+                                {
+                                    name: 'paragraph',
+                                    items: [
+                                        'NumberedList',
+                                        'BulletedList',
+                                        '-',
+                                        'Outdent',
+                                        'Indent',
+                                        '-',
+                                        'Blockquote',
+                                        '-',
+                                        'JustifyLeft',
+                                        'JustifyCenter',
+                                        'JustifyRight',
+                                        'JustifyBlock',
+                                        '-',
+                                    ],
+                                },
+                                { name: 'links', items: ['Link', 'Unlink'] },
+                                {
+                                    name: 'insert',
+                                    items: [
+                                        'Image',
+                                        'Table',
+                                        'HorizontalRule',
+                                        'Smiley',
+                                        'SpecialChar',
+                                        'PageBreak',
+                                    ],
+                                },
+                                '/',
+                                { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+                                { name: 'colors', items: ['TextColor', 'BGColor'] },
+                                { name: 'tools', items: ['Maximize', 'ShowBlocks'] },
+                            ],
+                        })
+                    }
                     onChange={(event) => this.SaveResource(event.editor.getData())}
                 />
-                <section className='container center mt-3rem mb-3rem'>
-                    <NavLink to='/profil/mySupport' className="btn btn-dark">뒤로가기</NavLink>
-                    <button type="button" className="btn btn-success" onClick={() => this.SupportWrite()}>완료</button>
+                <section className="container center mt-3rem mb-3rem">
+                    <NavLink to="/profil/mySupport" className="btn btn-dark">
+                        뒤로가기
+                    </NavLink>
+                    <button
+                        type="button"
+                        className="btn btn-success"
+                        onClick={() => this.SupportWrite()}
+                    >
+                        완료
+                    </button>
                 </section>
             </div>
         );
