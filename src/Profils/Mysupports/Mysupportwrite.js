@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
-import CKEditor from 'ckeditor4-react';
+import CKEditor from '@ckeditor/ckeditor5-react';
 
 class Mysupportwrite extends React.Component {
     constructor(props) {
@@ -76,9 +76,7 @@ class Mysupportwrite extends React.Component {
                     ></input>
                 </div>
                 <CKEditor
-                    id='ckeditor'
                     data={this.state.resource}
-                    config={{placeholder: '후원자분들께 제품을 소개해주세요!'}}
                     onChange={(event, editor) => this.SaveResource(editor.getData())}
                 />
             </div>
