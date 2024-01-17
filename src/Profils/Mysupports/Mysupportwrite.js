@@ -29,7 +29,7 @@ class Mysupportwrite extends React.Component {
             const scriptCKEditor = document.createElement('script');
             scriptCKEditor.id = 'cdn-ckeditor';
             scriptCKEditor.src = 'https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js';
-            document.head.appendChild(scriptCKEditor);
+            document.getElementById('all').appendChild(scriptCKEditor);
             ClassicEditor.create(document.querySelector('#editor'))
             .then((editor) => {
                 console.log(editor);
@@ -42,7 +42,7 @@ class Mysupportwrite extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id='all'>
                 <section className="one-half center mb-3rem">후원 요청 글쓰기</section>
                 <div className="mb-3rem">
                     <label for="TitleFormControlInput" className="form-label">
