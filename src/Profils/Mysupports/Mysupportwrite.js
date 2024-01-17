@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
-import * as ckeditor from '../../ckeditor/build/ckeditor.js';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 class Mysupportwrite extends React.Component {
     constructor(props) {
@@ -26,13 +27,7 @@ class Mysupportwrite extends React.Component {
         this.setState({ goal: param });
     }
     componentDidMount() {
-        ckeditor.ClassicEditor.create(document.querySelector('#editor'))
-            .then((editor) => {
-                console.log(editor);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+        
     }
 
     render() {
@@ -78,7 +73,23 @@ class Mysupportwrite extends React.Component {
                         onChange={(event) => this.SaveGoal(event.target.value)}
                     ></input>
                 </div>
-                <div id="editor"></div>
+                <CKEditor
+                    editor={ ClassicEditor }
+                    data="<p>Hello from CKEditor&nbsp;5!</p>"
+                    onReady={ editor => {
+                        // You can store the "editor" and use when it is needed.
+                        console.log( 'Editor is ready to use!', editor );
+                    } }
+                    onChange={ ( event ) => {
+                        console.log( event );
+                    } }
+                    onBlur={ ( event, editor ) => {
+                        console.log( 'Blur.', editor );
+                    } }
+                    onFocus={ ( event, editor ) => {
+                        console.log( 'Focus.', editor );
+                    } }
+                />
             </div>
         );
     }
