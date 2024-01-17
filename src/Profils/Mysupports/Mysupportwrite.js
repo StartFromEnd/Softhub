@@ -3,10 +3,8 @@ import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-class Mysupportwrite extends Component {
+class Mysupportwrite extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -14,6 +12,7 @@ class Mysupportwrite extends Component {
             price: '',
             goal: '',
         }
+        this.editor = React.createRef();
     }
     
     SaveTitle(param){
@@ -26,13 +25,15 @@ class Mysupportwrite extends Component {
         this.setState({ goal: param});
     }
     componentDidMount() {
-        
+        ClassicEditor.create(this.editor.current)
+        .then(editor => {console.log(editor);})
+        .catch(error => {console.log(error);});
     }
     
     render(){
         return(
             <div>
-                <section className='one center mb-3rem'>
+                <section className='one-half center mb-3rem'>
                     후원 요청 글쓰기
                 </section>
                 <div className="mb-3rem">
@@ -74,24 +75,7 @@ class Mysupportwrite extends Component {
                         onChange={(event) => this.SaveGoal(event.target.value)}
                     ></input>
                 </div>
-                <CKEditor
-                    editor={ ClassicEditor }
-                    data="<p>Hello from CKEditor 5</p>"
-                    onInit={ editor => {
-                        // You can store the "editor" and use when it is needed.
-                        console.log( 'Editor is ready to use!', editor );
-                    } }
-                    onChange={ ( event, editor ) => {
-                        const data = editor.getData();
-                        console.log( { event, editor, data } );
-                    } }
-                    onBlur={ editor => {
-                        console.log( 'Blur.', editor );
-                    } }
-                    onFocus={ editor => {
-                        console.log( 'Focus.', editor );
-                    } }
-                />
+                <div ref={this.editor}></div>
             </div>
         )
     }

@@ -43,7 +43,7 @@ class Myfaqwrite extends React.Component {
     render() {
         return (
             <div>
-                <section className='one center mb-3rem'>
+                <section className='one-half center mb-3rem'>
                     개인 문의 글쓰기
                 </section>
                 <div className="mb-3rem">
