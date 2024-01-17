@@ -3,8 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import CKEditor from 'ckeditor4-react';
 
 class Mysupportwrite extends React.Component {
     constructor(props) {
@@ -14,7 +13,6 @@ class Mysupportwrite extends React.Component {
             price: '',
             goal: '',
         };
-        this.editor = React.createRef();
     }
 
     SaveTitle(param) {
@@ -74,21 +72,7 @@ class Mysupportwrite extends React.Component {
                     ></input>
                 </div>
                 <CKEditor
-                    editor={ ClassicEditor }
-                    data="<p>Hello from CKEditor&nbsp;5!</p>"
-                    onReady={ editor => {
-                        // You can store the "editor" and use when it is needed.
-                        console.log( 'Editor is ready to use!', editor );
-                    } }
-                    onChange={ ( event ) => {
-                        console.log( event );
-                    } }
-                    onBlur={ ( event, editor ) => {
-                        console.log( 'Blur.', editor );
-                    } }
-                    onFocus={ ( event, editor ) => {
-                        console.log( 'Focus.', editor );
-                    } }
+                    data="<p>Hello from CKEditor 4!</p>"
                 />
             </div>
         );
