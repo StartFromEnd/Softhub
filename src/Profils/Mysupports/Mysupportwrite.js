@@ -76,15 +76,11 @@ class Mysupportwrite extends React.Component {
                 <CKEditor
                     data={this.state.resource}
                     type="classic"
-                    config={{
+                    config={{height: 50vw}, {
                         toolbar: [
                             {
                                 name: 'document',
                                 items: [
-                                    'Source',
-                                    '-',
-                                    'Save',
-                                    'NewPage',
                                     'ExportPdf',
                                     'Preview',
                                     'Print',
@@ -107,21 +103,7 @@ class Mysupportwrite extends React.Component {
                             },
                             {
                                 name: 'editing',
-                                items: ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt'],
-                            },
-                            {
-                                name: 'forms',
-                                items: [
-                                    'Form',
-                                    'Checkbox',
-                                    'Radio',
-                                    'TextField',
-                                    'Textarea',
-                                    'Select',
-                                    'Button',
-                                    'ImageButton',
-                                    'HiddenField',
-                                ],
+                                items: ['Find', 'Replace', '-', 'SelectAll'],
                             },
                             '/',
                             {
@@ -148,19 +130,15 @@ class Mysupportwrite extends React.Component {
                                     'Indent',
                                     '-',
                                     'Blockquote',
-                                    'CreateDiv',
                                     '-',
                                     'JustifyLeft',
                                     'JustifyCenter',
                                     'JustifyRight',
                                     'JustifyBlock',
                                     '-',
-                                    'BidiLtr',
-                                    'BidiRtl',
-                                    'Language',
                                 ],
                             },
-                            { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
+                            { name: 'links', items: ['Link', 'Unlink'] },
                             {
                                 name: 'insert',
                                 items: [
@@ -170,14 +148,12 @@ class Mysupportwrite extends React.Component {
                                     'Smiley',
                                     'SpecialChar',
                                     'PageBreak',
-                                    'Iframe',
                                 ],
                             },
                             '/',
                             { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
                             { name: 'colors', items: ['TextColor', 'BGColor'] },
                             { name: 'tools', items: ['Maximize', 'ShowBlocks'] },
-                            { name: 'about', items: ['About'] },
                         ],
                     }}
                     onChange={(event, editor) => this.SaveResource(editor.getData())}
