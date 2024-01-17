@@ -24,19 +24,11 @@ class Mysupportwrite extends React.Component {
     SaveGoal(param) {
         this.setState({ goal: param });
     }
-    componentDidMount() {
-        ClassicEditor.create(document.querySelector('#editor'))
-            .then((editor) => {
-                console.log(editor);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }
+    componentDidMount() {}
 
     render() {
         return (
-            <div id='all'>
+            <div id="all">
                 <section className="one-half center mb-3rem">후원 요청 글쓰기</section>
                 <div className="mb-3rem">
                     <label for="TitleFormControlInput" className="form-label">
@@ -78,7 +70,15 @@ class Mysupportwrite extends React.Component {
                     ></input>
                 </div>
                 <div id="editor"></div>
-                <script src='https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js'></script>
+                <script>
+                    {ClassicEditor.create(document.querySelector('#editor'))
+                        .then((editor) => {
+                            console.log(editor);
+                        })
+                        .catch((error) => {
+                            console.error(error);
+                        })}
+                </script>
             </div>
         );
     }
