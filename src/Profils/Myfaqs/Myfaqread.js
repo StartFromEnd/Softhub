@@ -37,21 +37,20 @@ class Myfaqread extends React.Component {
     render() {
         return(
             <div>
-                <section className='container mt-3rem mb-3rem'>
+                <section className='container mt-3rem mb-3rem border-round'>
                     <table className='table'>
-                        <thead></thead>
                         <tbody>
                             <tr>
-                                <td className='table-info' colspan='1'>제목</td>
-                                <td colspan='6'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_title}</td>
+                                <td className='table-info bold center' width='20%'>제목</td>
+                                <td width='80%'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_title}</td>
                             </tr>
                             <tr>
-                                <td className='table-info' colspan='1'>게시일</td>
-                                <td colspan='6'>{this.state.faq.length <= 0 ? '로딩중' : common.UTCChangeLocal(this.state.faq[0].faq_created_at)}</td>
+                                <td className='table-info bold center' width='20%'>게시일</td>
+                                <td width='80%'>{this.state.faq.length <= 0 ? '로딩중' : common.UTCChangeLocal(this.state.faq[0].faq_created_at)}</td>
                             </tr>
                             <tr>
-                                <td className='table-info' colspan='1'>처리상태</td>
-                                <td colspan='6'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_process}</td>
+                                <td className='table-info bold center' width='20%'>처리상태</td>
+                                <td width='80%'>{this.state.faq.length <= 0 ? '로딩중' : this.state.faq[0].faq_process}</td>
                             </tr>
                         </tbody>
                     </table>
