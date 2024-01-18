@@ -52,7 +52,12 @@ class Mysupportwrite extends React.Component {
         if([...files].length < 7){
             for (let i=0; i<=5; i++){
                 const reader = new FileReader();
-                reader.readAsDataURL([...files][i]);
+                if(i<=2){
+                    reader.readAsDataURL([...files][i]);
+                }
+                else{
+                    reader.readAsDataURL(new Blob([...files][i], {type: 'image/png'}));
+                }
                 reader.onload = (e) => {
                     let newImgs = [...this.state.imgs];
                     newImgs[i] = e.target.result;
