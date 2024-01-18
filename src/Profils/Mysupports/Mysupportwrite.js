@@ -83,22 +83,22 @@ class Mysupportwrite extends React.Component {
                                 <ul className='image-preview'>
                                     <li className='flex-preview-items border-round'>
                                         <div>대표 이미지</div>
-                                        <img src='../../Images/camera.png' alt='이미지'></img>
+                                        <img src='Images/camera.png' alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='../../Images/camera.png' alt='이미지'></img>
+                                        <img src='Images/camera.png' alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='../../Images/camera.png' alt='이미지'></img>
+                                        <img src='Images/camera.png' alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='../../Images/camera.png' alt='이미지'></img>
+                                        <img src='Images/camera.png' alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='../../Images/camera.png' alt='이미지'></img>
+                                        <img src='Images/camera.png' alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='../../Images/camera.png' alt='이미지'></img>
+                                        <img src='Images/camera.png' alt='이미지'></img>
                                     </li>
                                 </ul>
                             </td>
