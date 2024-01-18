@@ -11,6 +11,7 @@ class Mysupportwrite extends React.Component {
         super(props);
         this.state = {
             title: '',
+            product: '',
             price: '',
             goal: '',
             imgs: [CameraImages, CameraImages, CameraImages, CameraImages, CameraImages, CameraImages],
@@ -20,6 +21,9 @@ class Mysupportwrite extends React.Component {
 
     SaveTitle(param) {
         this.setState({ title: param });
+    }
+    SaveProduct(param) {
+        this.setState({ product: param });
     }
     SavePrice(param) {
         this.setState({ price: param });
@@ -81,6 +85,20 @@ class Mysupportwrite extends React.Component {
                         </tr>
                         <tr>
                             <td className="bold center table-primary" width="20%">
+                                제품명
+                            </td>
+                            <td width="80%">
+                                <input
+                                    type="text"
+                                    className="form-control form-input"
+                                    placeholder="50자 이내로 입력하여 주십시오."
+                                    value={this.state.product}
+                                    onChange={(event) => this.SaveProduct(event.target.value)}
+                                ></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="bold center table-primary" width="20%">
                                 가격
                             </td>
                             <td width="80%">
@@ -88,6 +106,7 @@ class Mysupportwrite extends React.Component {
                                     type="number"
                                     className="form-control form-input"
                                     placeholder="제품 하나당 후원받을 가격을 입력하여 주십시오."
+                                    min='0'
                                     value={this.state.price}
                                     onChange={(event) => this.SavePrice(event.target.value)}
                                 ></input>
@@ -102,6 +121,7 @@ class Mysupportwrite extends React.Component {
                                     type="number"
                                     className="form-control form-input"
                                     placeholder="제품 하나당 후원받을 가격을 입력하여 주십시오."
+                                    min='0'
                                     value={this.state.goal}
                                     onChange={(event) => this.SaveGoal(event.target.value)}
                                 ></input>
@@ -152,9 +172,7 @@ class Mysupportwrite extends React.Component {
                 <CKEditor
                     data={this.state.resource}
                     type="classic"
-                    config={{filebrowserUploadUrl: '/'},
-                        {filebrowserImageUploadUrl: '/'},
-                        {filebrowserUploadMethod: 'form'}, {
+                    config={{
                         toolbar: [
                             {
                                 name: 'document',
