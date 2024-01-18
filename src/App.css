@@ -151,6 +151,7 @@ hr {
     flex: 1 1 18%;
 }
 .flex-preview-items{
+    position: relative;
     flex: 1 1 9rem;
     height: 9rem;
     list-style: none;
@@ -167,6 +168,11 @@ hr {
     color: white;
     background-color: #0D6EFD;
     font-size: 1rem;
+}
+.flex-preview-items img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 .form-input {
     border-width: 0;
