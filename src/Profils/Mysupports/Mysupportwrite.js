@@ -33,6 +33,7 @@ class Mysupportwrite extends React.Component {
     }
     SaveResource(param) {
         this.setState({ resource: param });
+        console.log(param);
     }
     SupportWrite = async () => {};
     GetImagePreview = (event) => {
@@ -120,7 +121,7 @@ class Mysupportwrite extends React.Component {
                                 <input
                                     type="number"
                                     className="form-control form-input"
-                                    placeholder="제품 하나당 후원받을 가격을 입력하여 주십시오."
+                                    placeholder="몇 개의 제품에 대하여 후원받을지 입력하여 주십시오."
                                     min='0'
                                     value={this.state.goal}
                                     onChange={(event) => this.SaveGoal(event.target.value)}
