@@ -50,7 +50,9 @@ class Mysupportwrite extends React.Component {
             for (let i=0; i<=5; i++){
                 const reader = new FileReader();
                 reader.onload = (e) => {
-                    this.setState({imgs[i]: e.target.result});
+                    let newImgs = [...this.state.imgs];
+                    newImgs[i] = e.target.result;
+                    this.setState({imgs: newImgs});
                 }
                 reader.readAsDataURL([...files][i]);
             }
