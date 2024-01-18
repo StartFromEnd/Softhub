@@ -4,6 +4,7 @@ import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
 import CKEditor from 'ckeditor4-react-advanced';
+import CameraImages from '../../Images/camera.png';
 
 class Mysupportwrite extends React.Component {
     constructor(props) {
@@ -83,22 +84,22 @@ class Mysupportwrite extends React.Component {
                                 <ul className='image-preview'>
                                     <li className='flex-preview-items border-round'>
                                         <div>대표 이미지</div>
-                                        <img src='img/camera.png' alt='이미지'></img>
+                                        <img src={CameraImages} alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='img/camera.png' alt='이미지'></img>
+                                        <img src={CameraImages} alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='img/camera.png' alt='이미지'></img>
+                                        <img src={CameraImages} alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='img/camera.png' alt='이미지'></img>
+                                        <img src={CameraImages} alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='img/camera.png' alt='이미지'></img>
+                                        <img src={CameraImages} alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='img/camera.png' alt='이미지'></img>
+                                        <img src={CameraImages} alt='이미지'></img>
                                     </li>
                                 </ul>
                             </td>
