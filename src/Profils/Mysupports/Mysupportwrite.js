@@ -152,7 +152,9 @@ class Mysupportwrite extends React.Component {
                 <CKEditor
                     data={this.state.resource}
                     type="classic"
-                    config={{filebrowserUploadMethod: form}, {
+                    config={
+                        {filebrowserImageUploadUrl: '/'},
+                        {filebrowserUploadMethod: 'form'}, {
                         toolbar: [
                             {
                                 name: 'document',
