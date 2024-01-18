@@ -79,7 +79,7 @@ class Mysupportwrite extends React.Component {
                         <tr>
                             <td className='bold center table-primary' width='20%'>상품 이미지</td>
                             <td width='80%' onClick={() => document.querySelector('.realUpload').click()}>
-                                <input type='file' className='realUpload' accept='image/*' required multiple onChange={(event) => this.GetImagePreview(event)}></input>
+                                <input type='file' className='realUpload' display='hidden' accept='image/*' required multiple onChange={(event) => this.GetImagePreview(event)}></input>
                                 <ul className='image-preview flex'>
                                     <li className='flex-preview-items border-round'>
                                         <div>대표 이미지</div>
