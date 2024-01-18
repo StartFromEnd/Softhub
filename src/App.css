@@ -145,6 +145,22 @@ hr {
 .flex-items{
     flex: 1 1 18%;
 }
+.flex-preview-items{
+    flex: 1 1 30%;
+    height: 3rem;
+}
+.flex-preview-items > div {
+    width: 40%;
+    float: left;
+    text-align: center;
+    color: white;
+    background-color: #0D6EFD;
+    font-size: 1rem;
+}
+.flex-preview-item img {
+    width: 100%;
+    height: 3rem;
+}
 .form-input {
     border-width: 0;
 }

@@ -29,6 +29,9 @@ class Mysupportwrite extends React.Component {
         this.setState({ resource: param });
     }
     SupportWrite = async () => {};
+    GetImagePreview = () => {
+        
+    };
     componentDidMount() {}
 
     render() {
@@ -71,6 +74,33 @@ class Mysupportwrite extends React.Component {
                                     value={this.state.goal}
                                     onChange={(event) => this.SaveGoal(event.target.value)}
                                 ></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className='bold center table-primary' width='20%'>상품 이미지</td>
+                            <td width='80%' onClick={() => document.querySelector('.realUpload').click()}>
+                                <input type='file' className='realUpload' accept='image/*' required multiple onChange={(event) => this.GetImagePreview(event)}></input>
+                                <ul className='image-preview flex'>
+                                    <li className='flex-preview-items border-round'>
+                                        <div>대표 이미지</div>
+                                        <img src='#' alt='이미지'></img>
+                                    </li>
+                                    <li className='flex-preview-items border-round'>
+                                        <img src='#' alt='이미지'></img>
+                                    </li>
+                                    <li className='flex-preview-items border-round'>
+                                        <img src='#' alt='이미지'></img>
+                                    </li>
+                                    <li className='flex-preview-items border-round'>
+                                        <img src='#' alt='이미지'></img>
+                                    </li>
+                                    <li className='flex-preview-items border-round'>
+                                        <img src='#' alt='이미지'></img>
+                                    </li>
+                                    <li className='flex-preview-items border-round'>
+                                        <img src='#' alt='이미지'></img>
+                                    </li>
+                                </ul>
                             </td>
                         </tr>
                     </tbody>
@@ -158,7 +188,7 @@ class Mysupportwrite extends React.Component {
                 />
                 <section className='center mt-3rem container'>
                     <p className='half bold'>글쓰기 입력창의 오른쪽 제일 아래 직각삼각형을 드래그하면 창의 크기를 조절할 수 있습니다.</p>
-                    <p className='half bold'>글쓰기 입력창의 '도구' 오른쪽 제일 아래부분의 버튼으로 전체화면 모드를 활성화 할 수 있습니다.</p>
+                    <p className='half bold'>글쓰기 입력창의 '도구' 오른쪽 제일 아래부분의 '최대화'버튼으로 전체화면 모드를 활성화 할 수 있습니다.</p>
                 </section>
                 <section className="container center mt-3rem mb-3rem">
                     <NavLink to="/profil/mySupport/mySupportList" className="btn btn-dark">
