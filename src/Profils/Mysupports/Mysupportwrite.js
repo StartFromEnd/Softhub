@@ -15,7 +15,7 @@ class Mysupportwrite extends React.Component {
             price: '',
             goal: '',
             imgs: [CameraImages, CameraImages, CameraImages, CameraImages, CameraImages, CameraImages],
-            resource: '<p>이 문장들은 지우고 사용하십시오</p><br/><p>한 게시물의 본문 용량은 1Mb 입니다. 글자의 굵기, 크기, 색상 등 여러 효과를 사용하시려면 2000자,</p><br/><p>효과없이 기본으로 글자만 작성하시려면 4000자 이내가 안정적입니다.</p>',
+            resource: '<p>이 문장들은 지우고 작성하십시오</p><br/><p>한 게시물의 본문 용량은 1Mb 입니다. 글자의 굵기, 크기, 색상 등 여러 효과를 사용하시려면 2000자,</p><br/><p>효과없이 기본으로 글자만 작성하시려면 4000자 이내가 안정적입니다.</p>',
         };
     }
 
@@ -52,7 +52,7 @@ class Mysupportwrite extends React.Component {
         if([...files].length < 7){
             for (let i=0; i<=5; i++){
                 const reader = new FileReader();
-                if([...files][i] != CameraImages){
+                if(i < [...files].length){
                     console.log(true);
                     reader.readAsDataURL([...files][i]);
                     reader.onload = (e) => {
