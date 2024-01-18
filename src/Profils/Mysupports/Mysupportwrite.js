@@ -62,7 +62,6 @@ class Mysupportwrite extends React.Component {
                     }
                 }
                 else{
-                    reader.readAsDataURL(new Blob([[...files][i]], {type: 'image/png'}));
                     let newImgs = [...this.state.imgs];
                     newImgs[i] = CameraImages;
                     this.setState({imgs: newImgs});
