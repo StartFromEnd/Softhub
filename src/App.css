@@ -153,15 +153,14 @@ hr {
 .flex-preview-items{
     position: relative;
     flex: 1 1 9rem;
-    height: 9rem;
     list-style: none;
 }
 .realUpload {
     display: none;
 }
 .flex-preview-items > div {
-    width: 40%;
-    position: relative;
+    width: 50%;
+    position: absolute;
     top: 0;
     left: 0;
     text-align: center;
