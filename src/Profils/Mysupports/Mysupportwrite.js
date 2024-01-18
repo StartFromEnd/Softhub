@@ -15,7 +15,7 @@ class Mysupportwrite extends React.Component {
             price: '',
             goal: '',
             imgs: [CameraImages, CameraImages, CameraImages, CameraImages, CameraImages, CameraImages],
-            resource: '',
+            resource: '<p>이 문장들은 지우고 사용하십시오</p><br/><p>한 게시물의 본문 용량은 1Mb 입니다. 글자의 굵기, 크기, 색상 등 여러 효과를 사용하시려면 2000자,</p><br/><p>효과없이 기본으로 글자만 작성하시려면 4000자 이내가 안정적입니다.</p>',
         };
     }
 
@@ -33,9 +33,7 @@ class Mysupportwrite extends React.Component {
     }
     SaveResource(param) {
         this.setState({ resource: param });
-        console.log(param);
     }
-    SupportWrite = async () => {};
     GetImagePreview = (event) => {
         const files = event.currentTarget.files;
 
@@ -60,6 +58,25 @@ class Mysupportwrite extends React.Component {
                     this.setState({imgs: newImgs});
                 }
             }
+        }
+    };
+    SupportWrite = async () => {
+        
+        if(this.state.title == '' || this.state.product == '' || this.state.price == '' || this.state.goal == '' || this.state.resource == ''){
+            alert('모든 칸을 기입하여 주십시오.');
+            return;
+        }
+        
+        //session, email, password, nickname, variables(3)...
+        let array = [cookie.load('sessionID'), null, null, null, [this.state.title, this.state.product, this.state.price, this.state.goal], [...this.state.imgs], this.state.resource];
+        let data = await common.Fetch('supportWrite', array);
+        
+        if(data.ok){
+            alert(data.msg);
+            window.location.replace('/profil/mySupport/mySupportList');
+        }
+        else{
+            alert(data.msg);
         }
     };
     componentDidMount() {}
