@@ -13,6 +13,7 @@ class Mysupportwrite extends React.Component {
             title: '',
             price: '',
             goal: '',
+            imgs: [CameraImages, CameraImages, CameraImages, CameraImages, CameraImages, CameraImages],
             resource: '',
         };
     }
@@ -30,8 +31,29 @@ class Mysupportwrite extends React.Component {
         this.setState({ resource: param });
     }
     SupportWrite = async () => {};
-    GetImagePreview = () => {
+    GetImagePreview = (event) => {
+        const files = event.currentTarget.files;
+
+        if ([...files].length >= 7) {
+            alert('상품 이미지는 6개까지 업로드가 가능합니다.');
+            return;
+        }
+
+        [...files].forEach((file) => {
+            if (!file.type.match('image/.*')) {
+                alert('이미지 파일만 업로드가 가능합니다.');
+                return;
+            }
+        });
         
+        if([...files].length < 7){
+            for(i=0; i<=5; i++){
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    console.log(e.target.result);
+                }
+            }
+        }
     };
     componentDidMount() {}
 
@@ -42,7 +64,9 @@ class Mysupportwrite extends React.Component {
                 <table className="table mb-3rem border-round">
                     <tbody>
                         <tr>
-                            <td className="bold center table-primary" width='20%'>제목</td>
+                            <td className="bold center table-primary" width="20%">
+                                제목
+                            </td>
                             <td width="80%">
                                 <input
                                     type="text"
@@ -54,7 +78,9 @@ class Mysupportwrite extends React.Component {
                             </td>
                         </tr>
                         <tr>
-                            <td className="bold center table-primary" width='20%'>가격</td>
+                            <td className="bold center table-primary" width="20%">
+                                가격
+                            </td>
                             <td width="80%">
                                 <input
                                     type="number"
@@ -66,7 +92,9 @@ class Mysupportwrite extends React.Component {
                             </td>
                         </tr>
                         <tr>
-                            <td className="bold center table-primary" width='20%'>목표</td>
+                            <td className="bold center table-primary" width="20%">
+                                목표
+                            </td>
                             <td width="80%">
                                 <input
                                     type="number"
@@ -78,28 +106,41 @@ class Mysupportwrite extends React.Component {
                             </td>
                         </tr>
                         <tr>
-                            <td className='bold center table-primary' width='20%'>상품 이미지</td>
-                            <td width='80%' onClick={() => document.querySelector('.realUpload').click()}>
-                                <input type='file' className='realUpload' display='hidden' accept='image/*' required multiple onChange={(event) => this.GetImagePreview(event)}></input>
-                                <ul className='image-preview'>
-                                    <li className='flex-preview-items border-round'>
+                            <td className="bold center table-primary" width="20%">
+                                상품 이미지
+                            </td>
+                            <td
+                                width="80%"
+                                onClick={() => document.querySelector('.realUpload').click()}
+                            >
+                                <input
+                                    type="file"
+                                    className="realUpload"
+                                    display="hidden"
+                                    accept="image/*"
+                                    required
+                                    multiple
+                                    onChange={(event) => this.GetImagePreview(event)}
+                                ></input>
+                                <ul className="image-preview">
+                                    <li className="flex-preview-items border-round">
                                         <div>대표 이미지</div>
-                                        <img src={CameraImages} alt='이미지'></img>
+                                        <img src={this.state.imgs[0]} alt="이미지"></img>
                                     </li>
-                                    <li className='flex-preview-items border-round'>
-                                        <img src={CameraImages} alt='이미지'></img>
+                                    <li className="flex-preview-items border-round">
+                                        <img src={this.state.imgs[1]} alt="이미지"></img>
                                     </li>
-                                    <li className='flex-preview-items border-round'>
-                                        <img src={CameraImages} alt='이미지'></img>
+                                    <li className="flex-preview-items border-round">
+                                        <img src={this.state.imgs[2]} alt="이미지"></img>
                                     </li>
-                                    <li className='flex-preview-items border-round'>
-                                        <img src={CameraImages} alt='이미지'></img>
+                                    <li className="flex-preview-items border-round">
+                                        <img src={this.state.imgs[3]} alt="이미지"></img>
                                     </li>
-                                    <li className='flex-preview-items border-round'>
-                                        <img src={CameraImages} alt='이미지'></img>
+                                    <li className="flex-preview-items border-round">
+                                        <img src={this.state.imgs[4]} alt="이미지"></img>
                                     </li>
-                                    <li className='flex-preview-items border-round'>
-                                        <img src={CameraImages} alt='이미지'></img>
+                                    <li className="flex-preview-items border-round">
+                                        <img src={this.state.imgs[5]} alt="이미지"></img>
                                     </li>
                                 </ul>
                             </td>
@@ -109,87 +150,91 @@ class Mysupportwrite extends React.Component {
                 <CKEditor
                     data={this.state.resource}
                     type="classic"
-                    config={
-                        ({
-                            toolbar: [
-                                {
-                                    name: 'document',
-                                    items: ['ExportPdf', 'Preview', 'Print', '-', 'Templates'],
-                                },
-                                {
-                                    name: 'clipboard',
-                                    items: [
-                                        'Cut',
-                                        'Copy',
-                                        'Paste',
-                                        'PasteText',
-                                        'PasteFromWord',
-                                        '-',
-                                        'Undo',
-                                        'Redo',
-                                    ],
-                                },
-                                {
-                                    name: 'editing',
-                                    items: ['Find', 'Replace', '-', 'SelectAll'],
-                                },
-                                '/',
-                                {
-                                    name: 'basicstyles',
-                                    items: [
-                                        'Bold',
-                                        'Italic',
-                                        'Underline',
-                                        'Strike',
-                                        'Subscript',
-                                        'Superscript',
-                                        '-',
-                                        'CopyFormatting',
-                                        'RemoveFormat',
-                                    ],
-                                },
-                                {
-                                    name: 'paragraph',
-                                    items: [
-                                        'NumberedList',
-                                        'BulletedList',
-                                        '-',
-                                        'Outdent',
-                                        'Indent',
-                                        '-',
-                                        'Blockquote',
-                                        '-',
-                                        'JustifyLeft',
-                                        'JustifyCenter',
-                                        'JustifyRight',
-                                        'JustifyBlock',
-                                        '-',
-                                    ],
-                                },
-                                { name: 'links', items: ['Link', 'Unlink'] },
-                                {
-                                    name: 'insert',
-                                    items: [
-                                        'Image',
-                                        'Table',
-                                        'HorizontalRule',
-                                        'Smiley',
-                                        'SpecialChar',
-                                        'PageBreak',
-                                    ],
-                                },
-                                '/',
-                                { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
-                                { name: 'colors', items: ['TextColor', 'BGColor'] },
-                                { name: 'tools', items: ['Maximize', 'ShowBlocks'] },
-                            ],
-                        })
-                    }
+                    config={{
+                        toolbar: [
+                            {
+                                name: 'document',
+                                items: ['ExportPdf', 'Preview', 'Print', '-', 'Templates'],
+                            },
+                            {
+                                name: 'clipboard',
+                                items: [
+                                    'Cut',
+                                    'Copy',
+                                    'Paste',
+                                    'PasteText',
+                                    'PasteFromWord',
+                                    '-',
+                                    'Undo',
+                                    'Redo',
+                                ],
+                            },
+                            {
+                                name: 'editing',
+                                items: ['Find', 'Replace', '-', 'SelectAll'],
+                            },
+                            '/',
+                            {
+                                name: 'basicstyles',
+                                items: [
+                                    'Bold',
+                                    'Italic',
+                                    'Underline',
+                                    'Strike',
+                                    'Subscript',
+                                    'Superscript',
+                                    '-',
+                                    'CopyFormatting',
+                                    'RemoveFormat',
+                                ],
+                            },
+                            {
+                                name: 'paragraph',
+                                items: [
+                                    'NumberedList',
+                                    'BulletedList',
+                                    '-',
+                                    'Outdent',
+                                    'Indent',
+                                    '-',
+                                    'Blockquote',
+                                    '-',
+                                    'JustifyLeft',
+                                    'JustifyCenter',
+                                    'JustifyRight',
+                                    'JustifyBlock',
+                                    '-',
+                                ],
+                            },
+                            { name: 'links', items: ['Link', 'Unlink'] },
+                            {
+                                name: 'insert',
+                                items: [
+                                    'Image',
+                                    'Table',
+                                    'HorizontalRule',
+                                    'Smiley',
+                                    'SpecialChar',
+                                    'PageBreak',
+                                ],
+                            },
+                            '/',
+                            { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+                            { name: 'colors', items: ['TextColor', 'BGColor'] },
+                            { name: 'tools', items: ['Maximize', 'ShowBlocks'] },
+                        ],
+                    }}
                     onChange={(event) => this.SaveResource(event.editor.getData())}
                 />
-                <section className='center mt-3rem container'>
-                    <p className='half bold'>글쓰기 입력창의 오른쪽 제일 아래 직각삼각형을 드래그하면 창의 크기를 조절할 수 있습니다.</p>
-                    <p className='half bold'>글쓰기 입력창의 '도구' 오른쪽 제일 아래부분의 '최대화'버튼으로 전체화면 모드를 활성화 할 수 있습니다.</p>
+                <section className="center mt-3rem container">
+                    <p className="half bold">
+                        글쓰기 입력창의 오른쪽 제일 아래 직각삼각형을 드래그하면 창의 크기를 조절할
+                        수 있습니다.
+                    </p>
+                    <p className="half bold">
+                        글쓰기 입력창의 '도구' 오른쪽 제일 아래부분의 '최대화'버튼으로 전체화면
+                        모드를 활성화 할 수 있습니다.
+                    </p>
                 </section>
                 <section className="container center mt-3rem mb-3rem">
                     <NavLink to="/profil/mySupport/mySupportList" className="btn btn-dark">
