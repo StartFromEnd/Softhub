@@ -168,10 +168,6 @@ hr {
     background-color: #0D6EFD;
     font-size: 1rem;
 }
-.flex-preview-item img {
-    width: 100%;
-    height: 9rem;
-}
 .form-input {
     border-width: 0;
 }
