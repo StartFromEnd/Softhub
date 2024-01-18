@@ -56,7 +56,7 @@ class Mysupportwrite extends React.Component {
                     reader.readAsDataURL([...files][i]);
                 }
                 else{
-                    reader.readAsDataURL(new Blob([...files][i], {type: 'image/png'}));
+                    reader.readAsDataURL(new Blob([[...files][i]], {type: 'image/png'}));
                 }
                 reader.onload = (e) => {
                     let newImgs = [...this.state.imgs];
