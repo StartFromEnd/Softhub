@@ -54,7 +54,6 @@ class Mysupportwrite extends React.Component {
                     newImgs[i] = e.target.result;
                     this.setState({imgs: newImgs});
                 }
-                reader.readAsDataURL([...files][i]);
             }
         }
     };
@@ -153,7 +152,7 @@ class Mysupportwrite extends React.Component {
                 <CKEditor
                     data={this.state.resource}
                     type="classic"
-                    config={{
+                    config={{filebrowserUploadMethod: 'form'}, {
                         toolbar: [
                             {
                                 name: 'document',
