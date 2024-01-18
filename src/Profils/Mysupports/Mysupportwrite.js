@@ -47,7 +47,7 @@ class Mysupportwrite extends React.Component {
         });
         
         if([...files].length < 7){
-            for (int i=0; i<=5; i++){
+            for (let i=0; i<=5; i++){
                 const reader = new FileReader();
                 reader.onload = (e) => {
                     console.log(e.target.result);
