@@ -80,25 +80,25 @@ class Mysupportwrite extends React.Component {
                             <td className='bold center table-primary' width='20%'>상품 이미지</td>
                             <td width='80%' onClick={() => document.querySelector('.realUpload').click()}>
                                 <input type='file' className='realUpload' display='hidden' accept='image/*' required multiple onChange={(event) => this.GetImagePreview(event)}></input>
-                                <ul className='image-preview flex'>
+                                <ul className='image-preview'>
                                     <li className='flex-preview-items border-round'>
                                         <div>대표 이미지</div>
-                                        <img src='#' alt='이미지'></img>
+                                        <img src='../../Images/camera.png' alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='#' alt='이미지'></img>
+                                        <img src='../../Images/camera.png' alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='#' alt='이미지'></img>
+                                        <img src='../../Images/camera.png' alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='#' alt='이미지'></img>
+                                        <img src='../../Images/camera.png' alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='#' alt='이미지'></img>
+                                        <img src='../../Images/camera.png' alt='이미지'></img>
                                     </li>
                                     <li className='flex-preview-items border-round'>
-                                        <img src='#' alt='이미지'></img>
+                                        <img src='../../Images/camera.png' alt='이미지'></img>
                                     </li>
                                 </ul>
                             </td>
