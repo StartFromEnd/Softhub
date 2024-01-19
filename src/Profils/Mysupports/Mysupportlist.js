@@ -39,11 +39,9 @@ class Mysupportlist extends React.Component {
                         checked={this.state.request}
                         onClick={(event) => this.TrueRequest(event.target.checked)}
                     ></input>
-                    <label className="form-check-label" for="flexRadioDefault1">
-                        내가 받은 후원
+                    <label className="form-check-label bold" for="flexRadioDefault1">
+                        받은 후원
                     </label>
-                </div>
-                <div className="form-check">
                     <input
                         className="form-check-input"
                         type="radio"
@@ -52,8 +50,8 @@ class Mysupportlist extends React.Component {
                         checked={this.state.response}
                         onClick={(event) => this.TrueResponse(event.target.checked)}
                     ></input>
-                    <label className="form-check-label" for="flexRadioDefault2">
-                        내가 한 후원
+                    <label className="form-check-label bold" for="flexRadioDefault2">
+                        한 후원
                     </label>
                 </div>
                 <section className="flex container mb-3rem"></section>
