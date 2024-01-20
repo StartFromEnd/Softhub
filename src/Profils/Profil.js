@@ -62,7 +62,6 @@ class Profil extends React.Component {
                             </tr>
                         </tbody>
                         </table>
-                        <hr></hr>
                         <p className="half bold">이메일은 사용자 식별정보이므로 변경이 불가합니다.</p>
                         <p className="half bold">
                             닉네임 변경을 원할 시 관리자에게 개인 문의하여 주십시오.
@@ -71,6 +70,7 @@ class Profil extends React.Component {
                             공인 혹은 상표가 있는 단체는 관리자의 판단하에 ✅ 표시를 부여받을 수
                             있습니다.
                         </p>
+                        <hr></hr>
                     </section>
                 </section>
                 <section className="profil-routes container mt-3rem mb-3rem">
