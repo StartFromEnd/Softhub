@@ -42,10 +42,26 @@ class Profil extends React.Component {
             <div>
                 <section className="profil-form-wrap container">
                     <section className="profil-form-wrap-margin container">
-                        <p className="one">{this.state.nickname}</p>
-                        <p className="one">{this.state.position}</p>
-                        <p className="one">{this.state.email}</p>
-                        <p className="one">{this.state.bankAccount}</p>
+                        <table className='table border-round'>
+                        <tbody>
+                            <tr>
+                                <td className='table-warning bold center' width='20%'>닉네임</td>
+                                <td width='80%'>{this.state.nickname}</td>
+                            </tr>
+                            <tr>
+                                <td className='table-warning bold center' width='20%'>포지션</td>
+                                <td width='80%'>{this.state.position}</td>
+                            </tr>
+                            <tr>
+                                <td className='table-warning bold center' width='20%'>이메일</td>
+                                <td width='80%'>{this.state.email}</td>
+                            </tr>
+                            <tr>
+                                <td className='table-warning bold center' width='20%'>계좌정보</td>
+                                <td width='80%'>{this.state.bankAccount}</td>
+                            </tr>
+                        </tbody>
+                        </table>
                         <hr></hr>
                         <p className="half bold">이메일은 사용자 식별정보이므로 변경이 불가합니다.</p>
                         <p className="half bold">

@@ -30,7 +30,7 @@ class Mysupportlist extends React.Component {
     render() {
         return (
             <div>
-                <div class="form-check">
+                <div class="form-check center">
                     <input
                         className="form-check-input"
                         type="radio"
@@ -42,6 +42,8 @@ class Mysupportlist extends React.Component {
                     <label className="form-check-label bold" for="flexRadioDefault1">
                         받은 후원
                     </label>
+                </div>
+                <div class="form-check center">
                     <input
                         className="form-check-input"
                         type="radio"
