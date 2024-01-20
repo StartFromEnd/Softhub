@@ -22,11 +22,13 @@ class Mysupportlist extends React.Component {
     TrueRequest(param) {
         this.setState({ request: param });
         this.setState({ response: !param });
+        this.LoadSupport();
     }
 
     TrueResponse(param) {
         this.setState({ request: !param });
         this.setState({ response: param });
+        this.LoadSupport();
     }
 
     LoadSupport = async () => {
@@ -46,9 +48,14 @@ class Mysupportlist extends React.Component {
             this.setState({ supportNum: data.result[0] });
             this.setState({ supportList: data.result[1] });
         }
+        else {
+            alert(data.msg);
+        }
     };
 
-    componentDidMount() {}
+    componentDidMount() {
+        this.LoadSupport();
+    }
 
     render() {
         return (
