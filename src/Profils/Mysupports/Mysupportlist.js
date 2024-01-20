@@ -93,7 +93,7 @@ class Mysupportlist extends React.Component {
                     </div>
                 </div>
 
-                <section className="flex container mb-3rem">
+                <section className="container mb-3rem" style={this.state.supportNum <= 0 ? Styles.nothing : Styles.flex}>
                     {this.state.supportNum <= 0 ? (
                         <p className="center mt-3rem center">아직 참여한 후원이 존재하지 않습니다.</p>
                     ) : (
@@ -119,6 +119,17 @@ class Mysupportlist extends React.Component {
                 </section>
             </div>
         );
+    }
+}
+
+const Styles = {
+    nothing: {
+        
+    },
+    
+    flex: {
+        display: 'flex',
+        flexWrap: 'wrap',
     }
 }
 
