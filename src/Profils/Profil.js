@@ -81,7 +81,7 @@ class Profil extends React.Component {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/profil/myOrder" className="nav-link">
+                            <NavLink to="/profil/myOrder/myOrderList" className="nav-link">
                                 내 주문목록
                             </NavLink>
                         </li>
