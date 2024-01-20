@@ -77,7 +77,12 @@ class Mysupportwrite extends React.Component {
         }
         
         //session, email, password, nickname, variables(3)...
-        let array = [cookie.load('sessionID'), null, null, null, [this.state.title, this.state.product, this.state.price, this.state.goal], [...this.state.imgs], this.state.resource];
+        let infos = [];
+        infos[0] = this.state.title;
+        infos[1] = this.state.product;
+        infos[2] = this.state.price;
+        infos[3] = this.state.goal;
+        let array = [cookie.load('sessionID'), null, null, null, infos, [...this.state.imgs], this.state.resource];
         let data = await common.Fetch('supportWrite', array);
         
         if(data.ok){
