@@ -95,7 +95,7 @@ class Mysupportlist extends React.Component {
 
                 <section className="flex container mb-3rem">
                     {this.state.supportNum <= 0 ? (
-                        <p className="center mt-3rem">아직 참여한 후원이 존재하지 않습니다.</p>
+                        <p className="center mt-3rem center">아직 참여한 후원이 존재하지 않습니다.</p>
                     ) : (
                         this.state.supportList.map((item, index) => (
                             <Rendersupport
