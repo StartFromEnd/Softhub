@@ -83,6 +83,9 @@ class Mysupportwrite extends React.Component {
                 images[i] = 'null';
             }
             images[i] += '&%!';
+            if(i >= 5){
+                images[i] += ',';
+            }
         }
         let array = [cookie.load('sessionID'), null, null, null, [this.state.title+'&%!',this.state.product+'&%!',this.state.price+'&%!',this.state.goal], images, this.state.resource];
         let data = await common.Fetch('supportWrite', array);
