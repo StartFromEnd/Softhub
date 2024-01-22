@@ -107,9 +107,9 @@ class Mysupportlist extends React.Component {
                                 price={item.support_price}
                                 percent={
                                     item.support_supporters == null ? (
-                                    item.support_supporters.split('/').length / item.support_goal
-                                    ) : (
                                     0
+                                    ) : (
+                                    item.support_supporters.split('/').length / item.support_goal
                                     )
                                 }
                             />
