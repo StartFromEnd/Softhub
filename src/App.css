@@ -148,6 +148,9 @@ hr {
 }
 .flex-items{
     flex: 1 1 18%;
+    padding: 1rem;
+    border: 0.1rem solid black;
+    border-radius: 1rem;
 }
 .flex-preview-items{
     position: relative;
