@@ -134,6 +134,7 @@ const Styles = {
     flex: {
         display: 'flex',
         flexWrap: 'wrap',
+        gap: '1rem',
     }
 }
 
