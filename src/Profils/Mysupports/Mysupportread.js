@@ -43,19 +43,23 @@ class Mysupportread extends React.Component {
     
     render(){
         return(
-            <div style={{position:'relative', minHeight:'30vw'}}>
+            <div style={{position:'relative'}}>
                 <div className='wrap-main'>
                     <div className='wrap-images mb-3rem'>
-                        
+                        <div className='left-button'>&lt;</div>
+                        <div className='slide-box'>
+                            
+                        </div>
+                        <div className='right-button'>&gt;</div>
                     </div>
-                    <div className='wrap-body' dangerouslySetInnerHTML={{ __html: this.state.main }}>
+                    <div className='wrap-body' dangerouslySetInnerHTML={{ __html: this.state.main }} style={{minHeight:'30vw'}}>
                         
                     </div>
                 </div>
                 <div className='wrap-purchase'>
                     <p className='bold one-half'>{this.state.support.length > 0 ? this.state.support[0].support_title : '로딩중입니다.'}</p>
                     <p className='bold one'>{this.state.support.length > 0 ? this.state.support[0].support_writer_id : '로딩중입니다.'}</p>
-                    <p className='bold half-large'>{this.state.support.length > 0 ? `${this.state.support[0].support_price.toLocaleString('ko-KR')}원` : '로딩중입니다.'}</p>
+                    <p className='bold half-large'>{this.state.support.length > 0 ? `${Number(this.state.support[0].support_price).toLocaleString('ko-KR')}원` : '로딩중입니다.'}</p>
                     <p className='bold half-large'>{this.state.support.length > 0 ? `후원이 ${this.state.percent * this.state.support[0].support_goal}/${this.state.support[0].support_goal}명 진행중입니다.` : '로딩중입니다.'}</p>
                     <div className='border-round'>
                         <div className='border-round bg-skyblue' style={{width:`${100 * this.state.percent}%`, height:'1rem'}}>

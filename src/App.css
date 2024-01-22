@@ -195,6 +195,20 @@ hr {
     top: 0;
     width: 65%;
 }
+.wrap-images div {
+    height: 8rem;
+}
+.wrap-images .slide-box {
+    width: 16rem;
+    overflow: hidden;
+}
+.wrap-images .left-button, .wrap-images .right-button{
+    width: 2rem;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    line-height: 8rem;
+}
 .wrap-purchase {
     position: absolute;
     right: 0;
