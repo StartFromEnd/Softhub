@@ -190,8 +190,12 @@ hr {
 }
 
 .wrap-main {
+    left: 0;
+    top: 0;
     width: 65%;
 }
 .wrap-purchase {
+    right: 0;
+    top: 0;
     width: 35%;
 }
