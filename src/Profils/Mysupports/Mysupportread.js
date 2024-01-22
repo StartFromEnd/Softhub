@@ -46,11 +46,13 @@ class Mysupportread extends React.Component {
             <div style={{position:'relative'}}>
                 <div className='wrap-main'>
                     <div className='wrap-images mb-3rem'>
-                        <div className='left-button'>&lt;</div>
+                        <div className='left-button'></div>
                         <div className='slide-box'>
-                            
+                            <div class="d-flex justify-content-between">
+
+                            </div>
                         </div>
-                        <div className='right-button'>&gt;</div>
+                        <div className='right-button'></div>
                     </div>
                     <div className='wrap-body' dangerouslySetInnerHTML={{ __html: this.state.main }} style={{minHeight:'30vw'}}>
                         

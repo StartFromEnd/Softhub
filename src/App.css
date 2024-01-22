@@ -203,12 +203,23 @@ hr {
     width: 16rem;
     overflow: hidden;
 }
+.wrap-images .slide-box > div {
+    width: 96rem;
+    transition: 0.5s all;
+}
+.wrap-images .slide-box > div img {
+    display: block;
+    width: 16rem;
+}
 .wrap-images .left-button, .wrap-images .right-button{
     width: 2rem;
     text-align: center;
     color: white;
     background-color: rgba(0, 0, 0, 0.4);
     line-height: 8rem;
+}
+.wrap-images .left-button:hover, .wrap-images .right-button:hover{
+    background-color: rgba(0, 0, 0, 0.8);
 }
 .wrap-purchase {
     position: absolute;
