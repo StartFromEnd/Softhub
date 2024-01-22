@@ -10,6 +10,7 @@ class Mysupportread extends React.Component {
         super(props);
         this.state ={
             support: [],
+            main: '<p>로딩중입니다.</p>',
             percent: 0,
         }
     }
@@ -22,6 +23,7 @@ class Mysupportread extends React.Component {
         
         if(data.ok){
             this.setState({support: data.result});
+            this.setState({main: data.result[0].support_main});
             if(data.result[0].support_supporters == null){
                 this.setState({percent: 0});
             }
@@ -46,7 +48,7 @@ class Mysupportread extends React.Component {
                     <div className='wrap-images'>
                         
                     </div>
-                    <div className='wrap-body' dangerouslySetInnerHTML={{ __html: this.state.support[0].support_main }}>
+                    <div className='wrap-body' dangerouslySetInnerHTML={{ __html: this.state.main }}>
                         
                     </div>
                 </div>
