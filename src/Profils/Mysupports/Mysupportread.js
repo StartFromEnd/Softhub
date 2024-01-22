@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import cookie from 'react-cookies';
 import '../../App.css';
 import * as common from '../../CommonFunctions.js';
+import CameraImages from '../../Images/camera.png';
 
 class Mysupportread extends React.Component {
     
@@ -12,6 +13,7 @@ class Mysupportread extends React.Component {
             support: [],
             main: '<p>로딩중입니다.</p>',
             percent: 0,
+            srcs: [CameraImages, CameraImages, CameraImages, CameraImages, CameraImages, CameraImages],
         }
     }
     
@@ -24,6 +26,17 @@ class Mysupportread extends React.Component {
         if(data.ok){
             this.setState({support: data.result});
             this.setState({main: data.result[0].support_main});
+            let srcs = [...this.state.srcs];
+            let addresses = data.result[0].support_images.split('&%!,');
+            for(let i=0; i<6; i++){
+                if(addresses[i] == 'null'){
+                    srcs[i] = CameraImages;
+                }
+                else{
+                    srcs[i] = 'https://storage.googleapis.com/softhub-image-storage/'+addresses[i];
+                }
+            }
+            this.setState({srcs: srcs});
             if(data.result[0].support_supporters == null){
                 this.setState({percent: 0});
             }
@@ -49,7 +62,12 @@ class Mysupportread extends React.Component {
                         <div className='left-button'></div>
                         <div className='slide-box'>
                             <div class="d-flex justify-content-between">
-
+                                <img src={this.state.srcs[0]} alt='제품이미지 1'></img>
+                                <img src={this.state.srcs[1]} alt='제품이미지 2'></img>
+                                <img src={this.state.srcs[2]} alt='제품이미지 3'></img>
+                                <img src={this.state.srcs[3]} alt='제품이미지 4'></img>
+                                <img src={this.state.srcs[4]} alt='제품이미지 5'></img>
+                                <img src={this.state.srcs[5]} alt='제품이미지 6'></img>
                             </div>
                         </div>
                         <div className='right-button'></div>
