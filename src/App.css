@@ -175,3 +175,10 @@ hr {
 .form-input {
     border-width: 0;
 }
+.none-style-link {
+    text-decoration: none;
+}
+.none-style-link img {
+    display: block;
+    width: 100%;
+}
