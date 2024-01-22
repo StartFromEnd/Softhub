@@ -188,3 +188,10 @@ hr {
     display: block;
     width: 100%;
 }
+
+.wrap-main {
+    width: 65%;
+}
+.wrap-purchase {
+    width: 35%;
+}

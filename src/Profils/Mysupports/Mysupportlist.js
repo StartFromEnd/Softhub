@@ -22,16 +22,16 @@ class Mysupportlist extends React.Component {
     TrueRequest(param) {
         this.setState({ request: param });
         this.setState({ response: !param });
-        this.LoadSupport(true);
+        this.LoadSupportList(true);
     }
 
     TrueResponse(param) {
         this.setState({ request: !param });
         this.setState({ response: param });
-        this.LoadSupport(false);
+        this.LoadSupportList(false);
     }
 
-    LoadSupport = async (bool) => {
+    LoadSupportList = async (bool) => {
         //session, email, password, nickname, variables(3)...
         let array = [
             cookie.load('sessionID'),
@@ -42,7 +42,7 @@ class Mysupportlist extends React.Component {
             this.state.nowPage,
             null,
         ];
-        let data = await common.Fetch('supportRead', array);
+        let data = await common.Fetch('supportList', array);
 
         if (data.ok) {
             this.setState({ supportNum: data.result[0] });
@@ -55,13 +55,13 @@ class Mysupportlist extends React.Component {
 
     ButtonClick = async (param) => {
         await this.setState({nowPage: this.state.standardPage + param});
-        this.LoadSupport(this.state.request == true ? true : false);
+        this.LoadSupportList(this.state.request == true ? true : false);
     }
     
     LeftMoveButtonClick = async () => {
         if(this.state.standardPage >= 6){
             await this.setState({standardPage: this.state.standardPage-5, nowPage: this.state.standardPage - 5});
-            this.LoadSupport(this.state.request == true ? true : false);
+            this.LoadSupportList(this.state.request == true ? true : false);
         }
         else{
             return;
@@ -71,7 +71,7 @@ class Mysupportlist extends React.Component {
     RightMoveButtonClick = async () => {
         if(this.state.faqNum > (this.state.standardPage + 4) * 20){
             await this.setState({standardPage: this.state.standardPage + 5, nowPage: this.state.standardPage + 5});
-            this.LoadSupport(this.state.request == true ? true : false);
+            this.LoadSupportList(this.state.request == true ? true : false);
         }
         else{
             return;
@@ -79,7 +79,7 @@ class Mysupportlist extends React.Component {
     }
     
     componentDidMount() {
-        this.LoadSupport(true);
+        this.LoadSupportList(true);
     }
 
     render() {
