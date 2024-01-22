@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import cookie from 'react-cookies';
 import './App.css';
 import * as common from './CommonFunctions.js';
-import CameraImages from '../../Images/camera.png';
+import CameraImages from './Images/camera.png';
 
 function Renderflexitems({index, link, image, title, price, percent}){
     return(
