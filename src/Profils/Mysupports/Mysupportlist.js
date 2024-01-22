@@ -53,8 +53,33 @@ class Mysupportlist extends React.Component {
         }
     };
 
+    ButtonClick = async (param) => {
+        await this.setState({nowPage: this.state.standardPage + param});
+        this.LoadSupport(this.state.request == true ? true : false);
+    }
+    
+    LeftMoveButtonClick = async () => {
+        if(this.state.standardPage >= 6){
+            await this.setState({standardPage: this.state.standardPage-5, nowPage: this.state.standardPage - 5});
+            this.LoadSupport(this.state.request == true ? true : false);
+        }
+        else{
+            return;
+        }
+    }
+    
+    RightMoveButtonClick = async () => {
+        if(this.state.faqNum > (this.state.standardPage + 4) * 20){
+            await this.setState({standardPage: this.state.standardPage + 5, nowPage: this.state.standardPage + 5});
+            this.LoadSupport(this.state.request == true ? true : false);
+        }
+        else{
+            return;
+        }
+    }
+    
     componentDidMount() {
-        this.LoadSupport();
+        this.LoadSupport(true);
     }
 
     render() {
@@ -118,6 +143,76 @@ class Mysupportlist extends React.Component {
                     )}
                 </section>
                 <section className="container center mb-3rem">
+                    <div className="d-flex justify-content-center mb-3rem">
+                    <button
+                        type="button"
+                        className="btn btn-light bg-white btn-left"
+                        onClick={() => this.LeftMoveButtonClick()}>
+                        &lt;
+                    </button>
+                    <button
+                        type="button"
+                        className="btn btn-light bg-white"
+                        onClick={() => this.ButtonClick(0)}
+                    >
+                        {this.state.standardPage}
+                    </button>
+                    <button
+                        type="button"
+                        className="btn btn-light bg-white"
+                        style={
+                            this.state.supportNum > this.state.standardPage * 20
+                                ? Styles.inlineBlock
+                                : Styles.none
+                        }
+                        onClick={() => this.ButtonClick(1)}
+                    >
+                        {this.state.standardPage + 1}
+                    </button>
+                    <button
+                        type="button"
+                        className="btn btn-light bg-white"
+                        style={
+                            this.state.supportNum > (this.state.standardPage+1) * 20
+                                ? Styles.inlineBlock
+                                : Styles.none
+                        }
+                        onClick={() => this.ButtonClick(2)}
+                    >
+                        {this.state.standardPage + 2}
+                    </button>
+                    <button
+                        type="button"
+                        className="btn btn-light bg-white"
+                        style={
+                            this.state.supportNum > (this.state.standardPage+2) * 20
+                                ? Styles.inlineBlock
+                                : Styles.none
+                        }
+                        onClick={() => this.ButtonClick(3)}
+                    >
+                        {this.state.standardPage + 3}
+                    </button>
+                    <button
+                        type="button"
+                        className="btn btn-light bg-white"
+                        style={
+                            this.state.supportNum > (this.state.standardPage+3) * 20
+                                ? Styles.inlineBlock
+                                : Styles.none
+                        }
+                        onClick={() => this.ButtonClick(4)}
+                    >
+                        {this.state.standardPage + 4}
+                    </button>
+                    <button
+                        type="button"
+                        className="btn btn-light bg-white btn-right"
+                        onClick={() => this.RightMoveButtonClick()}
+                    >
+                        &gt;
+                    </button>
+                </div>
                     <NavLink to="/profil/mySupport/mySupportWrite" className="btn btn-primary">
                         후원 요청하기
                     </NavLink>
@@ -136,7 +231,13 @@ const Styles = {
         display: 'flex',
         flexWrap: 'wrap',
         gap: '1rem',
-    }
+    },
+    none: {
+        display: 'none',
+    },
+    inlineBlock: {
+        display: 'inline-block',
+    },
 }
 
 export default Mysupportlist;

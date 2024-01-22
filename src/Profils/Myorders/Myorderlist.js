@@ -61,7 +61,7 @@ class Myorderlist extends React.Component {
                 <section className="flex container mb-3rem"></section>
                 <section className="container center mb-3rem">
                     <NavLink to="/profil/myOrder/myOrderWrite" className="btn btn-primary">
-                        주문 요청/등록 하기
+                        주문 등록/요청 하기
                     </NavLink>
                 </section>
             </div>

@@ -126,7 +126,7 @@ class Myfaqlist extends React.Component {
                         type="button"
                         className="btn btn-light bg-white"
                         style={
-                            this.state.faqNum > this.state.standardPage * 20
+                            this.state.faqNum > (this.state.standardPage+1) * 10
                                 ? Styles.inlineBlock
                                 : Styles.none
                         }
@@ -138,7 +138,7 @@ class Myfaqlist extends React.Component {
                         type="button"
                         className="btn btn-light bg-white"
                         style={
-                            this.state.faqNum > this.state.standardPage * 30
+                            this.state.faqNum > (this.state.standardPage+2) * 10
                                 ? Styles.inlineBlock
                                 : Styles.none
                         }
@@ -150,7 +150,7 @@ class Myfaqlist extends React.Component {
                         type="button"
                         className="btn btn-light bg-white"
                         style={
-                            this.state.faqNum > this.state.standardPage * 40
+                            this.state.faqNum > (this.state.standardPage+3) * 10
                                 ? Styles.inlineBlock
                                 : Styles.none
                         }
