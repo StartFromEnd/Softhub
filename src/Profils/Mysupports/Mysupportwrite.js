@@ -79,6 +79,9 @@ class Mysupportwrite extends React.Component {
         //session, email, password, nickname, variables(3)...
         let images = [...this.state.imgs];
         for(let i=0; i<5; i++){
+            if(images[i] == CameraImages){
+                images[i] = 'null';
+            }
             images[i] += '&%!';
         }
         let array = [cookie.load('sessionID'), null, null, null, [this.state.title+'&%!',this.state.product+'&%!',this.state.price+'&%!',this.state.goal], images, this.state.resource];

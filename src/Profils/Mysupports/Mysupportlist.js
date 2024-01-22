@@ -102,11 +102,15 @@ class Mysupportlist extends React.Component {
                                 key={index}
                                 index={index}
                                 link={`/profil/mySupport/mySupportRead/?seq=${item.seq}`}
-                                image={item.support_images[0]}
+                                image={item.support_images.split('&%!,')}
                                 title={item.support_title}
                                 price={item.support_price}
                                 percent={
+                                    item.support_supporters.length > 0 ? (
                                     item.support_supporters.split('/').length / item.support_goal
+                                    ) : (
+                                    0
+                                    )
                                 }
                             />
                         ))
