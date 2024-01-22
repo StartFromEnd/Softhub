@@ -14,6 +14,7 @@ class Mysupportread extends React.Component {
             main: '<p>로딩중입니다.</p>',
             percent: 0,
             srcs: [CameraImages, CameraImages, CameraImages, CameraImages, CameraImages, CameraImages],
+            slider: 0,
         }
     }
     
@@ -54,14 +55,36 @@ class Mysupportread extends React.Component {
         this.LoadSupport();
     }
     
+    SlideLeft() {
+        if(this.state.slider >= 0){
+            return;
+        }
+        else{
+            let modified = this.state.slider;
+            modified += 16;
+            this.setState({slider: modified});
+        }
+    }
+    
+    SlideRight() {
+        if(this.state.slider <= -96){
+            return;
+        }
+        else{
+            let modified = this.state.slider;
+            modified += -16;
+            this.setState({slider: modified});
+        }
+    }
+    
     render(){
         return(
             <div style={{position:'relative'}}>
                 <div className='wrap-main'>
                     <div className='wrap-images mb-3rem'>
-                        <div className='left-button'></div>
+                        <div className='left-button' onClick={() => this.SlideLeft()}></div>
                         <div className='slide-box'>
-                            <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-between" style={{translateX:`${this.state.slider}rem`}}>
                                 <img src={this.state.srcs[0]} alt='제품이미지 1'></img>
                                 <img src={this.state.srcs[1]} alt='제품이미지 2'></img>
                                 <img src={this.state.srcs[2]} alt='제품이미지 3'></img>
@@ -70,7 +93,7 @@ class Mysupportread extends React.Component {
                                 <img src={this.state.srcs[5]} alt='제품이미지 6'></img>
                             </div>
                         </div>
-                        <div className='right-button'></div>
+                        <div className='right-button' onClick={() => this.SlideRight()}></div>
                     </div>
                     <div className='wrap-body' dangerouslySetInnerHTML={{ __html: this.state.main }} style={{minHeight:'30vw'}}>
                         
