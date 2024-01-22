@@ -190,11 +190,13 @@ hr {
 }
 
 .wrap-main {
+    position: relative;
     left: 0;
     top: 0;
     width: 65%;
 }
 .wrap-purchase {
+    position: relative;
     right: 0;
     top: 0;
     width: 35%;

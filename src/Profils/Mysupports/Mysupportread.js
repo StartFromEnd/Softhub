@@ -43,7 +43,7 @@ class Mysupportread extends React.Component {
     
     render(){
         return(
-            <div>
+            <div style={{position:'relative'}}>
                 <div className='wrap-main'>
                     <div className='wrap-images'>
                         
