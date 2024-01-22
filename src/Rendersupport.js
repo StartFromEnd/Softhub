@@ -11,7 +11,7 @@ function Renderflexitems({index, link, image, title, writer, price, percent}){
             <NavLink to={link} className='none-style-link'>
                 <img src={image[0] == 'null' ? CameraImages : 'https://storage.googleapis.com/softhub-image-storage/'+image[0]} alt='제품사진'></img>
                 <p className='bold half-large'>{title}</p>
-                <p classname='bold half'>{writer}</p>
+                <p className='bold half'>{`$[writer}`}</p>
                 <p className='bold half'>{`${price}원`}</p>
                 <p className='bold half'>후원 {100*percent}% 진행중</p>
                 <div className='border-round'>

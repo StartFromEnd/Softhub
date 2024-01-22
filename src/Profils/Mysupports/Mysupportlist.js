@@ -22,23 +22,23 @@ class Mysupportlist extends React.Component {
     TrueRequest(param) {
         this.setState({ request: param });
         this.setState({ response: !param });
-        this.LoadSupport();
+        this.LoadSupport(true);
     }
 
     TrueResponse(param) {
         this.setState({ request: !param });
         this.setState({ response: param });
-        this.LoadSupport();
+        this.LoadSupport(false);
     }
 
-    LoadSupport = async () => {
+    LoadSupport = async (bool) => {
         //session, email, password, nickname, variables(3)...
         let array = [
             cookie.load('sessionID'),
             null,
             null,
             null,
-            this.state.request == true ? 'request' : 'response',
+            bool == true ? 'request' : 'response',
             this.state.nowPage,
             null,
         ];
