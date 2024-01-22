@@ -84,7 +84,7 @@ class Mysupportread extends React.Component {
                     <div className='wrap-images mb-3rem'>
                         <div className='left-button' onClick={() => this.SlideLeft()}></div>
                         <div className='slide-box'>
-                            <div class="d-flex justify-content-between" style={{translateX:`${this.state.slider}rem`}}>
+                            <div class="d-flex justify-content-between" style={{translateX(`${this.state.slider}rem`)}}>
                                 <img src={this.state.srcs[0]} alt='제품이미지 1'></img>
                                 <img src={this.state.srcs[1]} alt='제품이미지 2'></img>
                                 <img src={this.state.srcs[2]} alt='제품이미지 3'></img>
