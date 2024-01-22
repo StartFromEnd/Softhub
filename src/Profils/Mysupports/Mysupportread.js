@@ -46,8 +46,8 @@ class Mysupportread extends React.Component {
                     <div className='wrap-images'>
                         
                     </div>
-                    <div className='wrap-body'>
-                        {this.state.support.length > 0 ? this.state.support[0].support_main : '로딩중입니다.'}
+                    <div className='wrap-body' dangerouslySetInnerHTML={{ __html: this.state.support[0].support_main }}>
+                        
                     </div>
                 </div>
                 <div className='wrap-purchase'>
