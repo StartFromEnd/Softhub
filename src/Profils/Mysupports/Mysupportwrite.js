@@ -78,7 +78,7 @@ class Mysupportwrite extends React.Component {
         
         //session, email, password, nickname, variables(3)...
         let images = [...this.state.imgs];
-        for(let i=0; i<5; i++){
+        for(let i=0; i<6; i++){
             if(images[i] == CameraImages){
                 images[i] = 'null';
             }
