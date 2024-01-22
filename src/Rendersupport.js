@@ -15,7 +15,7 @@ function Renderflexitems({index, link, image, title, writer, price, percent}){
                 <p className='bold half'>{`${price}원`}</p>
                 <p className='bold half'>후원 {100*percent}% 진행중</p>
                 <div className='border-round'>
-                    <div className='border-round bg-skyblue' style={{width:`${100 * percent}%`}}>
+                    <div className='border-round bg-skyblue' style={{width:`${100 * percent}%`, height:'1rem'}}>
                     </div>
                 </div>
             </NavLink>
