@@ -170,10 +170,12 @@ p {
     background-color: rgba(255, 255, 255, 0.3);
 }
 .grid-left-top-box {
-    padding: 0.4rem 0.5rem;
+    padding: 0.2rem 0.3rem;
     background-color: white;
     letter-spacing: 1px;
 }
 .grid-right-text {
+    position: absolute;
+    bottom: 0;
     margin-bottom: 0;
 }
