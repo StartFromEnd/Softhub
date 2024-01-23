@@ -162,6 +162,7 @@ p {
 .grid-left-top {
     display: flex;
     grid-column-gap: 0.5rem;
+    width: 70%;
     align-items: center;
     line-height: 0.75rem;
     padding: 0.3rem 0.7rem;

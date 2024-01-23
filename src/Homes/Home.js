@@ -43,7 +43,7 @@ class Home extends React.Component {
                                 <div className='d-flex flex-column'>
                                     <div>
                                         <div className='grid-left-top'>
-                                            <div className='grid-left-top-box purple font-0-75rem bold'>NEW</div>
+                                            <div className='grid-left-top-box purple font-0-75rem'>NEW</div>
                                             <div className='grid-left-top-text'>
                                                 <p className='white font-0-75rem'>새로운 개념의 투자를 시작해보세요</p>
                                             </div>
