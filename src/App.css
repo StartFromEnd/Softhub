@@ -211,6 +211,10 @@ hr {
     display: block;
     width: 16rem;
 }
+.wrap-images .slide-box p {
+    position: absolute;
+    bottom: 0;
+}
 .wrap-images .left-button, .wrap-images .right-button{
     width: 2rem;
     text-align: center;

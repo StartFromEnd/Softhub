@@ -14,7 +14,7 @@ class Mysupportread extends React.Component {
             main: '<p>로딩중입니다.</p>',
             percent: 0,
             srcs: [CameraImages, CameraImages, CameraImages, CameraImages, CameraImages, CameraImages],
-            styles: [Styles.basic, Styles.one, Styles.two, Styles.three, Styles.four, Styles.five, Styles.six],
+            styles: [Styles.basic, Styles.one, Styles.two, Styles.three, Styles.four, Styles.five],
             slider: 0,
         }
     }
@@ -68,7 +68,7 @@ class Mysupportread extends React.Component {
     }
     
     SlideRight() {
-        if(this.state.slider >= 6){
+        if(this.state.slider >= 5){
             return;
         }
         else{
@@ -85,7 +85,7 @@ class Mysupportread extends React.Component {
                     <div className='wrap-images mb-3rem'>
                         <div className='left-button' onClick={() => this.SlideLeft()}></div>
                         <div className='slide-box'>
-                            <div class="d-flex justify-content-between" style={this.state.styles[this.state.slider]}>
+                            <div className="d-flex justify-content-between" style={this.state.styles[this.state.slider]}>
                                 <img src={this.state.srcs[0]} alt='제품이미지 1'></img>
                                 <img src={this.state.srcs[1]} alt='제품이미지 2'></img>
                                 <img src={this.state.srcs[2]} alt='제품이미지 3'></img>
@@ -93,6 +93,7 @@ class Mysupportread extends React.Component {
                                 <img src={this.state.srcs[4]} alt='제품이미지 5'></img>
                                 <img src={this.state.srcs[5]} alt='제품이미지 6'></img>
                             </div>
+                            <p className='center half'>{`${this.state.slider+1}/6`}</p>
                         </div>
                         <div className='right-button' onClick={() => this.SlideRight()}></div>
                     </div>
@@ -133,9 +134,6 @@ const Styles = {
     },
     five: {
         transform: `translateX(-80rem)`,
-    },
-    six: {
-        transform: `translateX(-96rem)`,
     },
 };
 
