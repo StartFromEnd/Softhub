@@ -117,25 +117,25 @@ class Mysupportread extends React.Component {
 
 const Styles = {
     basic: {
-        transform: translateX(0),
+        transform: `translateX(0)`,
     },
     one: {
-        transform: translateX(-16+'rem'),
+        transform: `translateX(-16rem)`,
     },
     two: {
-        transform: translateX(-32+'rem'),
+        transform: `translateX(-32rem)`,
     },
     three: {
-        transform: translateX(-48+'rem'),
+        transform: `translateX(-48rem)`,
     },
     four: {
-        transform: translateX(-64+'rem'),
+        transform: `translateX(-64rem)`,
     },
     five: {
-        transform: translateX(-80+'rem'),
+        transform: `translateX(-80rem)`,
     },
     six: {
-        transform: translateX(-96+'rem'),
+        transform: `translateX(-96rem)`,
     },
 };
 
