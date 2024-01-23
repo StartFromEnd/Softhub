@@ -40,6 +40,9 @@ html {
 a {
     font-weight: 500;
 }
+p {
+    margin-bottom: 0;
+}
 .black {
     color: black;
 }
@@ -168,4 +171,5 @@ a {
 .grid-left-top-box {
     padding: 0.1rem 0.2rem;
     background-color: white;
+    letter-spacing: 1px;
 }
