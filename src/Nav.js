@@ -34,7 +34,7 @@ class Nav extends React.Component {
             if (data.position == 'admin') {
                 profilOrManage = ['관리', '/management'];
             } else {
-                profilOrManage = ['프로필', '/profil/mySupport/mySupportList'];
+                profilOrManage = ['프로필', '/profil/myFaq/myFaqList'];
             }
 
             this.setState({ dropDownNames: [data.result[0], profilOrManage[0], '로그아웃'] });

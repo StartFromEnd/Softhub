@@ -18,16 +18,6 @@ import Myfaqlist from './Profils/Myfaqs/Myfaqlist.js';
 import Myfaqread from './Profils/Myfaqs/Myfaqread.js';
 import Myfaqwrite from './Profils/Myfaqs/Myfaqwrite.js';
 
-import Mysupport from './Profils/Mysupports/Mysupport.js';
-import Mysupportlist from './Profils/Mysupports/Mysupportlist.js';
-import Mysupportread from './Profils/Mysupports/Mysupportread.js';
-import Mysupportwrite from './Profils/Mysupports/Mysupportwrite.js';
-
-import Myorder from './Profils/Myorders/Myorder.js';
-import Myorderlist from './Profils/Myorders/Myorderlist.js';
-import Myorderread from './Profils/Myorders/Myorderread.js';
-import Myorderwrite from './Profils/Myorders/Myorderwrite.js';
-
 import Faq from './Faqs/Faq.js';
 import Faqlist from './Faqs/Faqlist.js';
 import Faqread from './Faqs/Faqread.js';
@@ -53,16 +43,6 @@ class App extends React.Component {
                         <Route path='/signUp' element={<Signup />}></Route>
                         <Route path='/signOut' element={<Signout />}></Route>
                         <Route path='/profil' element={<Profil />}>
-                            <Route path='/profil/mySupport' element={<Mysupport />}>
-                                <Route path='/profil/mySupport/mySupportList' element={<Mysupportlist />}></Route>
-                                <Route path='/profil/mySupport/mySupportRead' element={<Mysupportread />}></Route>
-                                <Route path='/profil/mySupport/mySupportWrite' element={<Mysupportwrite />}></Route>
-                            </Route>
-                            <Route path='/profil/myOrder' element={<Myorder />}>
-                                <Route path='/profil/myOrder/myOrderList' element={<Myorderlist />}></Route>
-                                <Route path='/profil/myOrder/myOrderRead' element={<Myorderread />}></Route>
-                                <Route path='/profil/myOrder/myOrderWrite' element={<Myorderwrite />}></Route>
-                            </Route>
                             <Route path='/profil/myFaq' element={<Myfaq />}>
                                 <Route path='/profil/myFaq/myFaqList' element={<Myfaqlist />}></Route>
                                 <Route path='/profil/myFaq/myFaqRead' element={<Myfaqread />}></Route>
