@@ -43,9 +43,9 @@ class Home extends React.Component {
                                 <div className='d-flex flex-column'>
                                     <div>
                                         <div className='grid-left-top'>
-                                            <div className='grid-left-top-box purple font-0-75rem'>NEW</div>
+                                            <div className='grid-left-top-box purple font-0-75rem bold'>NEW</div>
                                             <div className='grid-left-top-text'>
-                                                <p className='white font-0-75rem'>새로운 개념의 투자를 시작해보세요</p>
+                                                <p className='white font-0-75rem'>새로운 개념의 투자를 시작해보세요.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@ class Home extends React.Component {
                             </div>
                             <div className='grid-right'>
                                 <p className='grid-right-text font-0-75rem white'>
-                                    한 번의 투자로 지속적이고 안정적인 수입을 얻을 수 있습니다.
+                                    한 번의 투자로 지속적인 수입을 얻을 수 있습니다.
                                 </p>
                             </div>
                         </div>
