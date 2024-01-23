@@ -42,17 +42,17 @@ class Home extends React.Component {
                             <div className='grid-left'>
                                 <div className='d-flex flex-column'>
                                     <div>
-                                        <div className='grid-left-top d-flex justify-content-between'>
-                                            <div className='grid-left-top-box purple'>NEW</div>
+                                        <div className='grid-left-top'>
+                                            <div className='grid-left-top-box purple font-0-75rem'>NEW</div>
                                             <div className='grid-left-top-text'>
-                                                <p className='white'>새로운 개념의 투자를 시작해보세요</p>
+                                                <p className='white font-0-75rem'>새로운 개념의 투자를 시작해보세요</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div>
-                                        <h2 className='font-2-5rem white'>펀드허브는</h2>
+                                        <h2 className='font-2rem white'>펀드허브는</h2>
                                         <br></br>
-                                        <h2 className='font-2-5rem white'>투자중계 플랫폼입니다.</h2>
+                                        <h2 className='font-2rem white'>투자중계 플랫폼입니다.</h2>
                                     </div>
                                 </div>
                             </div>
