@@ -66,6 +66,18 @@ class Home extends React.Component {
                         <img src={JobImage} alt='계산기 이미지.' className='row-image'></img>
                     </div>
                 </section>
+                <section className='about-body'>
+                    <div className='about-body-background'></div>
+                    <div className='about-body-container'>
+                        <div></div>
+                        <div>
+                            <p className='font-0-75rem purple mb-3rem'>ABOUT FUNDHUB</p>
+                            <p className='font-1-5rem black mb-3rem bold'>누가 이용하나요?</p>
+                            <p className='font-0-75rem gray mb-3rem'>창업을 하고싶은데 자금이 부족한 창업꿈나무, 투자는 하고싶은데 크게 하는건 부담스러운 투자초보, 모두 펀드허브를 통해 고민을 해결하실 수 있습니다.</p>
+                            
+                        </div>
+                    </div>
+                </section>
             </div>
         );
     }
