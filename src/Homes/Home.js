@@ -78,7 +78,7 @@ class Home extends React.Component {
                             <p className='font-0-75rem gray mb-2rem bold'>✅ 본인 명의의 계좌 소유</p>
                         </div>
                         <div className='about-body-grid'>
-                            
+                            <img src={OfficeImage} alt='사무실 이미지' className='about-body-grid-img-left'></img>
                         </div>
                     </div>
                 </section>
