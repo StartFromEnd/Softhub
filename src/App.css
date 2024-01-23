@@ -174,3 +174,6 @@ p {
     background-color: white;
     letter-spacing: 1px;
 }
+.grid-right-text {
+    margin-bottom: 0;
+}

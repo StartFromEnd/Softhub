@@ -56,7 +56,11 @@ class Home extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className='grid-right'></div>
+                            <div className='grid-right'>
+                                <p className='grid-right-text font-0-75rem white'>
+                                    한 번의 투자로 지속적이고 안정적인 수입을 얻을 수 있습니다.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>
