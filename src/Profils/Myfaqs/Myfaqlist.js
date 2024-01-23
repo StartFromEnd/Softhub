@@ -166,11 +166,6 @@ class Myfaqlist extends React.Component {
                         &gt;
                     </button>
                 </div>
-                <section className='myfaq-form-wrap mt-3rem mb-3rem container'>
-                    <p className='half bold'>개인 문의하기는 다른 사용자에게 노출되지 않습니다.</p>
-                    <p className='half bold'>개인 문의하기는 로그인된 사용자만 이용이 가능합니다.</p>
-                    <p className='half bold'>과도한 장난 혹은 악질적인 내용이 확인되면 계정 정지와 함께 법적 조치가 이뤄질 수 있습니다.</p>
-                </section>
                 <div className="d-flex justify-content-center mt-3rem mb-3rem">
                     <NavLink to="/profil/myFaq/myFaqWrite" className="btn btn-primary">
                         글쓰기

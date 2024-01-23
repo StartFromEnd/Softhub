@@ -51,7 +51,7 @@ class Nav extends React.Component {
             <nav className="navbar navbar-dark bg-dark fixed-top">
                 <div className="container-fluid responsive">
                     <NavLink to="/" className="navbar-brand">
-                        Softhub
+                        FundHub
                     </NavLink>
                     <button
                         className="navbar-toggler"
@@ -71,7 +71,7 @@ class Nav extends React.Component {
                     >
                         <div className="offcanvas-header">
                             <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-                                SoftHub
+                                FundHub
                             </h5>
                             <button
                                 type="button"

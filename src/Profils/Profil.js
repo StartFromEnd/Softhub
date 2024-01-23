@@ -73,16 +73,16 @@ class Profil extends React.Component {
                         <hr></hr>
                     </section>
                 </section>
-                <section className="profil-routes container mt-3rem mb-3rem border-round">
+                <section className="profil-routes container mt-3rem mb-3rem">
                     <ul className="nav justify-content-center">
                         <li className="nav-item border-round">
                             <NavLink to="/profil" className="nav-link">
-                                펀드 요청 현황
+                                내가 등록한 펀드
                             </NavLink>
                         </li>
                         <li className="nav-item border-round">
                             <NavLink to="/profil" className="nav-link">
-                                펀드 등록 현황
+                                내가 참여한 펀드
                             </NavLink>
                         </li>
                         <li className="nav-item border-round">
