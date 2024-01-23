@@ -9,6 +9,8 @@ class Mysupportread extends React.Component {
     
     constructor(props){
         super(props);
+        console.log(props.location.aboutProps);
+        console.log(props.location);
         this.state ={
             support: props.location.aboutProps.totalData,
             main: props.location.aboutProps.totalData.support_main,
