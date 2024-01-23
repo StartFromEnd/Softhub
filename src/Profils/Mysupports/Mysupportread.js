@@ -16,6 +16,14 @@ class Mysupportread extends React.Component {
             srcs: [CameraImages, CameraImages, CameraImages, CameraImages, CameraImages, CameraImages],
             styles: [Styles.basic, Styles.one, Styles.two, Styles.three, Styles.four, Styles.five],
             slider: 0,
+            actions: [<NavLink to='#' className='btn btn-success' style={{width:'100%'}}>후원하기</NavLink>,
+                      <Button className='btn btn-dark' style={{width:'100%'}}>후원완료</Button>,
+                      <NavLink to={() => {
+                              let params = new URLSearchParams(window.location.search);
+                              let link = '/profil/mySupport/mySupportModify/?seq='+params.get('seq');
+                              return link;
+                      }} className='btn btn-info' style={{width:'100%'}}>수정하기</NavLink>],
+            isSame: 0,
         }
     }
     
@@ -28,6 +36,7 @@ class Mysupportread extends React.Component {
         if(data.ok){
             this.setState({support: data.result});
             this.setState({main: data.result[0].support_main});
+            this.setState({isSame: data.result[1]});
             let srcs = [...this.state.srcs];
             let addresses = data.result[0].support_images.split('&%!,');
             for(let i=0; i<6; i++){
@@ -81,8 +90,8 @@ class Mysupportread extends React.Component {
     render(){
         return(
             <div style={{position:'relative'}}>
-                <div className='wrap-main'>
-                    <div className='wrap-images mb-3rem'>
+                <div className='wrap-main mb-3rem'>
+                    <div className='wrap-images'>
                         <div className='left-button' onClick={() => this.SlideLeft()}></div>
                         <div className='slide-box'>
                             <div className="d-flex justify-content-between" style={this.state.styles[this.state.slider]}>
@@ -97,9 +106,6 @@ class Mysupportread extends React.Component {
                         </div>
                         <div className='right-button' onClick={() => this.SlideRight()}></div>
                     </div>
-                    <div className='wrap-body' dangerouslySetInnerHTML={{ __html: this.state.main }} style={{minHeight:'30vw'}}>
-                        
-                    </div>
                 </div>
                 <div className='wrap-purchase'>
                     <p className='bold one-half'>{this.state.support.length > 0 ? this.state.support[0].support_title : '로딩중입니다.'}</p>
@@ -110,6 +116,10 @@ class Mysupportread extends React.Component {
                         <div className='border-round bg-skyblue' style={{width:`${100 * this.state.percent}%`, height:'1rem'}}>
                         </div>
                     </div>
+                    {this.state.actions[this.state.isSame]}
+                </div>
+                <div className='wrap-body' dangerouslySetInnerHTML={{ __html: this.state.main }} style={{width:'100%', minHeight:'30vw'}}>
+                        
                 </div>
             </div>
         )
