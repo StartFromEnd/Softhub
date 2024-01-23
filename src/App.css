@@ -94,6 +94,7 @@ html {
     left: 0;
     padding: 1rem 3%;
     background-color: white;
+    border-bottom: 0.05rem solid #DBDBDB;
 }
 
 .navbar > div {
@@ -103,8 +104,8 @@ html {
 }
 
 .navbar-middle a, .navbar-right a {
-    line-height: 1.6rem;
-    padding: 0.2rem 0.5rem;
+    line-height: 0.75rem;
+    padding: 0.625rem 0.5rem;
 }
 
 .navbar-right-button {
