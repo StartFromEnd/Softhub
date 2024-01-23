@@ -62,7 +62,23 @@ class Mysupportread extends React.Component {
     }
     
     componentDidMount() {
-        
+        let srcs = [...this.state.srcs];
+            for(let i=0; i<6; i++){
+                if(srcs[i] == 'null'){
+                    srcs[i] = CameraImages;
+                }
+                else{
+                    srcs[i] = 'https://storage.googleapis.com/softhub-image-storage/'+srcs[i];
+                }
+            }
+            this.setState({srcs: srcs});
+            if(this.state.support.support_supporters == null){
+                this.setState({percent: 0});
+            }
+            else{
+                let tage = this.state.support.support_supporters.split('/').length / this.state.support.support_goal;
+                this.setState({percent: tage});
+            }
     }
     
     SlideLeft() {
