@@ -22,7 +22,7 @@ class Home extends React.Component {
                             <NavLink to='/main' className='none-style-link block font-1rem black'>FundHub</NavLink>
                         </div>
                         <div className='navbar-middle d-flex justify-content-between'>
-                            <NavLink to='/' className='none-style-link block font-0-75rem blue'>시작하기</NavLink>
+                            <NavLink to='/' className='none-style-link block font-0-75rem purple'>시작하기</NavLink>
                             <NavLink to='/main' className='none-style-link block font-0-75rem gray'>홈</NavLink>
                             <NavLink to='/announce' className='none-style-link block font-0-75rem gray'>공지사항</NavLink>
                             <NavLink to='/faq' className='none-style-link block font-0-75rem gray'>문의하기</NavLink>

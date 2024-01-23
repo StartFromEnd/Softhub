@@ -46,8 +46,11 @@ html {
 .blue {
     color: #4353FF;
 }
+.purple {
+    color: #443FDE;
+}
 .gray {
-    color: #DBDBDB;
+    color: #3E404C;
 }
 .block {
     display: block;
