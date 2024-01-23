@@ -5,6 +5,8 @@ import logo from '../logo.svg';
 import '../App.css';
 import * as common from '../CommonFunctions.js';
 import JobImage from '../img/job.jpg';
+import Job2Image from '../img/job2.jpg';
+import Job3Image from '../img/job3.jpg';
 import OfficeImage from '../img/office.jpg';
 
 class Home extends React.Component {
@@ -64,7 +66,7 @@ class Home extends React.Component {
                                 </p>
                             </div>
                         </div>
-                        <img src={JobImage} alt='계산기 이미지.' className='row-image'></img>
+                        <img src={JobImage} alt='업무 이미지1' className='row-image'></img>
                     </div>
                 </section>
                 <section className='about-body'>
@@ -79,6 +81,8 @@ class Home extends React.Component {
                         </div>
                         <div className='about-body-grid'>
                             <img src={OfficeImage} alt='사무실 이미지' className='about-body-grid-img-left'></img>
+                            <img src={Job2Image} alt='엄무 이미지2' className='about-body-grid-img-right-top'></img>
+                            <img src={Job3Image} alt='엄무 이미지3' className='about-body-grid-img-right-bottom'></img>
                         </div>
                     </div>
                 </section>
