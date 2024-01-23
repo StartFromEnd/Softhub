@@ -34,11 +34,11 @@ class Mysupportread extends React.Component {
         let data = await common.Fetch('supportRead', array);
         
         if(data.ok){
-            this.setState({support: data.result});
-            this.setState({main: data.result[0].support_main});
+            this.setState({support: data.result[0]});
+            this.setState({main: data.result[0][0].support_main});
             this.setState({isSame: data.result[1]});
             let srcs = [...this.state.srcs];
-            let addresses = data.result[0].support_images.split('&%!,');
+            let addresses = data.result[0][0].support_images.split('&%!,');
             for(let i=0; i<6; i++){
                 if(addresses[i] == 'null'){
                     srcs[i] = CameraImages;
@@ -48,11 +48,11 @@ class Mysupportread extends React.Component {
                 }
             }
             this.setState({srcs: srcs});
-            if(data.result[0].support_supporters == null){
+            if(data.result[0][0].support_supporters == null){
                 this.setState({percent: 0});
             }
             else{
-                let tage = data.result[0].support_supporters.split('/').length / data.result[0].support_goal;
+                let tage = data.result[0][0].support_supporters.split('/').length / data.result[0][0].support_goal;
                 this.setState({percent: tage});
             }
         }
