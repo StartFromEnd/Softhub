@@ -4,6 +4,7 @@ import cookie from 'react-cookies';
 import logo from '../logo.svg';
 import '../App.css';
 import * as common from '../CommonFunctions.js';
+import CalculatorImage from '../img/calculator.jpg';
 
 class Home extends React.Component {
     constructor(props){
@@ -57,11 +58,12 @@ class Home extends React.Component {
                                 </div>
                             </div>
                             <div className='grid-right'>
-                                <p className='grid-right-text font-0-75rem white'>
+                                <p className='grid-right-text font-1rem white'>
                                     한 번의 투자로 지속적인 수입을 얻을 수 있습니다.
                                 </p>
                             </div>
                         </div>
+                        <img src={CalculatorImage} alt='계산기 이미지.' className='row-image'></img>
                     </div>
                 </section>
             </div>
