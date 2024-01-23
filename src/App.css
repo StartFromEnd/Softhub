@@ -200,6 +200,7 @@ hr {
     height: 12rem;
 }
 .wrap-images .slide-box {
+    position: relative;
     width: 16rem;
     overflow: hidden;
 }
