@@ -158,10 +158,14 @@ a {
 }
 .grid-left-top {
     display: flex;
+    grid-column-gap: 0.5rem;
+    align-items: center;
+    line-height: 0.75rem;
     padding: 0.3rem 0.7rem;
     margin-bottom: 1rem;
     background-color: rgba(255, 255, 255, 0.3);
 }
 .grid-left-top-box {
+    padding: 0.1rem 0.2rem;
     background-color: white;
 }
