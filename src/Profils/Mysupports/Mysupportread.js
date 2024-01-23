@@ -93,7 +93,7 @@ class Mysupportread extends React.Component {
                                 <img src={this.state.srcs[4]} alt='제품이미지 5'></img>
                                 <img src={this.state.srcs[5]} alt='제품이미지 6'></img>
                             </div>
-                            <p className='center half'>{`${this.state.slider+1}/6`}</p>
+                            <p className='container center half-large'>{`${this.state.slider+1}/6`}</p>
                         </div>
                         <div className='right-button' onClick={() => this.SlideRight()}></div>
                     </div>
@@ -121,19 +121,19 @@ const Styles = {
         transform: `translateX(0)`,
     },
     one: {
-        transform: `translateX(-16rem)`,
+        transform: `translateX(-25rem)`,
     },
     two: {
-        transform: `translateX(-32rem)`,
+        transform: `translateX(-50rem)`,
     },
     three: {
-        transform: `translateX(-48rem)`,
+        transform: `translateX(-75rem)`,
     },
     four: {
-        transform: `translateX(-64rem)`,
+        transform: `translateX(-100rem)`,
     },
     five: {
-        transform: `translateX(-80rem)`,
+        transform: `translateX(-125rem)`,
     },
 };
 

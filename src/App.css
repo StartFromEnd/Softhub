@@ -197,31 +197,29 @@ hr {
 }
 .wrap-images div {
     display: inline-block;
-    height: 12rem;
+    height: 18rem;
 }
 .wrap-images .slide-box {
     position: relative;
-    width: 16rem;
+    width: 25rem;
     overflow: hidden;
 }
 .wrap-images .slide-box > div {
-    width: 96rem;
+    width: 150rem;
     transition: 0.5s all;
 }
 .wrap-images .slide-box > div img {
     display: block;
-    width: 16rem;
+    width: 25rem;
 }
 .wrap-images .slide-box p {
+    margin: 0;
     position: absolute;
     bottom: 0;
 }
 .wrap-images .left-button, .wrap-images .right-button{
     width: 2rem;
-    text-align: center;
-    color: white;
     background-color: rgba(0, 0, 0, 0.4);
-    line-height: 8rem;
 }
 .wrap-images .left-button:hover, .wrap-images .right-button:hover{
     background-color: rgba(0, 0, 0, 0.8);
