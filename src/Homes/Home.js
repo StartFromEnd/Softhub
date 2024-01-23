@@ -38,7 +38,26 @@ class Home extends React.Component {
                 <section className='about-header'>
                     <div className='about-header-background'></div>
                     <div className='about-header-container'>
-                        
+                        <div className='grid-container'>
+                            <div className='grid-left'>
+                                <div className='d-flex flex-column'>
+                                    <div>
+                                        <div className='grid-left-top d-flex justify-content-between'>
+                                            <div className='grid-left-top-box purple'>NEW</div>
+                                            <div className='grid-left-top-text'>
+                                                <p className='white'>새로운 개념의 투자를 시작해보세요</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h2 className='font-2-5rem white'>펀드허브는</h2>
+                                        <br></br>
+                                        <h2 className='font-2-5rem white'>투자중계 플랫폼입니다.</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='grid-right'></div>
+                        </div>
                     </div>
                 </section>
             </div>
