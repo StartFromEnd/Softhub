@@ -126,8 +126,7 @@ class Mysupportlist extends React.Component {
                             <Rendersupport
                                 key={index}
                                 index={index}
-                                total={item}
-                                link={`/profil/mySupport/mySupportRead`}
+                                link={`/profil/mySupport/mySupportRead/?seq=${item.seq}`}
                                 image={item.support_images.split('&%!,')}
                                 title={item.support_title}
                                 writer={item.support_writer_id}

@@ -9,13 +9,11 @@ class Mysupportread extends React.Component {
     
     constructor(props){
         super(props);
-        console.log(props.location.aboutProps);
-        console.log(props.location);
         this.state ={
-            support: props.location.aboutProps.totalData,
-            main: props.location.aboutProps.totalData.support_main,
-            percent: props.location.aboutProps.percentage,
-            srcs: props.location.aboutProps.totalData.support_images.split('&%!,'),
+            support: [],
+            main: '<p>로딩중입니다.</p>',
+            percent: 0,
+            srcs: [CameraImages, CameraImages, CameraImages, CameraImages, CameraImages, CameraImages],
             styles: [Styles.basic, Styles.one, Styles.two, Styles.three, Styles.four, Styles.five],
             slider: 0,
             actions: [<NavLink to='#' className='btn btn-success bold' style={{width:'100%'}}>후원하기</NavLink>,
@@ -64,23 +62,7 @@ class Mysupportread extends React.Component {
     }
     
     componentDidMount() {
-        let srcs = [...this.state.srcs];
-            for(let i=0; i<6; i++){
-                if(srcs[i] == 'null'){
-                    srcs[i] = CameraImages;
-                }
-                else{
-                    srcs[i] = 'https://storage.googleapis.com/softhub-image-storage/'+srcs[i];
-                }
-            }
-            this.setState({srcs: srcs});
-            if(this.state.support.support_supporters == null){
-                this.setState({percent: 0});
-            }
-            else{
-                let tage = this.state.support.support_supporters.split('/').length / this.state.support.support_goal;
-                this.setState({percent: tage});
-            }
+        this.LoadSupport();
     }
     
     SlideLeft() {
