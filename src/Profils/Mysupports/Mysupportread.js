@@ -17,7 +17,7 @@ class Mysupportread extends React.Component {
             styles: [Styles.basic, Styles.one, Styles.two, Styles.three, Styles.four, Styles.five],
             slider: 0,
             actions: [<NavLink to='#' className='btn btn-success' style={{width:'100%'}}>후원하기</NavLink>,
-                      <Button className='btn btn-dark' style={{width:'100%'}}>후원완료</Button>,
+                      <button className='btn btn-dark' style={{width:'100%'}}>후원완료</button>,
                       <NavLink to={() => {
                               let params = new URLSearchParams(window.location.search);
                               let link = '/profil/mySupport/mySupportModify/?seq='+params.get('seq');
