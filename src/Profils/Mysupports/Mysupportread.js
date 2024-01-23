@@ -10,10 +10,10 @@ class Mysupportread extends React.Component {
     constructor(props){
         super(props);
         this.state ={
-            support: this.location.aboutProps.totalData,
-            main: this.location.aboutProps.totalData.support_main,
-            percent: this.location.aboutProps.percentage,
-            srcs: this.location.aboutProps.totalData.support_images.split('&%!,'),
+            support: props.location.aboutProps.totalData,
+            main: props.location.aboutProps.totalData.support_main,
+            percent: props.location.aboutProps.percentage,
+            srcs: props.location.aboutProps.totalData.support_images.split('&%!,'),
             styles: [Styles.basic, Styles.one, Styles.two, Styles.three, Styles.four, Styles.five],
             slider: 0,
             actions: [<NavLink to='#' className='btn btn-success bold' style={{width:'100%'}}>후원하기</NavLink>,
