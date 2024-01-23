@@ -30,6 +30,7 @@
 
 * {
     font-family: var(--bs-body-font-family);
+    font-weight: 500;
     margin: 0;
     padding: 0;
 }
@@ -81,6 +82,7 @@ html {
     height: 3rem;
     background-color: #FFD400;
     transition: 0.5s all;
+    z-index: 999;
 }
 
 .banner-container {
@@ -98,6 +100,7 @@ html {
     padding: 1rem 3%;
     background-color: white;
     border-bottom: 0.05rem solid #DBDBDB;
+    z-index: 999;
 }
 
 .navbar > div {
@@ -113,4 +116,28 @@ html {
 
 .navbar-right-button {
     background-color: #443FDE;
+}
+
+.about-header {
+    position: relative;
+    padding: 3.5rem 5.5rem 5%; 
+}
+
+.about-header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: 25rem;
+    background-color: #443FDE;
+}
+
+.about-header-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 47rem;
+    margin-right: auto;
+    margin-left: auto;
 }

@@ -35,6 +35,9 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </section>
+                <section className='about-header'>
+                    <div className='about-header-background'></div>
+                </section>
             </div>
         );
     }
