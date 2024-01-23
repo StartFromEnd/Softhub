@@ -14,6 +14,7 @@ class Mysupportread extends React.Component {
             main: '<p>로딩중입니다.</p>',
             percent: 0,
             srcs: [CameraImages, CameraImages, CameraImages, CameraImages, CameraImages, CameraImages],
+            styles: [Styles.basic, Styles.one, Styles.two, Styles.three, Styles.four, Styles.five, Styles.six],
             slider: 0,
         }
     }
@@ -56,23 +57,23 @@ class Mysupportread extends React.Component {
     }
     
     SlideLeft() {
-        if(this.state.slider >= 0){
+        if(this.state.slider <= 0){
             return;
         }
         else{
             let modified = this.state.slider;
-            modified += 16;
+            modified -= 1;
             this.setState({slider: modified});
         }
     }
     
     SlideRight() {
-        if(this.state.slider <= -96){
+        if(this.state.slider >= 6){
             return;
         }
         else{
             let modified = this.state.slider;
-            modified += -16;
+            modified += 1;
             this.setState({slider: modified});
         }
     }
@@ -84,7 +85,7 @@ class Mysupportread extends React.Component {
                     <div className='wrap-images mb-3rem'>
                         <div className='left-button' onClick={() => this.SlideLeft()}></div>
                         <div className='slide-box'>
-                            <div class="d-flex justify-content-between" style={{translateX(this.state.slider)}}>
+                            <div class="d-flex justify-content-between" style={this.state.styles[this.state.slider]}>
                                 <img src={this.state.srcs[0]} alt='제품이미지 1'></img>
                                 <img src={this.state.srcs[1]} alt='제품이미지 2'></img>
                                 <img src={this.state.srcs[2]} alt='제품이미지 3'></img>
@@ -113,5 +114,29 @@ class Mysupportread extends React.Component {
         )
     }
 }
+
+const Styles = {
+    basic: {
+        transform: translateX(0),
+    },
+    one: {
+        transform: translateX(-16+'rem'),
+    },
+    two: {
+        transform: translateX(-32+'rem'),
+    },
+    three: {
+        transform: translateX(-48+'rem'),
+    },
+    four: {
+        transform: translateX(-64+'rem'),
+    },
+    five: {
+        transform: translateX(-80+'rem'),
+    },
+    six: {
+        transform: translateX(-96+'rem'),
+    },
+};
 
 export default Mysupportread;
