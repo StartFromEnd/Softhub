@@ -5,6 +5,7 @@ import logo from '../logo.svg';
 import '../App.css';
 import * as common from '../CommonFunctions.js';
 import JobImage from '../img/job.jpg';
+import OfficeImage from '../img/office.jpg';
 
 class Home extends React.Component {
     constructor(props){
@@ -73,10 +74,12 @@ class Home extends React.Component {
                             <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
                             <p className='font-1-5rem black mb-2rem bold'>누가 이용하나요?</p>
                             <p className='font-0-75rem gray mb-2rem'>창업을 하고싶은데 자금이 부족한 창업꿈나무,<br></br>투자는 하고싶은데 크게 하는건 부담스러운 투자초보,<br></br>모두 펀드허브를 통해 고민을 해결하실 수 있습니다.</p>
-                            <p className='font-0-75rem gray mb-1rem bold'>  ✅ 보유자금 1만원 이상</p>
-                            <p className='font-0-75rem gray mb-2rem bold'>  ✅ 본인 명의의 계좌 소유</p>
+                            <p className='font-0-75rem gray mb-1rem bold'>✅ 보유자금 1만원 이상</p>
+                            <p className='font-0-75rem gray mb-2rem bold'>✅ 본인 명의의 계좌 소유</p>
                         </div>
-                        <div></div>
+                        <div className='about-body-grid'>
+                            
+                        </div>
                     </div>
                 </section>
             </div>
