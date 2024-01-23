@@ -10,19 +10,19 @@ class Mysupportread extends React.Component {
     constructor(props){
         super(props);
         this.state ={
-            support: [],
-            main: '<p>로딩중입니다.</p>',
-            percent: 0,
-            srcs: [CameraImages, CameraImages, CameraImages, CameraImages, CameraImages, CameraImages],
+            support: this.location.aboutProps.totalData,
+            main: this.location.aboutProps.totalData.support_main,
+            percent: this.location.aboutProps.percentage,
+            srcs: this.location.aboutProps.totalData.support_images.split('&%!,'),
             styles: [Styles.basic, Styles.one, Styles.two, Styles.three, Styles.four, Styles.five],
             slider: 0,
-            actions: [<NavLink to='#' className='btn btn-success' style={{width:'100%'}}>후원하기</NavLink>,
-                      <button className='btn btn-dark' style={{width:'100%'}}>후원완료</button>,
+            actions: [<NavLink to='#' className='btn btn-success bold' style={{width:'100%'}}>후원하기</NavLink>,
+                      <button className='btn btn-dark bold' style={{width:'100%'}}>후원완료</button>,
                       <NavLink to={() => {
                               let params = new URLSearchParams(window.location.search);
                               let link = '/profil/mySupport/mySupportModify/?seq='+params.get('seq');
                               return link;
-                      }} className='btn btn-info' style={{width:'100%'}}>수정하기</NavLink>],
+                      }} className='btn btn-info bold' style={{width:'100%'}}>수정하기</NavLink>],
             isSame: 0,
         }
     }
@@ -62,7 +62,7 @@ class Mysupportread extends React.Component {
     }
     
     componentDidMount() {
-        this.LoadSupport();
+        
     }
     
     SlideLeft() {
@@ -112,7 +112,7 @@ class Mysupportread extends React.Component {
                     <p className='bold one'>{this.state.support.length > 0 ? this.state.support[0].support_writer_id : '로딩중입니다.'}</p>
                     <p className='bold half-large'>{this.state.support.length > 0 ? `${Number(this.state.support[0].support_price).toLocaleString('ko-KR')}원` : '로딩중입니다.'}</p>
                     <p className='bold half-large'>{this.state.support.length > 0 ? `후원이 ${this.state.percent * this.state.support[0].support_goal}/${this.state.support[0].support_goal}명 진행중입니다.` : '로딩중입니다.'}</p>
-                    <div className='border-round'>
+                    <div className='border-round mb-3rem'>
                         <div className='border-round bg-skyblue' style={{width:`${100 * this.state.percent}%`, height:'1rem'}}>
                         </div>
                     </div>
