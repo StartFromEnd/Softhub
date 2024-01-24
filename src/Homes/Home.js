@@ -17,6 +17,8 @@ class Home extends React.Component {
         };
         this.timer = null;
         this.aboutHeaderBackground = React.createRef();
+        this.gridContainer = React.createRef();
+        this.mainImage = React.createRef();
         this.aboutBodyGrid = React.createRef();
     }
     
@@ -28,7 +30,7 @@ class Home extends React.Component {
         this.timer = setInterval(() => {
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
-                if(thing.intersectionRatio >= 0.5){
+                if(thing.intersectionRatio >= 0.2){
                     if(!thing.target.className.includes('fadeInUp')){
                         thing.target.className += ' fadeInUp';
                     }
@@ -38,6 +40,12 @@ class Home extends React.Component {
         
         if(this.aboutHeaderBackground.current){
             observer.observe(this.aboutHeaderBackground.current);
+        }
+        if(this.gridContainer.current){
+            observer.observe(this.gridContainer.current);
+        }
+        if(this.mainImage.current){
+            observer.observe(this.mainImage.current);
         }
         if(this.aboutBodyGrid.current){
             observer.observe(this.aboutBodyGrid.current);
@@ -72,7 +80,7 @@ class Home extends React.Component {
                 <section className='about-header'>
                     <div className='about-header-background' ref={this.aboutHeaderBackground}></div>
                     <div className='about-header-container'>
-                        <div className='grid-container'>
+                        <div className='grid-container' ref={this.gridContainer}>
                             <div className='grid-left'>
                                 <div className='d-flex flex-column'>
                                     <div>
@@ -96,7 +104,7 @@ class Home extends React.Component {
                                 </p>
                             </div>
                         </div>
-                        <img src={JobImage} alt='업무 이미지1' className='row-image'></img>
+                        <img src={JobImage} alt='업무 이미지1' className='main-image row-image' ref={this.mainImage}></img>
                     </div>
                 </section>
                 <section className='about-body'>
