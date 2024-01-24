@@ -117,7 +117,7 @@ class Home extends React.Component {
                     </div>
                 </section>
                 <section className='about-body'>
-                    <div className='about-body-background duration-1 scaleUp' ref={this.aboutBodyBackground}></div>
+                    <div className='about-body-background duration-1' ref={this.aboutBodyBackground}></div>
                     <div className='about-body-container'>
                         <div className='about-body-left duration-1' ref={this.aboutBodyLeft}>
                             <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
