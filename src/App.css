@@ -300,6 +300,9 @@ p {
     height: 100%;
 }
 .about-body-2 {
+    max-width: 47rem;
+    margin-right: auto;
+    margin-left: auto;
     position: relative;
     padding: 4rem 5%;
 }
