@@ -63,13 +63,13 @@
     animation-fill-mode: forwards;
 }
 .duration-1 {
-    animation-duration: 1s;
+    animation-duration: 1s !important;
 }
 .duration-1-5 {
-    animation-duration: 1.5s;
+    animation-duration: 1.5s !important;
 }
 .duration-2 {
-    animation-duration: 2s;
+    animation-duration: 2s !important;
 }
 
 * {
@@ -320,6 +320,7 @@ p {
     min-height: 10rem;
     text-align: center;
     align-items: center;
+    border: 1px solid #DBDBDB;
 }
 .about-body-2-grid-top-left-top {
     grid-column: 1/2;
