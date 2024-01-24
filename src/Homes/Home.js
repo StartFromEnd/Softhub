@@ -15,6 +15,8 @@ class Home extends React.Component {
         super(props);
         this.state = {
             starter: false,
+            
+            faqBoxes: [false, false, false];
         };
         this.observer = null;
         this.timer = null;
@@ -84,6 +86,12 @@ class Home extends React.Component {
     componentWillUnmount(){
         clearInterval(this.timer);
         this.observer.disconnect();
+    }
+    
+    OpenFaq = (param) => {
+        let faqBoxes = [...this.state.faqBoxes];
+        faqBoxes[param] = !faqBoxes[param];
+        this.setState({faqBoxes: faqBoxes});
     }
     render() {
         return(
@@ -200,19 +208,68 @@ class Home extends React.Component {
                             <p className='font-1-5rem black mb-2rem bold'>자주 묻는 질문</p>
                         </div>
                         <div className='faq-block d-flex flex-column mb-3rem'>
-                            <div className='faq-block-title d-flex justify-content-between'>
+                            <div className='faq-block-title d-flex justify-content-between' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing}>
                                 <div className='faq-block-title-text'>
                                     투자자 Q. 투자 성공시 수수료가 얼마인가요?
                                 </div>
-                                <div className='faq-block-title-image'>
-                                    <img src={ArrowImage} alt='화살표 이미지'></img>
+                                <div className='faq-block-title-image' onClick={() => this.OpenFaq(0)}>
+                                    <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[0] ? Styles.rotation : Styles.nothing}></img>
                                 </div>
+                            </div>
+                            <div className='faq-block-main'>
+                                <p className='font-0-75rem gray'>
+                                    A. 저희 펀드허브에서는 투자에 대한 수수료를 받지 않고 있어요!
+                                </p>
+                            </div>
+                        </div>
+                        <div className='faq-block d-flex flex-column mb-3rem'>
+                            <div className='faq-block-title d-flex justify-content-between' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing}>
+                                <div className='faq-block-title-text'>
+                                    투자자 Q. 사업자가 얼마만큼의 물건을 팔았는지 어떻게 확인하나요?
+                                </div>
+                                <div className='faq-block-title-image' onClick={() => this.OpenFaq(0)}>
+                                    <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[0] ? Styles.rotation : Styles.nothing}></img>
+                                </div>
+                            </div>
+                            <div className='faq-block-main'>
+                                <p className='font-0-75rem gray'>
+                                    A. 저희 펀드허브에서는 매달 사업자분들께서 제공해주시는 소득현황을 바탕으로 투자자 여러분께 정보를 공유해드리고 있어요!
+                                    <br></br>
+                                    또, 매년 7월 정부에서 해당 사업의 소득에 대하여 증명해주는 '소득금액증명'을 이용하여 소득내용에 거짓이 있는지 꼼꼼히 확인하고 있답니다!
+                                </p>
+                            </div>
+                        </div>
+                        <div className='faq-block d-flex flex-column mb-3rem'>
+                            <div className='faq-block-title d-flex justify-content-between' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing}>
+                                <div className='faq-block-title-text'>
+                                    사업자 Q. 펀드허브에서 구독권을 판매하면 수수료는 얼마나 나가나요?
+                                </div>
+                                <div className='faq-block-title-image' onClick={() => this.OpenFaq(0)}>
+                                    <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[0] ? Styles.rotation : Styles.nothing}></img>
+                                </div>
+                            </div>
+                            <div className='faq-block-main'>
+                                <p className='font-0-75rem gray'>
+                                    A. 저희 펀드허브에서는 창업 초창기의 자금부족을 매우 이해하기 때문에 구독권 판매로 얻으신 수익의 단 2% 만 받고 있습니다!
+                                </p>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
         );
+    }
+}
+
+const Styles = {
+    nothing: {
+        
+    },
+    rotation: {
+        transform: 'rotate(270deg)',
+    },
+    extension: {
+        height: '15rem',
     }
 }
 
