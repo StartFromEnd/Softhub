@@ -16,7 +16,7 @@ class Home extends React.Component {
         this.state = {
             starter: false,
             
-            faqBoxes: [false, false, false];
+            faqBoxes: [false, false, false],
         };
         this.observer = null;
         this.timer = null;
@@ -223,12 +223,12 @@ class Home extends React.Component {
                             </div>
                         </div>
                         <div className='faq-block d-flex flex-column mb-3rem'>
-                            <div className='faq-block-title d-flex justify-content-between' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing}>
+                            <div className='faq-block-title d-flex justify-content-between' style={this.state.faqBoxes[1] ? Styles.extension : Styles.nothing}>
                                 <div className='faq-block-title-text'>
                                     투자자 Q. 사업자가 얼마만큼의 물건을 팔았는지 어떻게 확인하나요?
                                 </div>
-                                <div className='faq-block-title-image' onClick={() => this.OpenFaq(0)}>
-                                    <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[0] ? Styles.rotation : Styles.nothing}></img>
+                                <div className='faq-block-title-image' onClick={() => this.OpenFaq(1)}>
+                                    <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[1] ? Styles.rotation : Styles.nothing}></img>
                                 </div>
                             </div>
                             <div className='faq-block-main'>
@@ -240,17 +240,17 @@ class Home extends React.Component {
                             </div>
                         </div>
                         <div className='faq-block d-flex flex-column mb-3rem'>
-                            <div className='faq-block-title d-flex justify-content-between' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing}>
+                            <div className='faq-block-title d-flex justify-content-between' style={this.state.faqBoxes[2] ? Styles.extension : Styles.nothing}>
                                 <div className='faq-block-title-text'>
                                     사업자 Q. 펀드허브에서 구독권을 판매하면 수수료는 얼마나 나가나요?
                                 </div>
-                                <div className='faq-block-title-image' onClick={() => this.OpenFaq(0)}>
-                                    <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[0] ? Styles.rotation : Styles.nothing}></img>
+                                <div className='faq-block-title-image' onClick={() => this.OpenFaq(2)}>
+                                    <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[2] ? Styles.rotation : Styles.nothing}></img>
                                 </div>
                             </div>
                             <div className='faq-block-main'>
                                 <p className='font-0-75rem gray'>
-                                    A. 저희 펀드허브에서는 창업 초창기의 자금부족을 매우 이해하기 때문에 구독권 판매로 얻으신 수익의 단 2% 만 받고 있습니다!
+                                    A. 저희 펀드허브에서는 창업을 할 때의 자금부족에 대하여 매우 공감하기 때문에 구독권 판매로 얻으신 수익의 단 2% 만 받고 있습니다!
                                 </p>
                             </div>
                         </div>
