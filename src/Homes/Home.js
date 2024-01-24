@@ -41,6 +41,8 @@ class Home extends React.Component {
         if(this.aboutBodyGrid.current){
             observer.observe(this.aboutBodyGrid.current);
         }
+        let start = this.state.starter;
+        this.setState({starter: !start});
     }
     
     componentWillUnmount(){
