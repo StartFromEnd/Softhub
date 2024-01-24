@@ -15,6 +15,7 @@ class Home extends React.Component {
         this.state = {
             starter: false,
         };
+        this.timer;
         this.aboutHeaderBackground = React.createRef();
         this.aboutBodyGrid = React.createRef();
     }
@@ -24,7 +25,7 @@ class Home extends React.Component {
     }
     
     componentDidUpdate(prevProp, prevState){
-        this.prop.timer = setInterval(() => {
+        this.timer = setInterval(() => {
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
                 if(thing.intersectionRatio >= 0.5){
@@ -44,7 +45,7 @@ class Home extends React.Component {
     }
     
     componentWillUnmount(){
-        clearInterval(this.prop.timer);
+        clearInterval(this.timer);
     }
     render() {
         return(
