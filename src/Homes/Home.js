@@ -8,7 +8,7 @@ import JobImage from '../img/job.jpg';
 import Job2Image from '../img/job2.jpg';
 import Job3Image from '../img/job3.jpg';
 import OfficeImage from '../img/office.jpg';
-import ArrowImage from '../img/arrow.png';
+import ArrowImage from '../img/arrow.svg';
 
 class Home extends React.Component {
     constructor(props){
