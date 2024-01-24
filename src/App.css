@@ -294,3 +294,26 @@ p {
     margin-right: auto;
     max-width: 27rem;
 }
+.about-body-2-grid-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
+}
+.about-body-2-grid-top > div {
+    text-align: center;
+    align-items: center;
+}
+.about-body-2-grid-top-left-top {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.about-body-2-grid-top-left-bottom {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.about-body-2-grid-top-right {
+    grid-column: 2/4;
+    grid-row: 1/3;
+}

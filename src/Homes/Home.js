@@ -24,6 +24,9 @@ class Home extends React.Component {
         this.aboutBodyBackground = React.createRef();
         this.aboutBodyLeft = React.createRef();
         this.aboutBodyGrid = React.createRef();
+        
+        this.aboutBody2Flex = React.createRef();
+        this.aboutBody2GridTop = React.createRef();
     }
     
     componentDidMount(){
@@ -58,7 +61,14 @@ class Home extends React.Component {
         }
         if(this.aboutBodyGrid.current){
             this.observer.observe(this.aboutBodyGrid.current);
-        }}, 100);
+        }
+        if(this.aboutBody2Flex.current){
+            this.observer.observe(this.aboutBody2Flex.current);
+        }
+        if(this.aboutBody2GridTop.current){
+            this.observer.observe(this.aboutBody2GridTop.current);
+        }
+        }, 100);
     }
     
     componentWillUnmount(){
@@ -135,7 +145,7 @@ class Home extends React.Component {
                     </div>
                 </section>
                 <section className='about-body-2'>
-                    <div className='about-body-2-flex d-flex flex-column mb-3rem'>
+                    <div className='about-body-2-flex d-flex flex-column mb-3rem duration-1'>
                         <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
                         <p className='font-1-5rem black mb-2rem bold'>어떤 원리인가요?</p>
                         <p className='font-0-75rem gray'>
@@ -152,6 +162,17 @@ class Home extends React.Component {
                             <br></br>
                             1년동안 OO카페에서 판매되는 제품 하나당 50원의 수익을 얻으실 수 있습니다.
                         </p>
+                    </div>
+                    <div className='about-body-2-grid-top duration-1-5'>
+                        <div className='about-body-2-grid-top-left-top'>
+                            사이트 이미지1
+                        </div>
+                        <div className='about-body-2-grid-top-left-bottom'>
+                            사이트 이미지2
+                        </div>
+                        <div className='about-body-2-grid-top-right'>
+                            사이트 이미지3
+                        </div>
                     </div>
                 </section>
             </div>
