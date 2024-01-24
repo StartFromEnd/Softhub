@@ -37,6 +37,9 @@ class Home extends React.Component {
         this.aboutBody3Faq1 = React.createRef();
         this.aboutBody3Faq2 = React.createRef();
         this.aboutBody3Faq3 = React.createRef();
+        
+        this.aboutFooterTopFlex = React.createRef();
+        this.aboutFooterTopGrid = React.createRef();
     }
     
     componentDidMount(){
@@ -92,6 +95,12 @@ class Home extends React.Component {
         }
         if(this.aboutBody3Faq3.current){
             this.observer.observe(this.aboutBody3Faq3.current);
+        }
+        if(this.aboutFooterTopFlex.current){
+            this.observer.observe(this.aboutFooterTopFlex.current);
+        }
+        if(this.this.aboutFooterTopGrid.current){
+            this.observer.observe(this.aboutFooterTopGrid.current);
         }
         }, 100);
     }
@@ -223,7 +232,7 @@ class Home extends React.Component {
                         <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInRight' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq1}>
                             <div className='faq-block-title d-flex justify-content-between' onClick={() => this.OpenFaq(0)}>
                                 <div className='faq-block-title-text'>
-                                    투자자 Q. 투자 성공시 수수료가 얼마인가요?
+                                    <span className='red'>투자자 Q.</span> 투자 성공시 수수료가 얼마인가요?
                                 </div>
                                 <div className='faq-block-title-image'>
                                     <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[0] ? Styles.rotation : Styles.nothing}></img>
@@ -238,7 +247,7 @@ class Home extends React.Component {
                         <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInRight' style={this.state.faqBoxes[1] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq2}>
                             <div className='faq-block-title d-flex justify-content-between' onClick={() => this.OpenFaq(1)}>
                                 <div className='faq-block-title-text'>
-                                    투자자 Q. 사업자가 얼마만큼의 물건을 팔았는지 어떻게 확인하나요?
+                                    <span className='red'>투자자 Q.</span> 사업자가 얼마만큼의 물건을 팔았는지 어떻게 확인하나요?
                                 </div>
                                 <div className='faq-block-title-image'>
                                     <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[1] ? Styles.rotation : Styles.nothing}></img>
@@ -262,7 +271,7 @@ class Home extends React.Component {
                         <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInRight' style={this.state.faqBoxes[2] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq3}>
                             <div className='faq-block-title d-flex justify-content-between' onClick={() => this.OpenFaq(2)}>
                                 <div className='faq-block-title-text'>
-                                    사업자 Q. 펀드허브에서 구독권을 판매하면 수수료는 얼마나 나가나요?
+                                    <span className='blue'>사업자 Q.</span> 펀드허브에서 구독권을 판매하면 수수료는 얼마나 나가나요?
                                 </div>
                                 <div className='faq-block-title-image'>
                                     <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[2] ? Styles.rotation : Styles.nothing}></img>
@@ -281,11 +290,11 @@ class Home extends React.Component {
                 </section>
                 <section className='about-footer-top'>
                     <div className='about-footer-top-container'>
-                        <div className='about-footer-top-flex d-flex flex-column mb-3rem duration-2 fadeInUp'>
+                        <div className='about-footer-top-flex d-flex flex-column mb-3rem duration-2 fadeInUp' ref={this.aboutFooterTopFlex}>
                             <p className='font-1-5rem black mb-2rem bold'>협업 및 광고문의</p>
                             <p className='font-0-75rem gray'>저희와 함께해요!</p>
                         </div>
-                        <div className='about-footer-top-grid duration-2 fadeInUp'>
+                        <div className='about-footer-top-grid duration-2 fadeInUp' ref={this.aboutFooterTopGrid}>
                             <div className='about-footer-top-grid-left'>
                                 <img src={BuildingImage} alt='커피 이미지'></img>
                             </div>
@@ -300,6 +309,30 @@ class Home extends React.Component {
                                     <br></br>
                                     <span className='purple'>Email:</span> example@abc.com
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='about-footer-bottom'>
+                    <div className='about-footer-bottom-container'>
+                        <div className='about-footer-bottom-logo mb-2rem'>
+                            <NavLink to='/' className='none-style-link block font-1rem black'>FundHub</NavLink>
+                        </div>
+                        <div className='about-footer-bottom-grid mb-3rem'>
+                            <div className='about-footer-bottom-grid-2'>
+                                
+                            </div>
+                            <div className='about-footer-bottom-grid-right'>
+                                <p className='font-0-75rem gray'>Get Started with Social Accounts</p>
+                                <br></br>
+                                <p className='font-0-75rem gray'>google</p>
+                                <br></br>
+                                <p className='font-0-75rem gray'>kakao</p>
+                                <br></br>
+                                <p className='font-0-75rem gray'>naver</p>
+                                <div className='navbar-right-button'>
+                                    <NavLink to='/login' className='none-style-link block font-0-75rem white'>Get Started</NavLink>
+                                </div>
                             </div>
                         </div>
                     </div>

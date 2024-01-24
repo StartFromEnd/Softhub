@@ -430,3 +430,18 @@ p {
     width: 100%;
     height: 100%;
 }
+.about-footer-bottom {
+    padding: 3rem 3% 2rem;
+    border-top: 1px solid #EBEBEF;
+}
+.about-footer-bottom-container {
+    width: 100%;
+    max-width: 40rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.about-footer-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2.5rem;
+}
