@@ -13,13 +13,17 @@ class Home extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            
+            starter: false;
         };
         this.aboutHeaderBackground = React.createRef();
         this.aboutBodyGrid = React.createRef();
     }
     
     componentDidMount(){
+        this.setState({starter: true});
+    }
+    
+    componentDidUpdate(prevProp, prevState){
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
                 console.log(thing.intersectionRatio);
@@ -37,11 +41,6 @@ class Home extends React.Component {
         if(this.aboutBodyGrid.current){
             observer.observe(this.aboutBodyGrid.current);
         }
-    }
-    
-    componentDidUpdate(prevProp, prevState){
-        console.log('hi');
-        
     }
     
     componentWillUnmount(){
