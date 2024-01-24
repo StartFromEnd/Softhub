@@ -43,9 +43,23 @@
     transform: translateY(0%);
   }
 }
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-40%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 
-.fadeInUp {
+.animation.fadeInUp {
     animation: fadeInUp;
+    animation-fill-mode: forwards;
+}
+.animation.fadeInRight {
+    animation: fadeInRight;
     animation-fill-mode: forwards;
 }
 .duration-1 {
@@ -302,6 +316,8 @@ p {
     grid-row-gap: 1.5rem;
 }
 .about-body-2-grid-top > div {
+    display: grid;
+    min-height: 10rem;
     text-align: center;
     align-items: center;
 }
