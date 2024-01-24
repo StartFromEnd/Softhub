@@ -298,7 +298,7 @@ class Home extends React.Component {
                             <div className='about-footer-top-grid-left'>
                                 <img src={BuildingImage} alt='커피 이미지'></img>
                             </div>
-                            <div className='about-footer-top-grid-right d-flex flex-column'>
+                            <div className='about-footer-top-grid-right d-flex flex-column mt-3rem'>
                                 <p className='font-0-75rem purple mb-2rem'>FUNDHUB (펀드허브)</p>
                                 <p className='font-0-75rem gray'>
                                     <span className='purple'>Address:</span> OO시 OO로 OO길
@@ -349,6 +349,9 @@ class Home extends React.Component {
                                     <NavLink to='/login' className='none-style-link block font-0-75rem white'>Get Started</NavLink>
                                 </div>
                             </div>
+                        </div>
+                        <div className='about-footer-bottom-bottom'>
+                            © Thank you for your idea, HireUp.
                         </div>
                     </div>
                 </section>

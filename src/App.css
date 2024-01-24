@@ -27,7 +27,10 @@
     font-family: 'wooriR';
     src: url('./font/WooridaumR.ttf');
 }
-
+@font-face{
+    font-family: 'wooriL';
+    src: url('./font/WooridaumL.ttf');
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -462,4 +465,9 @@ p {
     padding: 0.5rem;
     height: 2rem;
     background-color: #443FDE;
+}
+.about-footer-bottom-bottom {
+    display: flex;
+    padding: 2rem 0;
+    border-top: 1px solid #EBEBEF;
 }
