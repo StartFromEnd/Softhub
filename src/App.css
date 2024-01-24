@@ -394,3 +394,6 @@ p {
     transition: all 0.5s;
     transform: rotate(90deg);
 }
+.faq-block-main {
+    align-items: center;
+}
