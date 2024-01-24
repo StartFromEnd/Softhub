@@ -19,9 +19,7 @@ class Home extends React.Component {
     }
     
     componentDidMount(){
-        window.onbeforeunload = function pushRefresh() {
-            window.scrollTo(0, 0);
-        };
+        window.scrollTo(0, 0);
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
                 console.log(thing.intersectionRatio);
