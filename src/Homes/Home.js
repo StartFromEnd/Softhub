@@ -21,8 +21,8 @@ class Home extends React.Component {
     componentDidMount(){
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
-                console.log(thing.isIntersectionRatio);
-                if(thing.isIntersectionRatio >= 0.5){
+                console.log(thing.intersectionRatio);
+                if(thing.intersectionRatio >= 0.5){
                     thing.className = thing.className + ' fadeInUp';
                 }
             })
@@ -36,8 +36,8 @@ class Home extends React.Component {
     componentDidUpdate(prevProp, prevState){
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
-                console.log(thing.isIntersectionRatio);
-                if(thing.isIntersectionRatio >= 0.5){
+                console.log(thing.intersectionRatio);
+                if(thing.intersectionRatio >= 0.5){
                     thing.className = thing.className + ' fadeInUp';
                 }
             })
