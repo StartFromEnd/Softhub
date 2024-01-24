@@ -445,6 +445,9 @@ p {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2.5rem;
 }
+.about-footer-bottom-grid-right {
+    padding-left: 2rem;
+}
 .footer-button {
     display: inline-block;
     padding: 0.5rem;
