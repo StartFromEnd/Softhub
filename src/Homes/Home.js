@@ -23,6 +23,7 @@ class Home extends React.Component {
             all.forEach((thing) => {
                 console.log(thing.intersectionRatio);
                 if(thing.intersectionRatio >= 0.5){
+                    console.log(thing);
                     console.log(thing.className);
                 }
             })
