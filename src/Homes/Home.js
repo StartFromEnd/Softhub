@@ -350,7 +350,7 @@ class Home extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className='about-footer-bottom-bottom'>
+                        <div className='about-footer-bottom-bottom font-0-5rem'>
                             © Thank you for your idea, HireUp.
                         </div>
                     </div>
