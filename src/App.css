@@ -369,15 +369,19 @@ p {
     margin-left: auto;
 }
 .faq-block {
-    padding: 1.5rem;
+    padding: 1rem;
     overflow-y: hidden;
-    height: 5rem;
+    height: 4rem;
     transition: all 0.5s;
     background-color: white;
+    grid-row-gap: 2rem;
 }
 .faq-block-title {
     height: 2rem;
     align-items: center;
+}
+.faq-block-title-text {
+    line-height: 2rem;
 }
 .faq-block-title-image {
     width: 1.5rem;

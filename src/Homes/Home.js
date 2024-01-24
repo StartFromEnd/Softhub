@@ -207,8 +207,8 @@ class Home extends React.Component {
                             <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
                             <p className='font-1-5rem black mb-2rem bold'>자주 묻는 질문</p>
                         </div>
-                        <div className='faq-block d-flex flex-column mb-3rem'>
-                            <div className='faq-block-title d-flex justify-content-between' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing}>
+                        <div className='faq-block d-flex flex-column mb-3rem' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing}>
+                            <div className='faq-block-title d-flex justify-content-between'>
                                 <div className='faq-block-title-text'>
                                     투자자 Q. 투자 성공시 수수료가 얼마인가요?
                                 </div>
@@ -222,8 +222,8 @@ class Home extends React.Component {
                                 </p>
                             </div>
                         </div>
-                        <div className='faq-block d-flex flex-column mb-3rem'>
-                            <div className='faq-block-title d-flex justify-content-between' style={this.state.faqBoxes[1] ? Styles.extension : Styles.nothing}>
+                        <div className='faq-block d-flex flex-column mb-3rem' style={this.state.faqBoxes[1] ? Styles.extension : Styles.nothing}>
+                            <div className='faq-block-title d-flex justify-content-between'>
                                 <div className='faq-block-title-text'>
                                     투자자 Q. 사업자가 얼마만큼의 물건을 팔았는지 어떻게 확인하나요?
                                 </div>
@@ -239,8 +239,8 @@ class Home extends React.Component {
                                 </p>
                             </div>
                         </div>
-                        <div className='faq-block d-flex flex-column mb-3rem'>
-                            <div className='faq-block-title d-flex justify-content-between' style={this.state.faqBoxes[2] ? Styles.extension : Styles.nothing}>
+                        <div className='faq-block d-flex flex-column mb-3rem' style={this.state.faqBoxes[2] ? Styles.extension : Styles.nothing}>
+                            <div className='faq-block-title d-flex justify-content-between'>
                                 <div className='faq-block-title-text'>
                                     사업자 Q. 펀드허브에서 구독권을 판매하면 수수료는 얼마나 나가나요?
                                 </div>
