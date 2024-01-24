@@ -24,6 +24,7 @@ class Home extends React.Component {
     }
     
     componentDidUpdate(prevProp, prevState){
+        var timer = setInterval(() => {
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
                 console.log(thing.intersectionRatio);
@@ -40,13 +41,11 @@ class Home extends React.Component {
         }
         if(this.aboutBodyGrid.current){
             observer.observe(this.aboutBodyGrid.current);
-        }
-        let start = this.state.starter;
-        this.setState({starter: !start});
+        }}, 100);
     }
     
     componentWillUnmount(){
-        
+        clearInterval(timer);
     }
     render() {
         return(
