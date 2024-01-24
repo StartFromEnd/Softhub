@@ -16,14 +16,10 @@ class Home extends React.Component {
             
         };
         this.aboutHeaderBackground = React.createRef();
+        this.aboutBodyGrid = React.createRef();
     }
     
     componentDidMount(){
-        document.getElementById('root').scrollTo(0, 0);
-    }
-    
-    componentDidUpdate(prevProp, prevState){
-        console.log('hi');
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
                 console.log(thing.intersectionRatio);
@@ -38,6 +34,14 @@ class Home extends React.Component {
         if(this.aboutHeaderBackground.current){
             observer.observe(this.aboutHeaderBackground.current);
         }
+        if(this.aboutBodyGrid.current){
+            observer.observe(this.aboutBodyGrid.current);
+        }
+    }
+    
+    componentDidUpdate(prevProp, prevState){
+        console.log('hi');
+        
     }
     
     componentWillUnmount(){
@@ -105,7 +109,7 @@ class Home extends React.Component {
                             <p className='font-0-75rem gray mb-1rem bold'>✅ 보유자금 1만원 이상</p>
                             <p className='font-0-75rem gray mb-2rem bold'>✅ 본인 명의의 계좌 소유</p>
                         </div>
-                        <div className='about-body-grid'>
+                        <div className='about-body-grid' ref={this.aboutBodyGrid}>
                             <img src={OfficeImage} alt='사무실 이미지' className='about-body-grid-img-left'></img>
                             <img src={Job2Image} alt='엄무 이미지2' className='about-body-grid-img-right-top'></img>
                             <img src={Job3Image} alt='엄무 이미지3' className='about-body-grid-img-right-bottom'></img>
