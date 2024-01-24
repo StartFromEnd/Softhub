@@ -218,7 +218,7 @@ class Home extends React.Component {
                             </div>
                             <div className='faq-block-main'>
                                 <p className='font-0-75rem gray'>
-                                    A. 저희 펀드허브에서는 투자에 대한 수수료를 받지 않고 있어요!
+                                    A. 저희 펀드허브에서는 투자(성공/실패)에 대한 수수료를 받지 않고 있어요!
                                 </p>
                             </div>
                         </div>
@@ -233,9 +233,13 @@ class Home extends React.Component {
                             </div>
                             <div className='faq-block-main'>
                                 <p className='font-0-75rem gray'>
-                                    A. 저희 펀드허브에서는 매달 사업자분들께서 제공해주시는 소득현황을 바탕으로 투자자 여러분께 정보를 공유해드리고 있어요!
+                                    A. 저희 펀드허브에서는 매달 사업자분들께서 제공해주시는 소득현황을 바탕으로
                                     <br></br>
-                                    또, 매년 7월 정부에서 해당 사업의 소득에 대하여 증명해주는 '소득금액증명'을 이용하여 소득내용에 거짓이 있는지 꼼꼼히 확인하고 있답니다!
+                                    투자자 여러분께 정보를 공유해드리고 있어요!
+                                    <br></br>
+                                    또, 매년 7월 정부에서 해당 사업의 소득에 대하여 증명해주는 '소득금액증명'을 이용하여
+                                    <br></br>
+                                    소득내용에 거짓이 있는지 꼼꼼히 확인하고 있답니다!
                                 </p>
                             </div>
                         </div>
@@ -250,7 +254,9 @@ class Home extends React.Component {
                             </div>
                             <div className='faq-block-main'>
                                 <p className='font-0-75rem gray'>
-                                    A. 저희 펀드허브에서는 창업을 할 때의 자금부족에 대하여 매우 공감하기 때문에 구독권 판매로 얻으신 수익의 단 2% 만 받고 있습니다!
+                                    A. 저희 펀드허브에서는 창업을 할 때의 자금부족에 대하여 매우 공감하기 때문에
+                                    <br></br>
+                                    구독권 판매로 얻으신 수익의 단 2% 만 받고 있습니다!
                                 </p>
                             </div>
                         </div>
@@ -269,7 +275,7 @@ const Styles = {
         transform: 'rotate(270deg)',
     },
     extension: {
-        height: '15rem',
+        height: '10rem',
     }
 }
 
