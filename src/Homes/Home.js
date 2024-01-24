@@ -8,6 +8,7 @@ import JobImage from '../img/job.jpg';
 import Job2Image from '../img/job2.jpg';
 import Job3Image from '../img/job3.jpg';
 import OfficeImage from '../img/office.jpg';
+import ArrowImage from '../img/arrow.png';
 
 class Home extends React.Component {
     constructor(props){
@@ -27,6 +28,9 @@ class Home extends React.Component {
         
         this.aboutBody2Flex = React.createRef();
         this.aboutBody2GridTop = React.createRef();
+        this.aboutBody2GridBottom = React.createRef();
+        
+        this.aboutBody3Flex = React.createRef();
     }
     
     componentDidMount(){
@@ -67,6 +71,12 @@ class Home extends React.Component {
         }
         if(this.aboutBody2GridTop.current){
             this.observer.observe(this.aboutBody2GridTop.current);
+        }
+        if(this.aboutBody2GridBottom.current){
+            this.observer.observe(this.aboutBody2GridBottom.current);
+        }
+        if(this.aboutBody3Flex.current){
+            this.observer.observe(this.aboutBody3Flex.current);
         }
         }, 100);
     }
@@ -172,6 +182,32 @@ class Home extends React.Component {
                         </div>
                         <div className='about-body-2-grid-top-right'>
                             사이트 이미지3
+                        </div>
+                    </div>
+                    <div className='about-body-2-grid-bottom duration-2 fadeInUp' ref={this.aboutBody2GridBottom}>
+                        <div className='about-body-2-grid-bottom-left'>
+                            사이트 이미지4
+                        </div>
+                        <div className='about-body-2-grid-bottom-right'>
+                            사이트 이미지5
+                        </div>
+                    </div>
+                </section>
+                <section className='about-body-3'>
+                    <div className='about-body-3-container'>
+                        <div className='about-body-3-flex d-flex flex-column mb-3rem duration-1 fadeInUp' ref={this.aboutBody3Flex}>
+                            <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
+                            <p className='font-1-5rem black mb-2rem bold'>자주 묻는 질문</p>
+                        </div>
+                        <div className='faq-block d-flex flex-column mb-3rem'>
+                            <div className='faq-block-title d-flex justify-content-between'>
+                                <div className='faq-block-title-text'>
+                                    투자자 Q. 투자 성공시 수수료가 얼마인가요?
+                                </div>
+                                <div className='faq-block-title-image'>
+                                    <img src={ArrowImage} alt='화살표 이미지'></img>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
