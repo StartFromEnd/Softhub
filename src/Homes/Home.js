@@ -15,6 +15,7 @@ class Home extends React.Component {
         this.state = {
             starter: false,
         };
+        this.observer = null;
         this.timer = null;
         this.aboutHeaderBackground = React.createRef();
         this.gridContainer = React.createRef();
@@ -30,8 +31,7 @@ class Home extends React.Component {
     }
     
     componentDidUpdate(prevProp, prevState){
-        this.timer = setInterval(() => {
-        const observer = new IntersectionObserver((all) => {
+        this.observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
                 if(thing.isIntersecting){
                     if(!thing.target.className.includes('fadeInUp')){
@@ -40,29 +40,30 @@ class Home extends React.Component {
                 }
             })
         });
-        
+        this.timer = setInterval(() => {
         if(this.aboutHeaderBackground.current){
-            observer.observe(this.aboutHeaderBackground.current);
+            this.observer.observe(this.aboutHeaderBackground.current);
         }
         if(this.gridContainer.current){
-            observer.observe(this.gridContainer.current);
+            this.observer.observe(this.gridContainer.current);
         }
         if(this.mainImage.current){
-            observer.observe(this.mainImage.current);
+            this.observer.observe(this.mainImage.current);
         }
         if(this.aboutBodyBackground.current){
-            observer.observe(this.aboutBodyBackground.current);
+            this.observer.observe(this.aboutBodyBackground.current);
         }
         if(this.aboutBodyLeft.current){
-            observer.observe(this.aboutBodyLeft.current);
+            this.observer.observe(this.aboutBodyLeft.current);
         }
         if(this.aboutBodyGrid.current){
-            observer.observe(this.aboutBodyGrid.current);
+            this.observer.observe(this.aboutBodyGrid.current);
         }}, 100);
     }
     
     componentWillUnmount(){
         clearInterval(this.timer);
+        this.observer.disconnect();
     }
     render() {
         return(
