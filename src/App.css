@@ -198,7 +198,6 @@ p {
     margin-left: auto;
 }
 .grid-container {
-    opacity: 0;
     display: grid;
     margin-bottom: 2.5rem;
     grid-column-gap: 2.5rem;
@@ -257,6 +256,7 @@ p {
     grid-template-rows: auto;
 }
 .about-body-grid {
+    opacity: 0;
     display: grid;
     grid-column-gap: 1.5rem;
     grid-row-gap: 1.5rem;
