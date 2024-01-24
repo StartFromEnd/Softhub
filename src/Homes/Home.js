@@ -13,7 +13,7 @@ class Home extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            starter: false;
+            starter: false,
         };
         this.aboutHeaderBackground = React.createRef();
         this.aboutBodyGrid = React.createRef();
