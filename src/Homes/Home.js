@@ -141,7 +141,8 @@ class Home extends React.Component {
                         <p className='font-0-75rem gray'>
                             1.사업자로 등록된 이용자가 '구독권'을 발행합니다
                             <br></br>
-                            구독권 형식 예시(OO카페 50원 1년 구독권)
+                            <br></br>
+                            예시 (OO카페 50원 1년 구독권)
                             <br></br>
                             <br></br>
                             2.투자자는 해당 구독권을 사업자가 제시한 가격에 구매합니다.
