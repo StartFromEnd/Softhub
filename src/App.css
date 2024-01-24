@@ -47,7 +47,7 @@
 @keyframes scaleUp {
     0% {
         opacity: 0;
-        transform: scale(40%, 60%);
+        transform: scale(0%, 0%);
     }
     to {
         opacity: 1;
