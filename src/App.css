@@ -40,7 +40,16 @@
 }
 
 .fadeInUp {
-    animation: fadeInUp 1s;
+    animation: fadeInUp;
+}
+.duration-1 {
+    animation-duration: 1s;
+}
+.duration-1-5 {
+    animation-duration: 1.5s;
+}
+.duration-2 {
+    animation-duration: 2s;
 }
 
 * {

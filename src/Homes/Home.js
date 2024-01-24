@@ -78,9 +78,9 @@ class Home extends React.Component {
                     </div>
                 </section>
                 <section className='about-header'>
-                    <div className='about-header-background' ref={this.aboutHeaderBackground}></div>
+                    <div className='about-header-background duration-1' ref={this.aboutHeaderBackground}></div>
                     <div className='about-header-container'>
-                        <div className='grid-container' ref={this.gridContainer}>
+                        <div className='grid-container duration-1-5' ref={this.gridContainer}>
                             <div className='grid-left'>
                                 <div className='d-flex flex-column'>
                                     <div>
@@ -104,7 +104,7 @@ class Home extends React.Component {
                                 </p>
                             </div>
                         </div>
-                        <img src={JobImage} alt='업무 이미지1' className='main-image row-image' ref={this.mainImage}></img>
+                        <img src={JobImage} alt='업무 이미지1' className='main-image row-image duration-2' ref={this.mainImage}></img>
                     </div>
                 </section>
                 <section className='about-body'>
