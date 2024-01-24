@@ -19,7 +19,7 @@ class Home extends React.Component {
     }
     
     componentDidMount(){
-        window.scrollTo(0, 0);
+        window.document.getElementById('root').scrollTo(0, 0);
     }
     
     componentDidUpdate(prevProp, prevState){
