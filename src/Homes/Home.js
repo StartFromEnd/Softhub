@@ -9,6 +9,7 @@ import Job2Image from '../img/job2.jpg';
 import Job3Image from '../img/job3.jpg';
 import OfficeImage from '../img/office.jpg';
 import ArrowImage from '../img/arrow.svg';
+import CoffeeImage from '../img/coffee.jpg';
 
 class Home extends React.Component {
     constructor(props){
@@ -182,7 +183,7 @@ class Home extends React.Component {
                             1.사업자로 등록된 이용자가 <span className='purple'>'구독권'</span>을 발행합니다
                             <br></br>
                             <br></br>
-                            예시 (OO카페 50원 1년 <span className='purple'>구독권</span>)
+                            예시 (OO카페 <span className='red'>50원</span> <span className='green'>1년</span> <span className='purple'>구독권</span>)
                             <br></br>
                             <br></br>
                             2.투자자는 해당 <span className='purple'>구독권</span>을 사업자가 제시한 가격에 구매합니다.
@@ -190,7 +191,7 @@ class Home extends React.Component {
                             <br></br>
                             3.투자자는 <span className='purple'>구독권</span> 구매 후, <span className='purple'>구독권</span> 판매가 마감되는 다음날부터
                             <br></br>
-                            1년동안 OO카페에서 판매되는 제품 하나당 50원의 수익을 얻으실 수 있습니다.
+                            <span className='green'>1년</span>동안 OO카페에서 판매되는 제품 하나당 <span className='red'>50원</span>의 수익을 얻으실 수 있습니다.
                         </p>
                     </div>
                     <div className='about-body-2-grid-top mb-1-5rem duration-2 fadeInUp' ref={this.aboutBody2GridTop}>
@@ -286,7 +287,7 @@ class Home extends React.Component {
                         </div>
                         <div className='about-footer-top-grid duration-2 fadeInUp'>
                             <div className='about-footer-top-grid-left'>
-                                <img></img>
+                                <img src={CoffeeImage} alt='커피 이미지'></img>
                             </div>
                             <div className='about-footer-top-grid-right d-flex flex-column'>
                                 <p className='font-0-75rem purple mb-2rem'>FUNDHUB (펀드허브)</p>
