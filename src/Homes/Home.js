@@ -40,7 +40,6 @@ class Home extends React.Component {
         
         this.aboutFooterTopFlex = React.createRef();
         this.aboutFooterTopGrid = React.createRef();
-        this.aboutFooterTopGridRight = React.createRef();
     }
     
     componentDidMount(){
@@ -100,11 +99,8 @@ class Home extends React.Component {
         if(this.aboutFooterTopFlex.current){
             this.observer.observe(this.aboutFooterTopFlex.current);
         }
-        if(this.this.aboutFooterTopGrid.current){
+        if(this.aboutFooterTopGrid.current){
             this.observer.observe(this.aboutFooterTopGrid.current);
-        }
-        if(this.aboutFooterTopGridRight.current){
-            this.observer.observe(this.aboutFooterTopGridRight.current);
         }
         }, 100);
     }
@@ -302,7 +298,7 @@ class Home extends React.Component {
                             <div className='about-footer-top-grid-left'>
                                 <img src={BuildingImage} alt='커피 이미지'></img>
                             </div>
-                            <div className='about-footer-top-grid-right d-flex flex-column duration-2 fadeInUp' ref={this.aboutFooterTopGridRight}>
+                            <div className='about-footer-top-grid-right d-flex flex-column'>
                                 <p className='font-0-75rem purple mb-2rem'>FUNDHUB (펀드허브)</p>
                                 <p className='font-0-75rem gray'>
                                     <span className='purple'>Address:</span> OO시 OO로 OO길
@@ -327,17 +323,17 @@ class Home extends React.Component {
                                 <div>
                                     <p className='font-0-75rem gray'>PAGES</p>
                                     <br></br>
-                                    <NavLink to='/' className='none-style-link block font-0-75rem mb-1rem black'>Start</NavLink>
-                                    <NavLink to='/main' className='none-style-link block font-0-75rem mb-1rem black'>Home</NavLink>
-                                    <NavLink to='/announcement' className='none-style-link block font-0-75rem mb-1rem black'>Announcement</NavLink>
-                                    <NavLink to='/faq' className='none-style-link block font-0-75rem mb-1rem black'>FAQ</NavLink>
+                                    <NavLink to='/' className='none-style-link block font-0-5rem mb-1rem black'>Start</NavLink>
+                                    <NavLink to='/main' className='none-style-link block font-0-5rem mb-1rem black'>Home</NavLink>
+                                    <NavLink to='/announcement' className='none-style-link block font-0-5rem mb-1rem black'>Announcement</NavLink>
+                                    <NavLink to='/faq' className='none-style-link block font-0-5rem mb-1rem black'>FAQ</NavLink>
                                 </div>
                                 <div>
                                     <p className='font-0-75rem gray'>ACCOUNT</p>
                                     <br></br>
-                                    <NavLink to='/login' className='none-style-link block font-0-75rem mb-1rem black'>Sign In</NavLink>
-                                    <NavLink to='/signUp' className='none-style-link block font-0-75rem mb-1rem black'>Sign Up</NavLink>
-                                    <NavLink to='/signOut' className='none-style-link block font-0-75rem mb-1rem black'>Sign Out</NavLink>
+                                    <NavLink to='/login' className='none-style-link block font-0-5rem mb-1rem black'>Sign In</NavLink>
+                                    <NavLink to='/signUp' className='none-style-link block font-0-5rem mb-1rem black'>Sign Up</NavLink>
+                                    <NavLink to='/signOut' className='none-style-link block font-0-5rem mb-1rem black'>Sign Out</NavLink>
                                 </div>
                             </div>
                             <div className='about-footer-bottom-grid-right'>
