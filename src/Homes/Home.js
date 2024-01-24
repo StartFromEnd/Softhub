@@ -23,6 +23,7 @@ class Home extends React.Component {
     }
     
     componentDidUpdate(prevProp, prevState){
+        console.log('hi');
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
                 console.log(thing.intersectionRatio);
