@@ -35,12 +35,11 @@
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0%);
   }
 }
 
 .fadeInUp {
-    position: relative;
     animation: fadeInUp 1s;
 }
 
