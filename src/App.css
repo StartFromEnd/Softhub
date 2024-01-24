@@ -41,6 +41,7 @@
 
 .fadeInUp {
     animation: fadeInUp;
+    animation-fill-mode : forwards;
 }
 .duration-1 {
     animation-duration: 1s;
@@ -197,6 +198,7 @@ p {
     margin-left: auto;
 }
 .grid-container {
+    opacity: 0;
     display: grid;
     margin-bottom: 2.5rem;
     grid-column-gap: 2.5rem;
