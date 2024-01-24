@@ -20,20 +20,6 @@ class Home extends React.Component {
     
     componentDidMount(){
         window.scrollTo(0, 0);
-        const observer = new IntersectionObserver((all) => {
-            all.forEach((thing) => {
-                console.log(thing.intersectionRatio);
-                if(thing.intersectionRatio >= 0.5){
-                    if(!thing.target.className.includes('fadeInUp')){
-                        thing.target.className += ' fadeInUp';
-                    }
-                }
-            })
-        });
-        
-        if(this.aboutHeaderBackground.current){
-            observer.observe(this.aboutHeaderBackground.current);
-        }
     }
     
     componentDidUpdate(prevProp, prevState){
@@ -41,7 +27,9 @@ class Home extends React.Component {
             all.forEach((thing) => {
                 console.log(thing.intersectionRatio);
                 if(thing.intersectionRatio >= 0.5){
-                    thing.className = thing.className + ' fadeInUp';
+                    if(!thing.target.className.includes('fadeInUp')){
+                        thing.target.className += ' fadeInUp';
+                    }
                 }
             })
         });
