@@ -17,6 +17,24 @@ class Home extends React.Component {
         };
     }
     
+    componentDidMount(){
+        this.aboutHeaderBackground = React.createRef();
+    }
+    
+    componentDidUpdate(prevProp, prevState){
+        const observer = new IntersectionObserver((all) => {
+            all.forEach((thing) => {
+                if(thing.isIntersectionRatio >= 0.5){
+                    thing.className = thing.className + ' fadeInUp';
+                }
+            })
+        });
+        
+        if(this.aboutHeaderBackground.current){
+            observer.observe(this.aboutHeaderBackground.current);
+        }
+    }
+    
     render() {
         return(
             <div>
@@ -40,7 +58,7 @@ class Home extends React.Component {
                     </div>
                 </section>
                 <section className='about-header'>
-                    <div className='about-header-background'></div>
+                    <div className='about-header-background' ref={this.aboutHeaderBackground}></div>
                     <div className='about-header-container'>
                         <div className='grid-container'>
                             <div className='grid-left'>
