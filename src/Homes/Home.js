@@ -15,11 +15,10 @@ class Home extends React.Component {
         this.state = {
             
         };
+        this.aboutHeaderBackground = React.createRef();
     }
     
     componentDidMount(){
-        this.aboutHeaderBackground = React.createRef();
-        
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
                 console.log(thing.isIntersectionRatio);
