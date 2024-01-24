@@ -179,16 +179,16 @@ class Home extends React.Component {
                         <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
                         <p className='font-1-5rem black mb-2rem bold'>어떤 원리인가요?</p>
                         <p className='font-0-75rem gray'>
-                            1.사업자로 등록된 이용자가 '구독권'을 발행합니다
+                            1.사업자로 등록된 이용자가 <span className='purple'>'구독권'</span>을 발행합니다
                             <br></br>
                             <br></br>
-                            예시 (OO카페 50원 1년 구독권)
+                            예시 (OO카페 50원 1년 <span className='purple'>구독권</span>)
                             <br></br>
                             <br></br>
-                            2.투자자는 해당 구독권을 사업자가 제시한 가격에 구매합니다.
+                            2.투자자는 해당 <span className='purple'>구독권</span>을 사업자가 제시한 가격에 구매합니다.
                             <br></br>
                             <br></br>
-                            3.투자자는 구독권 구매 후, 구독권 판매가 마감되는 다음날부터
+                            3.투자자는 <span className='purple'>구독권</span> 구매 후, <span className='purple'>구독권</span> 판매가 마감되는 다음날부터
                             <br></br>
                             1년동안 OO카페에서 판매되는 제품 하나당 50원의 수익을 얻으실 수 있습니다.
                         </p>
@@ -291,13 +291,13 @@ class Home extends React.Component {
                             <div className='about-footer-top-grid-right d-flex flex-column'>
                                 <p className='font-0-75rem purple mb-2rem'>FUNDHUB (펀드허브)</p>
                                 <p className='font-0-75rem gray'>
-                                    Address. OO시 OO로 OO길
+                                    <span className='purple'>Address:</span> OO시 OO로 OO길
                                     <br></br>
                                     <br></br>
-                                    Tel. 010.xxxx.xxxx
+                                    <span className='purple'>Tel:</span> 010.xxxx.xxxx
                                     <br></br>
                                     <br></br>
-                                    Email. example@abc.com
+                                    <span className='purple'>Email:</span> example@abc.com
                                 </p>
                             </div>
                         </div>
