@@ -19,6 +19,18 @@ class Home extends React.Component {
     
     componentDidMount(){
         this.aboutHeaderBackground = React.createRef();
+        
+        const observer = new IntersectionObserver((all) => {
+            all.forEach((thing) => {
+                if(thing.isIntersectionRatio >= 0.5){
+                    thing.className = thing.className + ' fadeInUp';
+                }
+            })
+        });
+        
+        if(this.aboutHeaderBackground.current){
+            observer.observe(this.aboutHeaderBackground.current);
+        }
     }
     
     componentDidUpdate(prevProp, prevState){
