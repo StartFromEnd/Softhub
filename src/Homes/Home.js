@@ -325,11 +325,11 @@ class Home extends React.Component {
                             <div className='about-footer-bottom-grid-right'>
                                 <p className='font-0-75rem gray'>Get Started with Social Accounts</p>
                                 <br></br>
-                                <p className='font-0-75rem gray'>google</p>
+                                <p className='font-0-5rem gray'>google</p>
                                 <br></br>
-                                <p className='font-0-75rem gray'>kakao</p>
+                                <p className='font-0-5rem gray'>kakao</p>
                                 <br></br>
-                                <p className='font-0-75rem gray'>naver</p>
+                                <p className='font-0-5rem gray'>naver</p>
                                 <br></br>
                                 <div className='footer-button'>
                                     <NavLink to='/login' className='none-style-link block font-0-75rem white'>Get Started</NavLink>

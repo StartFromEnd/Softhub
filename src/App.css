@@ -23,6 +23,10 @@
     font-family: 'dohyeon';
     src: url('./font/BMDOHYEON_ttf.ttf');
 }
+@font-face{
+    font-family: 'wooriR';
+    src: url('./font/WooridaumR.ttf');
+}
 
 @keyframes App-logo-spin {
   from {
@@ -73,7 +77,7 @@
 }
 
 * {
-    font-family: 'dohyeon' serif;
+    font-family: 'wooriR' serif;
     margin: 0;
     padding: 0;
 }
