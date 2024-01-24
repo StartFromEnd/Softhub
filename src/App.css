@@ -397,3 +397,32 @@ p {
 .faq-block-main {
     align-items: center;
 }
+.about-footer-top {
+    position: relative;
+    padding: 4rem 5%;
+}
+.about-footer-top-container {
+    max-width: 40rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.about-footer-top-flex {
+    max-width: 26rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.about-footer-top-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 4rem;
+}
+.about-footer-top-grid > div {
+    min-height: 20rem;
+}
+.about-footer-top-grid-left > img {
+    width: 100%;
+    height: 100%;
+}
+.about-footer-top-grid-right {
+    align-items: center;
+}

@@ -219,7 +219,7 @@ class Home extends React.Component {
                             <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
                             <p className='font-1-5rem black mb-2rem bold'>자주 묻는 질문</p>
                         </div>
-                        <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInUp' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq1}>
+                        <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInRight' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq1}>
                             <div className='faq-block-title d-flex justify-content-between'>
                                 <div className='faq-block-title-text'>
                                     투자자 Q. 투자 성공시 수수료가 얼마인가요?
@@ -234,7 +234,7 @@ class Home extends React.Component {
                                 </p>
                             </div>
                         </div>
-                        <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInUp' style={this.state.faqBoxes[1] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq2}>
+                        <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInRight' style={this.state.faqBoxes[1] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq2}>
                             <div className='faq-block-title d-flex justify-content-between'>
                                 <div className='faq-block-title-text'>
                                     투자자 Q. 사업자가 얼마만큼의 물건을 팔았는지 어떻게 확인하나요?
@@ -258,7 +258,7 @@ class Home extends React.Component {
                                 </p>
                             </div>
                         </div>
-                        <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInUp' style={this.state.faqBoxes[2] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq3}>
+                        <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInRight' style={this.state.faqBoxes[2] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq3}>
                             <div className='faq-block-title d-flex justify-content-between'>
                                 <div className='faq-block-title-text'>
                                     사업자 Q. 펀드허브에서 구독권을 판매하면 수수료는 얼마나 나가나요?
@@ -272,7 +272,32 @@ class Home extends React.Component {
                                     A. 저희 펀드허브에서는 창업을 할 때의 자금부족에 대하여 매우 공감하기 때문에
                                     <br></br>
                                     <br></br>
-                                    구독권 판매로 얻으신 수익의 단 2% 만 받고 있습니다!
+                                    구독권 판매로 얻으신 수익의 단 2%(사이트 유지비용) 만 받고 있습니다!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='about-footer-top'>
+                    <div className='about-footer-top-container'>
+                        <div className='about-footer-top-flex d-flex flex-column mb-3rem duration-2 fadeInUp'>
+                            <p className='font-1-5rem black mb-2rem bold'>협업 및 광고문의</p>
+                            <p className='font-0-75rem gray'>저희와 함께해요!</p>
+                        </div>
+                        <div className='about-footer-top-grid duration-2 fadeInUp'>
+                            <div className='about-footer-top-grid-left'>
+                                <img></img>
+                            </div>
+                            <div className='about-footer-top-grid-right d-flex flex-column'>
+                                <p className='font-0-75rem purple mb-2rem'>FUNDHUB (펀드허브)</p>
+                                <p className='font-0-75rem gray'>
+                                    Address. OO시 OO로 OO길
+                                    <br></br>
+                                    <br></br>
+                                    Tel. 010.xxxx.xxxx
+                                    <br></br>
+                                    <br></br>
+                                    Email. example@abc.com
                                 </p>
                             </div>
                         </div>
