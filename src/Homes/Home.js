@@ -108,9 +108,9 @@ class Home extends React.Component {
                     </div>
                 </section>
                 <section className='about-header'>
-                    <div className='about-header-background duration-1 fadeInUp' ref={this.aboutHeaderBackground}></div>
+                    <div className='about-header-background duration-2 fadeInUp' ref={this.aboutHeaderBackground}></div>
                     <div className='about-header-container'>
-                        <div className='grid-container duration-1-5 fadeInUp' ref={this.gridContainer}>
+                        <div className='grid-container duration-2 fadeInUp' ref={this.gridContainer}>
                             <div className='grid-left'>
                                 <div className='d-flex flex-column'>
                                     <div>
@@ -138,16 +138,16 @@ class Home extends React.Component {
                     </div>
                 </section>
                 <section className='about-body'>
-                    <div className='about-body-background duration-1 fadeInRight' ref={this.aboutBodyBackground}></div>
+                    <div className='about-body-background duration-2 fadeInRight' ref={this.aboutBodyBackground}></div>
                     <div className='about-body-container'>
-                        <div className='about-body-left duration-1 fadeInUp' ref={this.aboutBodyLeft}>
+                        <div className='about-body-left duration-2 fadeInUp' ref={this.aboutBodyLeft}>
                             <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
                             <p className='font-1-5rem black mb-2rem bold'>누가 이용하나요?</p>
                             <p className='font-0-75rem gray mb-2rem'>창업을 하고싶은데 자금이 부족한 창업꿈나무,<br></br>투자는 하고싶은데 크게 하는건 부담스러운 투자초보,<br></br>모두 펀드허브를 통해 고민을 해결하실 수 있습니다.</p>
                             <p className='font-0-75rem gray mb-1rem bold'>✅ 보유자금 1만원 이상</p>
                             <p className='font-0-75rem gray mb-2rem bold'>✅ 본인 명의의 계좌 소유</p>
                         </div>
-                        <div className='about-body-grid duration-1-5 fadeInUp' ref={this.aboutBodyGrid}>
+                        <div className='about-body-grid duration-2 fadeInUp' ref={this.aboutBodyGrid}>
                             <img src={OfficeImage} alt='사무실 이미지' className='about-body-grid-img-left'></img>
                             <img src={Job2Image} alt='엄무 이미지2' className='about-body-grid-img-right-top'></img>
                             <img src={Job3Image} alt='엄무 이미지3' className='about-body-grid-img-right-bottom'></img>
@@ -155,7 +155,7 @@ class Home extends React.Component {
                     </div>
                 </section>
                 <section className='about-body-2'>
-                    <div className='about-body-2-flex d-flex flex-column mb-3rem duration-1 fadeInUp' ref={this.aboutBody2Flex}>
+                    <div className='about-body-2-flex d-flex flex-column mb-3rem duration-2 fadeInUp' ref={this.aboutBody2Flex}>
                         <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
                         <p className='font-1-5rem black mb-2rem bold'>어떤 원리인가요?</p>
                         <p className='font-0-75rem gray'>
@@ -173,7 +173,7 @@ class Home extends React.Component {
                             1년동안 OO카페에서 판매되는 제품 하나당 50원의 수익을 얻으실 수 있습니다.
                         </p>
                     </div>
-                    <div className='about-body-2-grid-top duration-1-5 fadeInUp' ref={this.aboutBody2GridTop}>
+                    <div className='about-body-2-grid-top mb-1-5rem duration-2 fadeInUp' ref={this.aboutBody2GridTop}>
                         <div className='about-body-2-grid-top-left-top'>
                             사이트 이미지1
                         </div>
@@ -195,7 +195,7 @@ class Home extends React.Component {
                 </section>
                 <section className='about-body-3'>
                     <div className='about-body-3-container'>
-                        <div className='about-body-3-flex d-flex flex-column mb-3rem duration-1 fadeInUp' ref={this.aboutBody3Flex}>
+                        <div className='about-body-3-flex d-flex flex-column mb-3rem duration-2 fadeInUp' ref={this.aboutBody3Flex}>
                             <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
                             <p className='font-1-5rem black mb-2rem bold'>자주 묻는 질문</p>
                         </div>
