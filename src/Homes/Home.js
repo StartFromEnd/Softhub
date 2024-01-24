@@ -15,7 +15,7 @@ class Home extends React.Component {
         this.state = {
             starter: false,
         };
-        this.timer;
+        this.timer = null;
         this.aboutHeaderBackground = React.createRef();
         this.aboutBodyGrid = React.createRef();
     }
