@@ -24,10 +24,9 @@ class Home extends React.Component {
     }
     
     componentDidUpdate(prevProp, prevState){
-        var timer = setInterval(() => {
+        this.prop.timer = setInterval(() => {
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
-                console.log(thing.intersectionRatio);
                 if(thing.intersectionRatio >= 0.5){
                     if(!thing.target.className.includes('fadeInUp')){
                         thing.target.className += ' fadeInUp';
@@ -45,7 +44,7 @@ class Home extends React.Component {
     }
     
     componentWillUnmount(){
-        clearInterval(timer);
+        clearInterval(this.prop.timer);
     }
     render() {
         return(
