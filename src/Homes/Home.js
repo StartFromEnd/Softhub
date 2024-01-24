@@ -19,6 +19,9 @@ class Home extends React.Component {
         this.aboutHeaderBackground = React.createRef();
         this.gridContainer = React.createRef();
         this.mainImage = React.createRef();
+        
+        this.aboutBodyBackground = React.createRef();
+        this.aboutBodyLeft = React.createRef();
         this.aboutBodyGrid = React.createRef();
     }
     
@@ -46,6 +49,12 @@ class Home extends React.Component {
         }
         if(this.mainImage.current){
             observer.observe(this.mainImage.current);
+        }
+        if(this.aboutBodyBackground.current){
+            observer.observe(this.aboutBodyBackground.current);
+        }
+        if(this.aboutBodyLeft.current){
+            observer.observe(this.aboutBodyLeft.current);
         }
         if(this.aboutBodyGrid.current){
             observer.observe(this.aboutBodyGrid.current);
@@ -85,7 +94,7 @@ class Home extends React.Component {
                                 <div className='d-flex flex-column'>
                                     <div>
                                         <div className='grid-left-top'>
-                                            <div className='grid-left-top-box purple font-0-75rem bold'>NEW</div>
+                                            <div className='grid-left-top-box purple font-0-75rem'>NEW</div>
                                             <div className='grid-left-top-text'>
                                                 <p className='white font-0-75rem'>새로운 개념의 투자를 시작해보세요.</p>
                                             </div>
@@ -108,16 +117,16 @@ class Home extends React.Component {
                     </div>
                 </section>
                 <section className='about-body'>
-                    <div className='about-body-background'></div>
+                    <div className='about-body-background duration-1 scaleUp' ref={this.aboutBodyBackground}></div>
                     <div className='about-body-container'>
-                        <div>
+                        <div className='about-body-left duration-1' ref={this.aboutBodyLeft}>
                             <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
                             <p className='font-1-5rem black mb-2rem bold'>누가 이용하나요?</p>
                             <p className='font-0-75rem gray mb-2rem'>창업을 하고싶은데 자금이 부족한 창업꿈나무,<br></br>투자는 하고싶은데 크게 하는건 부담스러운 투자초보,<br></br>모두 펀드허브를 통해 고민을 해결하실 수 있습니다.</p>
                             <p className='font-0-75rem gray mb-1rem bold'>✅ 보유자금 1만원 이상</p>
                             <p className='font-0-75rem gray mb-2rem bold'>✅ 본인 명의의 계좌 소유</p>
                         </div>
-                        <div className='about-body-grid duration-1' ref={this.aboutBodyGrid}>
+                        <div className='about-body-grid duration-1-5' ref={this.aboutBodyGrid}>
                             <img src={OfficeImage} alt='사무실 이미지' className='about-body-grid-img-left'></img>
                             <img src={Job2Image} alt='엄무 이미지2' className='about-body-grid-img-right-top'></img>
                             <img src={Job3Image} alt='엄무 이미지3' className='about-body-grid-img-right-bottom'></img>
