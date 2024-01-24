@@ -30,7 +30,7 @@ class Home extends React.Component {
         this.timer = setInterval(() => {
         const observer = new IntersectionObserver((all) => {
             all.forEach((thing) => {
-                if(thing.isIntersection){
+                if(thing.isIntersecting){
                     if(!thing.target.className.includes('fadeInUp')){
                         thing.target.className += ' fadeInUp';
                     }
