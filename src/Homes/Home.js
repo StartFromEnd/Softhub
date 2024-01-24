@@ -330,7 +330,8 @@ class Home extends React.Component {
                                 <p className='font-0-75rem gray'>kakao</p>
                                 <br></br>
                                 <p className='font-0-75rem gray'>naver</p>
-                                <div className='navbar-right-button'>
+                                <br></br>
+                                <div className='footer-button'>
                                     <NavLink to='/login' className='none-style-link block font-0-75rem white'>Get Started</NavLink>
                                 </div>
                             </div>

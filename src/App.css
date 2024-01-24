@@ -445,3 +445,9 @@ p {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2.5rem;
 }
+.footer-button {
+    display: inline-block;
+    padding: 0.5rem;
+    height: 2rem;
+    background-color: #443FDE;
+}
