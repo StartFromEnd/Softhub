@@ -134,6 +134,23 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </section>
+                <section className='about-body-2'>
+                    <div className='about-body-2-flex d-flex flex-column mb-3rem'>
+                        <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
+                        <p className='font-1-5rem black mb-2rem bold'>어떤 원리인가요?</p>
+                        <p className='font-0-75rem gray'>
+                            1.사업자로 등록된 이용자분들께서 '구독권'을 발행합니다
+                            <br></br>
+                            구독권 형식 예시(OO카페 50원 1년 구독권)
+                            <br></br>
+                            2.투자자께서는 해당 구독권을 사업자가 제시한 가격에 구매합니다.
+                            <br></br>
+                            3.투자자께서는 구독권 구매 후, 구독권 판매가 마감되는 다음날부터
+                            <br></br>
+                            1년동안 OO카페에서 판매되는 제품 하나당 50원의 수익을 얻으실 수 있습니다.
+                        </p>
+                    </div>
+                </section>
             </div>
         );
     }
