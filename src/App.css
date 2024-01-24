@@ -77,7 +77,7 @@
 }
 
 * {
-    font-family: 'dohyeon' serif;
+    font-family: 'wooriR' serif;
     margin: 0;
     padding: 0;
 }
@@ -448,6 +448,11 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2.5rem;
+}
+.about-footer-bottom-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.5rem;
 }
 .about-footer-bottom-grid-right {
     padding-left: 2rem;
