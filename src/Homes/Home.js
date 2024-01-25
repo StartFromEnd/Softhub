@@ -339,7 +339,7 @@ class Home extends React.Component {
                             <div className='about-footer-bottom-grid-right'>
                                 <p className='font-0-75rem gray'>Get Started with Social Accounts</p>
                                 <br></br>
-                                <p className='font-0-75rem gray'>google</p>
+                                <div className='g-signin2'></div>
                                 <br></br>
                                 <p className='font-0-75rem gray'>kakao</p>
                                 <br></br>
