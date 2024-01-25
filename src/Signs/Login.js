@@ -52,7 +52,7 @@ class Login extends React.Component {
                         </div>
                         <div className='login-about-body-grid-right'>
                             <p className='font-1rem white mt-3rem'>펀드허브 사업자 수수료</p>
-                            <p className='white mt-3rem'><span className='font-1rem'>고정금액 없이 </span><span className='font-1-5rem'>"단 3%"</span></p>
+                            <p className='white mt-3rem'><span className='font-1rem'>고정금액 없이 </span><span className='font-1-5rem'>"단 5%"</span></p>
                             <p className='white mt-3rem font-0-75rem'>고정금이 없어서 소액이라도 부담이 없어요!</p>
                         </div>
                     </div>
