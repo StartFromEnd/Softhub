@@ -46,7 +46,7 @@ class Home extends React.Component {
     }
     
     componentDidMount(){
-        console.log(process.env.GOOGLE_REDIRECT_URI);
+        console.log(process.env.GOOGLE_CLIENT_ID);
         this.setState({starter: true});
     }
     
