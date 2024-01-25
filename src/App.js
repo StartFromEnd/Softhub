@@ -6,6 +6,7 @@ import './App.css';
 import * as common from './CommonFunctions.js';
 
 import Home from './Homes/Home.js';
+import Login from './Signs/Login.js';
 
 class App extends React.Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class App extends React.Component {
                 <BrowserRouter>
                     <Routes>
                         <Route path='/' element={<Home />}></Route>
+                        <Route path='/login' element={<Login />}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>

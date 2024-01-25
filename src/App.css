@@ -460,6 +460,21 @@ p {
 .about-footer-bottom-grid-right {
     padding-left: 2rem;
 }
+.google-sign-in {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 2rem;
+    box-sizing: border-box;
+    padding: 0.4rem;
+    background-color: white;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+}
+.google-sign-in > img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
 .footer-button {
     display: inline-block;
     padding: 0.5rem;

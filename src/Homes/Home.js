@@ -10,6 +10,7 @@ import Job3Image from '../img/job3.jpg';
 import OfficeImage from '../img/office.jpg';
 import ArrowImage from '../img/arrow.svg';
 import BuildingImage from '../img/building.jpg';
+import GoogleImage from '../img/Google__G__logo.svg.png';
 
 class Home extends React.Component {
     constructor(props){
@@ -339,7 +340,10 @@ class Home extends React.Component {
                             <div className='about-footer-bottom-grid-right'>
                                 <p className='font-0-75rem gray'>Get Started with Social Accounts</p>
                                 <br></br>
-                                <div className='g-signin2'></div>
+                                <div className='google-sign-in'>
+                                    <img src={GoogleImage} alt='구글 이미지'></img>
+                                    <p className='font-0-75 black'>구글 로그인</p>
+                                </div>
                                 <br></br>
                                 <p className='font-0-75rem gray'>kakao</p>
                                 <br></br>
