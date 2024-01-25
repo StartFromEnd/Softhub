@@ -48,7 +48,7 @@ class Home extends React.Component {
     }
     
     componentDidMount(){
-        console.log(process.env.GOOGLE_CLIENT_ID);
+        console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID);
         this.setState({starter: true});
     }
     
@@ -123,8 +123,8 @@ class Home extends React.Component {
     }
     
     OAuthGoogleStart = () => {
-        const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
-        const GOOGLE_REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI;
+        const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+        const GOOGLE_REDIRECT_URI = process.env.REACT_APP_GOOGLE_REDIRECT_URI;
         
         window.location.replace(`https://accounts.google.com/o/oauth2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&response_type=code&scope=openid email profile`);
     }
