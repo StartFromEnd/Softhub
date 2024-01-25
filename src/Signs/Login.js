@@ -4,6 +4,9 @@ import cookie from 'react-cookies';
 import logo from '../logo.svg';
 import '../App.css';
 import * as common from '../CommonFunctions.js';
+import GoogleImage from '../img/Google__G__logo.svg.png';
+import KakaoImage from '../img/kakao_login_medium_wide.png';
+import NaverImage from '../img/naver_logo.png';
 
 class Login extends React.Component {
     render() {
