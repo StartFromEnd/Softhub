@@ -296,7 +296,7 @@ class Home extends React.Component {
                                     A. 저희 펀드허브에서는 창업을 할 때의 자금부족에 대하여 매우 공감하기 때문에
                                     <br></br>
                                     <br></br>
-                                    구독권 판매로 얻으신 수익의 단 2%(사이트 유지비용) 만 받고 있습니다!
+                                    구독권 판매로 얻으신 수익의 단 5%(사이트 유지비용) 만 받고 있습니다!
                                 </p>
                             </div>
                         </div>
@@ -360,12 +360,10 @@ class Home extends React.Component {
                                 <button className='kakao-sign-in mb-0-5rem'>
                                     <img src={KakaoImage} alt='카카오 이미지'></img>
                                 </button>
-                                <br></br>
                                 <button className='naver-sign-in mb-1rem'>
                                     <img src={NaverImage} alt='네이버 이미지'></img>
                                     <p className='font-0-75rem white center'>네이버 로그인</p>
                                 </button>
-                                <br></br>
                                 <div className='footer-button'>
                                     <NavLink to='/login' className='none-style-link block font-0-75rem white'>Get Started</NavLink>
                                 </div>

@@ -28,6 +28,30 @@ class Login extends React.Component {
                         </div>
                     </div>
                 </section>
+                <section className='login-about-body'>
+                    <div className='login-about-body-grid'>
+                        <div className='login-about-body-grid-left'>
+                            <p className='font-1rem black mt-3rem'>로그인</p>
+                            <p className='font-0-75rem gray mt-2rem mb-3rem'>소셜계정으로 편하고 안전하게 로그인해요!</p>
+                            <button className='google-sign-in mb-0-5rem' onClick={() => this.OAuthGoogleStart()}>
+                                <img src={GoogleImage} alt='구글 이미지'></img>
+                                <p className='font-0-75rem gray center'>구글 로그인</p>
+                            </button>
+                            <button className='kakao-sign-in mb-0-5rem'>
+                                <img src={KakaoImage} alt='카카오 이미지'></img>
+                            </button>
+                            <button className='naver-sign-in mb-1rem'>
+                                <img src={NaverImage} alt='네이버 이미지'></img>
+                                <p className='font-0-75rem white center'>네이버 로그인</p>
+                            </button>
+                        </div>
+                        <div className='login-about-body-grid-right'>
+                            <p className='font-1rem white mt-3rem'>펀드허브 사업자 수수료</p>
+                            <p className='white mt-3rem'><span className='font-1rem'>고정금액 없이 </span><span className='font-1-5rem'>"단 3%"</span></p>
+                            <p className='white mt-3rem font-0-75rem'>고정금이 없어서 소액이라도 부담이 없어요!</p>
+                        </div>
+                    </div>
+                </section>
                 <section className='about-footer-bottom'>
                     <div className='about-footer-bottom-container'>
                         <div className='about-footer-bottom-logo mb-2rem'>
