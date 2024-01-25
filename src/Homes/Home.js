@@ -12,7 +12,7 @@ import ArrowImage from '../img/arrow.svg';
 import BuildingImage from '../img/building.jpg';
 import GoogleImage from '../img/Google__G__logo.svg.png';
 import KakaoImage from '../img/kakao_login_large_wide.png';
-import NaverImage from '../img/naver_login.png';
+import NaverImage from '../img/naver_logo.png';
 
 class Home extends React.Component {
     constructor(props){
@@ -352,6 +352,7 @@ class Home extends React.Component {
                                 <br></br>
                                 <button className='naver-sign-in mb-1rem'>
                                     <img src={NaverImage} alt='네이버 이미지'></img>
+                                    <p className='font-0-75rem white center'>네이버 로그인</p>
                                 </button>
                                 <br></br>
                                 <div className='footer-button'>

@@ -472,7 +472,7 @@ p {
     padding: 0.4rem;
     background-color: white;
     border: 1px solid #DBDBDB;
-    border-radius: 12px;
+    border-radius: 5px;
 }
 .google-sign-in > img {
     width: 1rem;
@@ -488,15 +488,27 @@ p {
     border: none;
     border-radius: 12px;
 }
-.naver-sign-in {
-    width: 40%;
-    height: 2rem;
-    box-sizing: border-box;
-    border-radius: 12px;
-}
-.kakao-sign-in > img, .naver-sign-in > img {
+.kakao-sign-in > img {
     width: 100%;
     height: 100%;
+}
+.naver-sign-in {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 2rem;
+    box-sizing: border-box;
+    padding: 0.4rem;
+    background-color: #03C75A;
+    border: none;
+    border-radius: 5px;
+}
+.naver-sign-in > img {
+    width: 1rem;
+    height: 1rem;
+}
+.naver-sign-in > p {
+    margin-left: 25%;
 }
 .footer-button {
     display: inline-block;
