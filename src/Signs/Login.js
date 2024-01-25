@@ -30,7 +30,7 @@ class Login extends React.Component {
         return response.json();
     }
     
-    componentDidMount async(){
+    async componentDidMount(){
         const params = new URLSearchParams(window.location.search);
         if(params.get('code')){
             const res = await this.GetToken(params.get('code'));
@@ -81,7 +81,7 @@ class Login extends React.Component {
                             <p className='font-0-5rem gray mt-2rem center' style={{width:'80%'}}>더 강력한 보안과 편의성을 위해<br></br>저희 펀드허브는 소셜로그인만 지원해요!</p>
                         </div>
                         <div className='login-about-body-grid-right'>
-                            <p className='font-1rem white mt-3rem'>펀드허브 사업자 수수료</p>
+                            <p className='font-1rem white mt-5rem'>펀드허브 사업자 수수료</p>
                             <p className='white mt-3rem'><span className='font-1rem'>고정금액 없이 </span><span className='font-1-5rem'>"단 5%"</span></p>
                             <p className='white mt-3rem font-0-75rem'>고정금이 없어서 소액이라도 부담이 없어요!</p>
                         </div>
