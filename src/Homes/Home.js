@@ -11,7 +11,7 @@ import OfficeImage from '../img/office.jpg';
 import ArrowImage from '../img/arrow.svg';
 import BuildingImage from '../img/building.jpg';
 import GoogleImage from '../img/Google__G__logo.svg.png';
-import KakaoImage from '../img/kakao_login_medium_wide.png';
+import KakaoImage from '../img/kakao_login_medium_narrow.png';
 import NaverImage from '../img/naver_login.png';
 
 class Home extends React.Component {
@@ -350,7 +350,7 @@ class Home extends React.Component {
                                     <img src={KakaoImage} alt='카카오 이미지'></img>
                                 </button>
                                 <br></br>
-                                <button className='naver-sign-in'>
+                                <button className='naver-sign-in mb-0-5rem'>
                                     <img src={NaverImage} alt='네이버 이미지'></img>
                                 </button>
                                 <br></br>
