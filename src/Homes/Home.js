@@ -11,7 +11,7 @@ import OfficeImage from '../img/office.jpg';
 import ArrowImage from '../img/arrow.svg';
 import BuildingImage from '../img/building.jpg';
 import GoogleImage from '../img/Google__G__logo.svg.png';
-import KakaoImage from '../img/kakao_login_large_wide.png';
+import KakaoImage from '../img/kakao_login_medium_wide.png';
 import NaverImage from '../img/naver_logo.png';
 
 class Home extends React.Component {
@@ -335,8 +335,8 @@ class Home extends React.Component {
                                     <p className='font-0-75rem gray'>ACCOUNT</p>
                                     <br></br>
                                     <NavLink to='/login' className='none-style-link block font-0-5rem mb-1rem black'>Sign In</NavLink>
-                                    <NavLink to='/signUp' className='none-style-link block font-0-5rem mb-1rem black'>Sign Up</NavLink>
-                                    <NavLink to='/signOut' className='none-style-link block font-0-5rem mb-1rem black'>Sign Out</NavLink>
+                                    <NavLink to='/privacy-policy' className='none-style-link block font-0-5rem mb-1rem black'>Privacy Policy</NavLink>
+                                    <NavLink to='/terms-of-service' className='none-style-link block font-0-5rem mb-1rem black'>Terms of Service</NavLink>
                                 </div>
                             </div>
                             <div className='about-footer-bottom-grid-right'>
