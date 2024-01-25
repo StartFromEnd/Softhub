@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 export function Fetch(url, array) {
-    const response = fetch('https://port-0-softhub-back-d8gr12alqtfs5p9.sel5.cloudtype.app/'+url, {
+    const response = fetch(`${process.env.REACT_APP_SERVER_HOST}`+url, {
         method: 'POST',
         mode: 'cors',
         credentials: 'include',
