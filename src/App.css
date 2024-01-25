@@ -525,14 +525,23 @@ p {
     display: relative;
     padding: 4rem 5%;
 }
+.login-about-body-background {
+    position: absolute;
+    width: 60%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    background-color: #443FDE;
+}
 .login-about-body-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 3rem;
+    margin-right: auto;
+    margin-left: auto;
 }
 .login-about-body-grid > div {
     min-height: 15rem;
-}
-.login-about-body-grid-right {
-    background-color: #443FDE;
+    max-width: 17rem;
 }
