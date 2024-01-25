@@ -9,6 +9,36 @@ import KakaoImage from '../img/kakao_login_medium_wide.png';
 import NaverImage from '../img/naver_logo.png';
 
 class Login extends React.Component {
+    
+    OAuthGoogleStart = () => {
+        const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+        const GOOGLE_REDIRECT_URI = process.env.REACT_APP_GOOGLE_REDIRECT_URI;
+        
+        window.location.replace(`https://accounts.google.com/o/oauth2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&response_type=code&scope=openid email profile`);
+    }
+    
+    GetToken = async(code) => {
+        const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+        const GOOGLE_REDIRECT_URI = process.env.REACT_APP_GOOGLE_REDIRECT_URI;
+        const GOOGLE_SECRET_KEY = process.env.REACT_APP_GOOGLE_SECRET_KEY;
+        const response = await fetch(`https://oauth2.googleapis.com/token?grant_type=authorization_code&client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&client_secret=${GOOGLE_SECRET_KEY}&code=${code}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+            },
+        });
+        return response.json();
+    }
+    
+    componentDidMount async(){
+        const params = new URLSearchParams(window.location.search);
+        if(params.get('code')){
+            const res = await this.GetToken(params.get('code'));
+            console.log(res);
+        }
+        console.log('no');
+    }
+    
     render() {
         return(
             <div>
@@ -48,7 +78,7 @@ class Login extends React.Component {
                                 <img src={NaverImage} alt='네이버 이미지'></img>
                                 <p className='font-0-75rem white center'>네이버 로그인</p>
                             </button>
-                            <p className='font-0-5rem gray mt-2rem'>더 강력한 보안과 편의성을 위해<br></br>저희 펀드허브는 소셜로그인만 지원해요!</p>
+                            <p className='font-0-5rem gray mt-2rem center' style={{width:'80%'}}>더 강력한 보안과 편의성을 위해<br></br>저희 펀드허브는 소셜로그인만 지원해요!</p>
                         </div>
                         <div className='login-about-body-grid-right'>
                             <p className='font-1rem white mt-3rem'>펀드허브 사업자 수수료</p>
