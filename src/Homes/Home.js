@@ -11,6 +11,7 @@ import OfficeImage from '../img/office.jpg';
 import ArrowImage from '../img/arrow.svg';
 import BuildingImage from '../img/building.jpg';
 import GoogleImage from '../img/Google__G__logo.svg.png';
+import KakaoImage from '../img/kakao_login_medium_wide.png';
 
 class Home extends React.Component {
     constructor(props){
@@ -340,12 +341,14 @@ class Home extends React.Component {
                             <div className='about-footer-bottom-grid-right'>
                                 <p className='font-0-75rem gray'>Get Started with Social Accounts</p>
                                 <br></br>
-                                <div className='google-sign-in'>
+                                <button className='google-sign-in'>
                                     <img src={GoogleImage} alt='구글 이미지'></img>
-                                    <p className='font-0-75 black'>구글 로그인</p>
-                                </div>
+                                    <p className='font-0-5 gray'>구글 로그인</p>
+                                </button>
                                 <br></br>
-                                <p className='font-0-75rem gray'>kakao</p>
+                                <button className='kakao-sign-in'>
+                                    <img src={GoogleImage} alt='카카오 이미지'></img>
+                                </button>
                                 <br></br>
                                 <p className='font-0-75rem gray'>naver</p>
                                 <br></br>
