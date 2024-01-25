@@ -541,8 +541,8 @@ p {
     grid-column-gap: 3rem;
     margin-right: auto;
     margin-left: auto;
+    max-width: 40rem;
 }
 .login-about-body-grid > div {
     min-height: 15rem;
-    max-width: 17rem;
 }

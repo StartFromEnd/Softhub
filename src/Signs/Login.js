@@ -32,8 +32,8 @@ class Login extends React.Component {
                     </div>
                 </section>
                 <section className='login-about-body'>
+                    <div className='login-about-body-background'></div>
                     <div className='login-about-body-grid'>
-                        <div className='login-about-body-background'></div>
                         <div className='login-about-body-grid-left'>
                             <p className='font-1rem black mt-3rem'>로그인</p>
                             <p className='font-0-75rem gray mt-2rem mb-3rem'>소셜계정으로 편하고 안전하게 로그인해요!</p>
