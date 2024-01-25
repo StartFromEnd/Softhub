@@ -472,7 +472,7 @@ p {
     padding: 0.4rem;
     background-color: white;
     border: 1px solid #DBDBDB;
-    border-radius: 5px;
+    border-radius: 12px;
 }
 .google-sign-in > img {
     width: 1rem;
@@ -482,16 +482,17 @@ p {
     margin-left: 25%;
 }
 .kakao-sign-in {
-    width: 60%;
+    width: 80%;
     height: 2rem;
     box-sizing: border-box;
-    border-radius: 5px;
+    border: none;
+    border-radius: 12px;
 }
 .naver-sign-in {
     width: 40%;
     height: 2rem;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 12px;
 }
 .kakao-sign-in > img, .naver-sign-in > img {
     width: 100%;
