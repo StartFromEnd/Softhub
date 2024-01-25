@@ -347,7 +347,7 @@ class Home extends React.Component {
                                 </button>
                                 <br></br>
                                 <button className='kakao-sign-in'>
-                                    <img src={GoogleImage} alt='카카오 이미지'></img>
+                                    <img src={KakaoImage} alt='카카오 이미지'></img>
                                 </button>
                                 <br></br>
                                 <p className='font-0-75rem gray'>naver</p>
