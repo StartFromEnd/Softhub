@@ -6,17 +6,10 @@ export function Fetch(url, array) {
         mode: 'cors',
         credentials: 'include',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Type': 'application/json',
         },
-        body: new URLSearchParams({
-            sessionID: `${array[0]}`,
-            email: `${array[1]}`,
-            password: `${array[2]}`,
-            nickname: `${array[3]}`,
-
-            variable1: `${array[4]}`,
-            variable2: `${array[5]}`,
-            variable3: `${array[6]}`,
+        body: JSON.stringify({
+            datas: array,
         }),
     })
     .then((data) => {return data.json()})

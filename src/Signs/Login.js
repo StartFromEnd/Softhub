@@ -34,7 +34,14 @@ class Login extends React.Component {
         const params = new URLSearchParams(window.location.search);
         if(params.get('code')){
             const res = await this.GetToken(params.get('code'));
-            console.log(res);
+            const data = await common.Fetch('oAuthGoogle', {access_token: res.access_token});
+            if(data.ok){
+                cookie.save('sessionID', data.result.sessionID, {path: '/'});
+                window.location.replace('/main');
+            }
+            else{
+                alert(data.msg);
+            }
         }
         console.log('no');
     }
