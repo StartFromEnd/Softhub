@@ -46,6 +46,7 @@ class Home extends React.Component {
     }
     
     componentDidMount(){
+        console.log(process.env.GOOGLE_REDIRECT_URI);
         this.setState({starter: true});
     }
     
