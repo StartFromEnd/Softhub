@@ -12,6 +12,7 @@ import ArrowImage from '../img/arrow.svg';
 import BuildingImage from '../img/building.jpg';
 import GoogleImage from '../img/Google__G__logo.svg.png';
 import KakaoImage from '../img/kakao_login_medium_wide.png';
+import NaverImage from '../img/naver_login.png';
 
 class Home extends React.Component {
     constructor(props){
@@ -341,16 +342,17 @@ class Home extends React.Component {
                             <div className='about-footer-bottom-grid-right'>
                                 <p className='font-0-75rem gray'>Get Started with Social Accounts</p>
                                 <br></br>
-                                <button className='google-sign-in'>
+                                <button className='google-sign-in mb-0-5rem'>
                                     <img src={GoogleImage} alt='구글 이미지'></img>
-                                    <p className='font-0-5 gray'>구글 로그인</p>
+                                    <p className='font-0-75rem gray center'>구글 로그인</p>
                                 </button>
-                                <br></br>
-                                <button className='kakao-sign-in'>
+                                <button className='kakao-sign-in mb-0-5rem'>
                                     <img src={KakaoImage} alt='카카오 이미지'></img>
                                 </button>
                                 <br></br>
-                                <p className='font-0-75rem gray'>naver</p>
+                                <button className='naver-sign-in'>
+                                    <img src={NaverImage} alt='네이버 이미지'></img>
+                                </button>
                                 <br></br>
                                 <div className='footer-button'>
                                     <NavLink to='/login' className='none-style-link block font-0-75rem white'>Get Started</NavLink>
