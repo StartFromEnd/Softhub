@@ -36,7 +36,7 @@ class Login extends React.Component {
             const res = await this.GetToken(params.get('code'));
             const data = await common.Fetch('oAuthGoogle', {access_token: res.access_token});
             if(data.ok){
-                cookie.save('sessionID', data.result.sessionID, {path: '/'});
+                cookie.save('sessionID', data.result[0], {path: '/'});
                 window.location.replace('/main');
             }
             else{
