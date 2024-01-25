@@ -522,10 +522,11 @@ p {
     border-top: 1px solid #EBEBEF;
 }
 .login-about-body {
-    display: relative;
+    position: relative;
     padding: 4rem 5%;
 }
 .login-about-body-background {
+    z-index: -1;
     position: absolute;
     width: 60%;
     top: 0;

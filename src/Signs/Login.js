@@ -80,17 +80,13 @@ class Login extends React.Component {
                                 </div>
                             </div>
                             <div className='about-footer-bottom-grid-right'>
-                                <p className='font-0-75rem gray'>Get Started with Social Accounts</p>
+                                <p className='font-0-75rem gray'>저희와 함께해요!</p>
                                 <br></br>
-                                <p className='font-0-75rem gray'>google</p>
+                                <p className='font-0-75rem gray'><span className='purple'>Address:</span> OO시 OO로 OO길</p>
                                 <br></br>
-                                <p className='font-0-75rem gray'>kakao</p>
+                                <p className='font-0-75rem gray'><span className='purple'>Tel:</span> 010.xxxx.xxxx</p>
                                 <br></br>
-                                <p className='font-0-75rem gray'>naver</p>
-                                <br></br>
-                                <div className='footer-button'>
-                                    <NavLink to='/login' className='none-style-link block font-0-75rem white'>Get Started</NavLink>
-                                </div>
+                                <p className='font-0-75rem gray'><span className='purple'>Email:</span> example@abc.com</p>
                             </div>
                         </div>
                         <div className='about-footer-bottom-bottom font-0-5rem'>
