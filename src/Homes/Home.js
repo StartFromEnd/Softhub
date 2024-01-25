@@ -118,6 +118,14 @@ class Home extends React.Component {
         faqBoxes[param] = !faqBoxes[param];
         this.setState({faqBoxes: faqBoxes});
     }
+    
+    OAuthGoogleStart = () => {
+        const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+        const GOOGLE_REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI;
+        
+        window.location.replace(`https://accounts.google.com/o/oauth2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&response_type=code&scope=openid email profile`);
+    }
+    
     render() {
         return(
             <div>
@@ -342,7 +350,7 @@ class Home extends React.Component {
                             <div className='about-footer-bottom-grid-right'>
                                 <p className='font-0-75rem gray'>Get Started with Social Accounts</p>
                                 <br></br>
-                                <button className='google-sign-in mb-0-5rem'>
+                                <button className='google-sign-in mb-0-5rem' onClick={() => this.OAuthGoogleStart()}>
                                     <img src={GoogleImage} alt='구글 이미지'></img>
                                     <p className='font-0-75rem gray center'>구글 로그인</p>
                                 </button>
