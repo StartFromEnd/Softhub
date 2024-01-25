@@ -14,6 +14,8 @@ import GoogleImage from '../img/Google__G__logo.svg.png';
 import KakaoImage from '../img/kakao_login_medium_wide.png';
 import NaverImage from '../img/naver_logo.png';
 
+require("dotenv").config();
+
 class Home extends React.Component {
     constructor(props){
         super(props);
