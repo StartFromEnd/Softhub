@@ -443,6 +443,7 @@ p {
 .about-footer-bottom {
     padding: 3rem 3% 2rem;
     border-top: 1px solid #EBEBEF;
+    background-color: white;
 }
 .about-footer-bottom-container {
     width: 100%;
@@ -528,7 +529,7 @@ p {
 .login-about-body-background {
     z-index: -1;
     position: absolute;
-    width: 60%;
+    width: 50%;
     top: 0;
     right: 0;
     bottom: 0;

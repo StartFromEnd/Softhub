@@ -48,6 +48,7 @@ class Login extends React.Component {
                                 <img src={NaverImage} alt='네이버 이미지'></img>
                                 <p className='font-0-75rem white center'>네이버 로그인</p>
                             </button>
+                            <p className='font-0-5rem gray mt-2rem'>더 강력한 보안과 편의성을 위해<br></br>저희 펀드허브는 소셜로그인만 지원해요!</p>
                         </div>
                         <div className='login-about-body-grid-right'>
                             <p className='font-1rem white mt-3rem'>펀드허브 사업자 수수료</p>
