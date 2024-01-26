@@ -74,10 +74,10 @@ class Main extends React.Component {
                         <div className='profil-about-body-grid-left'>
                             <div className='profil-about-body-grid-left-flex d-flex flex-column'>
                                 <p className='black pt-3rem'><span className='font-1rem'>{this.state.nickname}</span><span className='font-0-75rem'> 님</span></p>
-                                <pre className='font-0-75rem mt-2rem'><span className='black'>포지션    </span><span className='gray'>{this.state.position}</span></p>
-                                <pre className='font-0-75rem mt-1rem'><span className='black'>휴대전화  </span><span className='gray'>{this.state.number}</span></p>
-                                <pre className='font-0-75rem mt-1rem'><span className='black'>은행      </span><span className='gray'>{this.state.bank}</span></p>
-                                <pre className='font-0-75rem mt-1rem'><span className='black'>계좌번호  </span><span className='gray'>{this.state.bank_account}</span></p>
+                                <pre className='font-0-75rem mt-2rem'><span className='black'>포지션    </span><span className='gray'>{this.state.position}</span></pre>
+                                <pre className='font-0-75rem mt-1rem'><span className='black'>휴대전화  </span><span className='gray'>{this.state.number}</span></pre>
+                                <pre className='font-0-75rem mt-1rem'><span className='black'>은행      </span><span className='gray'>{this.state.bank}</span></pre>
+                                <pre className='font-0-75rem mt-1rem'><span className='black'>계좌번호  </span><span className='gray'>{this.state.bank_account}</span></pre>
                             </div>
                         </div>
                         <div className='profil-about-body-grid-right'>
