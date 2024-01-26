@@ -587,7 +587,7 @@ p {
 .profil-about-body-grid-left-flex {
     width: 95%;
     height: 96%;
-    margin: auto;
+    margin: 3% auto;
     background-color: white;
     border-radius: 1.5rem;
 }

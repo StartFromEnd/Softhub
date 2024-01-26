@@ -73,7 +73,11 @@ class Main extends React.Component {
                     <div className='profil-about-body-grid'>
                         <div className='profil-about-body-grid-left'>
                             <div className='profil-about-body-grid-left-flex'>
-                                
+                                <p className='black mt-3rem'><span className='font-1rem'>{this.state.nickname}</span><span className='font-0-75rem'> 님</span></p>
+                                <p className='font-0-75rem mt-2rem'><span className='black'>포지션 </span><span className='gray'>{this.state.position}</span></p>
+                                <p className='font-0-75rem mt-1rem'><span className='black'>휴대전화 </span><span className='gray'>{this.state.number}</span></p>
+                                <p className='font-0-75rem mt-1rem'><span className='black'>은행 </span><span className='gray'>{this.state.bank}</span></p>
+                                <p className='font-0-75rem mt-1rem'><span className='black'>계좌번호 </span><span className='gray'>{this.state.bank_account}</span></p>
                             </div>
                         </div>
                         <div className='profil-about-body-grid-right'>
