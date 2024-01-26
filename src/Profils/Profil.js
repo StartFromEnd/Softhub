@@ -21,7 +21,9 @@ class Main extends React.Component {
     }
     
     async componentDidMount() {
-        if(cookie.load('sessionID') != undefined){
+        if(cookie.load('sessionID') != undefined && cookie.load('nickname')!= undefined){
+            this.setState({nickname: cookie.load('nickname')});
+            
             const data = await common.Fetch('profil', {sessionID: cookie.load('sessionID')});
             
             if(data.ok){
@@ -32,7 +34,6 @@ class Main extends React.Component {
                     bank: data.result.bank,
                     bank_account: data.result.bank_account
                 });
-                this.setState({nickname: cookie.load('nickname')});
             }
             else{
                 alert(data.msg);
@@ -70,7 +71,12 @@ class Main extends React.Component {
                 <section className='profil-about-body'>
                     <div className='profil-about-body-background'></div>
                     <div className='profil-about-body-grid'>
+                        <div className='profil-about-body-grid-left'>
                         
+                        </div>
+                        <div className='profil-about-body-grid-right'>
+                        
+                        </div>
                     </div>
                 </section>
                 <section className='about-footer-bottom'>
