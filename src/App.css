@@ -145,6 +145,9 @@ p {
 .font-2-5rem {
     font-size: 2.5rem;
 }
+.pt-3rem {
+    padding-top: 3rem;
+}
 .mb-0-5rem {
     margin-bottom: 0.5rem;
 }
@@ -585,9 +588,13 @@ p {
     border-radius: 2rem;
 }
 .profil-about-body-grid-left-flex {
+    align-items: center;
     width: 95%;
     height: 96%;
     margin: 3% auto;
     background-color: white;
     border-radius: 1.5rem;
+}
+.profil-about-body-grid-left-flex > p {
+    width: 80%;
 }
