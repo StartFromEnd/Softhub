@@ -10,6 +10,13 @@ import NaverImage from '../img/naver_logo.png';
 
 class Login extends React.Component {
     
+    constructor(props){
+        super(props);
+        this.state = {
+            nickname: '',
+        }
+    }
+    
     OAuthGoogleStart = () => {
         const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
         const GOOGLE_REDIRECT_URI = process.env.REACT_APP_GOOGLE_REDIRECT_URI;
@@ -31,6 +38,9 @@ class Login extends React.Component {
     }
     
     async componentDidMount(){
+        if(cookie.load('nickname') != undefined){
+            this.setState({nickname: cookie.load('nickname')});
+        }
         const params = new URLSearchParams(window.location.search);
         if(params.get('code')){
             const res = await this.GetToken(params.get('code'));
@@ -38,7 +48,7 @@ class Login extends React.Component {
             if(data.ok){
                 console.log(data);
                 cookie.save('sessionID', data.result.sessionID, {path: '/'});
-                this.props.GetNickname(data.result.nickname);
+                cookie.save('nickname', data.result.nickname, {path: '/'});
                 window.location.replace('/main');
             }
             else{
@@ -64,7 +74,7 @@ class Login extends React.Component {
                         <div className='navbar-right d-flex justify-content-end'>
                             <NavLink to='/write' className='none-style-link block font-0-75rem gray'>펀드 게시하기</NavLink>
                             <div className='navbar-right-button'>
-                                <NavLink to={this.props.nickname=='' ? '/login' : '/profil'} className='none-style-link block font-0-75rem white'>{this.props.nickname == '' ? '로그인' : `${this.props.nickname}`+' 님'}</NavLink>
+                                <NavLink to={this.state.nickname=='' ? '/login' : '/profil'} className='none-style-link block font-0-75rem white'>{this.state.nickname == '' ? '로그인' : `${this.state.nickname}`+' 님'}</NavLink>
                             </div>
                         </div>
                     </div>

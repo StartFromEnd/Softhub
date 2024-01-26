@@ -23,6 +23,8 @@ class Home extends React.Component {
             starter: false,
             
             faqBoxes: [false, false, false],
+            
+            nickname: '',
         };
         this.observer = null;
         this.timer = null;
@@ -48,8 +50,10 @@ class Home extends React.Component {
     }
     
     componentDidMount(){
-        console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID);
         this.setState({starter: true});
+        if(cookie.load('nickname') != undefined){
+            this.setState({nickname: cookie.load('nickname')});
+        }
     }
     
     componentDidUpdate(prevProp, prevState){
@@ -146,7 +150,7 @@ class Home extends React.Component {
                         <div className='navbar-right d-flex justify-content-end'>
                             <NavLink to='/write' className='none-style-link block font-0-75rem gray'>펀드 게시하기</NavLink>
                             <div className='navbar-right-button'>
-                                <NavLink to={this.props.nickname=='' ? '/login' : '/profil'} className='none-style-link block font-0-75rem white'>{this.props.nickname == '' ? '로그인' : `${this.props.nickname}`+' 님'}</NavLink>
+                                <NavLink to={this.state.nickname=='' ? '/login' : '/profil'} className='none-style-link block font-0-75rem white'>{this.state.nickname == '' ? '로그인' : `${this.state.nickname}`+' 님'}</NavLink>
                             </div>
                         </div>
                     </div>

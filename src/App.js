@@ -10,25 +10,15 @@ import Main from './Mains/Main.js';
 import Login from './Signs/Login.js';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            nickname: '',
-        };
-    }
-    
-    GetNickname = (nickname) => {
-        this.setState({nickname: nickname});
-    }
     
     render() {
         return (
             <div className="App">
                 <BrowserRouter>
                     <Routes>
-                        <Route path='/' element={<Home nickname={this.state.nickname}/>}></Route>
-                        <Route path='/main' element={<Main nickname={this.state.nickname}/>}></Route>
-                        <Route path='/login' element={<Login nickname={this.state.nickname} GetNickname={this.GetNickname}/>}></Route>
+                        <Route path='/' element={<Home />}></Route>
+                        <Route path='/main' element={<Main />}></Route>
+                        <Route path='/login' element={<Login />}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>
