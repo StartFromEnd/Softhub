@@ -69,7 +69,7 @@ class Login extends React.Component {
         window.location.replace(`https://nid.naver.com/oauth2.0/authorize?client_id=${NAVER_CLIENT_ID}&redirect_uri=${NAVER_REDIRECT_URI}&response_type=code&state=${rand}`);
     }
     
-    GetTokenNaver = (code) => {
+    GetTokenNaver = async (code) => {
         const NAVER_CLIENT_ID = process.env.REACT_APP_NAVER_CLIENT_ID;
         const NAVER_REDIRECT_URI = process.env.REACT_APP_NAVER_REDIRECT_URI;
         const NAVER_SECRET_KEY = process.env.REACT_APP_NAVER_SECRET_KEY;
