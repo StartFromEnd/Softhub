@@ -137,11 +137,19 @@ class Home extends React.Component {
         const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
         const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
         
-        const rand = 'kakao-'+Math.floor(Math.random() * 1000000).toString();
+        const rand = 'kakao-'+Math.floor(Math.random() * 1000000000).toString();
         
         window.location.replace(`https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code&state=${rand}&scope=profile_nickname,account_email`)
     }
     
+    OAuthNaverStart = () => {
+        const NAVER_CLIENT_ID = process.env.REACT_APP_NAVER_CLIENT_ID;
+        const NAVER_REDIRECT_URI = process.env.REACT_APP_NAVER_REDIRECT_URI;
+        
+        const rand = 'naver-'+Math.floor(Math.random() * 1000000000).toString();
+        
+        window.location.replace(`https://nid.naver.com/oauth2.0/authorize?client_id=${NAVER_CLIENT_ID}&redirect_uri=${NAVER_REDIRECT_URI}&response_type=code&state={rand}`);
+    }
     render() {
         return(
             <div>
@@ -373,7 +381,7 @@ class Home extends React.Component {
                                 <button className='kakao-sign-in mb-0-5rem' onClick={() => this.OAuthKakaoStart()}>
                                     <img src={KakaoImage} alt='카카오 이미지'></img>
                                 </button>
-                                <button className='naver-sign-in mb-1rem'>
+                                <button className='naver-sign-in mb-1rem' onClick={() => this.OAuthNaverStart()}>
                                     <img src={NaverImage} alt='네이버 이미지'></img>
                                     <p className='font-0-75rem white center'>네이버 로그인</p>
                                 </button>

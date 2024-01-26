@@ -41,7 +41,7 @@ class Login extends React.Component {
         const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
         const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
         
-        const rand = 'kakao-'+Math.floor(Math.random() * 1000000).toString();
+        const rand = 'kakao-'+Math.floor(Math.random() * 1000000000).toString();
         
         window.location.replace(`https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code&state=${rand}&scope=profile_nickname,account_email`)
     }
@@ -60,6 +60,26 @@ class Login extends React.Component {
         return response.json();
     }
     
+    OAuthNaverStart = () => {
+        const NAVER_CLIENT_ID = process.env.REACT_APP_NAVER_CLIENT_ID;
+        const NAVER_REDIRECT_URI = process.env.REACT_APP_NAVER_REDIRECT_URI;
+        
+        const rand = 'naver-'+Math.floor(Math.random() * 1000000000).toString();
+        
+        window.location.replace(`https://nid.naver.com/oauth2.0/authorize?client_id=${NAVER_CLIENT_ID}&redirect_uri=${NAVER_REDIRECT_URI}&response_type=code&state={rand}`);
+    }
+    
+    GetTokenNaver = (code) => {
+        const NAVER_CLIENT_ID = process.env.REACT_APP_NAVER_CLIENT_ID;
+        const NAVER_REDIRECT_URI = process.env.REACT_APP_NAVER_REDIRECT_URI;
+        const NAVER_SECRET_KEY = process.env.REACT_APP_NAVER_SECRET_KEY;
+        
+        const rand = 'naver-'+Math.floor(Math.random() * 1000000000).toString();
+        
+        const response = await fetch(`https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id=${NAVER_CLIENT_ID}&client_secret=${NAVER_SECRET_KEY}&code=${code}&state=${rand}`);
+        
+        return response.json();
+    }
     async componentDidMount(){
         if(cookie.load('nickname') != undefined){
             this.setState({nickname: cookie.load('nickname')});
@@ -68,8 +88,14 @@ class Login extends React.Component {
         if(params.get('code')){
             let data;
             if(params.get('state')){
-                let res = await this.GetTokenKakao(params.get('code'));
-                data = await common.Fetch('oAuthKakao', {access_token: res.access_token});
+                if(params.get('state').includes('naver')){
+                    let res = await this.GetTokenNaver(params.get('code'));
+                    data = await common.Fetch('oAuthNaver', {access_token: res.access_token});  
+                }
+                else if(params.get('state').includes('kakao')){
+                    let res = await this.GetTokenKakao(params.get('code'));
+                    data = await common.Fetch('oAuthKakao', {access_token: res.access_token});   
+                }
             }
             else{
                 let res = await this.GetTokenGoogle(params.get('code'));
@@ -122,7 +148,7 @@ class Login extends React.Component {
                                 <img src={KakaoImage} alt='카카오 이미지'></img>
                             </button>
                             <button className='naver-sign-in mb-1rem'>
-                                <img src={NaverImage} alt='네이버 이미지'></img>
+                                <img src={NaverImage} alt='네이버 이미지' onClick={() => this.OAuthNaverStart()}></img>
                                 <p className='font-0-75rem white center'>네이버 로그인</p>
                             </button>
                             <p className='font-0-5rem gray mt-2rem center' style={{width:'80%'}}>더 강력한 보안과 편의성을 위해<br></br>저희 펀드허브는 소셜로그인만 지원해요!</p>
