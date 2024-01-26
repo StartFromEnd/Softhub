@@ -595,6 +595,6 @@ p {
     background-color: white;
     border-radius: 1.5rem;
 }
-.profil-about-body-grid-left-flex > p {
+.profil-about-body-grid-left-flex > p, .profil-about-body-grid-left-flex > pre {
     width: 80%;
 }
