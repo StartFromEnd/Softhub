@@ -8,6 +8,7 @@ import * as common from './CommonFunctions.js';
 import Home from './Homes/Home.js';
 import Main from './Mains/Main.js';
 import Login from './Signs/Login.js';
+import Profil from './Profils/Profil.js';
 
 class App extends React.Component {
     
@@ -19,6 +20,7 @@ class App extends React.Component {
                         <Route path='/' element={<Home />}></Route>
                         <Route path='/main' element={<Main />}></Route>
                         <Route path='/login' element={<Login />}></Route>
+                        <Route path='/profil' element={<Profil />}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>
