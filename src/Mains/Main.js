@@ -6,6 +6,11 @@ import '../App.css';
 import * as common from '../CommonFunctions.js';
 
 class Main extends React.Component {
+    
+    componentDidMount() {
+        console.log(this.props);
+    }
+    
     render() {
         return(
             <div>
