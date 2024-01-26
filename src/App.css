@@ -550,3 +550,24 @@ p {
 .login-about-body-grid > div {
     min-height: 15rem;
 }
+.profil-about-body {
+    position: relative;
+    padding: 4rem 5%;
+}
+.profil-about-body-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: auto;
+    width: 30%;
+    background-color: #0052CC;
+}
+.profil-about-body-grid {
+    display: grid;
+    max-width: 57rem;
+    width: 100%;
+    min-height: 50vw;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 5rem;
+}
