@@ -69,17 +69,6 @@ class Login extends React.Component {
         window.location.replace(`https://nid.naver.com/oauth2.0/authorize?client_id=${NAVER_CLIENT_ID}&redirect_uri=${NAVER_REDIRECT_URI}&response_type=code&state=${rand}`);
     }
     
-    GetTokenNaver = async (code) => {
-        const NAVER_CLIENT_ID = process.env.REACT_APP_NAVER_CLIENT_ID;
-        const NAVER_REDIRECT_URI = process.env.REACT_APP_NAVER_REDIRECT_URI;
-        const NAVER_SECRET_KEY = process.env.REACT_APP_NAVER_SECRET_KEY;
-        
-        const rand = 'naver-'+Math.floor(Math.random() * 1000000000).toString();
-        
-        const response = await fetch(`https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id=${NAVER_CLIENT_ID}&client_secret=${NAVER_SECRET_KEY}&code=${code}&state=${rand}`);
-        
-        return response.json();
-    }
     async componentDidMount(){
         if(cookie.load('nickname') != undefined){
             this.setState({nickname: cookie.load('nickname')});
@@ -89,8 +78,7 @@ class Login extends React.Component {
             let data;
             if(params.get('state')){
                 if(params.get('state').includes('naver')){
-                    let res = await this.GetTokenNaver(params.get('code'));
-                    data = await common.Fetch('oAuthNaver', {access_token: res.access_token});  
+                    data = await common.Fetch('oAuthNaver', {code: params.get('code')});  
                 }
                 else if(params.get('state').includes('kakao')){
                     let res = await this.GetTokenKakao(params.get('code'));
