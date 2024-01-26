@@ -66,7 +66,7 @@ class Login extends React.Component {
         
         const rand = 'naver-'+Math.floor(Math.random() * 1000000000).toString();
         
-        window.location.replace(`https://nid.naver.com/oauth2.0/authorize?client_id=${NAVER_CLIENT_ID}&redirect_uri=${NAVER_REDIRECT_URI}&response_type=code&state={rand}`);
+        window.location.replace(`https://nid.naver.com/oauth2.0/authorize?client_id=${NAVER_CLIENT_ID}&redirect_uri=${NAVER_REDIRECT_URI}&response_type=code&state=${rand}`);
     }
     
     GetTokenNaver = (code) => {
