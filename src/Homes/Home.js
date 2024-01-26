@@ -146,7 +146,7 @@ class Home extends React.Component {
                         <div className='navbar-right d-flex justify-content-end'>
                             <NavLink to='/write' className='none-style-link block font-0-75rem gray'>펀드 게시하기</NavLink>
                             <div className='navbar-right-button'>
-                                <NavLink to='/login' className='none-style-link block font-0-75rem white'>로그인</NavLink>
+                                <NavLink to={this.prop.nickname=='' ? '/login' : '/profil'} className='none-style-link block font-0-75rem white'>{this.prop.nickname == '' ? '로그인' : `${this.prop.nickname}`+' 님'}</NavLink>
                             </div>
                         </div>
                     </div>
@@ -285,7 +285,7 @@ class Home extends React.Component {
                         <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInRight' style={this.state.faqBoxes[2] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq3}>
                             <div className='faq-block-title d-flex justify-content-between' onClick={() => this.OpenFaq(2)}>
                                 <div className='faq-block-title-text'>
-                                    <span className='purple'>사업자 Q.</span> 펀드허브에서 구독권을 판매하면 수수료는 얼마나 나가나요?
+                                    <span className='blue'>사업자 Q.</span> 펀드허브에서 구독권을 판매하면 수수료는 얼마나 나가나요?
                                 </div>
                                 <div className='faq-block-title-image'>
                                     <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[2] ? Styles.rotation : Styles.nothing}></img>

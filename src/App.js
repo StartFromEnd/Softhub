@@ -17,7 +17,7 @@ class App extends React.Component {
         };
     }
     
-    GetNickName = (nickname) => {
+    GetNickname = (nickname) => {
         this.setState({nickname: nickname});
     }
     
@@ -28,7 +28,7 @@ class App extends React.Component {
                     <Routes>
                         <Route path='/' element={<Home nickname={this.state.nickname}/>}></Route>
                         <Route path='/main' element={<Main nickname={this.state.nickname}/>}></Route>
-                        <Route path='/login' element={<Login nickname={this.state.nickname} GetNickName={this.GetNickName}/>}></Route>
+                        <Route path='/login' element={<Login nickname={this.state.nickname} GetNickname={this.GetNickname}/>}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>
