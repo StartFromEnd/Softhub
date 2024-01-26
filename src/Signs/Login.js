@@ -135,8 +135,8 @@ class Login extends React.Component {
                             <button className='kakao-sign-in mb-0-5rem' onClick={() => this.OAuthKakaoStart()}>
                                 <img src={KakaoImage} alt='카카오 이미지'></img>
                             </button>
-                            <button className='naver-sign-in mb-1rem'>
-                                <img src={NaverImage} alt='네이버 이미지' onClick={() => this.OAuthNaverStart()}></img>
+                            <button className='naver-sign-in mb-1rem' onClick={() => this.OAuthNaverStart()}>
+                                <img src={NaverImage} alt='네이버 이미지'></img>
                                 <p className='font-0-75rem white center'>네이버 로그인</p>
                             </button>
                             <p className='font-0-5rem gray mt-2rem center' style={{width:'80%'}}>더 강력한 보안과 편의성을 위해<br></br>저희 펀드허브는 소셜로그인만 지원해요!</p>
