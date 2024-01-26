@@ -139,7 +139,7 @@ class Home extends React.Component {
         
         const rand = 'kakao-'+Math.floor(Math.random() * 1000000).toString();
         
-        window.location.replace(`https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code&state=${rand}&scope=openid,profile_nickname,account_email`)
+        window.location.replace(`https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code&state=${rand}&scope=profile_nickname,account_email`)
     }
     
     render() {
