@@ -133,6 +133,15 @@ class Home extends React.Component {
         window.location.replace(`https://accounts.google.com/o/oauth2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&response_type=code&scope=openid email profile`);
     }
     
+    OAuthKakaoStart = () => {
+        const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
+        const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
+        
+        const rand = 'kakao-'+Math.floor(Math.random() * 1000000).toString();
+        
+        window.location.replace(`https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code&state=${rand}&scope=openid,profile_nickname,account_email`)
+    }
+    
     render() {
         return(
             <div>
@@ -192,7 +201,7 @@ class Home extends React.Component {
                             <p className='font-0-75rem blue mb-2rem'>ABOUT FUNDHUB</p>
                             <p className='font-1-5rem black mb-2rem bold'>누가 이용하나요?</p>
                             <p className='font-0-75rem gray mb-2rem'>창업을 하고싶은데 자금이 부족한 창업꿈나무,<br></br>투자는 하고싶은데 크게 하는건 부담스러운 투자초보,<br></br>모두 펀드허브를 통해 고민을 해결하실 수 있습니다.</p>
-                            <p className='font-0-75rem gray mb-1rem bold'>✅ 보유자금 1만원 이상</p>
+                            <p className='font-0-75rem gray mb-1rem bold'>✅ 보유자금 10만원 이상</p>
                             <p className='font-0-75rem gray mb-2rem bold'>✅ 본인 명의의 계좌 소유</p>
                         </div>
                         <div className='about-body-grid duration-2 fadeInUp' ref={this.aboutBodyGrid}>

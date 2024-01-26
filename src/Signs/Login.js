@@ -24,7 +24,7 @@ class Login extends React.Component {
         window.location.replace(`https://accounts.google.com/o/oauth2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&response_type=code&scope=openid email profile`);
     }
     
-    GetToken = async(code) => {
+    GetTokenGoogle = async(code) => {
         const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
         const GOOGLE_REDIRECT_URI = process.env.REACT_APP_GOOGLE_REDIRECT_URI;
         const GOOGLE_SECRET_KEY = process.env.REACT_APP_GOOGLE_SECRET_KEY;
@@ -37,16 +37,45 @@ class Login extends React.Component {
         return response.json();
     }
     
+    OAuthKakaoStart = () => {
+        const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
+        const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
+        
+        const rand = 'kakao-'+Math.floor(Math.random() * 1000000).toString();
+        
+        window.location.replace(`https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code&state=${rand}&scope=openid,profile_nickname,account_email`)
+    }
+    
+    GetTokenKakao = async(code) => {
+        const KAKAO_CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
+        const KAKAO_REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
+        const KAKAO_SECRET_KEY = process.env.REACT_APP_KAKAO_SECRET_KEY;
+        
+        const response = await fetch(`https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&client_secret=${KAKAO_SECRET_KEY}&code=${code}`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+            },
+        });
+        return response.json();
+    }
+    
     async componentDidMount(){
         if(cookie.load('nickname') != undefined){
             this.setState({nickname: cookie.load('nickname')});
         }
         const params = new URLSearchParams(window.location.search);
         if(params.get('code')){
-            const res = await this.GetToken(params.get('code'));
-            const data = await common.Fetch('oAuthGoogle', {access_token: res.access_token});
+            let data;
+            if(params.get('state')){
+                let res = await this.GetTokenKakao(params.get('code'));
+                data = await common.Fetch('oAuthKakao', {access_token: res.access_token});
+            }
+            else{
+                let res = await this.GetTokenGoogle(params.get('code'));
+                data = await common.Fetch('oAuthGoogle', {access_token: res.access_token});
+            }
             if(data.ok){
-                console.log(data);
                 cookie.save('sessionID', data.result.sessionID, {path: '/'});
                 cookie.save('nickname', data.result.nickname, {path: '/'});
                 window.location.replace('/main');
