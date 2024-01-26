@@ -6,14 +6,19 @@ import './App.css';
 import * as common from './CommonFunctions.js';
 
 import Home from './Homes/Home.js';
+import Main from './Mains/Main.js';
 import Login from './Signs/Login.js';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            
+            nickname: '',
         };
+    }
+    
+    GetNickName = (nickname) => {
+        this.setState({nickname: nickname});
     }
     
     render() {
@@ -21,8 +26,9 @@ class App extends React.Component {
             <div className="App">
                 <BrowserRouter>
                     <Routes>
-                        <Route path='/' element={<Home />}></Route>
-                        <Route path='/login' element={<Login />}></Route>
+                        <Route path='/' element={<Home nickname={this.state.nickname}/>}></Route>
+                        <Route path='/main' element={<Main nickname={this.state.nickname}/>}></Route>
+                        <Route path='/login' element={<Login nickname={this.state.nickname} GetNickName={this.GetNickName}/>}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>
