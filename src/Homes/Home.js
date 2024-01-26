@@ -138,7 +138,7 @@ class Home extends React.Component {
                             <NavLink to='/main' className='none-style-link block font-1rem black'>FundHub</NavLink>
                         </div>
                         <div className='navbar-middle d-flex justify-content-between'>
-                            <NavLink to='/' className='none-style-link block font-0-75rem purple'>시작하기</NavLink>
+                            <NavLink to='/' className='none-style-link block font-0-75rem blue'>시작하기</NavLink>
                             <NavLink to='/main' className='none-style-link block font-0-75rem gray'>홈</NavLink>
                             <NavLink to='/announce' className='none-style-link block font-0-75rem gray'>공지사항</NavLink>
                             <NavLink to='/faq' className='none-style-link block font-0-75rem gray'>문의하기</NavLink>
@@ -159,7 +159,7 @@ class Home extends React.Component {
                                 <div className='d-flex flex-column'>
                                     <div>
                                         <div className='grid-left-top'>
-                                            <div className='grid-left-top-box purple font-0-75rem'>NEW</div>
+                                            <div className='grid-left-top-box blue font-0-75rem'>NEW</div>
                                             <div className='grid-left-top-text'>
                                                 <p className='white font-0-75rem'>새로운 개념의 투자를 시작해보세요.</p>
                                             </div>
@@ -185,7 +185,7 @@ class Home extends React.Component {
                     <div className='about-body-background duration-2 fadeInRight' ref={this.aboutBodyBackground}></div>
                     <div className='about-body-container'>
                         <div className='about-body-left duration-2 fadeInUp' ref={this.aboutBodyLeft}>
-                            <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
+                            <p className='font-0-75rem black mb-2rem'>ABOUT FUNDHUB</p>
                             <p className='font-1-5rem black mb-2rem bold'>누가 이용하나요?</p>
                             <p className='font-0-75rem gray mb-2rem'>창업을 하고싶은데 자금이 부족한 창업꿈나무,<br></br>투자는 하고싶은데 크게 하는건 부담스러운 투자초보,<br></br>모두 펀드허브를 통해 고민을 해결하실 수 있습니다.</p>
                             <p className='font-0-75rem gray mb-1rem bold'>✅ 보유자금 1만원 이상</p>
@@ -200,19 +200,19 @@ class Home extends React.Component {
                 </section>
                 <section className='about-body-2'>
                     <div className='about-body-2-flex d-flex flex-column mb-3rem duration-2 fadeInUp' ref={this.aboutBody2Flex}>
-                        <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
+                        <p className='font-0-75rem black mb-2rem'>ABOUT FUNDHUB</p>
                         <p className='font-1-5rem black mb-2rem bold'>어떤 원리인가요?</p>
                         <p className='font-0-75rem gray'>
-                            1.사업자로 등록된 이용자가 <span className='purple'>'구독권'</span>을 발행합니다
+                            1.사업자로 등록된 이용자가 <span className='black'>'구독권'</span>을 발행합니다
                             <br></br>
                             <br></br>
-                            예시 (OO카페 50원 1년 <span className='purple'>구독권</span>)
+                            예시 (OO카페 50원 1년 <span className='black'>구독권</span>)
                             <br></br>
                             <br></br>
-                            2.투자자는 해당 <span className='purple'>구독권</span>을 사업자가 제시한 가격에 구매합니다.
+                            2.투자자는 해당 <span className='black'>구독권</span>을 사업자가 제시한 가격에 구매합니다.
                             <br></br>
                             <br></br>
-                            3.투자자는 <span className='purple'>구독권</span> 구매 후, <span className='purple'>구독권</span> 판매가 마감되는 다음날부터
+                            3.투자자는 <span className='black'>구독권</span> 구매 후, <span className='black'>구독권</span> 판매가 마감되는 다음날부터
                             <br></br>
                             1년동안 OO카페에서 판매되는 제품 하나당 50원의 수익을 얻으실 수 있습니다.
                         </p>
@@ -240,7 +240,7 @@ class Home extends React.Component {
                 <section className='about-body-3'>
                     <div className='about-body-3-container'>
                         <div className='about-body-3-flex d-flex flex-column mb-3rem duration-2 fadeInUp' ref={this.aboutBody3Flex}>
-                            <p className='font-0-75rem purple mb-2rem'>ABOUT FUNDHUB</p>
+                            <p className='font-0-75rem black mb-2rem'>ABOUT FUNDHUB</p>
                             <p className='font-1-5rem black mb-2rem bold'>자주 묻는 질문</p>
                         </div>
                         <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInRight' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq1}>
@@ -285,7 +285,7 @@ class Home extends React.Component {
                         <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInRight' style={this.state.faqBoxes[2] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq3}>
                             <div className='faq-block-title d-flex justify-content-between' onClick={() => this.OpenFaq(2)}>
                                 <div className='faq-block-title-text'>
-                                    <span className='blue'>사업자 Q.</span> 펀드허브에서 구독권을 판매하면 수수료는 얼마나 나가나요?
+                                    <span className='purple'>사업자 Q.</span> 펀드허브에서 구독권을 판매하면 수수료는 얼마나 나가나요?
                                 </div>
                                 <div className='faq-block-title-image'>
                                     <img src={ArrowImage} alt='화살표 이미지' style={this.state.faqBoxes[2] ? Styles.rotation : Styles.nothing}></img>
@@ -313,15 +313,15 @@ class Home extends React.Component {
                                 <img src={BuildingImage} alt='커피 이미지'></img>
                             </div>
                             <div className='about-footer-top-grid-right d-flex flex-column mt-3rem'>
-                                <p className='font-0-75rem purple mb-2rem'>FUNDHUB (펀드허브)</p>
+                                <p className='font-0-75rem black mb-2rem'>FUNDHUB (펀드허브)</p>
                                 <p className='font-0-75rem gray'>
-                                    <span className='purple'>Address:</span> OO시 OO로 OO길
+                                    <span className='black'>Address:</span> OO시 OO로 OO길
                                     <br></br>
                                     <br></br>
-                                    <span className='purple'>Tel:</span> 010.xxxx.xxxx
+                                    <span className='black'>Tel:</span>     010.xxxx.xxxx
                                     <br></br>
                                     <br></br>
-                                    <span className='purple'>Email:</span> example@abc.com
+                                    <span className='black'>Email:</span>   example@abc.com
                                 </p>
                             </div>
                         </div>

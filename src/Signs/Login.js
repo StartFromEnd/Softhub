@@ -121,11 +121,11 @@ class Login extends React.Component {
                             <div className='about-footer-bottom-grid-right'>
                                 <p className='font-0-75rem gray'>저희와 함께해요!</p>
                                 <br></br>
-                                <p className='font-0-75rem gray'><span className='purple'>Address:</span> OO시 OO로 OO길</p>
+                                <p className='font-0-75rem gray'><span className='black'>Address:</span> OO시 OO로 OO길</p>
                                 <br></br>
-                                <p className='font-0-75rem gray'><span className='purple'>Tel:</span> 010.xxxx.xxxx</p>
+                                <p className='font-0-75rem gray'><span className='black'>Tel:</span>     010.xxxx.xxxx</p>
                                 <br></br>
-                                <p className='font-0-75rem gray'><span className='purple'>Email:</span> example@abc.com</p>
+                                <p className='font-0-75rem gray'><span className='black'>Email:</span>   example@abc.com</p>
                             </div>
                         </div>
                         <div className='about-footer-bottom-bottom font-0-5rem'>

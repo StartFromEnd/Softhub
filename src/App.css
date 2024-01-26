@@ -107,7 +107,7 @@ p {
     color: white;
 }
 .blue {
-    color: #4353FF;
+    color: #007BFF;
 }
 .purple {
     color: #443FDE;
@@ -212,7 +212,7 @@ p {
 }
 
 .navbar-right-button {
-    background-color: #443FDE;
+    background-color: #007BFF;
 }
 
 .about-header {
@@ -518,7 +518,7 @@ p {
     display: inline-block;
     padding: 0.5rem;
     height: 2rem;
-    background-color: #443FDE;
+    background-color: #007BFF;
 }
 .about-footer-bottom-bottom {
     display: flex;
@@ -537,7 +537,7 @@ p {
     right: 0;
     bottom: 0;
     left: auto;
-    background-color: #443FDE;
+    background-color: #007BFF;
 }
 .login-about-body-grid {
     display: grid;
