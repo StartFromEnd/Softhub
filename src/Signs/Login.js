@@ -118,7 +118,7 @@ class Login extends React.Component {
                                 <img src={GoogleImage} alt='구글 이미지'></img>
                                 <p className='font-0-75rem gray center'>구글 로그인</p>
                             </button>
-                            <button className='kakao-sign-in mb-0-5rem'>
+                            <button className='kakao-sign-in mb-0-5rem' onClick={() => this.OAuthKakaoStart()}>
                                 <img src={KakaoImage} alt='카카오 이미지'></img>
                             </button>
                             <button className='naver-sign-in mb-1rem'>
