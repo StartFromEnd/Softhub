@@ -595,6 +595,13 @@ p {
     background-color: white;
     border-radius: 1.5rem;
 }
-.profil-about-body-grid-left-flex > p, .profil-about-body-grid-left-flex > pre {
+.profil-about-body-grid-left-flex > p, .profil-about-body-grid-left-flex > div {
     width: 80%;
+}
+.profil-about-body-grid-left-flex-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 2rem;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 1rem;
 }
