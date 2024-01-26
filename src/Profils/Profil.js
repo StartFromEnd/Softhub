@@ -72,7 +72,9 @@ class Main extends React.Component {
                     <div className='profil-about-body-background'></div>
                     <div className='profil-about-body-grid'>
                         <div className='profil-about-body-grid-left'>
-                        
+                            <div className='profil-about-body-grid-left-flex'>
+                                
+                            </div>
                         </div>
                         <div className='profil-about-body-grid-right'>
                         
