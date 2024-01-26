@@ -38,7 +38,7 @@ class Login extends React.Component {
             if(data.ok){
                 console.log(data);
                 cookie.save('sessionID', data.result.sessionID, {path: '/'});
-                this.prop.GetNickname(data.result.nickname);
+                this.props.GetNickname(data.result.nickname);
                 window.location.replace('/main');
             }
             else{
@@ -64,7 +64,7 @@ class Login extends React.Component {
                         <div className='navbar-right d-flex justify-content-end'>
                             <NavLink to='/write' className='none-style-link block font-0-75rem gray'>펀드 게시하기</NavLink>
                             <div className='navbar-right-button'>
-                                <NavLink to={this.prop.nickname=='' ? '/login' : '/profil'} className='none-style-link block font-0-75rem white'>{this.prop.nickname == '' ? '로그인' : `${this.prop.nickname}`+' 님'}</NavLink>
+                                <NavLink to={this.props.nickname=='' ? '/login' : '/profil'} className='none-style-link block font-0-75rem white'>{this.props.nickname == '' ? '로그인' : `${this.props.nickname}`+' 님'}</NavLink>
                             </div>
                         </div>
                     </div>

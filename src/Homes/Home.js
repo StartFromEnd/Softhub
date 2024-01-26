@@ -313,15 +313,15 @@ class Home extends React.Component {
                                 <img src={BuildingImage} alt='커피 이미지'></img>
                             </div>
                             <div className='about-footer-top-grid-right d-flex flex-column mt-3rem'>
-                                <p className='font-0-75rem black mb-2rem'>FUNDHUB (펀드허브)</p>
+                                <p className='font-0-75rem blue mb-2rem'>FUNDHUB (펀드허브)</p>
                                 <p className='font-0-75rem gray'>
-                                    <span className='black'>Address:</span> OO시 OO로 OO길
+                                    <span className='blue'>Address:</span> OO시 OO로 OO길
                                     <br></br>
                                     <br></br>
-                                    <span className='black'>Tel:</span>     010.xxxx.xxxx
+                                    <span className='blue'>Tel:</span>     010.xxxx.xxxx
                                     <br></br>
                                     <br></br>
-                                    <span className='black'>Email:</span>   example@abc.com
+                                    <span className='blue'>Email:</span>   example@abc.com
                                 </p>
                             </div>
                         </div>

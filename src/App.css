@@ -107,7 +107,7 @@ p {
     color: white;
 }
 .blue {
-    color: #007BFF;
+    color: #0052CC;
 }
 .purple {
     color: #443FDE;
@@ -212,7 +212,7 @@ p {
 }
 
 .navbar-right-button {
-    background-color: #007BFF;
+    background-color: #0052CC;
 }
 
 .about-header {
@@ -227,7 +227,7 @@ p {
     right: 0;
     bottom: auto;
     height: 25rem;
-    background-color: #007BFF;
+    background-color: #0052CC;
 }
 
 .about-header-container {
@@ -518,7 +518,7 @@ p {
     display: inline-block;
     padding: 0.5rem;
     height: 2rem;
-    background-color: #007BFF;
+    background-color: #0052CC;
 }
 .about-footer-bottom-bottom {
     display: flex;
@@ -537,7 +537,7 @@ p {
     right: 0;
     bottom: 0;
     left: auto;
-    background-color: #007BFF;
+    background-color: #0052CC;
 }
 .login-about-body-grid {
     display: grid;
