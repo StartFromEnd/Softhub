@@ -146,7 +146,7 @@ class Home extends React.Component {
                         <div className='navbar-right d-flex justify-content-end'>
                             <NavLink to='/write' className='none-style-link block font-0-75rem gray'>펀드 게시하기</NavLink>
                             <div className='navbar-right-button'>
-                                <NavLink to={this.prop.nickname=='' ? '/login' : '/profil'} className='none-style-link block font-0-75rem white'>{this.prop.nickname == '' ? '로그인' : `${this.prop.nickname}`+' 님'}</NavLink>
+                                <NavLink to={this.props.nickname=='' ? '/login' : '/profil'} className='none-style-link block font-0-75rem white'>{this.props.nickname == '' ? '로그인' : `${this.props.nickname}`+' 님'}</NavLink>
                             </div>
                         </div>
                     </div>
@@ -185,7 +185,7 @@ class Home extends React.Component {
                     <div className='about-body-background duration-2 fadeInRight' ref={this.aboutBodyBackground}></div>
                     <div className='about-body-container'>
                         <div className='about-body-left duration-2 fadeInUp' ref={this.aboutBodyLeft}>
-                            <p className='font-0-75rem black mb-2rem'>ABOUT FUNDHUB</p>
+                            <p className='font-0-75rem blue mb-2rem'>ABOUT FUNDHUB</p>
                             <p className='font-1-5rem black mb-2rem bold'>누가 이용하나요?</p>
                             <p className='font-0-75rem gray mb-2rem'>창업을 하고싶은데 자금이 부족한 창업꿈나무,<br></br>투자는 하고싶은데 크게 하는건 부담스러운 투자초보,<br></br>모두 펀드허브를 통해 고민을 해결하실 수 있습니다.</p>
                             <p className='font-0-75rem gray mb-1rem bold'>✅ 보유자금 1만원 이상</p>
@@ -200,7 +200,7 @@ class Home extends React.Component {
                 </section>
                 <section className='about-body-2'>
                     <div className='about-body-2-flex d-flex flex-column mb-3rem duration-2 fadeInUp' ref={this.aboutBody2Flex}>
-                        <p className='font-0-75rem black mb-2rem'>ABOUT FUNDHUB</p>
+                        <p className='font-0-75rem blue mb-2rem'>ABOUT FUNDHUB</p>
                         <p className='font-1-5rem black mb-2rem bold'>어떤 원리인가요?</p>
                         <p className='font-0-75rem gray'>
                             1.사업자로 등록된 이용자가 <span className='blue'>'구독권'</span>을 발행합니다
@@ -240,7 +240,7 @@ class Home extends React.Component {
                 <section className='about-body-3'>
                     <div className='about-body-3-container'>
                         <div className='about-body-3-flex d-flex flex-column mb-3rem duration-2 fadeInUp' ref={this.aboutBody3Flex}>
-                            <p className='font-0-75rem black mb-2rem'>ABOUT FUNDHUB</p>
+                            <p className='font-0-75rem blue mb-2rem'>ABOUT FUNDHUB</p>
                             <p className='font-1-5rem black mb-2rem bold'>자주 묻는 질문</p>
                         </div>
                         <div className='faq-block d-flex flex-column mb-3rem duration-2 fadeInRight' style={this.state.faqBoxes[0] ? Styles.extension : Styles.nothing} ref={this.aboutBody3Faq1}>
